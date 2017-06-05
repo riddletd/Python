@@ -1,0 +1,1133 @@
+<!DOCTYPE html><html><body><title>CouchDB Tutorial</title>
+
+<h1>CouchDB Tutorial</h1>
+
+<p>This tutorial provides a brief knowledge about CouchDB, the procedures to set it up, and the ways to interact with CouchDB server using cURL and Futon. It also tells how to create, update and delete databases and documents.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial helps the professionals aspiring to make a career in Big Data and NoSQL databases, especially the documents store.</p>
+
+<h1>Prerequisites</h1>
+
+<p>Before you start proceeding with this tutorial, we are assuming that you have a brief knowledge on Big Data, Hadoop, and also have the basic understanding of databases.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>CouchDB Introduction</title>
+
+<h1>CouchDB - Introduction</h1>
+
+<p>Database management system provides mechanism for storage and retrieval of data. There are three main types of database management systems namely &minus;</p>
+
+<h2>RDBMS</h2>
+
+<p>RDBMS stands for Relational Database Management System. RDBMS is the basis for SQL, and for all modern database systems like MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.</p>
+
+<p>A Relational database management system (RDBMS) is a database management system (DBMS) that is based on the relational model as introduced by E. F. Codd.</p>
+
+<p>The data in RDBMS is stored in database objects called <b>tables</b>. The table is a collection of related data entries and it consists of columns and rows. It stores only structured data.</p>
+
+<h2>NoSQL Databases</h2>
+
+<p>A NoSQL database (sometimes called as Not Only SQL) is a database that provides a mechanism to store and retrieve data other than the tabular relations used in relational databases. These databases are schema-free, support easy replication, have simple API, eventually consistent, and can handle huge amounts of data (big data).</p>
+
+<p>The primary objective of a NoSQL database is to have the following &minus;</p>
+
+<p>NoSQL databases use different data structures compared to relational databases. It makes some operations faster in NoSQL. The suitability of a given NoSQL database depends on the problem it must solve. These databases store both structured data and unstructured data like audio files, video files, documents, etc. These NoSQL databases are classified into three types and they are explained below.</p>
+
+<p><b>Key-value Store</b> &minus; These databases are designed for storing data in key-value pairs and these databases will not have any schema. In these databases, each data value consists of an indexed key and a value for that key.</p>
+
+<p>Examples &minus; BerkeleyDB, Cassandra, DynamoDB, Riak.</p>
+
+<p><b>Column Store</b> &minus; In these databases, data is stored in cells grouped in columns of data, and these columns are further grouped into Column families. These column families can contain any number of columns.</p>
+
+<p>Examples &minus; BigTable, HBase, and HyperTable.</p>
+
+<p><b>Document Store</b> &minus; These are the databases developed on the basic idea of key-value stores where "documents" contain more complex data. Here, each document is assigned a unique key, which is used to retrieve the document. These are designed for storing, retrieving, and managing document-oriented information, also known as semi-structured data.</p>
+
+<p>Examples &minus; CouchDB and MongoDB.</p>
+
+<h2>What is CouchDB?</h2>
+
+<p>CouchDB is an open source database developed by Apache software foundation. The focus is on the ease of use, embracing the web. It is a NoSQL document store database.</p>
+
+<p>It uses JSON, to store data (documents), java script as its query language to transform the documents, http protocol for api to access the documents, query the indices with the web browser. It is a multi master application released in 2005 and it became an apache project in 2008.</p>
+
+<h2>Why CouchDB?</h2>
+
+<p>CouchDB have an HTTP-based REST API, which helps to communicate with the database easily. And the simple structure of HTTP resources and methods (GET, PUT, DELETE) are easy to understand and use.</p>
+
+<p>As we store data in the flexible document-based structure, there is no need to worry about the structure of the data.</p>
+
+<p>Users are provided with powerful data mapping, which allows querying, combining, and filtering the information.</p>
+
+<p>CouchDB provides easy-to-use replication, using which you can copy, share, and synchronize the data between databases and machines.</p>
+
+<h2>Data Model</h2>
+
+<p>Database is the outermost data structure/container in CouchDB.</p>
+
+<p>Each database is a collection of independent documents.</p>
+
+<p>Each document maintains its own data and self-contained schema.</p>
+
+<p>Document metadata contains revision information, which makes it possible to merge the differences occurred while the databases were disconnected.</p>
+
+<p>CouchDB implements multi version concurrency control, to avoid the need to lock the database field during writes.</p>
+
+<h2>Features of CouchDB</h2>
+
+<h3>Document Storage</h3>
+
+<p>CouchDB is a document storage NoSQL database. Documents are the primary unit of data, each field is uniquely named and contain values of various data types such as text, number, Boolean, lists, etc... In these documents there is no set limit to text size or element count.</p>
+
+<p>CouchDB provides an API called RESTful HTTP API for reading and updating (add, edit, delete) database documents.</p>
+
+<p>Below given is the sample JSON document structure followed by couchDB.. </p>
+
+<h3>ACID Properties</h3>
+
+<p>The CouchDB file layout and commitment system features all the ACID properties.</p>
+
+<p>Once the data is entered in to the disc it will not be overwritten. Document updates (add, edit, delete) follow Atomicity, i.e., they will be saved completely or not saved at all. The database will not have any partially saved or edited documents.</p>
+
+<p>Almost all of these update are serialized and any number of clients can read a document without waiting and without being interrupted.</p>
+
+<h3>Compaction</h3>
+
+<p>Compaction is an operation to avail extra disc space for the database by removing unused data. While performing compaction operation on a particular file, a file with the extension <b>.compaction</b> is created and all the active/actual data is copied (cloned) to that file, when the copying process is finished then the old file is discarded.  The database remains online during the compaction  and all updates and reads are allowed to complete successfully.</p>
+
+<h3>Views</h3>
+
+<p>Data in CouchDB is stored in semi-structured documents that are flexible with individual implicit structures, but it is a simple document model for data storage and sharing. If we want see our data in many different ways, we need a way to filter, organize and report on data that hasn’t been decomposed into tables.</p>
+
+<p>To solve this problem, CouchDB provides a view model. Views are the method of aggregating and reporting on the documents in a database, and are built on-demand to aggregate, join and report on database documents. Because views are built dynamically and don’t affect the underlying document, you can have as many different view representations of the same data as you like.</p>
+
+<h2>History</h2>
+
+<p>A brief of CouchDB's past is as follows &minus;</p>
+
+<p>The current version of CouchDB is 1.61.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+{
+   "field" : "value",
+   "field" : "value",
+   "field" : "value",
+}
+</pre>
+
+<title>CouchDB Installation</title>
+
+<h1>CouchDB - Installation</h1>
+
+<p>This chapter teaches you how to install CouchDB in windows as well as Linux systems.</p>
+
+<h2>Installing CouchDB in Windows</h2>
+
+<h3>Download CouchDB</h3>
+
+<p>The official website for CouchDB is <a rel="nofollow" target="_blank" href="http://couchdb.apache.org">http://couchdb.apache.org</a>. If you click the given link, you can get the home page of the CouchDB official website as shown below.</p>
+
+<p>If you click on the download button that will lead to a page where download links of CouchDB in various formats are provided. The following snapshot illustrates the same.</p>
+
+<p>Choose the download link for windows systems and select one of the provided mirrors to start your download.</p>
+
+<h3>Installing CouchDB</h3>
+
+<p>A windos executable <b>setup-couchdb-1.6.1_R16B02.exe</b> file will be downloaded on your system.  Run the setup file and proceed with the installation.</p>
+
+<p>You can interact with the CouchDB web interface by using the following url &minus;</p>
+
+<p>This shows you the index page of Futon, which is the web interface of CouchDB.</p>
+
+<h2>Installing CouchDB in Linux Systems</h2>
+
+<p>For many of the Linux flavored systems, they provide CouchDB internally. To install this CouchDB follow the instructions.</p>
+
+<p>On Ubuntu and Debian you can use &minus;</p>
+
+<p>On Gentoo Linux there is a CouchDB ebuild available &minus;</p>
+
+<p>If your Linux system does not have CouchDB, follow the next section to install CouchDB and its dependencies.</p>
+
+<h3>Installing CouchDB Dependencies</h3>
+
+<p>Following is the list of dependencies that are to be installed to get CouchDB in your system&minus;</p>
+
+<p>To install these dependencies, type the following commands in the terminal. Here we are using Centos 6.5 and the following commands will install the required softwares compatible to Centos 6.5.</p>
+
+<p><b>Note &minus;</b> For all these commands you need to use sudo. The following procedure converts a normal user to a sudoer.</p>
+
+<p>Login as root in admin user</p>
+
+<p>Open <b>sudo</b> file using the following command &minus;</p>
+
+<p>and press esc : x to write the changes to the file.</p>
+
+<p>After installing all the dependencies in your system, download CouchDB as described in next section.</p>
+
+<h3>Downloading CouchDB</h3>
+
+<p>There is no <b>.tar</b> file available for CouchDB, so you have to install it from the source. Download the source file of CouchDB, to download <a rel="nofollow" target="_blank" href="http://www.apache.org/dist/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz">click here</a>.</p>
+
+<p> Create a new directory, and name it CouchDB for example, go into the directory and download CouchDB source by executing the following commands &minus;</p>
+
+<p>This should download CouchDB source file <b>apache-couchdb-1.6.1.tar.gz</b>.  Give the following command to unzip it &minus;</p>
+
+<h3>Configuring CouchDB</h3>
+
+<p>Configure CouchDB as follows &minus;</p>
+
+<h3>Installing CouchDB</h3>
+
+<p>Execute the following command to install CouchDB &minus;</p>
+
+<p>This command should install CouchDB in your system with a concluding remarks, saying &minus; <i>You have installed Apache CouchDB, time to relax</i>.</p>
+
+<h3>Starting CouchDB</h3>
+
+<p>To start CouchDB, browse to the CouchDB home folder and use the following command &minus;</p>
+
+<p>This should start CouchDB along with the following output &minus;</p>
+
+<h3>Verification</h3>
+
+<p>Since CouchDB is a web interface, we need to verify it in web browser.  Type the following homepage url and match the output.</p>
+
+<p>It should produce the following output &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+{
+   "couchdb":"Welcome","uuid":"c8d48ac61bb497f4692b346e0f400d60",
+   "version":"1.6.1",
+   "vendor":{
+      "version":"1.6.1","name":"The Apache Software Foundation"
+   }
+}
+</pre>
+<p>You can interact with the CouchDB web interface by using the following url &minus;</p>
+<pre class="result notranslate">
+http://127.0.0.1:5984/_utils/
+</pre>
+<p>This shows you the index page of Futon, which is the web interface of CouchDB.</p>
+<img src="/couchdb/images/web_interface.jpg" alt="Web Interface" />
+<h2>Installing CouchDB in Linux Systems</h2>
+<p>For many of the Linux flavored systems, they provide CouchDB internally. To install this CouchDB follow the instructions.</p>
+<p>On Ubuntu and Debian you can use &minus;</p>
+<pre class="result notranslate">
+sudo apt install couchdb
+</pre>
+<p>On Gentoo Linux there is a CouchDB ebuild available &minus;</p>
+<pre class="result notranslate">
+sudo emerge couchdb
+</pre>
+<p>If your Linux system does not have CouchDB, follow the next section to install CouchDB and its dependencies.</p>
+<h3>Installing CouchDB Dependencies</h3>
+<p>Following is the list of dependencies that are to be installed to get CouchDB in your system&minus;</p>
+<ul class="list">
+<li>Erlang OTP</li>
+<li>ICU</li>
+<li>OpenSSL</li>
+<li>Mozilla SpiderMonkey</li>
+<li>GNU Make</li>
+<li>GNU Compiler Collection</li>
+<li>libcurl</li>
+<li>help2man</li>
+<li>Python for docs</li>
+<li>Python Sphinx</li>
+</ul>
+<p>To install these dependencies, type the following commands in the terminal. Here we are using Centos 6.5 and the following commands will install the required softwares compatible to Centos 6.5.</p>
+<pre class="result notranslate">
+$sudo yum install autoconf
+$sudo yum install autoconf-archive
+$sudo yum install automake
+$sudo yum install curl-devel
+$sudo yum install erlang-asn1
+$sudo yum install erlang-erts
+$sudo yum install erlang-eunit
+$sudo yum install erlang-os_mon
+$sudo yum install erlang-xmerl
+$sudo yum install help2man
+$sudo yum install js-devel
+$sudo yum install libicu-devel
+$sudo yum install libtool
+$sudo yum install perl-Test-Harness
+</pre>
+<p><b>Note &minus;</b> For all these commands you need to use sudo. The following procedure converts a normal user to a sudoer.</p>
+<ul class="list">
+<li><p>Login as root in admin user</p></li>
+<li><p>Open <b>sudo</b> file using the following command &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+visudo
+</pre>
+<ul class="list">
+<li>Then edit as shown below to give your existing user the sudoer privileges &minus;</li>
+</ul>
+<pre class="result notranslate">
+Hadoop All = (All) All  
+</pre>
+<p>and press esc : x to write the changes to the file.</p>
+<p>After installing all the dependencies in your system, download CouchDB as described in next section.</p>
+<h3>Downloading CouchDB</h3>
+<p>There is no <b>.tar</b> file available for CouchDB, so you have to install it from the source. Download the source file of CouchDB, to download <a rel="nofollow" target="_blank" href="http://www.apache.org/dist/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz">click here</a>.</p>
+<p> Create a new directory, and name it CouchDB for example, go into the directory and download CouchDB source by executing the following commands &minus;</p>
+<pre class="result notranslate">
+$ mkdir CouchDB
+$ cd CouchDB/
+$ wget
+http://www.google.com/url?q=http%3A%2F%2Fwww.apache.org%2Fdist%2Fcouchdb
+%2Fsource%2F1.6.1%2Fapache-couchdb-1.6.1.tar.gz
+</pre>
+<p>This should download CouchDB source file <b>apache-couchdb-1.6.1.tar.gz</b>.  Give the following command to unzip it &minus;</p>
+<pre class="result notranslate">
+$ tar zxvf apache-couchdb-1.6.1.tar.gz
+</pre>
+<h3>Configuring CouchDB</h3>
+<p>Configure CouchDB as follows &minus;</p>
+<ul class="list">
+<li>Browse to the home folder of CouchDB.</li>
+<li>Login as superuser.</li>
+<li>Configure using ./configure prompt as shown below &minus;</li>
+</ul>
+<pre class="result notranslate">
+$ cd apache-couchdb-1.6.1
+$ su
+Password:
+# ./configure --with-erlang=/usr/lib64/erlang/usr/include/
+</pre>
+<p>It gives you the following output similar to that shown below with a concluding
+line saying &minus; <b>You have configured Apache CouchDB, time to relax</b>.</p>
+<pre class="result notranslate">
+# ./configure --with-erlang=/usr/lib64/erlang/usr/include/
+
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking how to create a ustar tar archive... gnutar
+………………………………………………………..
+……………………….
+config.status: creating var/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: creating src/snappy/google-snappy/config.h
+config.status: src/snappy/google-snappy/config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+You have configured Apache CouchDB, time to relax.
+
+Run `make &amp;&amp; sudo make install' to install.
+</pre>
+<h3>Installing CouchDB</h3>
+<p>Execute the following command to install CouchDB &minus;</p>
+<pre class="result notranslate">
+# make &amp;&amp; sudo make install
+</pre>
+<p>This command should install CouchDB in your system with a concluding remarks, saying &minus; <i>You have installed Apache CouchDB, time to relax</i>.</p>
+<h3>Starting CouchDB</h3>
+<p>To start CouchDB, browse to the CouchDB home folder and use the following command &minus;</p>
+<pre class="result notranslate">
+$ cd apache-couchdb-1.6.1
+$ cd etc
+$ couchdb start
+</pre>
+<p>This should start CouchDB along with the following output &minus;</p>
+<pre class="result notranslate">
+Apache CouchDB 1.6.1 (LogLevel=info) is starting.
+Apache CouchDB has started. Time to relax.
+[info] [lt;0.31.0gt;] Apache CouchDB has started on http://127.0.0.1:5984/
+[info] [lt;0.112.0gt;] 127.0.0.1 - - GET / 200
+[info] [lt;0.112.0gt;] 127.0.0.1 - - GET /favicon.ico 200
+</pre>
+<h3>Verification</h3>
+<p>Since CouchDB is a web interface, we need to verify it in web browser.  Type the following homepage url and match the output.</p>
+<pre class="result notranslate">
+http://127.0.0.1:5984/
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+{
+   "couchdb":"Welcome",
+   "uuid":"8f0d59acd0e179f5e9f0075fa1f5e804",
+   "version":"1.6.1",
+   "vendor":{
+      "name":"The Apache Software Foundation",
+      "version":"1.6.1"
+   }
+}
+</pre>
+
+<title>CouchDB Curl and Futon</title>
+
+<h1>CouchDB - Curl &amp; Futon</h1>
+
+<h2>cURL Utility</h2>
+
+<p>cURL utility is a way to communicate with CouchDB.</p>
+
+<p>It is a tool to transfer data from or to a server, using one of the supported protocols (HTTP, HTTPS, FTP, FTPS, TFTP, DICT, TELNET, LDAP or FILE). This command is designed to work without user interaction. cURL offers a busload of useful tricks like proxy support, user authentication, ftp upload, HTTP post, SSL (https:) connections, cookies, file transfer resume and more.</p>
+
+<p>The cURL utility is available for operating systems such as UNIX, Linux, Mac OS X and Windows. It is a command-line utility to access HTTP protocol straight away from the command line.</p>
+
+<h2>Using cURL Utility</h2>
+
+<p>You can access any website using cURL utility by simply typing cURL followed by the website address as shown below &minus;</p>
+
+<p>By default, the cURL utility returns the source code of the requested page. It displays this code on the terminal window.</p>
+
+<h2>cURL Utility Options</h2>
+
+<p>cURL utility provides various options to work with, and you can see them in cURL utility help.</p>
+
+<p>The following code shows some portion of cURL help.</p>
+
+<p>While communicating with CouchDB, certain options of cURL utility were extensively used. Following are the brief descriptions of some important options of cURL utility including those used by CouchDB &minus;</p>
+
+<h3>-X flag</h3>
+
+<p>When communicating with an HTTP server, -X flag allows to specify a request method (GET, POST, PUT etc.) to override the default method(GET).</p>
+
+<p>When communicating with an FTP server, -X flag allows to specify FTP command to override the default command(LIST).</p>
+
+<h3>-H</h3>
+
+<p>This flag specifies a custom header to pass on to the server. For example, to send a file to the server, we have to use the "content type" that defines the type of content of the file that we are going to upload.</p>
+
+<h3>-d flag</h3>
+
+<p>Using this flag of cURL, you can send data along with the HTTP POST request to the server, as if it was filled by the user in the form and submitted.</p>
+
+<p><b>Example</b></p>
+
+<p>Suppose there is a website and you want to login into it or send some data to the website using –d flag of cURL utility as shown below.</p>
+
+<p>It sends a post chunk that looks like <b>"userid=001&amp;password=tutorialspoint"</b>. Likewise you can also send documents (JSON ) using -d flag.</p>
+
+<h3>-o flag</h3>
+
+<p>Using this flag, cURL writes the output of the request to a file.</p>
+
+<p><b>Example</b></p>
+
+<p>The following example shows the use of <b>-o</b> flag of cURL utility.</p>
+
+<p>This gets the source code of the homepage of tutorialspoint.com, creates a file named example.com and saves the output in the file named example.html.</p>
+
+<p>Following is the snapshot of the <b>example.html</b>.</p>
+
+<h3>-O</h3>
+
+<p>This flag is similar to <b>–o</b>, the only difference is with this flag, a new file with the same name as the requested url was created, and the source code of the requested url will be copied to it.</p>
+
+<p><b>Example</b></p>
+
+<p>The following example shows the use of <b>-O</b> flag of cURL utility.</p>
+
+<p>It creates a new file with the name index.htm and saves the source code of the index page of tutorialspoint.com in it.</p>
+
+<h2>Hello CouchDB</h2>
+
+<p>You can access the homepage of the CouchDB by sending a GET request to the CouchDB instance installed. First of all make sure you have installed CouchDB in your Linux environment and it is running successfully, and then use the following syntax to send a get request to the CouchDB instance.</p>
+
+<p>This gives you a JSON document as shown below where CouchDB specifies the details such as version number, name of the vendor, and version of the software.</p>
+
+<h2>List of All Databases</h2>
+
+<p>You can get the list of all the databases created, by sending a get request along with the string <b>"_all_dbs string "</b>. Following is the syntax to get the list of all databases in CouchDB.</p>
+
+<p>It gives you the list of all databases in CouchDB as shown below.</p>
+
+<h2>Creating a Database</h2>
+
+<h3>Example</h3>
+
+<p>As an example, using the above given syntax create a database with name <b>my_database</b> as shown below.</p>
+
+<h3>Verification</h3>
+
+<h2>Getting Database Info</h2>
+
+<p>You can get the information about database using the get request along with the database name. Following is the syntax to get the database information.</p>
+
+<h3>Example</h3>
+
+<p>As an example let us get the information of the database named <b>my_database</b> as shown below. Here you can get the information about your database as a response.</p>
+
+<h2>Futon</h2>
+
+<h2>Starting Futon</h2>
+
+<p>Make sure CouchDB is running and then open the following url in browser &minus;</p>
+
+<p>If you open this url, it displays the Futon home page as shown below &minus;</p>
+
+<p>On the left hand side of this page you can observe the list of all the current databases of CouchDB. In this illustration, we have a database named <b>my_database</b>, along with system defined databases <b>_replicator</b> and <b>_user</b>.</p>
+
+<p>On the right hand side you can see the following &minus;</p>
+
+<p><b>Tools</b> &minus; In this section you can find <b>Configuration</b> to configure CouchDB, <b>Replicator</b> to perform replications, and <b>Status</b> to verify status of CouchDB and recent modifications done on CouchDB.</p>
+
+<p><b>Documentation</b> &minus; This section contains the complete documentation for the recent version of CouchDB.</p>
+
+<p><b>Diagnostics</b> &minus; Under this you can verify the installation of CouchDB.</p>
+
+<p><b>Recent Databases</b> &minus; Under this you can find the names of recently added databases.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+curl www.tutorialspoint.com/
+</pre>
+<p>By default, the cURL utility returns the source code of the requested page. It displays this code on the terminal window.</p>
+<h2>cURL Utility Options</h2>
+<p>cURL utility provides various options to work with, and you can see them in cURL utility help.</p>
+<p>The following code shows some portion of cURL help.</p>
+<pre class="result notranslate">
+$ curl --help
+</pre>
+<p>While communicating with CouchDB, certain options of cURL utility were extensively used. Following are the brief descriptions of some important options of cURL utility including those used by CouchDB &minus;</p>
+<h3>-X flag</h3>
+<p>When communicating with an HTTP server, -X flag allows to specify a request method (GET, POST, PUT etc.) to override the default method(GET).</p>
+<p>When communicating with an FTP server, -X flag allows to specify FTP command to override the default command(LIST).</p>
+<h3>-H</h3>
+<p>This flag specifies a custom header to pass on to the server. For example, to send a file to the server, we have to use the "content type" that defines the type of content of the file that we are going to upload.</p>
+<h3>-d flag</h3>
+<p>Using this flag of cURL, you can send data along with the HTTP POST request to the server, as if it was filled by the user in the form and submitted.</p>
+<p><b>Example</b></p>
+<p>Suppose there is a website and you want to login into it or send some data to the website using –d flag of cURL utility as shown below.</p>
+<pre class="result notranslate">
+curl -X PUT http://mywebsite.com/login.html -d userid=001 -d password=tutorialspoint
+</pre>
+<p>It sends a post chunk that looks like <b>"userid=001&amp;password=tutorialspoint"</b>. Likewise you can also send documents (JSON ) using -d flag.</p>
+<h3>-o flag</h3>
+<p>Using this flag, cURL writes the output of the request to a file.</p>
+<p><b>Example</b></p>
+<p>The following example shows the use of <b>-o</b> flag of cURL utility.</p>
+<pre class="result notranslate">
+$ curl -o example.html www.tutorialspoint.com/index.htm 
+% Total % Received % Xferd Average Speed Time Time Time Current 
+      Dload Upload Total Spent Left Speed
+100 81193 0 81193 0 0 48168 0 --:--:-- 0:00:01 --:--:--
+58077
+</pre>
+<p>This gets the source code of the homepage of tutorialspoint.com, creates a file named example.com and saves the output in the file named example.html.</p>
+<p>Following is the snapshot of the <b>example.html</b>.</p>
+<img src="/couchdb/images/example_html.jpg" alt="Example Html" />
+<h3>-O</h3>
+<p>This flag is similar to <b>–o</b>, the only difference is with this flag, a new file with the same name as the requested url was created, and the source code of the requested url will be copied to it.</p>
+<p><b>Example</b></p>
+<p>The following example shows the use of <b>-O</b> flag of cURL utility.</p>
+<pre class="result notranslate">
+$ curl -O www.tutorialspoint.com/index.htm
+% Total % Received % Xferd Average Speed Time Time Time Current
+      Dload Upload Total Spent Left
+Speed
+100 81285 0 81285 0 0 49794 0 --:--:-- 0:00:01 --:--:--
+60077
+</pre>
+<p>It creates a new file with the name index.htm and saves the source code of the index page of tutorialspoint.com in it.</p>
+<h2>Hello CouchDB</h2>
+<p>You can access the homepage of the CouchDB by sending a GET request to the CouchDB instance installed. First of all make sure you have installed CouchDB in your Linux environment and it is running successfully, and then use the following syntax to send a get request to the CouchDB instance.</p>
+<pre class="result notranslate">
+curl http://127.0.0.1:5984/
+</pre>
+<p>This gives you a JSON document as shown below where CouchDB specifies the details such as version number, name of the vendor, and version of the software.</p>
+<pre class="result notranslate">
+$ curl http://127.0.0.1:5984/
+{
+   "couchdb" : "Welcome",
+   "uuid" : "8f0d59acd0e179f5e9f0075fa1f5e804",
+   "version" : "1.6.1",
+   "vendor" : {
+      "name":"The Apache Software Foundation",
+      "version":"1.6.1"
+   }
+}
+</pre>
+<h2>List of All Databases</h2>
+<p>You can get the list of all the databases created, by sending a get request along with the string <b>"_all_dbs string "</b>. Following is the syntax to get the list of all databases in CouchDB.</p>
+<pre class="result notranslate">
+curl -X GET http://127.0.0.1:5984/_all_dbs
+</pre>
+<p>It gives you the list of all databases in CouchDB as shown below.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/_all_dbs
+[ "_replicator" , "_users" ]
+</pre>
+<h2>Creating a Database</h2>
+<P>You can create a database in CouchDB using cURL with PUT header using the following syntax &minus;</p>
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/<b>database_name</b>
+</pre>
+<h3>Example</h3>
+<p>As an example, using the above given syntax create a database with name <b>my_database</b> as shown below.</p>
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/my_database
+{"ok":true}
+</pre>
+<h3>Verification</h3>
+<p>Verify whether the database is created, by listing out all the databases as shown
+below. Here you can observe the name of newly created database, <b>"my_database"</b> in the list</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/_all_dbs
+
+[ "_replicator " , "_users" , "my_database" ]
+</pre>
+<h2>Getting Database Info</h2>
+<p>You can get the information about database using the get request along with the database name. Following is the syntax to get the database information.</p>
+<h3>Example</h3>
+<p>As an example let us get the information of the database named <b>my_database</b> as shown below. Here you can get the information about your database as a response.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database
+
+{
+   "db_name" : "my_database",
+   "doc_count" : 0,
+   "doc_del_count" : 0,
+   "update_seq" : 0,
+   "purge_seq" : 0,
+   "compact_running" : false,
+   "disk_size" : 79,
+   "data_size" : 0,
+   "instance_start_time" : "1423628520835029",
+   "disk_format_version" : 6,
+   "committed_update_seq" : 0
+ }
+</pre>
+<h2>Futon</h2>
+<p>Futon is the built-in, web based, administration interface of CouchDB. It provides
+a simple graphical interface using which you can interact with CouchDB. It is a naive interface and it provides full access to all CouchDB features. Following is the list of those features &minus;</p>
+<b>Databases &minus;</b>
+<ul class="list">
+<li>Creates databases.</li>
+<li>Destroys databases.</li>
+</ul>
+<b>Documents &minus;</b>
+<ul class="list">
+<li>Creates documents.</li>
+<li>Updates documents.</li>
+<li>Edits documents.</li>
+<li>Deletes documents.</li>
+</ul>
+<h2>Starting Futon</h2>
+<p>Make sure CouchDB is running and then open the following url in browser &minus;</p>
+<pre class="result notranslate">
+http://127.0.0.1:5984/_utils/
+</pre>
+
+<title>CouchDB HTTP API</title>
+
+<h1>CouchDB - HTTP API</h1>
+
+<p>Using HTTP request headers, you can communicate with CouchDB. Through these requests we can retrieve data from the database, store data in to the database in the form of documents, and we can view as well as format the documents stored in a database.</p>
+
+<h2>HTTP Request Formats</h2>
+
+<p>While communicating with the database we will use different request formats like get, head, post, put, delete, and copy. For all operations in CouchDB, the input data and the output data structures will be in the form of JavaScript Object Notation (JSON) object.</p>
+
+<p>Following are the different request formats of HTTP Protocol used to communicate with CouchDB.</p>
+
+<p><b>GET</b> &minus; This format is used to get a specific item. To get different items, you have to send specific url patterns. In CouchDB using this GET request, we can get static items, database documents and configuration, and statistical information in the form of JSON documents (in most cases).</p>
+
+<p><b>HEAD</b> &minus; The HEAD method is used to get the HTTP header of a GET request without the body of the response.</p>
+
+<p><b>POST</b> &minus; Post request is used to upload data. In CouchDB using POST request, you can set values, upload documents, set document values, and can also start certain administration commands.</p>
+
+<p><b>PUT</b> &minus; Using PUT request, you can create new objects, databases, documents, views and design documents.</p>
+
+<p><b>DELETE</b> &minus; Using DELETE request, you can delete documents, views, and design documents.</p>
+
+<p><b>COPY</b> &minus; Using COPY method, you can copy documents and objects.</p>
+
+<h2>HTTP Request Headers</h2>
+
+<p>HTTP headers should be supplied to get the right format and encoding. While sending the request to the CouchDB server, you can send Http request headers along with the request. Following are the different Http request headers.</p>
+
+<p><b>Content-type</b> &minus; This Header is used to specify the content type of the data that we supply to the server along with the request. Mostly the type of the content we send along with the request will be MIME type or JSON (application/json). Using Content-type on a request is highly recommended.</p>
+
+<p><b>Accept</b> &minus; This header is used to specify the server, the list of data types that client can understand, so that the server will send its response using those data types. Generally here, you can send the list of MIME data types the client accepts, separated by colons.</p>
+
+<p>Though, using Accept in queries of CouchDB is not required, it is highly recommended to ensure that the data returned can be processed by the client.</p>
+
+<h2>Response Headers</h2>
+
+<p>These are the headers of the response sent by the server. These headers give information about the content send by the server as response.</p>
+
+<p><b>Content-type</b> &minus; This header specifies the MIME type of the data returned by the server. For most request, the returned MIME type is text/plain.</p>
+
+<p><b>Cache-control</b> &minus; This header suggests the client about treating the information sent by the server. CouchDB mostly returns the must-revalidate, which indicates that the information should be revalidated if possible.</p>
+
+<p><b>Content-length</b> &minus; This header returns the length of the content sent by the server, in bytes.</p>
+
+<p><b>Etag</b> &minus; This header is used to show the revision for a document, or a view.</p>
+
+<h2>Status Codes</h2>
+
+<p>Following is the tabular form of the status code sent by the http header and the description of it.</p>
+
+<h2>HTTP URL Paths</h2>
+
+<p>There are certain url paths using which, you can interact with the database directly. Following is the tabular format of such url paths.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>CouchDB Creating a Database</title>
+
+<h1>CouchDB - Creating a Database</h1>
+
+<p>Database is the outermost data structure in CouchDB where your documents are stored. You can create these databases using cURL utility provided by CouchDB, as well as Futon the web interface of CouchDB.</p>
+
+<h2>Creating a Database using cURL Utility</h2>
+
+<p>You can create a database in CouchDB by sending an HTTP request to the server using PUT method through cURL utility. Following is the syntax to create a database &minus;</p>
+
+<p>Using <b>&minus;X</b> we can specify HTTP custom request method to be used. In this case, we are using PUT method. When we use the PUT operation/method, the content of the url specifies the object name we are creating using HTTP request. Here we have to send the name of the database using put request in the url to create a database.</p>
+
+<h3>Example</h3>
+
+<p>Using the above given syntax if you want to create a database with name <b>my_database</b>, you can create it as mentioned below. As a response the server will return you a JSON document with content <b>"ok" : true</b> indicating the operation was successful.</p>
+
+<p></p>
+
+<h3>Verification</h3>
+
+<h2>Creating a Database using Futon</h2>
+
+<p>In this page, you can see the list of databases in CouchDB, an option button Create Database on the left hand side.</p>
+
+<p>Now click on the create database link. You can see a popup window <b>Create New Databases</b> asking for the database name for the new database. Choose any name following the mentioned criteria. Here we are creating another database with name tutorials_point. Click on the create button as shown in the following screenshot.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/<b>database_name</b>
+</pre>
+<p>Using <b>&minus;X</b> we can specify HTTP custom request method to be used. In this case, we are using PUT method. When we use the PUT operation/method, the content of the url specifies the object name we are creating using HTTP request. Here we have to send the name of the database using put request in the url to create a database.</p>
+<h3>Example</h3>
+<p>Using the above given syntax if you want to create a database with name <b>my_database</b>, you can create it as mentioned below. As a response the server will return you a JSON document with content <b>"ok" : true</b> indicating the operation was successful.</p>
+<pre class="result notranslate">
+curl -X PUT http://127.0.0.1:5984/my_database
+{
+   "ok":true
+}
+</pre>
+<p></p>
+<h3>Verification</h3>
+<p>Verify whether the database is created, by listing out all the databases as shown
+below. Here you can observe the name of a newly created database, <b>" my_database "</b> in the list.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/_all_dbs
+
+[ "_replicator " , " _users " , " my_database " ]
+</pre>
+
+<title>CouchDB Deleting a Database</title>
+
+<h1>CouchDB - Deleting a Database</h1>
+
+<h2>Deleting a Database using cURL Utility</h2>
+
+<p>You can delete a database in CouchDB by sending a request to the server using DELETE method through cURL utility. Following is the syntax to create a database &minus;</p>
+
+<p>Using <b>&minus;X</b> we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using the DELETE method. Send the url to the server by specifying the database to be deleted in it.</p>
+
+<h3>Example</h3>
+
+<p>Assume there is a database named my_database2 in CouchDB. Execute the command as mentioned below. Server should respond you with a JSON document having <b>"ok" : true</b> indicating the operation was successful.</p>
+
+<p></p>
+
+<h3>Verification</h3>
+
+<p>Verify whether the database is deleted by listing out all the databases as shown below. Here you can observe the name of the deleted database, <b>"my_database"</b> is not there in the list.</p>
+
+<h2>Deleting a Database using Futon</h2>
+
+<p>To delete a database, open the <b>http://127.0.0.1:5984/_utils/</b> url where you will get an Overview/index page of CouchDB as shown below.</p>
+
+<p>Here you can see three user created databases. Let us delete the database named tutorials_point2. To delete a database, select one from the list of databases, and click on it, which will lead to the overview page of the selected database where you can see the various operations on databases. The following screenshot shows the same &minus;</p>
+
+<p>Among them you can find <b>Delete Database</b> option. By clicking on it you will get a popup window, asking whether you are sure! Click on delete, to delete the selected database.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+$ curl -X DELETE http://127.0.0.1:5984/<b>database_name</b>
+</pre>
+<p>Using <b>&minus;X</b> we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using the DELETE method. Send the url to the server by specifying the database to be deleted in it.</p>
+<h3>Example</h3>
+<p>Assume there is a database named my_database2 in CouchDB. Execute the command as mentioned below. Server should respond you with a JSON document having <b>"ok" : true</b> indicating the operation was successful.</p>
+<pre class="result notranslate">
+$ curl -X DELETE http://127.0.0.1:5984/my_database2
+{
+   "ok" : true
+}
+</pre>
+<p></p>
+<h3>Verification</h3>
+<p>Verify whether the database is deleted by listing out all the databases as shown below. Here you can observe the name of the deleted database, <b>"my_database"</b> is not there in the list.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/_all_dbs
+
+[ "_replicator " , " _users " ]
+</pre>
+
+<title>CouchDB Creating a Document</title>
+
+<h1>CouchDB - Creating a Document</h1>
+
+<p>Documents are CouchDB’s central data structure. Contents of the database will be stored in the form of Documents instead of tables. You can create these documents using cURL utility provided by CouchDB, as well as Futon. This chapter covers the ways to create a document in a database.</p>
+
+<p>Each document in CouchDB has a unique ID. You can choose your own ID that should be in the form of a string. Generally, UUID (Universally Unique IDentifier) is used, which are random numbers that have least chance of creating a duplicate. These are preferred to avoid collisions.</p>
+
+<h2>Creating a Document using cURL Utility</h2>
+
+<p>You can create a document in CouchDB by sending an HTTP request to the server using PUT method through cURL utility. Following is the syntax to create a document.</p>
+
+<p>Using <b>&minus;X</b>, we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using PUT method. When we use the PUT method, the content of the url specifies the object name we are creating using the HTTP request. Here we have to send the following &minus;</p>
+
+<p>The name of the database name in which we are creating the document.</p>
+
+<p>The document id.</p>
+
+<p>The data of the document. <b>&minus;d</b> option is used to send the data/document through HTTP request. While writing a document simply enter your Field-Value pairs separated by colon, within flower brackets as shown below &minus;</p>
+
+<h3>Example</h3>
+
+<p>Using the above given syntax if you want to create a document with id <b>001</b> in a database with name <b>my_database</b>, you can create it as shown below.</p>
+
+<p>The response of CouchDB to this request contains three fields &minus;</p>
+
+<p><b>"ok",</b> indicating the operation was successful.</p>
+
+<p><b>"id",</b> which stores the id of the document and</p>
+
+<p><b>"rev",</b> this indicates the revision id. Every time you revise (update or modify) a document a <b>_rev</b> value will be generated by CouchDB. If you want to update or delete a document, CouchDB expects you to include the <b>_rev</b> field of the revision you wish to change. When CouchDB accepts the change, it will generate a new revision number. This mechanism ensures concurrency control.</p>
+
+<h3>Verification</h3>
+
+<p>If you want to view the created document you can get it using the document as shown below.</p>
+
+<h2>Creating a Document using Futon</h2>
+
+<p>To Create a document open the <b>http://127.0.0.1:5984/_utils/</b> url to get an Overview/index page of CouchDB as shown below.</p>
+
+<p>Select the database in which you want to create the document. Open the Overview page of the database and select <b>New Document</b> option as shown below.</p>
+
+<p>When you select the <b>New Document</b> option, CouchDB creates a new database document, assigning it a new id. You can edit the value of the id and can assign your own value in the form of a string. In the following illustration, we have created a new document with an id 001.</p>
+
+<p>In this page, you can observe three options &minus; save Document, Add Field and Upload Attachment.</p>
+
+<h3>Add Field to the Document</h3>
+
+<p>To add field to the document click on <b>Add Field</b> option. After creating a database, you can add a field to it using this option. Clicking on it will get you a pair of text boxes, namely, <b>Field, value.</b> You can edit these values by clicking on them. Edit those values and type your desired Field-Value pair. Click on the green button to save these values.</p>
+
+<p>In the following illustration, we have created three fields Name, age and, Designation of the employee.</p>
+
+<h3>Save Document</h3>
+
+<p>You can save the changes made to the document by clicking on this option. After saving, a new id <b>_rev</b> will be generated as shown below.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/database name/"id" -d ' { document} '
+</pre>
+<p>Using <b>&minus;X</b>, we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using PUT method. When we use the PUT method, the content of the url specifies the object name we are creating using the HTTP request. Here we have to send the following &minus;</p>
+<ul class="list">
+<li><p>The name of the database name in which we are creating the document.</p></li>
+<li><p>The document id.</p></li>
+<li><p>The data of the document. <b>&minus;d</b> option is used to send the data/document through HTTP request. While writing a document simply enter your Field-Value pairs separated by colon, within flower brackets as shown below &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+{
+   Name : Raju
+   age : 23
+   Designation : Designer
+}
+</pre>
+<h3>Example</h3>
+<p>Using the above given syntax if you want to create a document with id <b>001</b> in a database with name <b>my_database</b>, you can create it as shown below.</p>
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/my_database/"001" -d
+'{ " Name " : " Raju " , " age " :" 23 " , " Designation " : " Designer " }'
+
+{"ok":true,"id":"001","rev":"1-1c2fae390fa5475d9b809301bbf3f25e"}
+</pre>
+<p>The response of CouchDB to this request contains three fields &minus;</p>
+<ul class="list">
+<li><p><b>"ok",</b> indicating the operation was successful.</p></li>
+<li><p><b>"id",</b> which stores the id of the document and</p></li>
+<li><p><b>"rev",</b> this indicates the revision id. Every time you revise (update or modify) a document a <b>_rev</b> value will be generated by CouchDB. If you want to update or delete a document, CouchDB expects you to include the <b>_rev</b> field of the revision you wish to change. When CouchDB accepts the change, it will generate a new revision number. This mechanism ensures concurrency control.</p></li>
+</ul>
+<h3>Verification</h3>
+<p>If you want to view the created document you can get it using the document as shown below.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/<b>001</b>
+{
+   "_id": "001",
+   "_rev": "1-3fcc78daac7a90803f0a5e383f4f1e1e",
+   "Name": "Raju",
+   "age": 23,
+   "Designation": "Designer"
+}
+</pre>
+
+<title>CouchDB Updating a Document</title>
+
+<h1>CouchDB - Updating a Document</h1>
+
+<h2>Updating Documents using cURL</h2>
+
+<p>You can update a document in CouchDB by sending an HTTP request to the server using PUT method through cURL utility. Following is the syntax to update a document.</p>
+
+<h3>Example</h3>
+
+<p>Suppose there is a document with id <b>001</b> in the database named my_database.</p>
+
+<p>First of all, get the revision id of the document that is to be updated. You can find the <b>_rev</b> of the document in the document itself, as shown below &minus;</p>
+
+<p>Use revision id <b>_rev</b> from the document. In this example, we are updating the age from 23 to 24.</p>
+
+<h3>Verification</h3>
+
+<p>To verify the document, get the document again using GET request as shown below &minus;</p>
+
+<p>Following are some important points to be noted while updating a document.</p>
+
+<p>The URL we send in the request containing the database name and the document id.</p>
+
+<p>Updating an existing document is same as updating the entire document. You cannot add a field to an existing document. You can only write an entirely new version of the document into the database with the same document ID.</p>
+
+<p>We have to supply the revision number as a part of the JSON request.</p>
+
+<p>In return JSON contains the success message, the ID of the document being updated, and the new revision information. If you want to update the new version of the document, you have to quote this latest revision number.</p>
+
+<h2>Updating Documents using Futon</h2>
+
+<p>Select the database in which the document to be updated exists and click it. Here we are updating a document in the database named <b>tutorials_point</b>. You will get the list of documents in the database as shown below.</p>
+
+<p>Select a document that you want to update and click on it. You will get the contents of the documents as shown below.</p>
+
+<p>Here, to update the location from Delhi to Hyderabad, click on the text box, edit the field, and click the green button to save the changes as shown below.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+curl -X PUT http://127.0.0.1:5984/database_name/document_id/ -d '{ "field" : "value", "_rev" : "revision id" }'
+</pre>
+<h3>Example</h3>
+<p>Suppose there is a document with id <b>001</b> in the database named my_database.</p>
+<p>First of all, get the revision id of the document that is to be updated. You can find the <b>_rev</b> of the document in the document itself, as shown below &minus;</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{
+   "_id" : "001",
+   "_rev" : "2-04d8eac1680d237ca25b68b36b8899d3 " ,
+   "age" : "23"
+}
+</pre>
+<p>Use revision id <b>_rev</b> from the document. In this example, we are updating the age from 23 to 24.</p>
+<pre class="result notranslate">
+$ curl -X PUT http://127.0.0.1:5984/my_database/001/ -d
+' { " age " : " 24 " , " _rev " : " 1-1c2fae390fa5475d9b809301bbf3f25e " } '
+
+{ " ok " : true , " id " : " 001 " , " rev " : " 2-04d8eac1680d237ca25b68b36b8899d3 " }
+</pre>
+<h3>Verification</h3>
+<p>To verify the document, get the document again using GET request as shown below &minus;</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{
+   " _id " : " 001 ",
+   " _rev " : " 2-04d8eac1680d237ca25b68b36b8899d3 " ,
+   " age " : " 23 "
+ }
+</pre>
+
+<title>CouchDB Deleting a Document</title>
+
+<h1>CouchDB - Deleting a Document</h1>
+
+<h2>Deleting a Document using cURL Utility</h2>
+
+<p>You can delete a document in CouchDB by sending an HTTP request to the server using DELETE method through cURL utility. Following is the syntax to delete a document.</p>
+
+<p>Using <b>&minus;X,</b> we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using Delete method. To delete a database <code>/database_name/database_id/</code> is not enough. You have to pass the recent revision id through the url. To mention attributes of any data structure <b>"?"</b> is used.</p>
+
+<h3>Example</h3>
+
+<p>Suppose there is a document in database named <b>my_database</b> with document id 001. To delete this document, you have to get the rev id of the document. Get the document data as shown below.</p>
+
+<p>Now specify the revision id of the document to be deleted, id of the document, and database name the document belongs to, as shown below &minus;</p>
+
+<h3>Verification</h3>
+
+<p>To verify whether the document is deleted, try to fetch the document by using the <b>GET</b> method. Since you are fetching a deleted document, this will give you an error message as shown below &minus;</p>
+
+<h2>Deleting a Document using Futon</h2>
+
+<p>First of all, verify the documents in the database. Following is the snapshot of the database named <b>tutorials_point</b>.</p>
+
+<p>Here you can observe, the database consists of three documents. To delete any of the documents say <b>003,</b> do the following &minus;</p>
+
+<p>Click on the document, you will get a page showing the contents of selected document in the form of field-value pairs.</p>
+
+<p>This page also contains four options namely <b>Save Document, Add Field, Upload Attachment, Delete Document.</b></p>
+
+<p>Click on <b>Delete Document</b> option.</p>
+
+<p>You will get a dialog box saying <b>"Are you sure you want to delete this document?"</b> Click on delete, to delete the document.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+curl -X DELETE http://127.0.0.1:5984/database_name/database_id?<b>_rev</b>
+</pre>
+<p>Using <b>&minus;X,</b> we can specify a custom request method of HTTP we are using, while communicating with the HTTP server. In this case, we are using Delete method. To delete a database <code>/database_name/database_id/</code> is not enough. You have to pass the recent revision id through the url. To mention attributes of any data structure <b>"?"</b> is used.</p>
+<h3>Example</h3>
+<p>Suppose there is a document in database named <b>my_database</b> with document id 001. To delete this document, you have to get the rev id of the document. Get the document data as shown below.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{
+   " _id " : " 001 ",
+   " _rev " : " 2-04d8eac1680d237ca25b68b36b8899d3 " ,
+   " age " : " 23 "
+}
+</pre>
+<p>Now specify the revision id of the document to be deleted, id of the document, and database name the document belongs to, as shown below &minus;</p>
+<pre class="result notranslate">
+$ curl -X DELETE http://127.0.0.1:5984/my_database/001?rev=1-
+3fcc78daac7a90803f0a5e383f4f1e1e
+
+{"ok":true,"id":"001","rev":"2-3a561d56de1ce3305d693bd15630bf96"}
+</pre>
+<h3>Verification</h3>
+<p>To verify whether the document is deleted, try to fetch the document by using the <b>GET</b> method. Since you are fetching a deleted document, this will give you an error message as shown below &minus;</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{"error":"not_found","reason":"deleted"}
+</pre>
+
+<title>CouchDB Attaching Files</title>
+
+<h1>CouchDB - Attaching Files</h1>
+
+<h2>Attaching Files using cURL</h2>
+
+<p>You can attach files to CouchDB just like email. The file contains metadata like name and includes its MIME type, and the number of bytes the attachment contains. To attach files to a document you have to send PUT request to the server. Following is the syntax to attach files to the document &minus;</p>
+
+<p>The request has various options that are explained below.</p>
+
+<p><b>--data-binary@</b> - This option tells cURL to read a file’s contents into the HTTP request body.</p>
+
+<p><b>-H</b> - This option is used to mention the content type of the file we are going to upload.</p>
+
+<h3>Example</h3>
+
+<p>Let us attach a file named <b>boy.jpg,</b> to the document with id <b>001,</b> in the database named <b>my_database</b> by sending PUT request to CouchDB. Before that, you have to fetch the data of the document with id <b>001</b> to get its current <b>rev</b> id as shown below.</p>
+
+<p>Now using the <b>_rev</b> value, send the PUT request to the CouchDB server as shown below.</p>
+
+<h3>Verification</h3>
+
+<p>To verify whether the attachment is uploaded, fetch the document content as shown below&minus;</p>
+
+<h2>Attaching Files using Futon</h2>
+
+<h3>Upload Attachment</h3>
+
+<p>Using this option, you can upload a new attachment such as a file, image, or document, to the database. To do so, click on the <b>Upload Attachment</b> button. A dialog box will appear where you can choose the file to be uploaded. Select the file and click on the <b>Upload</b> button.</p>
+
+<p>The file uploaded will be displayed under _attachments field. Later you can see the file by clicking on it.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="result notranslate">
+$ curl -vX PUT http://127.0.0.1:5984/database_name/database_id
+/filename?rev=document rev_id --data-binary @filename -H "Content-Type:
+type of the content"
+</pre>
+<p>The request has various options that are explained below.</p>
+<ul class="list">
+<li><p><b>--data-binary@</b> - This option tells cURL to read a file’s contents into the HTTP request body.</p></li>
+<li><p><b>-H</b> - This option is used to mention the content type of the file we are going to upload.</p></li>
+</ul>
+<h3>Example</h3>
+<p>Let us attach a file named <b>boy.jpg,</b> to the document with id <b>001,</b> in the database named <b>my_database</b> by sending PUT request to CouchDB. Before that, you have to fetch the data of the document with id <b>001</b> to get its current <b>rev</b> id as shown below.</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{
+   "_id": "001",
+   "_rev": "1-967a00dff5e02add41819138abb3284d"
+}
+</pre>
+<p>Now using the <b>_rev</b> value, send the PUT request to the CouchDB server as shown below.</p>
+<pre class="result notranslate">
+$ curl -vX PUT http://127.0.0.1:5984/my_database/001/boy.jpg?rev=1-
+967a00dff5e02add41819138abb3284d --data-binary @boy.jpg -H "ContentType:
+image/jpg"
+</pre>
+<h3>Verification</h3>
+<p>To verify whether the attachment is uploaded, fetch the document content as shown below&minus;</p>
+<pre class="result notranslate">
+$ curl -X GET http://127.0.0.1:5984/my_database/001
+{
+   "_id": "001",
+   "_rev": "2-4705a219cdcca7c72aac4f623f5c46a8",
+   "_attachments": {
+      "boy.jpg": {
+         "content_type": "image/jpg",
+         "revpos": 2,
+         "digest": "md5-9Swz8jvmga5mfBIsmCxCtQ==",
+         "length": 91408,
+         "stub": true
+      }
+   }
+}
+</pre>
+
+<title>CouchDB Quick Guide</title>
+
+<h1>CouchDB - Quick Guide</h1>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>CouchDB Useful Resources</title>
+
+<h1>CouchDB - Useful Resources</h1>
+
+<p>The following resources contain additional information on CouchDB. Please use them to get more in-depth knowledge on this topic.</p>
+
+<h2>Useful Links on CouchDB</h2>
+
+<p><a target="_blank" rel="nofollow" href="http://couchdb.apache.org/">CouchDB</a> - Official site of CouchDB.</p>
+
+<p><a target="_blank" rel="nofollow" href="http://docs.couchdb.org/en/1.6.1/">Apache CouchDB</a> - CouchDB 6.1 Documentation.</p>
+
+<p><a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/CouchDB">CouchDB Wikipedia</a> - Wikipedia reference for CouchDB</p>
+
+<h2>Useful Books on CouchDB</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss CouchDB</title>
+
+<h1>Discuss CouchDB</h1>
+
+<p>This tutorial provides a brief knowledge about CouchDB, the procedures to set it up, and the ways to interact with CouchDB server using cURL and Futon. It also tells how to create, update and delete databases and documents.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>

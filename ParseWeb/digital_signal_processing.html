@@ -1,0 +1,3525 @@
+<!DOCTYPE html><html><body><title>Digital Signal Processing Tutorial</title>
+
+<h1>Digital Signal Processing Tutorial</h1>
+
+<p>Digital Signal Processing is an important branch of Electronics and Telecommunication engineering that deals with the improvisation of reliability and accuracy of the digital communication by employing multiple techniques. This tutorial explains the basic concepts of digital signal processing in a simple and easy-to-understand manner.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial is meant for the students of E&amp;TC, Electrical and Computer Science engineering. In addition, it should be useful for any enthusiastic reader who would like to understand more about various signals, systems, and the methods to process a digital signal.</p>
+
+<h1>Prerequisites</h1>
+
+<p>Digital signal processing deals with the signal phenomenon. Along with it, in this tutorial, we have shown the filter design using the concept of DSP. This tutorial has a good balance between theory and mathematical rigor. Before proceeding with this tutorial, the readers are expected to have a basic understanding of discrete mathematical structures.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Signals Definition</title>
+
+<h1>Digital Signal Processing - Signals-Definition</h1>
+
+<h2>Definition</h2>
+
+<p>Anything that carries information can be called as signal. It can also be defined as a physical quantity that varies with time, temperature, pressure or with any independent variables such as speech signal or video signal.</p>
+
+<p>The process of operation in which the characteristics of a signal (Amplitude, shape, phase, frequency, etc.) undergoes a change is known as signal processing.</p>
+
+<p><b>Note</b> &minus; Any unwanted signal interfering with the main signal is termed as noise. So, noise is also a signal but unwanted.</p>
+
+<p>According to their representation and processing, signals can be classified into various categories details of which are discussed below.</p>
+
+<h2>Continuous Time Signals</h2>
+
+<p>Continuous-time signals are defined along a continuum of time and are thus, represented by a continuous independent variable. Continuous-time signals are often referred to as analog signals.</p>
+
+<p>This type of signal shows continuity both in amplitude and time. These will have values at each instant of time. Sine and cosine functions are the best example of Continuous time signal.</p>
+
+<p>The signal shown above is an example of continuous time signal because we can get value of signal at each instant of time.</p>
+
+<h2>Discrete Time signals</h2>
+
+<p>The signals, which are defined at discrete times are known as discrete signals. Therefore, every independent variable has distinct value. Thus, they are represented as sequence of numbers.</p>
+
+<p>Although speech and video signals have the privilege to be represented in both continuous and discrete time format; under certain circumstances, they are identical. Amplitudes also show discrete characteristics. Perfect example of this is a digital signal; whose amplitude and time both are discrete.</p>
+
+<p>The figure above depicts a discrete signal’s discrete amplitude characteristic over a period of time. Mathematically, these types of signals can be formularized as;</p>
+
+<p>Where, <i>n</i> is an integer.</p>
+
+<p>It is a sequence of numbers x, where n<sup>th</sup> number in the sequence is represented as x[n].</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Basic CT Signals</title>
+
+<h1>Digital Signal Processing - Basic CT Signals</h1>
+
+<p>To test a system, generally, standard or basic signals are used. These signals are the basic building blocks for many complex signals. Hence, they play a very important role in the study of signals and systems.</p>
+
+<h2>Unit Impulse or Delta Function</h2>
+
+<p>A signal, which satisfies the condition, $\delta(t) = \lim_{\epsilon \to \infty} x(t)$ is known as unit impulse signal. This signal tends to infinity when t = 0 and tends to zero when t &ne; 0 such that the area under its curve is always equals to one. The delta function has zero amplitude everywhere excunit_impulse.jpgept at t = 0.</p>
+
+<h3>Properties of Unit Impulse Signal</h3>
+
+<h2>Unit Step Signal</h2>
+
+<p>A signal, which satisfies the following two conditions &minus;</p>
+
+<p>is known as a unit step signal.</p>
+
+<p>It has the property of showing discontinuity at t = 0. At the point of discontinuity, the signal value is given by the average of signal value. This signal has been taken just before and after the point of discontinuity (according to Gibb’s Phenomena).</p>
+
+<p>If we add a step signal to another step signal that is time scaled, then the result will be unity. It is a power type signal and the value of power is 0.5. The RMS (Root mean square) value is 0.707 and its average value is also 0.5</p>
+
+<h2>Ramp Signal</h2>
+
+<p>Integration of step signal results in a Ramp signal. It is represented by r(t). Ramp signal also satisfies the condition $r(t) = \int_{-\infty}^{t} U(t)dt = tU(t)$. It is neither energy nor power (NENP) type signal.</p>
+
+<h2>Parabolic Signal</h2>
+
+<p>Integration of Ramp signal leads to parabolic signal. It is represented by p(t). Parabolic signal also satisfies he condition $p(t) = \int_{-\infty}^{t} r(t)dt = (t^{2}/2)U(t)$ . It is neither energy nor Power (NENP) type signal.</p>
+
+<h2>Signum Function</h2>
+
+<p>This function is represented as</p>
+
+<p>It is a power type signal. Its power value and RMS (Root mean square) values, both are 1. Average value of signum function is zero.</p>
+
+<h2>Sinc Function</h2>
+
+<p>It is also a function of sine and is written as &minus;</p>
+
+<h3>Properties of Sinc function</h3>
+
+<p>It is an energy type signal.</p>
+
+<p>$Sinc(0) = \lim_{t \to 0}\frac{\sin \Pi t}{\Pi t} = 1$</p>
+
+<p>$Sinc(\infty) = \lim_{t \to \infty}\frac{\sin \Pi \infty}{\Pi \infty} = 0$ (Range of sin&pi;&infin; varies between -1 to +1 but anything divided by infinity is equal to zero)</p>
+
+<p>If $ \sin c(t) = 0 =>  \sin \Pi t = 0$</p>
+
+<p>$\Rightarrow \Pi t = n\Pi$</p>
+
+<p>$\Rightarrow t = n (n \neq  0)$</p>
+
+<h2>Sinusoidal Signal</h2>
+
+<p>A signal, which is continuous in nature is known as continuous signal. General format of a sinusoidal signal is</p>
+
+<p>Here,</p>
+
+<p>The tendency of this signal is to repeat itself after certain period of time, thus is called periodic signal. The time period of signal is given as;</p>
+
+<p>The diagrammatic view of sinusoidal signal is shown below.</p>
+
+<h2>Rectangular Function</h2>
+
+<p>A signal is said to be rectangular function type if it satisfies the following condition &minus;</p>
+
+<p>Being symmetrical about Y-axis, this signal is termed as even signal.</p>
+
+<h2>Triangular Pulse Signal</h2>
+
+<p>Any signal, which satisfies the following condition, is known as triangular signal.</p>
+
+<p>This signal is symmetrical about Y-axis. Hence, it is also termed as even signal.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Basic DT Signals</title>
+
+<h1>Digital Signal Processing - Basic DT Signals</h1>
+
+<p>We have seen that how the basic signals can be represented in Continuous time domain. Let us see how the basic signals can be represented in Discrete Time Domain.</p>
+
+<h2>Unit Impulse Sequence</h2>
+
+<p>It is denoted as &delta;(n) in discrete time domain and can be defined as;</p>
+
+<h2>Unit Step Signal</h2>
+
+<p>Discrete time unit step signal is defined as;</p>
+
+<p>The figure above shows the graphical representation of a discrete step function.</p>
+
+<h2>Unit Ramp Function</h2>
+
+<p>A discrete unit ramp function can be defined as &minus;</p>
+
+<p>The figure given above shows the graphical representation of a discrete ramp signal.</p>
+
+<h2>Parabolic Function</h2>
+
+<p>Discrete unit parabolic function is denoted as p(n) and can be defined as;</p>
+
+<p>In terms of unit step function it can be written as;</p>
+
+<p>The figure given above shows the graphical representation of a parabolic sequence.</p>
+
+<h2>Sinusoidal Signal</h2>
+
+<p>All continuous-time signals are periodic. The discrete-time sinusoidal sequences may or may not be periodic. They depend on the value of &omega;. For a discrete time signal to be periodic, the angular frequency &omega; must be a rational multiple of 2&pi;.</p>
+
+<p>A discrete sinusoidal signal is shown in the figure above.</p>
+
+<p>Discrete form of a sinusoidal signal can be represented in the format &minus;</p>
+
+<p>Here A,&omega; and &phi; have their usual meaning and n is the integer. Time period of the discrete sinusoidal signal is given by &minus;</p>
+
+<p>Where, N and m are integers.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Classification of CT Signals</title>
+
+<h1>DSP - Classification of CT Signals</h1>
+
+<p>Continuous time signals can be classified according to different conditions or operations performed on the signals.</p>
+
+<h2>Even and Odd Signals</h2>
+
+<h3>Even Signal</h3>
+
+<p>A signal is said to be even if it satisfies the following condition;</p>
+
+<p>Time reversal of the signal does not imply any change on amplitude here. For example, consider the triangular wave shown below.</p>
+
+<p>The triangular signal is an even signal. Since, it is symmetrical about Y-axis. We can say it is mirror image about Y-axis.</p>
+
+<p>Consider another signal as shown in the figure below.</p>
+
+<p>We can see that the above signal is even as it is symmetrical about Y-axis.</p>
+
+<h3>Odd Signal</h3>
+
+<p>A signal is said to be odd, if it satisfies the following condition</p>
+
+<p>Here, both the time reversal and amplitude change takes place simultaneously.</p>
+
+<p>In the figure above, we can see a step signal x(t). To test whether it is an odd signal or not, first we do the time reversal i.e. x(-t) and the result is as shown in the figure. Then we reverse the amplitude of the resultant signal i.e. –x(-t) and we get the result as shown in figure.</p>
+
+<p>If we compare the first and the third waveform, we can see that they are same, i.e. x(t)= -x(-t), which satisfies our criteria. Therefore, the above signal is an Odd signal.</p>
+
+<p>Some important results related to even and odd signals are given below.</p>
+
+<h3>Representation of any signal into even or odd form</h3>
+
+<p>Some signals cannot be directly classified into even or odd type. These are represented as a combination of both even and odd signal.</p>
+
+<p>Where x<sub>e</sub>(t) represents the even signal and x<sub>o</sub>(t) represents the odd signal</p>
+
+<p>And</p>
+
+<h3>Example</h3>
+
+<p>Find the even and odd parts of the signal $x(n) = t+t^{2}+t^{3}$</p>
+
+<p><b>Solution</b> &minus; From reversing x(n), we get</p>
+
+<p>Now, according to formula, the even part</p>
+
+<p>Similarly, according to formula the odd part is</p>
+
+<h2>Periodic and Non-Periodic Signals</h2>
+
+<h3>Periodic Signals</h3>
+
+<p>Periodic signal repeats itself after certain interval of time. We can show this in equation form as &minus;</p>
+
+<p>Where, n = an integer (1,2,3……)</p>
+
+<p>T = Fundamental time period (FTP) &ne; 0 and &ne;&infin;</p>
+
+<p>Fundamental time period (FTP) is the smallest positive and fixed value of time for which signal is periodic.</p>
+
+<p>A triangular signal is shown in the figure above of amplitude A. Here, the signal is repeating after every 1 sec. Therefore, we can say that the signal is periodic and its FTP is 1 sec.</p>
+
+<h3>Non-Periodic Signal</h3>
+
+<p>Simply, we can say, the signals, which are not periodic are non-periodic in nature. As obvious, these signals will not repeat themselves after any interval time.</p>
+
+<p>Non-periodic signals do not follow a certain format; therefore, no particular mathematical equation can describe them.</p>
+
+<h2>Energy and Power Signals</h2>
+
+<p>A signal is said to be an Energy signal, if and only if, the total energy contained is finite and nonzero (0&lt;E&lt;&infin;). Therefore, for any energy type signal, the total normalized signal is finite and non-zero.</p>
+
+<p>A sinusoidal AC current signal is a perfect example of Energy type signal because it is in positive half cycle in one case and then is negative in the next half cycle. Therefore, its average power becomes zero.</p>
+
+<p>A lossless capacitor is also a perfect example of Energy type signal because when it is connected to a source it charges up to its optimum level and when the source is removed, it dissipates that equal amount of energy through a load and makes its average power to zero.</p>
+
+<p>For any finite signal x(t) the energy can be symbolized as E and is written as;</p>
+
+<p>Spectral density of energy type signals gives the amount of energy distributed at various frequency levels.</p>
+
+<h3>Power type Signals</h3>
+
+<p>A signal is said to be power type signal, if and only if, normalized average power is finite and non-zero i.e. (0&lt;p&lt;&infin;). For power type signal, normalized average power is finite and non-zero. Almost all the periodic signals are power signals and their average power is finite and non-zero.</p>
+
+<p>In mathematical form, the power of a signal x(t) can be written as;</p>
+
+<h3>Difference between Energy and Power Signals</h3>
+
+<p>The following table summarizes the differences of Energy and Power Signals.</p>
+
+<p>Mathematically,</p>
+
+<p>Mathematically,</p>
+
+<p>$$E = \int_{-\infty}^{+\infty} x^{2}(t)dt$$</p>
+
+<h2>Solved Examples</h2>
+
+<p><b>Example 1</b> &minus; Find the Power of a signal $z(t) = 2\cos(3\Pi t+30^{o})+4\sin(3\Pi +30^{o})$</p>
+
+<p><b>Solution</b> &minus; The above two signals are orthogonal to each other because their frequency terms are identical to each other also they have same phase difference. So, total power will be the summation of individual powers.</p>
+
+<p>Let $z(t) = x(t)+y(t)$</p>
+
+<p>Where $x(t) = 2\cos (3\Pi t+30^{o})$ and $y(t) = 4\sin(3\Pi +30^{o})$</p>
+
+<p>Therefore, <span  style="padding-left:3%">$P(z) = p(x)+p(y) = 2+8 = 10$</span><span  style="padding-left:35%">…Ans.</span></p>
+
+<p><b>Example 2</b> &minus; Test whether the signal given $x(t) = t^{2}+j\sin t$ is conjugate or not?</p>
+
+<p><b>Solution</b> &minus; Here, the real part being t<sup>2</sup> is even and odd part (imaginary) being $\sin t$ is odd. So the above signal is Conjugate signal.</p>
+
+<p><b>Example 3</b> &minus; Verify whether $X(t)= \sin \omega t$ is an odd signal or an even signal.</p>
+
+<p><b>Solution</b> &minus; Given $X(t) = \sin \omega t$</p>
+
+<p>By time reversal, we will get $\sin (-\omega t)$</p>
+
+<p>But we know that $\sin(-\phi) = -\sin \phi$.</p>
+
+<p>Therefore,</p>
+
+<p>This is satisfying the condition for a signal to be odd. Therefore, $\sin \omega t$ is an odd signal.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Classification of DT Signals</title>
+
+<h1>DSP - Classification of DT Signals</h1>
+
+<p>Just like Continuous time signals, Discrete time signals can be classified according to the conditions or operations on the signals.</p>
+
+<h2>Even and Odd Signals</h2>
+
+<h3>Even Signal</h3>
+
+<p>A signal is said to be even or symmetric if it satisfies the following condition;</p>
+
+<p>Here, we can see that x(-1) = x(1), x(-2) = x(2) and x(-n) = x(n). Thus, it is an even signal.</p>
+
+<h3>Odd Signal</h3>
+
+<p>A signal is said to be odd if it satisfies the following condition;</p>
+
+<p>From the figure, we can see that x(1) = -x(-1), x(2) = -x(2) and x(n) = -x(-n). Hence, it is an odd as well as anti-symmetric signal.</p>
+
+<h2>Periodic and Non-Periodic Signals</h2>
+
+<p>A discrete time signal is periodic if and only if, it satisfies the following condition &minus;</p>
+
+<p>Here, x(n) signal repeats itself after N period. This can be best understood by considering a cosine signal &minus;</p>
+
+<p>For the signal to become periodic, following condition should be satisfied;</p>
+
+<p>i.e. $2\pi f_{0}N$ is an integral multiple of $2\pi$</p>
+
+<p>Frequencies of discrete sinusoidal signals are separated by integral multiple of $2\pi$.</p>
+
+<h2>Energy and Power Signals</h2>
+
+<h3>Energy Signal</h3>
+
+<p>Energy of a discrete time signal is denoted as E. Mathematically, it can be written as;</p>
+
+<p>If each individual values of $x(n)$ are squared and added, we get the energy signal. Here $x(n)$ is the energy signal and its energy is finite over time i.e $0< E< \infty$</p>
+
+<h3>Power Signal</h3>
+
+<p>Average power of a discrete signal is represented as P. Mathematically, this can be written as;</p>
+
+<p>Here, power is finite i.e. 0&lt;P&lt;&infin;. However, there are some signals, which belong to neither energy nor power type signal.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Miscellaneous Signals</title>
+
+<h1>DSP - Miscellaneous Signals</h1>
+
+<p>There are other signals, which are a result of operation performed on them. Some common type of signals are discussed below.</p>
+
+<h2>Conjugate Signals</h2>
+
+<p>Signals, which satisfies the condition $x(t) = x*(-t)$ are called conjugate signals.</p>
+
+<p>Let $x(t) = a(t)+jb(t)$<span style="padding-left:47%">...eqn. 1</span></p>
+
+<p>So, <span style="padding-left:25%">$x(-t) = a(-t)+jb(-t)$</span></p>
+
+<p>And <span style="padding-left:21%">$x*(-t) = a(-t)-jb(-t)$</span><span style="padding-left:6%">...eqn. 2</span></p>
+
+<p>By Condition, <span style="padding-left:15%">$x(t) = x*(-t)$</span></p>
+
+<p>If we compare both the derived equations 1 and 2, we can see that the real part is even, whereas the imaginary part is odd. This is the condition for a signal to be a conjugate type.</p>
+
+<h2>Conjugate Anti-Symmetric Signals</h2>
+
+<p>Signals, which satisfy the condition $x(t) = -x*(-t)$ are called conjugate anti-symmetric signal</p>
+
+<p>Let <span style="padding-left:17%">$x(t) = a(t)+jb(t)$</span><span style="padding-left:25%">...eqn. 1</span></p>
+
+<p>So <span style="padding-left:18%">$x(-t) = a(-t)+jb(-t)$</span></p>
+
+<p>And <span style="padding-left:16%">$x*(-t) = a(-t)-jb(-t)$</span></p>
+
+<p>By Condition <span style="padding-left:6%">$x(t) = -x*(-t)$</span></p>
+
+<p>Now, again compare, both the equations just as we did for conjugate signals. Here, we will find that the real part is odd and the imaginary part is even. This is the condition for a signal to become conjugate anti-symmetric type.</p>
+
+<h3>Example</h3>
+
+<p>Let the signal given be $x(t) = \sin t+jt^{2}$.</p>
+
+<p>Here, the real part being $\sin t$ is odd and the imaginary part being $t^2$ is even. So, this signal can be classified as conjugate anti-symmetric signal.</p>
+
+<p>Any function can be divided into two parts. One part being Conjugate symmetry and other part being conjugate anti-symmetric. So any signal x(t) can be written as</p>
+
+<p>Where $xcs(t)$ is conjugate symmetric signal and $xcas(t)$ is conjugate anti symmetric signal</p>
+
+<p>And</p>
+
+<h2>Half Wave Symmetric Signals</h2>
+
+<p>When a signal satisfies the condition $cx(t) = -x(t\pm (\frac{T_{0}}{2}))$, it is called half wave symmetric signal. Here, amplitude reversal and time shifting of the signal takes place by half time. For half wave symmetric signal, average value will be zero but this is not the case when the situation is reversed.</p>
+
+<p>Consider a signal x(t) as shown in figure A above. The first step is to time shift the signal and make it $x[t-(\frac{T}{2})]$. So, the new signal is changed as shown in figure B. Next, we reverse the amplitude of the signal, i.e. make it $-x[t-(\frac{T}{2})]$ as shown in figure C. Since, this signal repeats itself after half-time shifting and reversal of amplitude, it is a half wave symmetric signal.</p>
+
+<h2>Orthogonal Signal</h2>
+
+<p>Two signals x(t) and y(t) are said to be orthogonal if they satisfy the following two conditions.</p>
+
+<p><b>Condition 1</b> &minus; $\int_{-\infty}^{\infty}x(t)y(t) = 0$ [for non-periodic signal]</p>
+
+<p><b>Condition 2</b> &minus; $\int x(t)y(t) = 0$ [For periodic Signal]</p>
+
+<p>The signals, which contain odd harmonics (3<sup>rd</sup>, 5<sup>th</sup>, 7<sup>th</sup> ...etc.) and have different frequencies, are mutually orthogonal to each other.</p>
+
+<p>In trigonometric type signals, sine functions and cosine functions are also orthogonal to each other; provided, they have same frequency and are in same phase. In the same manner DC (Direct current signals) and sinusoidal signals are also orthogonal to each other. If x(t) and y(t) are two orthogonal signals and $z(t) = x(t)+y(t)$ then the power and energy of z(t) can be written as ;</p>
+
+<h3>Example</h3>
+
+<p>Analyze the signal: $z(t) = 3+4\sin(2\pi t+30^0)$</p>
+
+<p>Here, the signal comprises of a DC signal (3) and one sine function. So, by property this signal is an orthogonal signal and the two sub-signals in it are mutually orthogonal to each other.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Shifting</title>
+
+<h1>DSP - Operations on Signals Shifting</h1>
+
+<p>Shifting means movement of the signal, either in time domain (around Y-axis) or in amplitude domain (around X-axis). Accordingly, we can classify the shifting into two categories named as Time shifting and Amplitude shifting, these are subsequently discussed below.</p>
+
+<h2>Time Shifting</h2>
+
+<p>Time shifting means, shifting of signals in the time domain. Mathematically, it can be written as</p>
+
+<p>This K value may be positive or it may be negative. According to the sign of k value, we have two types of shifting named as Right shifting and Left shifting.</p>
+
+<h3>Case 1 (K &gt; 0)</h3>
+
+<p>When K is greater than zero, the shifting of the signal takes place towards "left" in the time domain. Therefore, this type of shifting is known as Left Shifting of the signal.</p>
+
+<p><b>Example</b></p>
+
+<h3>Case 2 (K &lt; 0)</h3>
+
+<p>When K is less than zero the shifting of signal takes place towards right in the time domain. Therefore, this type of shifting is known as Right shifting.</p>
+
+<p><b>Example</b></p>
+
+<p>The figure given below shows right shifting of a signal by 2.</p>
+
+<h2>Amplitude Shifting</h2>
+
+<p>Amplitude shifting means shifting of signal in the amplitude domain (around X-axis). Mathematically, it can be represented as &minus;</p>
+
+<p>This K value may be positive or negative. Accordingly, we have two types of amplitude shifting which are subsequently discussed below.</p>
+
+<h3>Case 1 (K &gt; 0)</h3>
+
+<p>When K is greater than zero, the shifting of signal takes place towards up in the x-axis. Therefore, this type of shifting is known as upward shifting.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t) which is given as;</p>
+
+<p>Let we have taken K=+1 so new signal can be written as &minus;</p>
+
+<h3>Case 2 (K &lt; 0)</h3>
+
+<p>When K is less than zero shifting of signal takes place towards downward in the X- axis. Therefore, it is called downward shifting of the signal.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t) which is given as;</p>
+
+<p>Let we have taken K = -1 so new signal can be written as;</p>
+
+<p>$y(t)\rightarrow x(t)-1$ So, y(t) can finally be written as;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Scaling</title>
+
+<h1>DSP - Operations on Signals Scaling</h1>
+
+<p>Scaling of a signal means, a constant is multiplied with the time or amplitude of the signal.</p>
+
+<h2>Time Scaling</h2>
+
+<p>If a constant is multiplied to the time axis then it is known as Time scaling. This can be mathematically represented as;</p>
+
+<p>So the y-axis being same, the x- axis magnitude decreases or increases according to the sign of the constant (whether positive or negative). Therefore, scaling can also be divided into two categories as discussed below.</p>
+
+<h3>Time Compression</h3>
+
+<p>Whenever alpha is greater than zero, the signal’s amplitude gets divided by alpha whereas the value of the Y-axis remains the same. This is known as Time Compression.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t), which is shown as in figure below. Let us take the value of alpha as 2. So, y(t) will be x(2t), which is illustrated in the given figure.</p>
+
+<p>Clearly, we can see from the above figures that the time magnitude in y-axis remains the same but the amplitude in x-axis reduces from 4 to 2. Therefore, it is a case of Time Compression.</p>
+
+<h3>Time Expansion</h3>
+
+<p>When the time is divided by the constant alpha, the Y-axis magnitude of the signal get multiplied alpha times, keeping X-axis magnitude as it is. Therefore, this is called Time expansion type signal.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a square signal x(t), of magnitude 1. When we time scaled it by a constant 3, such that $x(t) \rightarrow y(t) \rightarrow x(\frac{t}{3})$, then the signal’s amplitude gets modified by 3 times which is shown in the figure below.</p>
+
+<h2>Amplitude Scaling</h2>
+
+<p>Multiplication of a constant with the amplitude of the signal causes amplitude scaling. Depending upon the sign of the constant, it may be either amplitude scaling or attenuation. Let us consider a square wave signal x(t) = &Pi;(t/4).</p>
+
+<p>Suppose we define another function y(t) = 2 &Pi;(t/4). In this case, value of y-axis will be doubled, keeping the time axis value as it is. The is illustrated in the figure given below.</p>
+
+<p>Consider another square wave function defined as z(t) where z(t) = 0.5 &Pi;(t/4). Here, amplitude of the function z(t) will be half of that of x(t) i.e. time axis remaining same, amplitude axis will be halved. This is illustrated by the figure given below.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Reversal</title>
+
+<h1>DSP - Operations on Signals Reversal</h1>
+
+<p>Whenever the time in a signal gets multiplied by -1, the signal gets reversed. It produces its mirror image about Y or X-axis. This is known as Reversal of the signal.</p>
+
+<p>Reversal can be classified into two types based on the condition whether the time or the amplitude of the signal is multiplied by -1.</p>
+
+<h2>Time Reversal</h2>
+
+<p>Whenever signal’s time is multiplied by -1, it is known as time reversal of the signal. In this case, the signal produces its mirror image about Y-axis. Mathematically, this can be written as;</p>
+
+<p>This can be best understood by the following example.</p>
+
+<p>In the above example, we can clearly see that the signal has been reversed about its Y-axis. So, it is one kind of time scaling also, but here the scaling quantity is (-1) always.</p>
+
+<h2>Amplitude Reversal</h2>
+
+<p>Whenever the amplitude of a signal is multiplied by -1, then it is known as amplitude reversal. In this case, the signal produces its mirror image about X-axis. Mathematically, this can be written as;</p>
+
+<p>Consider the following example. Amplitude reversal can be seen clearly.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Differentiation</title>
+
+<h1>DSP - Operations on Signals Differentiation</h1>
+
+<p>Two very important operations performed on the signals are Differentiation and Integration.</p>
+
+<h2>Differentiation</h2>
+
+<p>Differentiation of any signal x(t) means slope representation of that signal with respect to time. Mathematically, it is represented as;</p>
+
+<p>In the case of OPAMP differentiation, this methodology is very helpful. We can easily differentiate a signal graphically rather than using the formula. However, the condition is that the signal must be either rectangular or triangular type, which happens in most cases.</p>
+
+<p>The above table illustrates the condition of the signal after being differentiated. For example, a ramp signal converts into a step signal after differentiation. Similarly, a unit step signal becomes an impulse signal.</p>
+
+<h3>Example</h3>
+
+<p>Let the signal given to us be $x(t) = 4[r(t)-r(t-2)]$. When this signal is plotted, it will look like the one on the left side of the figure given below. Now, our aim is to differentiate the given signal.</p>
+
+<p>To start with, we will start differentiating the given equation. We know that the ramp signal after differentiation gives unit step signal.</p>
+
+<p>So our resulting signal y(t) can be written as;</p>
+
+<p>Now this signal is plotted finally, which is shown in the right hand side of the above figure.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Integration</title>
+
+<h1>DSP - Operations on Signals Integration</h1>
+
+<p>Integration of any signal means the summation of that signal under particular time domain to get a modified signal. Mathematically, this can be represented as &minus;</p>
+
+<p>Here also, in most of the cases we can do mathematical integration and find the resulted signal but direct integration in quick succession is possible for signals which are depicted in rectangular format graphically. Like differentiation, here also, we will refer a table to get the result quickly.</p>
+
+<h3>Example</h3>
+
+<p>Let us consider a signal $x(t) = u(t)-u(t-3)$. It is shown in Fig-1 below. Clearly, we can see that it is a step signal. Now we will integrate it. Referring to the table, we know that integration of step signal yields ramp signal.</p>
+
+<p>However, we will calculate it mathematically,</p>
+
+<p>The same is plotted as shown in fig-2,</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Operations on Signals Convolution</title>
+
+<h1>DSP - Operations on Signals Convolution</h1>
+
+<p>The convolution of two signals in the time domain is equivalent to the multiplication of their representation in frequency domain. Mathematically, we can write the convolution of two signals as</p>
+
+<h2>Steps for convolution</h2>
+
+<h3>Example</h3>
+
+<p>Let us do the convolution of a step signal u(t) with its own kind.</p>
+
+<p>Now this t can be greater than or less than zero, which are shown in below figures</p>
+
+<p>So, with the above case, the result arises with following possibilities</p>
+
+<h2>Properties of Convolution</h2>
+
+<h3>Commutative</h3>
+
+<p>It states that order of convolution does not matter, which can be shown mathematically as</p>
+
+<h3>Associative</h3>
+
+<p>It states that order of convolution involving three signals, can be anything. Mathematically, it can be shown as;</p>
+
+<h3>Distributive</h3>
+
+<p>Two signals can be added first, and then their convolution can be made to the third signal. This is equivalent to convolution of two signals individually with the third signal and added finally. Mathematically, this can be written as;</p>
+
+<h3>Area</h3>
+
+<p>If a signal is the result of convolution of two signals then the area of the signal is the multiplication of those individual signals. Mathematically this can be written</p>
+
+<p>If <span style="padding-left:10%">$y(t) = x_{1}*x_{2}(t)$</span></p>
+
+<p>Then, <span style="padding-left:6%">Area of y(t) = Area of x<sub>1</sub>(t) X Area of x<sub>2</sub>(t)</span></p>
+
+<h3>Scaling</h3>
+
+<p>If two signals are scaled to some unknown constant “a” and convolution is done then resultant signal will also be convoluted to same constant “a” and will be divided by that quantity as shown below.</p>
+
+<p>If, <span style="padding-left:20%">$x_{1}(t)*x_{2}(t) = y(t)$</span></p>
+
+<p>Then, <span style="padding-left:16%">$x_{1}(at)*x_{2}(at) = \frac{y(at)}{a}, a \ne 0$</span></p>
+
+<h3>Delay</h3>
+
+<p>Suppose a signal y(t) is a result from the convolution of two signals x1(t) and x2(t). If the two signals are delayed by time t1 and t2 respectively, then the resultant signal y(t) will be delayed by (t1+t2). Mathematically, it can be written as &minus;</p>
+
+<p>If, <span style="padding-left:20%">$x_{1}(t)*x_{2}(t) = y(t)$</span></p>
+
+<p>Then, <span style="padding-left:16%">$x_{1}(t-t_{1})*x_{2}(t-t_{2}) = y[t-(t_{1}+t_{2})]$</span></p>
+
+<h2>Solved Examples</h2>
+
+<p><b>Example 1</b> &minus; Find the convolution of the signals u(t-1) and u(t-2).</p>
+
+<p><b>Solution</b> &minus; Given signals are u(t-1) and u(t-2). Their convolution can be done as shown below &minus;</p>
+
+<p><b>Example 2</b> &minus; Find the convolution of two signals given by</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>Similarly, <span style="padding-left:4%">$x_{2}(z) = 2+2Z^{-1}+2Z^{-2}+2Z^{-3}+2Z^{-4}$</span></p>
+
+<p>Resultant signal,</p>
+
+<p>Taking inverse Z-transformation of the above, we will get the resultant signal as</p>
+
+<p><b>Example 3</b> &minus; Determine the convolution of following 2 signals &minus;</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>Taking the Z-transformation of the signals, we get,</p>
+
+<p>And <span  style="padding-left:8.5%">$h(n) = 1+2Z^{-1}+3Z^{-2}+Z^{-3}$</span></p>
+
+<p>Now convolution of two signal means multiplication of their Z-transformations</p>
+
+<p>That is <span  style="padding-left:8.5%">$Y(Z) = X(Z) \times h(Z)$</span></p>
+
+<p>Taking the inverse Z-transformation, the resultant signal can be written as;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Static Systems</title>
+
+<h1>Digital Signal Processing - Static Systems</h1>
+
+<p>Some systems have feedback and some do not. Those, which do not have feedback systems, their output depends only upon the present values of the input. Past value of the data is not present at that time. These types of systems are known as static systems. It does not depend upon future values too.</p>
+
+<p>Since these systems do not have any past record, so they do not have any memory also. Therefore, we say all static systems are memory-less systems. Let us take an example to understand this concept much better.</p>
+
+<h2>Example</h2>
+
+<p>Let us verify whether the following systems are static systems or not.</p>
+
+<h3>a) $y(t) = x(t)+x(t-1)$</h3>
+
+<p>Here, x(t) is the present value. It has no relation with the past values of the time. So, it is a static system. However, in case of x(t-1), if we put t = 0, it will reduce to x(-1) which is a past value dependent. So, it is not static. Therefore here y(t) is not a static system.</p>
+
+<h3>b) $y(t) = x(2t)$</h3>
+
+<p>If we substitute t = 2, the result will be y(t) = x(4). Again, it is future value dependent. So, it is also not a static system.</p>
+
+<h3>c) $y(t) = x = \sin [x(t)]$</h3>
+
+<p>In this expression, we are dealing with sine function. The range of sine function lies within -1 to +1. So, whatever the values we substitute for x(t), we will get in between -1 to +1. Therefore, we can say it is not dependent upon any past or future values. Hence, it is a static system.</p>
+
+<p>From the above examples, we can draw the following conclusions &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Dynamic Systems</title>
+
+<h1>Digital Signal Processing - Dynamic Systems</h1>
+
+<p>If a system depends upon the past and future value of the signal at any instant of the time then it is known as dynamic system. Unlike static systems, these are not memory less systems. They store past and future values. Therefore, they require some memory. Let us understand this theory better through some examples.</p>
+
+<h2>Examples</h2>
+
+<p>Find out whether the following systems are dynamic.</p>
+
+<p><b>a) $y(t) = x(t+1)$</b></p>
+
+<p>In this case if we put t = 1 in the equation, it will be converted to x(2), which is a future dependent value. Because here we are giving input as 1 but it is showing value for x(2). As it is a future dependent signal, so clearly it is a dynamic system.</p>
+
+<p><b>b) $y(t) = Real[x(t)]$</b></p>
+
+<p>In this case, whatever the value we will put it will show that time real value signal. It has no dependency on future or past values. Therefore, it is not a dynamic system rather it is a static system.</p>
+
+<p><b>c) $y(t) = Even[x(t)]$</b></p>
+
+<p>Here, if we will substitute t = 1, one signal shows x(1) and another will show x(-1) which is a past value. Similarly, if we will put t = -1 then one signal will show x(-1) and another will show x(1) which is a future value. Therefore, clearly it is a case of Dynamic system.</p>
+
+<p><b>d) $y(t) = \cos [x(t)]$</b></p>
+
+<p>In this case, as the system is cosine function it has a certain domain of values which lies between -1 to +1. Therefore, whatever values we will put we will get the result within specified limit. Therefore, it is a static system</p>
+
+<p>From the above examples, we can draw the following conclusions &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Causal Systems</title>
+
+<h1>Digital Signal Processing - Causal Systems</h1>
+
+<p>Previously, we saw that the system needs to be independent from the future and past values to become static. In this case, the condition is almost same with little modification. Here, for the system to be causal, it should be independent from the future values only. That means past dependency will cause no problem for the system from becoming causal.</p>
+
+<p>Causal systems are practically or physically realizable system. Let us consider some examples to understand this much better.</p>
+
+<h2>Examples</h2>
+
+<p>Let us consider the following signals.</p>
+
+<p><b>a) $y(t) = x(t)$</b></p>
+
+<p>Here, the signal is only dependent on the present values of x. For example if we substitute t = 3, the result will show for that instant of time only. Therefore, as it has no dependence on future value, we can call it a Causal system.</p>
+
+<p><b>b) $y(t) = x(t-1)$</b></p>
+
+<p>Here, the system depends on past values. For instance if we substitute t = 3, the expression will reduce to x(2), which is a past value against our input. At no instance, it depends upon future values. Therefore, this system is also a causal system.</p>
+
+<p><b>c) $y(t) = x(t)+x(t+1)$</b></p>
+
+<p>In this case, the system has two parts. The part x(t), as we have discussed earlier, depends only upon the present values. So, there is no issue with it. However, if we take the case of x(t+1), it clearly depends on the future values because if we put t = 1, the expression will reduce to x(2) which is future value. Therefore, it is not causal.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Non Causal Systems</title>
+
+<h1>DSP - Non-Causal Systems</h1>
+
+<p>A non-causal system is just opposite to that of causal system. If a system depends upon the future values of the input at any instant of the time then the system is said to be non-causal system.</p>
+
+<h2>Examples</h2>
+
+<p>Let us take some examples and try to understand this in a better way.</p>
+
+<p><b>a) $y(t) = x(t+1)$</b></p>
+
+<p>We have already discussed this system in causal system too. For any input, it will reduce the system to its future value. For instance, if we put t = 2, it will reduce to x(3), which is a future value. Therefore, the system is Non-Causal.</p>
+
+<p><b>b) $y(t) = x(t)+x(t+2)$</b></p>
+
+<p>In this case, x(t) is purely a present value dependent function. We have already discussed that x(t+2) function is future dependent because for t = 3 it will give values for x(5). Therefore, it is Non-causal.</p>
+
+<p><b>c) $y(t) = x(t-1)+x(t)$</b></p>
+
+<p>In this system, it depends upon the present and past values of the given input. Whatever values we substitute, it will never show any future dependency. Clearly, it is not a non-causal system; rather it is a Causal system.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Anti-Causal Systems</title>
+
+<h1>DSP - Anti-Causal Systems</h1>
+
+<p>An anti-causal system is just a little bit modified version of a non-causal system. The system depends upon the future values of the input only. It has no dependency either on present or on the past values.</p>
+
+<h2>Examples</h2>
+
+<p>Find out whether the following systems are anti-causal.</p>
+
+<p><b>a) $y(t) = x(t)+x(t-1)$</b></p>
+
+<p>The system has two sub-functions. One sub function x(t+1) depends on the future value of the input but another sub-function x(t) depends only on the future. As the system is dependent on the present value also in addition to future value, this system is not anti-causal.</p>
+
+<p><b>b) $y(t) = x(t+3)$</b></p>
+
+<p>If we analyze the above system, we can see that the system depends only on the future values of the system i.e. if we put t = 0, it will reduce to x(3), which is a future value. This system is a perfect example of anti-causal system.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Linear Systems</title>
+
+<h1>Digital Signal Processing - Linear Systems</h1>
+
+<p>A linear system follows the laws of superposition. This law is necessary and sufficient condition to prove the linearity of the system. Apart from this, the system is a combination of two types of laws &minus;</p>
+
+<p>Both, the law of homogeneity and the law of additivity are shown in the above figures. However, there are some other conditions to check whether the system is linear or not.</p>
+
+<p><b>The conditions are</b> &minus;</p>
+
+<p>Examples of non-linear operators &minus;</p>
+
+<p>(a) Trigonometric operators- Sin, Cos, Tan, Cot, Sec, Cosec etc.</p>
+
+<p>(b) Exponential, logarithmic, modulus, square, Cube etc.</p>
+
+<p>(c) sa(i/p) , Sinc (i/p) , Sqn (i/p) etc.</p>
+
+<p>Either input x or output y should not have these non-linear operators.</p>
+
+<h2>Examples</h2>
+
+<p>Let us find out whether the following systems are linear.</p>
+
+<p><b>a) $y(t) = x(t)+3$</b></p>
+
+<p>This system is not a linear system because it violates the first condition. If we put input as zero, making x(t) = 0, then the output is not zero.</p>
+
+<p><b>b) $y(t) = \sin tx(t)$</b></p>
+
+<p>In this system, if we give input as zero, the output will become zero. Hence, the first condition is clearly satisfied. Again, there is no non-linear operator that has been applied on x(t). Hence, second condition is also satisfied. Therefore, the system is a linear system.</p>
+
+<p><b>c) $y(t) = \sin (x(t))$</b></p>
+
+<p>In the above system, first condition is satisfied because if we put x(t) = 0, the output will also be sin(0) = 0. However, the second condition is not satisfied, as there is a non-linear operator which operates x(t). Hence, the system is not linear.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Non Linear Systems</title>
+
+<h1>DSP - Non-Linear Systems</h1>
+
+<p>If we want to define this system, we can say that the systems, which are not linear are non-linear systems. Clearly, all the conditions, which are being violated in the linear systems, should be satisfied in this case.</p>
+
+<h2>Conditions</h2>
+
+<p>The output should not be zero when input applied is zero.</p>
+
+<p>Any non-linear operator can be applied on the either input or on the output to make the system non-linear.</p>
+
+<h3>Examples</h3>
+
+<p>To find out whether the given systems are linear or non-linear.</p>
+
+<p><b>a) $y(t) = e^{x(t)}$</b></p>
+
+<p>In the above system, the first condition is satisfied because if we make the input zero, the output is 1. In addition, exponential non-linear operator is applied to the input. Clearly, it is a case of Non-Linear system.</p>
+
+<p><b>b) $y(t) = x(t+1)+x(t-1)$</b></p>
+
+<p>The above type of system deals with both past and future values. However, if we will make its input zero, then none of its values exists. Therefore, we can say if the input is zero, then the time scaled and time shifted version of input will also be zero, which violates our first condition. Again, there is no non-linear operator present. Therefore, second condition is also violated. Clearly, this system is not a non-linear system; rather it is a linear system.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Time Invariant Systems</title>
+
+<h1>DSP - Time-Invariant Systems</h1>
+
+<p>For a time-invariant system, the output and input should be delayed by some time unit. Any delay provided in the input must be reflected in the output for a time invariant system.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(T) = x(2T)$</b></p>
+
+<p>If the above expression, it is first passed through the system and then through the time delay (as shown in the upper part of the figure); then the output will become $x(2T-2t)$. Now, the same expression is passed through a time delay first and then through the system (as shown in the lower part of the figure). The output will become $x(2T-t)$.</p>
+
+<p>Hence, the system is not a time-invariant system.</p>
+
+<p><b>b) $y(T) = \sin [x(T)]$</b></p>
+
+<p>If the signal is first passed through the system and then through the time delay process, the output be $\sin x(T-t)$. Similarly, if the system is passed through the time delay first then through the system then output will be $\sin x(T-t)$. We can see clearly that both the outputs are same. Hence, the system is time invariant.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Time Variant Systems</title>
+
+<h1>DSP - Time-Variant Systems</h1>
+
+<p>For a time variant system, also, output and input should be delayed by some time constant but the delay at the input should not reflect at the output. All time scaling cases are examples of time variant system. Similarly, when coefficient in the system relationship is a function of time, then also, the system is time variant.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = x[\cos T]$</b></p>
+
+<p>If the above signal is first passed through the system and then through the time delay, the output will be $x\cos (T-t)$. If it is passed through the time delay first and then through the system, it will be $x(\cos T-t)$. As the outputs are not same, the system is time variant.</p>
+
+<p><b>b) $y(T) = \cos T.x(T)$</b></p>
+
+<p>If the above expression is first passed through the system and then through the time delay, then the output will be $\cos(T-t)x(T-t)$. However, if the expression is passed through the time delay first and then through the system, the output will be $\cos T.x(T-t)$. As the outputs are not same, clearly the system is time variant.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Stable Systems</title>
+
+<h1>Digital Signal Processing - Stable Systems</h1>
+
+<p>A stable system satisfies the BIBO (bounded input for bounded output) condition. Here, bounded means finite in amplitude. For a stable system, output should be bounded or finite, for finite or bounded input, at every instant of time.</p>
+
+<p>Some examples of bounded inputs are functions of sine, cosine, DC, signum and unit step.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = x(t)+10$</b></p>
+
+<p>Here, for a definite bounded input, we can get definite bounded output i.e. if we put $x(t) = 2, y(t) = 12$ which is bounded in nature. Therefore, the system is stable.</p>
+
+<p><b>b) $y(t) = \sin [x(t)]$</b></p>
+
+<p>In the given expression, we know that sine functions have a definite boundary of values, which lies between -1 to +1. So, whatever values we will substitute at x(t), we will get the values within our boundary. Therefore, the system is stable.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Unstable Systems</title>
+
+<h1>Digital Signal Processing - Unstable Systems</h1>
+
+<p>Unstable systems do not satisfy the BIBO conditions. Therefore, for a bounded input, we cannot expect a bounded output in case of unstable systems.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = tx(t)$</b></p>
+
+<p>Here, for a finite input, we cannot expect a finite output. For example, if we will put $x(t) = 2 \Rightarrow y(t) = 2t$. This is not a finite value because we do not know the value of t. So, it can be ranged from anywhere. Therefore, this system is not stable. It is an unstable system.</p>
+
+<p><b>b) $y(t) = \frac{x(t)}{\sin t}$</b></p>
+
+<p>We have discussed earlier, that the sine function has a definite range from -1 to +1; but here, it is present in the denominator. So, in worst case scenario, if we put t = 0 and sine function becomes zero, then the whole system will tend to infinity. Therefore, this type of system is not at all stable. Obviously, this is an unstable system.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP System Properties Solved Examples</title>
+
+<h1>DSP - System Properties Solved Examples</h1>
+
+<p><b>Example 1</b> &minus; Check whether $y(t) = x*(t)$ is linear or non-linear.</p>
+
+<p><b>Solution</b> &minus; The function represents the conjugate of input. It can be verified by either first law of homogeneity and law of additivity or by the two rules. However, verifying through rules is lot easier, so we will go by that.</p>
+
+<p>If the input to the system is zero, the output also tends to zero. Therefore, our first condition is satisfied. There is no non-linear operator used either at the input nor the output. Therefore, the system is Linear.</p>
+
+<p><b>Example 2</b> &minus; Check whether $y(t)=\begin{cases}x(t+1), &amp; t &gt; 0\\x(t-1), &amp; t\leq 0\end{cases}$ is linear or non linear</p>
+
+<p><b>Solution</b> &minus; Clearly, we can see that when time becomes less than or equal to zero the input becomes zero. So, we can say that at zero input the output is also zero and our first condition is satisfied.</p>
+
+<p>Again, there is no non-linear operator used at the input nor at the output. Therefore, the system is Linear.</p>
+
+<p><b>Example 3</b> &minus; Check whether $y(t) = \sin t.x(t)$ is stable or not.</p>
+
+<p><b>Solution</b> &minus; Suppose, we have taken the value of x(t) as 3. Here, sine function has been multiplied with it and maximum and minimum value of sine function varies between -1 to +1.</p>
+
+<p>Therefore, the maximum and minimum value of the whole function will also vary between -3 and +3. Thus, the system is stable because here we are getting a bounded input for a bounded output.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Z Transform Transform</title>
+
+<h1>DSP - Z-Transform Introduction</h1>
+
+<p>Discrete Time Fourier Transform(DTFT) exists for energy and power signals. Z-transform also exists for neither energy nor Power (NENP) type signal, up to a certain extent only. The replacement $z=e^{jw}$ is used for Z-transform to DTFT conversion only for absolutely summable signal.</p>
+
+<p>So, the Z-transform of the discrete time signal x(n) in a power series can be written as &minus;</p>
+
+<p>The above equation represents a two-sided Z-transform equation.</p>
+
+<p>Generally, when a signal is Z-transformed, it can be represented as &minus;</p>
+
+<p>Or <span style="padding-left:35%">$x(n) \longleftrightarrow X(Z)$</span></p>
+
+<p>If it is a continuous time signal, then Z-transforms are not needed because Laplace transformations are used. However, Discrete time signals can be analyzed through Z-transforms only.</p>
+
+<h2>Region of Convergence</h2>
+
+<p>Region of Convergence is the range of complex variable Z in the Z-plane. The Z- transformation of the signal is finite or convergent. So, ROC represents those set of values of Z, for which X(Z) has a finite value.</p>
+
+<h3>Properties of ROC</h3>
+
+<p>The Z-transform is uniquely characterized by &minus;</p>
+
+<h2>Signals and their ROC</h2>
+
+<h3>Example</h3>
+
+<p>Let us find the Z-transform and the ROC of a signal given as $x(n) = \lbrace 7,3,4,9,5\rbrace$, where origin of the series is at 3.</p>
+
+<p><b>Solution</b> &minus; Applying the formula we have &minus;</p>
+
+<p>ROC is the entire Z-plane excluding Z = 0, &infin;, -&infin;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Z-Transform Properties</title>
+
+<h1>DSP - Z-Transform Properties</h1>
+
+<p>In this chapter, we will understand the basic properties of Z-transforms.</p>
+
+<h2>Linearity</h2>
+
+<p>It states that when two or more individual discrete signals are multiplied by constants, their respective Z-transforms will also be multiplied by the same constants.</p>
+
+<p>Mathematically,</p>
+
+<p><b>Proof</b> &minus; We know that,</p>
+
+<p>Here, the ROC is $ROC_1\bigcap ROC_2$.</p>
+
+<h2>Time Shifting</h2>
+
+<p>Time shifting property depicts how the change in the time domain in the discrete signal will affect the Z-domain, which can be written as;</p>
+
+<p>Or <span style="padding-left:31%">$x(n-1)\longleftrightarrow Z^{-1}X(Z)$</span></p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Let s = p-k</p>
+
+<p>Here, ROC can be written as Z = 0 (p&gt;0) or Z = &infin;(p&lt;0)</p>
+
+<h3>Example</h3>
+
+<p>U(n) and U(n-1) can be plotted as follows</p>
+
+<p>Z-transformation of U(n) cab be written as;</p>
+
+<p>Z-transformation of U(n-1) can be written as;</p>
+
+<p>So here $x(n-n_0) = Z^{-n_0}X(Z)$ <span style="padding-left:32%">(Hence Proved)</span></p>
+
+<h2>Time Scaling</h2>
+
+<p>Time Scaling property tells us, what will be the Z-domain of the signal when the time is scaled in its discrete form, which can be written as;</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>ROC: = Mod(ar1) &lt; Mod(Z) &lt; Mod(ar2) where Mod = Modulus</p>
+
+<h3>Example</h3>
+
+<p>Let us determine the Z-transformation of $x(n) = a^n \cos \omega n$ using Time scaling property.</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>We already know that the Z-transformation of the signal $\cos (\omega n)$ is given by &minus;</p>
+
+<p>$$\sum_{n=-\infty}^\infty(\cos \omega n)Z^{-n} = (Z^2-Z \cos \omega)/(Z^2-2Z\cos \omega +1)$$</p>
+
+<p>Now, applying Time scaling property, the Z-transformation of $a^n \cos \omega n$ can be written as;</p>
+
+<h2>Successive Differentiation</h2>
+
+<p>Successive Differentiation property shows that Z-transform will take place when we differentiate the discrete signal in time domain, with respect to time. This is shown as below.</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Consider the LHS of the equation &minus; <span style="padding-left:8%">$\frac{dx(n)}{dn}$</span></p>
+
+<p>ROC: R1&lt; Mod (Z) &lt;R2</p>
+
+<h3>Example</h3>
+
+<p>Let us find the Z-transform of a signal given by $x(n) = n^2u(n)$</p>
+
+<p>By property we can write</p>
+
+<p>Now, Z[n.y] can be found out by again applying the property,</p>
+
+<h2>Convolution</h2>
+
+<p>This depicts the change in Z-domain of the system when a convolution takes place in the discrete signal form, which can be written as &minus;</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Let n-k = l, then the above equation cab be written as &minus;</p>
+
+<p>ROC:$ROC\bigcap ROC2$</p>
+
+<h3>Example</h3>
+
+<p>Let us find the convolution given by two signals</p>
+
+<p>Z-transformation of the first equation can be written as;</p>
+
+<p>Z-transformation of the second signal can be written as;</p>
+
+<p>So, the convolution of the above two signals is given by &minus;</p>
+
+<p>Taking the inverse Z-transformation we get,</p>
+
+<h2>Initial Value Theorem</h2>
+
+<p>If x(n) is a causal sequence, which has its Z-transformation as X(z), then the initial value theorem can be written as;</p>
+
+<p><b>Proof</b> &minus; We know that,</p>
+
+<p>Expanding the above series, we get;</p>
+
+<p>In the above case if Z &rarr; &infin; then $Z^{-n}\rightarrow 0$ (Because n&gt;0)</p>
+
+<p>Therefore, we can say;</p>
+
+<h2>Final Value Theorem</h2>
+
+<p>Final Value Theorem states that if the Z-transform of a signal is represented as X(Z) and the poles are all inside the circle, then its final value is denoted as x(n) or X(&infin;) and can be written as &minus;</p>
+
+<p><b>Conditions</b> &minus;</p>
+
+<p><b>Proof</b> &minus; We know that</p>
+
+<p>Here, we can apply advanced property of one-sided Z-Transformation. So, the above equation can be re-written as;</p>
+
+<p>Now putting z = 1 in the above equation, we can expand the above equation &minus;</p>
+
+<p>This can be formulated as;</p>
+
+<h3>Example</h3>
+
+<p>Let us find the Initial and Final value of x(n) whose signal is given by</p>
+
+<p>$X(Z) = 2+3Z^{-1}+4Z^{-2}$</p>
+
+<p><b>Solution</b> &minus; Let us first, find the initial value of the signal by applying the theorem</p>
+
+<p>Now let us find the Final value of signal applying the theorem</p>
+
+<p><b>Some other properties of Z-transform are listed below</b> &minus;</p>
+
+<h2>Differentiation in Frequency</h2>
+
+<p>It gives the change in Z-domain of the signal, when its discrete signal is differentiated with respect to time.</p>
+
+<p>Its ROC can be written as;</p>
+
+<h3>Example</h3>
+
+<p>Let us find the value of x(n) through Differentiation in frequency, whose discrete signal in Z-domain is given by $x(n)\longleftrightarrow X(Z) = log(1+aZ^{-1})$</p>
+
+<p>By property, we can write that</p>
+
+<h2>Multiplication in Time</h2>
+
+<p>It gives the change in Z-domain of the signal when multiplication takes place at discrete signal level.</p>
+
+<h2>Conjugation in Time</h2>
+
+<p>This depicts the representation of conjugated discrete signal in Z-domain.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Z Transform Existence</title>
+
+<h1>DSP - Z-Transform Existence</h1>
+
+<p>A system, which has system function, can only be stable if all the poles lie inside the unit circle. First, we check whether the system is causal or not. If the system is Causal, then we go for its BIBO stability determination; where BIBO stability refers to the bounded input for bounded output condition.</p>
+
+<p>This can be written as;</p>
+
+<p>The above equation shows the condition for existence of Z-transform.</p>
+
+<p>However, the condition for existence of DTFT signal is</p>
+
+<h2>Example 1</h2>
+
+<p>Let us try to find out the Z-transform of the signal, which is given as</p>
+
+<p><b>Solution</b> &minus; Here, for $-(-2)^nu(n)$ the ROC is Left sided and Z&lt;2</p>
+
+<p>For $3^nu(n)$ ROC is right sided and Z&gt;3</p>
+
+<p>Hence, here Z-transform of the signal will not exist because there is no common region.</p>
+
+<h2>Example 2</h2>
+
+<p>Let us try to find out the Z-transform of the signal given by</p>
+
+<p><b>Solution</b> &minus; Here, for $-2^nu(-n-1)$ ROC of the signal is Left sided and Z&lt;2</p>
+
+<p>For signal $(0.5)^nu(n)$ ROC is right sided and Z&gt;0.5</p>
+
+<p>So, the common ROC being formed as 0.5&lt;Z&lt;2</p>
+
+<p>Therefore, Z-transform can be written as;</p>
+
+<h2>Example 3</h2>
+
+<p>Let us try to find out the Z-transform of the signal, which is given as $x(n) = 2^{r(n)}$</p>
+
+<p><b>Solution</b> &minus; r(n) is the ramp signal. So the signal can be written as;</p>
+
+<p>Here, for the signal $u(-n-1)$ and ROC Z&lt;1 and for $2^nu(n)$ with ROC is Z&gt;2.</p>
+
+<p>So, Z-transformation of the signal will not exist.</p>
+
+<h2>Z -Transform for Causal System</h2>
+
+<p>Causal system can be defined as $h(n) = 0,n&lt;0$. For causal system, ROC will be outside the circle in Z-plane.</p>
+
+<p>Expanding the above equation,</p>
+
+<p>For causal systems, expansion of Transfer Function does not include positive powers of Z. For causal system, order of numerator cannot exceed order of denominator. This can be written as-</p>
+
+<p>For stability of causal system, poles of Transfer function should be inside the unit circle in Z-plane.</p>
+
+<h2>Z-transform for Anti-causal System</h2>
+
+<p>Anti-causal system can be defined as $h(n) = 0, n\geq 0$ . For Anti causal system, poles of transfer function should lie outside unit circle in Z-plane. For anti-causal system, ROC will be inside the circle in Z-plane.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Z-Transform Inverse</title>
+
+<h1>DSP - Z-Transform Inverse</h1>
+
+<p>If we want to analyze a system, which is already represented in frequency domain, as discrete time signal then we go for Inverse Z-transformation.</p>
+
+<p>Mathematically, it can be represented as;</p>
+
+<p>where x(n) is the signal in time domain and X(Z) is the signal in frequency domain.</p>
+
+<p>If we want to represent the above equation in integral format then we can write it as</p>
+
+<p>Here, the integral is over a closed path C. This path is within the ROC of the x(z) and it does contain the origin.</p>
+
+<h2>Methods to Find Inverse Z-Transform</h2>
+
+<p>When the analysis is needed in discrete format, we convert the frequency domain signal back into discrete format through inverse Z-transformation. We follow the following four ways to determine the inverse Z-transformation.</p>
+
+<h2>Long Division Method</h2>
+
+<p>In this method, the Z-transform of the signal x (z) can be represented as the ratio of polynomial as shown below;</p>
+
+<p>Now, if we go on dividing the numerator by denominator, then we will get a series as shown below</p>
+
+<p>The above sequence represents the series of inverse Z-transform of the given signal (for n≥0) and the above system is causal.</p>
+
+<p>However for n&lt;0 the series can be written as;</p>
+
+<h2>Partial Fraction Expansion Method</h2>
+
+<p>Here also the signal is expressed first in N (z)/D (z) form.</p>
+
+<p>If it is a rational fraction it will be represented as follows;</p>
+
+<p>The above one is improper when m&lt;n and an&ne;0</p>
+
+<p>If the ratio is not proper (i.e. Improper), then we have to convert it to the proper form to solve it.</p>
+
+<h2>Residue or Contour Integral Method</h2>
+
+<p>In this method, we obtain inverse Z-transform x(n) by summing residues of $[x(z)Z^{n-1}]$ at all poles. Mathematically, this may be expressed as</p>
+
+<p>Here, the residue for any pole of order m at $z = \beta$ is</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Z-Transform Solved Examples</title>
+
+<h1>DSP - Z-Transform Solved Examples</h1>
+
+<h2>Example 1</h2>
+
+<p>Find the response of the system $s(n+2)-3s(n+1)+2s(n) = \delta (n)$, when all the initial conditions are zero.</p>
+
+<p><b>Solution</b> &minus; Taking Z-transform on both the sides of the above equation, we get</p>
+
+<p>Taking the inverse Z-transform of the above equation, we get</p>
+
+<h2>Example 2</h2>
+
+<p>Find the system function H(z) and unit sample response h(n) of the system whose difference equation is described as under</p>
+
+<p>where, y(n) and x(n) are the output and input of the system, respectively.</p>
+
+<p><b>Solution</b> &minus; Taking the Z-transform of the above difference equation, we get</p>
+
+<p>This system has a pole at $Z = \frac{1}{2}$ and $Z = 0$ and $H(Z) = \frac{2}{[1-\frac{1}{2}Z^{-1}]}$</p>
+
+<p>Hence, taking the inverse Z-transform of the above, we get</p>
+
+<h2>Example 3</h2>
+
+<p>Determine Y(z),n&ge;0 in the following case &minus;</p>
+
+<p>$y(n)+\frac{1}{2}y(n-1)-\frac{1}{4}y(n-2) = 0\quad given\quad y(-1) = y(-2) = 1$</p>
+
+<p><b>Solution</b> &minus; Applying the Z-transform to the above equation, we get</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing DFT Introduction</title>
+
+<h1>Digital Signal Processing - DFT Introduction</h1>
+
+<p>Like continuous time signal Fourier transform, discrete time Fourier Transform can be used to represent a discrete sequence into its equivalent frequency domain representation and LTI discrete time system and develop various computational algorithms.</p>
+
+<p>X (j&omega;) in continuous F.T, is a continuous function of x(n). However, DFT deals with representing x(n) with samples of its spectrum X(&omega;). Hence, this mathematical tool carries much importance computationally in convenient representation. Both, periodic and non-periodic sequences can be processed through this tool. The periodic sequences need to be sampled by extending the period to infinity.</p>
+
+<h2>Frequency Domain Sampling</h2>
+
+<p>From the introduction, it is clear that we need to know how to proceed through frequency domain sampling i.e. sampling X(&omega;). Hence, the relationship between sampled Fourier transform and DFT is established in the following manner.</p>
+
+<p>Similarly, periodic sequences can fit to this tool by extending the period N to infinity.</p>
+
+<p>Let an Non periodic sequence be, $X(n) = \lim_{N \to \infty}x_N(n)$</p>
+
+<p>Defining its Fourier transform,</p>
+
+<p>Here, X(&omega;) is sampled periodically, at every &delta;&omega; radian interval.</p>
+
+<p>As X(&omega;) is periodic in 2&pi; radians, we require samples only in fundamental range. The samples are taken after equidistant intervals in the frequency range 0&le;&omega;&le;2&pi;. Spacing between equivalent intervals is $\delta \omega = \frac{2\pi }{N}k$ radian.</p>
+
+<p>Now evaluating, $\omega = \frac{2\pi}{N}k$</p>
+
+<p>where k=0,1,……N-1</p>
+
+<p>After subdividing the above, and interchanging the order of summation</p>
+
+<p>$\sum_{l=-\infty}^\infty x(n-Nl) = x_p(n) = a\quad  periodic\quad function\quad of\quad period\quad N\quad and\quad its\quad fourier\quad series\quad = \sum_{k = 0}^{N-1}C_ke^{j2\pi nk/N}$</p>
+
+<p>where, n = 0,1,…..,N-1; ‘p’- stands for periodic entity or function</p>
+
+<p>The Fourier coefficients are,</p>
+
+<p>Comparing equations 3 and 4, we get ;</p>
+
+<p>From Fourier series expansion,</p>
+
+<p>Where n=0,1,…,N-1</p>
+
+<p>Here, we got the periodic signal from X(&omega;). $x(n)$ can be extracted from $x_p(n)$ only, if there is no aliasing in the time domain. $N\geq L$</p>
+
+<p>N = period of $x_p(n)$ L= period of $x(n)$</p>
+
+<p>The mapping is achieved in this manner.</p>
+
+<h2>Properties of DFT</h2>
+
+<h3>Linearity</h3>
+
+<p>It states that the DFT of a combination of signals is equal to the sum of DFT of individual signals. Let us take two signals x<sub>1</sub>(n) and x<sub>2</sub>(n), whose DFT s are X<sub>1</sub>(&omega;) and X<sub>2</sub>(&omega;) respectively. So, if</p>
+
+<p>Then <span style="padding-left:5%">$ax_1(n)+bx_2(n)\rightarrow aX_1(\omega)+bX_2(\omega)$</span></p>
+
+<p>where <b>a</b> and <b>b</b> are constants.</p>
+
+<h3>Symmetry</h3>
+
+<p>The symmetry properties of DFT can be derived in a similar way as we derived DTFT symmetry properties. We know that DFT of sequence x(n) is denoted by X(K). Now, if x(n) and X(K) are complex valued sequence, then it can be represented as under</p>
+
+<p>And <span style="padding-left:5%">$X(K) = X_R(K)+jX_1(K),0\leq K\leq N-1$</span></p>
+
+<h3>Duality Property</h3>
+
+<p>Let us consider a signal x(n), whose DFT is given as X(K). Let the finite duration sequence be X(N). Then according to duality theorem,</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$X(N)\longleftrightarrow Nx[((-k))_N]$</span></p>
+
+<p>So, by using this theorem if we know DFT, we can easily find the finite duration sequence.</p>
+
+<h3>Complex Conjugate Properties</h3>
+
+<p>Suppose, there is a signal x(n), whose DFT is also known to us as X(K). Now, if the complex conjugate of the signal is given as x*(n), then we can easily find the DFT without doing much calculation by using the theorem shown below.</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x*(n)\longleftrightarrow X*((K))_N = X*(N-K)$</span></p>
+
+<h3>Circular Frequency Shift</h3>
+
+<p>The multiplication of the sequence x(n) with the complex exponential sequence $e^{j2\Pi kn/N}$ is equivalent to the circular shift of the DFT by L units in frequency. This is the dual to the circular time shifting property.</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x(n)e^{j2\Pi Kn/N}\longleftrightarrow X((K-L))_N$</span></p>
+
+<h3>Multiplication of Two Sequence</h3>
+
+<p>If there are two signal x<sub>1</sub>(n) and x<sub>2</sub>(n) and their respective DFTs are X<sub>1</sub>(k) and X<sub>2</sub>(K), then multiplication of signals in time sequence corresponds to circular convolution of their DFTs.</p>
+
+<p>If, <span style="padding-left:9%">$x_1(n)\longleftrightarrow X_1(K)\quad\&amp;\quad x_2(n)\longleftrightarrow X_2(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x_1(n)\times x_2(n)\longleftrightarrow X_1(K)&copy; X_2(K)$</span></p>
+
+<h3>Parseval’s Theorem</h3>
+
+<p>For complex valued sequences x(n) and y(n), in general</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)\quad \&amp;\quad y(n)\longleftrightarrow Y(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$\sum_{n = 0}^{N-1}x(n)y^*(n) = \frac{1}{N}\sum_{k = 0}^{N-1}X(K)Y^*(K)$</span></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Time Frequency Transform</title>
+
+<h1>DSP - DFT Time Frequency Transform</h1>
+
+<p>We know that when $\omega = 2\pi K/N$ and $N\rightarrow \infty,\omega$ becomes a continuous variable and limits summation become $-\infty$ to $+\infty$.</p>
+
+<p>Therefore,</p>
+
+<p>We know that, $X(e^{j\omega}) = \sum_{n = -\infty}^\infty x(n)e^{-j\omega n}$</p>
+
+<p>Where, $X(e^{j\omega})$ is continuous and periodic in &omega; and with period 2&pi;.<span style="padding-left:7%">…eq(1)</span></p>
+
+<p>Now,</p>
+
+<p>&omega; becomes continuous and $\frac{2\pi}{N}\rightarrow d\omega$, because of the reasons cited above.</p>
+
+<p>Inverse Discrete Time Fourier Transform</p>
+
+<p>Symbolically,</p>
+
+<p>Necessary and sufficient condition for existence of Discrete Time Fourier Transform for a non-periodic sequence x(n) is absolute summable.</p>
+
+<h2>Properties of DTFT</h2>
+
+<p><b>Linearity</b> : <span style="padding-left:7%">$a_1x_1(n)+a_2x_2(n)\Leftrightarrow a_1X_1(e^{j\omega})+a_2X_2(e^{j\omega})$</span></p>
+
+<p><b>Time shifting</b> &minus; <span style="padding-left:10%">$x(n-k)\Leftrightarrow e^{-j\omega k}.X(e^{j\omega})$</span></p>
+
+<p><b>Time Reversal</b> &minus; <span style="padding-left:10%">$x(-n)\Leftrightarrow X(e^{-j\omega})$</span></p>
+
+<p><b>Frequency shifting</b> &minus; <span style="padding-left:5%">$e^{j\omega _0n}x(n)\Leftrightarrow X(e^{j(\omega -\omega _0)})$</span></p>
+
+<p><b>Differentiation frequency domain</b> &minus; <span style="padding-left:5%">$nx(n) = j\frac{d}{d\omega}X(e^{j\omega})$</span></p>
+
+<p><b>Convolution</b> &minus; <span style="padding-left:11%">$x_1(n)*x_2(n)\Leftrightarrow X_1(e^{j\omega})\times X_2(e^{j\omega})$</span></p>
+
+<p><b>Multiplication</b> &minus; <span style="padding-left:10%">$x_1(n)\times x_2(n)\Leftrightarrow X_1(e^{j\omega})*X_2(e^{j\omega})$</span></p>
+
+<p><b>Co-relation</b> &minus; <span style="padding-left:14%">$y_{x_1\times x_2}(l)\Leftrightarrow X_1(e^{j\omega})\times X_2(e^{j\omega})$</span></p>
+
+<p><b>Modulation theorem</b> &minus; <span style="padding-left:2%">$x(n)\cos \omega _0n = \frac{1}{2}[X_1(e^{j(\omega +\omega _0})*X_2(e^{jw})$</span></p>
+
+<p><b>Symmetry</b> &minus;<span style="padding-left:11%">$x^*(n)\Leftrightarrow X^*(e^{-j\omega})$ ;</span></p>
+
+<p><b>Parseval’s theorem</b> &minus; <span style="padding-left:2%">$\sum_{-\infty}^\infty|x_1(n)|^2 = \frac{1}{2\pi}\int_{-\pi}^{\pi}|X_1(e^{j\omega})|^2d\omega$</span></p>
+
+<p>Earlier, we studied sampling in frequency domain. With that basic knowledge, we sample $X(e^{j\omega})$ in frequency domain, so that a convenient digital analysis can be done from that sampled data. Hence, DFT is sampled in both time and frequency domain. With the assumption $x(n) = x_p(n)$</p>
+
+<p>Hence, DFT is given by &minus;</p>
+
+<p>And IDFT is given by &minus;</p>
+
+<h2>Twiddle Factor</h2>
+
+<p>It is denoted as $W_N$ and defined as $W_N = e^{-j2\pi /N}$ . Its magnitude is always maintained at unity. Phase of $W_N = -2\pi /N$ . It is a vector on unit circle and is used for computational convenience. Mathematically, it can be shown as &minus;</p>
+
+<p>It is function of r and period N.</p>
+
+<p>$W_8^1 = W_8^9 = W_8^{17} = ... = ... = W_8^{33} = ... =\frac{1}{\sqrt 2}= j\frac{1}{\sqrt 2} = 1\angle-\frac{\pi}{4}$</p>
+
+<h2>Linear Transformation</h2>
+
+<p>Let us understand Linear Transformation &minus;</p>
+
+<p>We know that,</p>
+
+<p><b>Note</b> &minus; Computation of DFT can be performed with N<sup>2</sup> complex multiplication and N(N-1) complex addition.</p>
+
+<p>$W_N\longmapsto$ Matrix of linear transformation</p>
+
+<p><span style="padding-left:35%">$Now,\quad x_N = W_N^{-1}X_N$</span></p>
+
+<p>IDFT in Matrix form is given by</p>
+
+<p>Comparing both the expressions of $x_N,\quad W_N^{-1} = \frac{1}{N}W_N^*$ and $W_N\times W_N^* = N[I]_{N\times N}$</p>
+
+<p>Therefore, $W_N$ is a linear transformation matrix, an orthogonal (unitary) matrix.</p>
+
+<p>From periodic property of $W_N$ and from its symmetric property, it can be concluded that, $W_N^{k+N/2} = -W_N^k$</p>
+
+<h2>Circular Symmetry</h2>
+
+<p>N-point DFT of a finite duration x(n) of length N&le;L, is equivalent to the N-point DFT of periodic extension of x(n), i.e. $x_p(n)$ of period N. and $x_p(n) = \sum_{l = -\infty}^\infty x(n-Nl)$ . Now, if we shift the sequence, which is a periodic sequence by k units to the right, another periodic sequence is obtained. This is known as Circular shift and this is given by,</p>
+
+<p>The new finite sequence can be represented as</p>
+
+<p><b>Example</b> &minus; Let x(n)= {1,2,4,3}, N = 4,</p>
+
+<p>$x_p^\prime (n) = x(n-k,modulo\quad N)\equiv x((n-k))_N\quad;ex-if\quad k=2i.e\quad 2\quad unit\quad right\quad shift\quad and\quad N = 4,$</p>
+
+<p>Assumed clockwise direction as positive direction.</p>
+
+<p>We got, $x\prime(n) = x((n-2))_4$</p>
+
+<p>$x\prime(0) = x((-2))_4 = x(2) = 4$</p>
+
+<p>$x\prime(1) = x((-1))_4 = x(3) = 3$</p>
+
+<p>$x\prime(2) = x((-2))_4 = x(0) = 1$</p>
+
+<p>$x\prime(3) = x((1))_4 = x(1) = 2$</p>
+
+<p><b>Conclusion</b> &minus; Circular shift of N-point sequence is equivalent to a linear shift of its periodic extension and vice versa.</p>
+
+<p>Circularly even sequence &minus; <span style="padding-left:3%">$x(N-n) = x(n),\quad 1\leq n\leq N-1$</span></p>
+
+<p>Conjugate even &minus;<span style="padding-left:24%">$x_p(n) = x_p^*(N-n)$</span></p>
+
+<p>Circularly odd sequence &minus; <span style="padding-left:3%">$x(N-n) = -x(n),\quad 1\leq n\leq N-1$</span></p>
+
+<p>Conjugate odd &minus; <span style="padding-left:24%">$x_p(n) = -x_p^*(N-n)$</span></p>
+
+<p>Now, $x_p(n) = x_{pe}+x_{po}(n)$, where,</p>
+
+<p>For any real signal x(n),<span style="padding-left:18%">$X(k) = X^*(N-k)$</p>
+
+<p><b>Time reversal</b> &minus; reversing sample about the 0<sup>th</sup> sample. This is given as;</p>
+
+<p>Time reversal is plotting samples of sequence, in clockwise direction i.e. assumed negative direction.</p>
+
+<h2>Some Other Important Properties</h2>
+
+<p>Other important IDFT properties $x(n)\longleftrightarrow X(k)$</p>
+
+<p><b>Time reversal</b> &minus; $x((-n))_N = x(N-n)\longleftrightarrow X((-k))_N = X(N-k)$</p>
+
+<p><b>Circular time shift</b> &minus; $x((n-l))_N \longleftrightarrow X(k)e^{j2\pi lk/N}$</p>
+
+<p><b>Circular frequency shift</b> &minus; $x(n)e^{j2\pi ln/N} \longleftrightarrow X((k-l))_N$</p>
+
+<p><b>Complex conjugate properties</b> &minus; </p>
+
+<p><b>Multiplication of two sequence</b> &minus; </p>
+
+<p>$\therefore x_1(n)x_2(n)\longleftrightarrow X_1(k)\quadⓃ X_2(k)$</p>
+
+<p><b>Circular convolution</b> &minus; and multiplication of two DFT</p>
+
+<p>$x_1(k)\quad Ⓝ x_2(k) =\sum_{k = 0}^{N-1}x_1(n).x_2((m-n))_n,\quad m = 0,1,2,... .,N-1 $</p>
+
+<p>$x_1(k)\quad Ⓝ x_2(k)\longleftrightarrow X_1(k).X_2(k)$</p>
+
+<p><b>Circular correlation</b> &minus; If $x(n)\longleftrightarrow X(k)$ and $y(n)\longleftrightarrow Y(k)$ , then there exists a cross correlation sequence denoted as $\bar Y_{xy}$ such that $\bar Y_{xy}(l) = \sum_{n = 0}^{N-1}x(n)y^*((n-l))_N = X(k).Y^*(k)$</p>
+
+<p><b>Parseval’s Theorem</b> &minus; If $x(n)\longleftrightarrow X(k)$ and $y(n)\longleftrightarrow Y(k)$;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Circular Convolution</title>
+
+<h1>DSP - DFT Circular Convolution</h1>
+
+<p>Let us take two finite duration sequences x<sub>1</sub>(n) and x<sub>2</sub>(n), having integer length as N. Their DFTs are X<sub>1</sub>(K) and X<sub>2</sub>(K) respectively, which is shown below &minus;</p>
+
+<p>Now, we will try to find the DFT of another sequence x<sub>3</sub>(n), which is given as X<sub>3</sub>(K)</p>
+
+<p>By taking the IDFT of the above we get</p>
+
+<p>After solving the above equation, finally, we get</p>
+
+<h2>Methods of Circular Convolution</h2>
+
+<p>Generally, there are two methods, which are adopted to perform circular convolution and they are &minus;</p>
+
+<h3>Concentric Circle Method</h3>
+
+<p>Let $x_1(n)$ and $x_2(n)$ be two given sequences. The steps followed for circular convolution of $x_1(n)$ and $x_2(n)$ are</p>
+
+<p>Take two concentric circles. Plot N samples of $x_1(n)$ on the circumference of the outer circle (maintaining equal distance successive points) in anti-clockwise direction.</p>
+
+<p>For plotting $x_2(n)$, plot N samples of $x_2(n)$ in clockwise direction on the inner circle, starting sample placed at the same point as 0<sup>th</sup> sample of $x_1(n)$</p>
+
+<p>Multiply corresponding samples on the two circles and add them to get output.</p>
+
+<p>Rotate the inner circle anti-clockwise with one sample at a time.</p>
+
+<h3>Matrix Multiplication Method</h3>
+
+<p>Matrix method represents the two given sequence $x_1(n)$ and $x_2(n)$ in matrix form.</p>
+
+<p>One of the given sequences is repeated via circular shift of one sample at a time to form a N X N matrix.</p>
+
+<p>The other sequence is represented as column matrix.</p>
+
+<p>The multiplication of two matrices give the result of circular convolution.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Linear Filtering</title>
+
+<h1>DSP - DFT Linear Filtering</h1>
+
+<p>DFT provides an alternative approach to time domain convolution. It can be used to perform linear filtering in frequency domain.</p>
+
+<p>Thus,<span style="padding-left:10%">$Y(\omega) = X(\omega).H(\omega)\longleftrightarrow y(n)$</span>.</p>
+
+<p>The problem in this frequency domain approach is that $Y(\omega)$, $X(\omega)$ and $H(\omega)$ are continuous function of ω, which is not fruitful for digital computation on computers. However, DFT provides sampled version of these waveforms to solve the purpose.</p>
+
+<p>The advantage is that, having knowledge of faster DFT techniques likes of FFT, a computationally higher efficient algorithm can be developed for digital computer computation in comparison with time domain approach.</p>
+
+<p>Consider a finite duration sequence, $[x(n) = 0,\quad for,n&lt;0\quad and\quad n\geq L]$ (generalized equation), excites a linear filter with impulse response $[h(n) = 0,\quad forn&lt;0\quad and\quad n\geq M]$.</p>
+
+<p>From the convolution analysis, it is clear that, the duration of y(n) is L+M−1.</p>
+
+<p>In frequency domain,</p>
+
+<p>Now, $Y(\omega)$ is a continuous function of ω and it is sampled at a set of discrete frequencies with number of distinct samples which must be equal to or exceeds $L+M-1$.</p>
+
+<p>With $\omega = \frac{2\pi}{N}k$,</p>
+
+<p>Where, X(k) and H(k) are N-point DFTs of x(n) and h(n) respectively. $x(n)\&amp; h(n)$ are padded with zeros up to the length N. It will not distort the continuous spectra $X(\omega)$ and $H(\omega)$. Since $N\geq L+M-1$, N-point DFT of output sequence y(n) is sufficient to represent y(n) in frequency domain and these facts infer that the multiplication of N-point DFTs of X(k) and H(k), followed by the computation of N-point IDFT must yield y(n).</p>
+
+<p>This implies, N-point circular convolution of x(n) and H(n) with zero padding, equals to linear convolution of x(n) and h(n).</p>
+
+<p>Thus, DFT can be used for linear filtering.</p>
+
+<p><b>Caution</b> &minus; N should always be greater than or equal to $L+M-1$. Otherwise, aliasing effect would corrupt the output sequence.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Sectional Convolution</title>
+
+<h1>DSP - DFT Sectional Convolution</h1>
+
+<p>Suppose, the input sequence x(n) of long duration is to be processed with a system having finite duration impulse response by convolving the two sequences. Since, the linear filtering performed via DFT involves operation on a fixed size data block, the input sequence is divided into different fixed size data block before processing.</p>
+
+<p>The successive blocks are then processed one at a time and the results are combined to produce the net result.</p>
+
+<p>As the convolution is performed by dividing the long input sequence into different fixed size sections, it is called sectioned convolution. A long input sequence is segmented to fixed size blocks, prior to FIR filter processing.</p>
+
+<p>Two methods are used to evaluate the discrete convolution &minus;</p>
+
+<p><b>Overlap-save method</b></p>
+
+<p><b>Overlap-add method</b></p>
+
+<h2>Overlap Save Method</h2>
+
+<p>Overlap–save is the traditional name for an efficient way to evaluate the discrete convolution between a very long signal x(n) and a finite impulse response (FIR) filter h(n). Given below are the steps of Overlap save method &minus;</p>
+
+<p>Let the length of input data block = N = L+M-1. Therefore, DFT and IDFT length = N. Each data block carries M-1 data points of previous block followed by L new data points to form a data sequence of length N = L+M-1.</p>
+
+<p>First, N-point DFT is computed for each data block.</p>
+
+<p>By appending (L-1) zeros, the impulse response of FIR filter is increased in length and N point DFT is calculated and stored.</p>
+
+<p>Multiplication of two N-point DFTs H(k) and X<sub>m</sub>(k) : Y&prime;<sub>m</sub>(k) = H(k).X<sub>m</sub>(k), where K=0,1,2,…N-1</p>
+
+<p>Then, IDFT[Y&prime;<sub>m</sub>((k)] = y&prime;((n) = [y&prime;<sub>m</sub>(0), y&prime;<sub>m</sub>(1), y&prime;<sub>m</sub>(2),.......y&prime;<sub>m</sub>(M-1), y&prime;<sub>m</sub>(M),.......y&prime;<sub>m</sub>(N-1)]</p>
+
+<p>(here, N-1 = L+M-2)</p>
+
+<p>First M-1 points are corrupted due to aliasing and hence, they are discarded because the data record is of length N.</p>
+
+<p>The last L points are exactly same as a result of convolution, so</p>
+
+<p>To avoid aliasing, the last M-1 elements of each data record are saved and these points carry forward to the subsequent record and become 1<sup>st</sup> M-1 elements.</p>
+
+<p>Result of IDFT, where first M-1 Points are avoided, to nullify aliasing and remaining L points constitute desired result as that of a linear convolution.</p>
+
+<h2>Overlap Add Method</h2>
+
+<p>Given below are the steps to find out the discrete convolution using Overlap method &minus;</p>
+
+<p>Let the input data block size be L. Therefore, the size of DFT and IDFT: N = L+M-1</p>
+
+<p>Each data block is appended with M-1 zeros to the last.</p>
+
+<p>Compute N-point DFT.</p>
+
+<p>Two N-point DFTs are multiplied: Y<sub>m</sub>(k) = H(k).X<sub>m</sub>(k), where k = 0,,1,2,….,N-1</p>
+
+<p>IDFT [Y<sub>m</sub>(k)] produces blocks of length N which are not affected by aliasing as the size of DFT is N = L+M-1 and increased lengths of the sequences to N-points by appending M-1 zeros to each block.</p>
+
+<p>Last M-1 points of each block must be overlapped and added to first M-1 points of the succeeding block.</p>
+
+<p>Hence, this method is known Overlap-add method. Thus, we get &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Discrete Cosine Transform</title>
+
+<h1>DSP - DFT Discrete Cosine Transform</h1>
+
+<p>DCT (Discrete Cosine Transform) is an N-input sequence x(n) , 0&le;n&le;N-1 , as a linear transformation or combination of complex exponentials. As a result, the DFT coefficients are in general, complex even if x(n) is real.</p>
+
+<p>Suppose, we try to find out an orthogonal transformation which has N×N structure that expressed a real sequence x(n) as a linear combination of cosine sequence. We already know that &minus;</p>
+
+<p>And <span style="padding-left:4%">$x(n) = \frac{1}{N}\sum_{k = 0}^{N-1}x(k)cos\frac{2\Pi kn}{N}0\leq k \leq N-1$</span></p>
+
+<p>This is possible if N point sequence x(n) is real and even. Thus, $x(n) = x(N-n),0\leq n \leq (N-1)$. The resulting DFT itself is real and even. These things make it clear that we could possibly device a discrete cosine transform, for any N point real sequence by taking the 2N point DFT of an “Even extension” of sequence.</p>
+
+<p>DCT is, basically, used in image and speech processing. It is also used in compression of images and speech signals.</p>
+
+<p>$\Rightarrow S(k) = W_{2N}^{-k/2}+\sum_{n = 0}^{N-1}x(n) [W_{2N}^{nk}W_{2N}^{k/2}+W_{2N}^{-nk}W_{2N}^{-k/2}];\quad where\quad 0\leq k\leq 2N-1$</p>
+
+<p>$\Rightarrow S(k) = W_{2N}^{\frac{k}{2}}\sum_{n = 0}^{N-1}x(n)\cos [\frac{\pi}{N}(n+\frac{1}{2})k];\quad where\quad 0\leq k\leq 2N-1$</p>
+
+<p>DCT is defined by,</p>
+
+<p>$V(k) = 2\sum_{n = 0}^{N-1}x(n)\cos [\frac{\pi}{2}(n+\frac{1}{2})k]\quad where\quad 0\leq k\leq N-1$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP DFT Solved Examples</title>
+
+<h1>DSP - DFT Solved Examples</h1>
+
+<h2>Example 1</h2>
+
+<p>Verify Parseval’s theorem of the sequence $x(n) = \frac{1^n}{4}u(n)$</p>
+
+<p><b>Solution</b> &minus; <span style="padding-left:3%">$\displaystyle\sum\limits_{-\infty}^\infty|x_1(n)|^2 = \frac{1}{2\pi}\int_{-\pi}^{\pi}|X_1(e^{j\omega})|^2d\omega$</span></p>
+
+<p>L.H.S <span style="padding-left:8.5%">$\displaystyle\sum\limits_{-\infty}^\infty|x_1(n)|^2$</span></p>
+
+<p>R.H.S. <span style="padding-left:3%">$X(e^{j\omega}) = \frac{1}{1-\frac{1}{4}e-j\omega} = \frac{1}{1-0.25\cos \omega+j0.25\sin \omega}$</span></p>
+
+<p>Calculating, $X(e^{j\omega}).X^*(e^{j\omega})$</p>
+
+<p>We can see that, LHS = RHS.<span style="padding-left:43%">(Hence Proved)</span></p>
+
+<h2>Example 2</h2>
+
+<p>Compute the N-point DFT of $x(n) = 3\delta (n)$</p>
+
+<p><b>Solution</b> &minus; We know that,</p>
+
+<p>So,<span style="padding-left:25%">$x(k) = 3,0\leq k\leq N-1$</span><span style="padding-left:4%">… Ans.</span></p>
+
+<h2>Example 3</h2>
+
+<p>Compute the N-point DFT of $x(n) = 7(n-n_0)$</p>
+
+<p><b>Solution</b> &minus; We know that,</p>
+
+<p>Substituting the value of x(n),</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Fast Fourier Transform</title>
+
+<h1>DSP - Fast Fourier Transform</h1>
+
+<p>In earlier DFT methods, we have seen that the computational part is too long. We want to reduce that. This can be done through FFT or fast Fourier transform. So, we can say FFT is nothing but computation of discrete Fourier transform in an algorithmic format, where the computational part will be reduced.</p>
+
+<p>The main advantage of having FFT is that through it, we can design the FIR filters. Mathematically, the FFT can be written as follows;</p>
+
+<p>Let us take an example to understand it better. We have considered eight points named from $x_0\quad to\quad x_7$. We will choose the even terms in one group and the odd terms in the other. Diagrammatic view of the above said has been shown below &minus;</p>
+
+<p>Here, points x<sub>0</sub>, x<sub>2</sub>, x<sub>4</sub> and x<sub>6</sub> have been grouped into one category and similarly, points x<sub>1</sub>, x<sub>3</sub>, x<sub>5</sub> and x<sub>7</sub> has been put into another category. Now, we can further make them in a group of two and can proceed with the computation. Now, let us see how these breaking into further two is helping in computation.</p>
+
+<p>Initially, we took an eight-point sequence, but later we broke that one into two parts G[k] and H[k]. G[k] stands for the even part whereas H[k] stands for the odd part. If we want to realize it through a diagram, then it can be shown as below &minus;</p>
+
+<p>From the above figure, we can see that</p>
+
+<p>Similarly, the final values can be written as follows &minus;</p>
+
+<p>The above one is a periodic series. The disadvantage of this system is that K cannot be broken beyond 4 point. Now Let us break down the above into further. We will get the structures something like this</p>
+
+<h3>Example</h3>
+
+<p>Consider the sequence x[n]={ 2,1,-1,-3,0,1,2,1}. Calculate the FFT.</p>
+
+<p><b>Solution</b> &minus; The given sequence is x[n]={ 2,1,-1,-3,0,1,2,1}</p>
+
+<p>Arrange the terms as shown below;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP In Place Computation</title>
+
+<h1>DSP - In-Place Computation</h1>
+
+<p>This efficient use of memory is important for designing fast hardware to calculate the FFT. The term in-place computation is used to describe this memory usage.</p>
+
+<h2>Decimation in Time Sequence</h2>
+
+<p>In this structure, we represent all the points in binary format i.e. in 0 and 1. Then, we reverse those structures. The sequence we get after that is known as bit reversal sequence. This is also known as decimation in time sequence. In-place computation of an eight-point DFT is shown in a tabular format as shown below &minus;</p>
+
+<h2>Decimation in Frequency Sequence</h2>
+
+<p>Apart from time sequence, an N-point sequence can also be represented in frequency. Let us take a four-point sequence to understand it better.</p>
+
+<p>Let the sequence be $x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]$. We will group two points into one group, initially. Mathematically, this sequence can be written as;</p>
+
+<p>Now let us make one group of sequence number 0 to 3 and another group of sequence 4 to 7. Now, mathematically this can be shown as;</p>
+
+<p>Let us replace n by r, where r = 0, 1 , 2….(N/2-1). Mathematically,</p>
+
+<p>We take the first four points (x[0], x[1], x[2], x[3]) initially, and try to represent them mathematically as follows &minus;</p>
+
+<p>now <span style="padding-left:8%">$X[0] = \sum_{n = 0}^3(X[n]+X[n+4])$</span></p>
+
+<p>We can further break it into two more parts, which means instead of breaking them as 4-point sequence, we can break them into 2-point sequence.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>DSP Computer Aided Design</title>
+
+<h1>DSP - Computer Aided Design</h1>
+
+<p>FIR filters can be useful in making computer-aided design of the filters. Let us take an example and see how it works. Given below is a figure of desired filter.</p>
+
+<p>While doing computer designing, we break the whole continuous graph figures into discrete values. Within certain limits, we break it into either 64, 256 or 512 (and so on) number of parts having discrete magnitudes.</p>
+
+<p>In the above example, we have taken limits between -&pi; to +&pi;. We have divided it into 256 parts. The points can be represented as H(0), H(1),….up to H(256). Here, we apply IDFT algorithm and this will give us linear phase characteristics.</p>
+
+<p>Sometimes, we may be interested in some particular order of filter. Let us say we want to realize the above given design through 9<sup>th</sup> order filter. So, we take filter values as h0, h1, h2….h9. Mathematically, it can be shown as below</p>
+
+<p>Where there are large number of dislocations, we take maximum points.</p>
+
+<p>For example, in the above figure, there is a sudden drop of slopping between the points B and C. So, we try to take more discrete values at this point, but there is a constant slope between point C and D. There we take less number of discrete values.</p>
+
+<p>For designing the above filter, we go through minimization process as follows;</p>
+
+<p>Similarly,</p>
+
+<p>Representing the above equation in matrix form, we have &minus;</p>
+
+<p>Let us take the 1000×1 matrix as B, 1000×9 matrix as A and 9×1 matrix as $\hat{h}$.</p>
+
+<p>So, for solving the above matrix, we will write</p>
+
+<p>where A<sup>*</sup> represents the complex conjugate of the matrix A.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Quick Guide</title>
+
+<h1>Digital Signal Processing - Quick Guide</h1>
+
+<h1>Digital Signal Processing - Signals-Definition</h1>
+
+<h2>Definition</h2>
+
+<p>Anything that carries information can be called as signal. It can also be defined as a physical quantity that varies with time, temperature, pressure or with any independent variables such as speech signal or video signal.</p>
+
+<p>The process of operation in which the characteristics of a signal (Amplitude, shape, phase, frequency, etc.) undergoes a change is known as signal processing.</p>
+
+<p><b>Note</b> &minus; Any unwanted signal interfering with the main signal is termed as noise. So, noise is also a signal but unwanted.</p>
+
+<p>According to their representation and processing, signals can be classified into various categories details of which are discussed below.</p>
+
+<h2>Continuous Time Signals</h2>
+
+<p>Continuous-time signals are defined along a continuum of time and are thus, represented by a continuous independent variable. Continuous-time signals are often referred to as analog signals.</p>
+
+<p>This type of signal shows continuity both in amplitude and time. These will have values at each instant of time. Sine and cosine functions are the best example of Continuous time signal.</p>
+
+<p>The signal shown above is an example of continuous time signal because we can get value of signal at each instant of time.</p>
+
+<h2>Discrete Time signals</h2>
+
+<p>The signals, which are defined at discrete times are known as discrete signals. Therefore, every independent variable has distinct value. Thus, they are represented as sequence of numbers.</p>
+
+<p>Although speech and video signals have the privilege to be represented in both continuous and discrete time format; under certain circumstances, they are identical. Amplitudes also show discrete characteristics. Perfect example of this is a digital signal; whose amplitude and time both are discrete.</p>
+
+<p>The figure above depicts a discrete signal’s discrete amplitude characteristic over a period of time. Mathematically, these types of signals can be formularized as;</p>
+
+<p>Where, <i>n</i> is an integer.</p>
+
+<p>It is a sequence of numbers x, where n<sup>th</sup> number in the sequence is represented as x[n].</p>
+
+<h1>Digital Signal Processing - Basic CT Signals</h1>
+
+<p>To test a system, generally, standard or basic signals are used. These signals are the basic building blocks for many complex signals. Hence, they play a very important role in the study of signals and systems.</p>
+
+<h2>Unit Impulse or Delta Function</h2>
+
+<p>A signal, which satisfies the condition, $\delta(t) = \lim_{\epsilon \to \infty} x(t)$ is known as unit impulse signal. This signal tends to infinity when t = 0 and tends to zero when t &ne; 0 such that the area under its curve is always equals to one. The delta function has zero amplitude everywhere excunit_impulse.jpgept at t = 0.</p>
+
+<h3>Properties of Unit Impulse Signal</h3>
+
+<h2>Unit Step Signal</h2>
+
+<p>A signal, which satisfies the following two conditions &minus;</p>
+
+<p>is known as a unit step signal.</p>
+
+<p>It has the property of showing discontinuity at t = 0. At the point of discontinuity, the signal value is given by the average of signal value. This signal has been taken just before and after the point of discontinuity (according to Gibb’s Phenomena).</p>
+
+<p>If we add a step signal to another step signal that is time scaled, then the result will be unity. It is a power type signal and the value of power is 0.5. The RMS (Root mean square) value is 0.707 and its average value is also 0.5</p>
+
+<h2>Ramp Signal</h2>
+
+<p>Integration of step signal results in a Ramp signal. It is represented by r(t). Ramp signal also satisfies the condition $r(t) = \int_{-\infty}^{t} U(t)dt = tU(t)$. It is neither energy nor power (NENP) type signal.</p>
+
+<h2>Parabolic Signal</h2>
+
+<p>Integration of Ramp signal leads to parabolic signal. It is represented by p(t). Parabolic signal also satisfies he condition $p(t) = \int_{-\infty}^{t} r(t)dt = (t^{2}/2)U(t)$ . It is neither energy nor Power (NENP) type signal.</p>
+
+<h2>Signum Function</h2>
+
+<p>This function is represented as</p>
+
+<p>It is a power type signal. Its power value and RMS (Root mean square) values, both are 1. Average value of signum function is zero.</p>
+
+<h2>Sinc Function</h2>
+
+<p>It is also a function of sine and is written as &minus;</p>
+
+<h3>Properties of Sinc function</h3>
+
+<p>It is an energy type signal.</p>
+
+<p>$Sinc(0) = \lim_{t \to 0}\frac{\sin \Pi t}{\Pi t} = 1$</p>
+
+<p>$Sinc(\infty) = \lim_{t \to \infty}\frac{\sin \Pi \infty}{\Pi \infty} = 0$ (Range of sin&pi;&infin; varies between -1 to +1 but anything divided by infinity is equal to zero)</p>
+
+<p>If $ \sin c(t) = 0 =>  \sin \Pi t = 0$</p>
+
+<p>$\Rightarrow \Pi t = n\Pi$</p>
+
+<p>$\Rightarrow t = n (n \neq  0)$</p>
+
+<h2>Sinusoidal Signal</h2>
+
+<p>A signal, which is continuous in nature is known as continuous signal. General format of a sinusoidal signal is</p>
+
+<p>Here,</p>
+
+<p>The tendency of this signal is to repeat itself after certain period of time, thus is called periodic signal. The time period of signal is given as;</p>
+
+<p>The diagrammatic view of sinusoidal signal is shown below.</p>
+
+<h2>Rectangular Function</h2>
+
+<p>A signal is said to be rectangular function type if it satisfies the following condition &minus;</p>
+
+<p>Being symmetrical about Y-axis, this signal is termed as even signal.</p>
+
+<h2>Triangular Pulse Signal</h2>
+
+<p>Any signal, which satisfies the following condition, is known as triangular signal.</p>
+
+<p>This signal is symmetrical about Y-axis. Hence, it is also termed as even signal.</p>
+
+<h1>Digital Signal Processing - Basic DT Signals</h1>
+
+<p>We have seen that how the basic signals can be represented in Continuous time domain. Let us see how the basic signals can be represented in Discrete Time Domain.</p>
+
+<h2>Unit Impulse Sequence</h2>
+
+<p>It is denoted as &delta;(n) in discrete time domain and can be defined as;</p>
+
+<h2>Unit Step Signal</h2>
+
+<p>Discrete time unit step signal is defined as;</p>
+
+<p>The figure above shows the graphical representation of a discrete step function.</p>
+
+<h2>Unit Ramp Function</h2>
+
+<p>A discrete unit ramp function can be defined as &minus;</p>
+
+<p>The figure given above shows the graphical representation of a discrete ramp signal.</p>
+
+<h2>Parabolic Function</h2>
+
+<p>Discrete unit parabolic function is denoted as p(n) and can be defined as;</p>
+
+<p>In terms of unit step function it can be written as;</p>
+
+<p>The figure given above shows the graphical representation of a parabolic sequence.</p>
+
+<h2>Sinusoidal Signal</h2>
+
+<p>All continuous-time signals are periodic. The discrete-time sinusoidal sequences may or may not be periodic. They depend on the value of &omega;. For a discrete time signal to be periodic, the angular frequency &omega; must be a rational multiple of 2&pi;.</p>
+
+<p>A discrete sinusoidal signal is shown in the figure above.</p>
+
+<p>Discrete form of a sinusoidal signal can be represented in the format &minus;</p>
+
+<p>Here A,&omega; and &phi; have their usual meaning and n is the integer. Time period of the discrete sinusoidal signal is given by &minus;</p>
+
+<p>Where, N and m are integers.</p>
+
+<h1>DSP - Classification of CT Signals</h1>
+
+<p>Continuous time signals can be classified according to different conditions or operations performed on the signals.</p>
+
+<h2>Even and Odd Signals</h2>
+
+<h3>Even Signal</h3>
+
+<p>A signal is said to be even if it satisfies the following condition;</p>
+
+<p>Time reversal of the signal does not imply any change on amplitude here. For example, consider the triangular wave shown below.</p>
+
+<p>The triangular signal is an even signal. Since, it is symmetrical about Y-axis. We can say it is mirror image about Y-axis.</p>
+
+<p>Consider another signal as shown in the figure below.</p>
+
+<p>We can see that the above signal is even as it is symmetrical about Y-axis.</p>
+
+<h3>Odd Signal</h3>
+
+<p>A signal is said to be odd, if it satisfies the following condition</p>
+
+<p>Here, both the time reversal and amplitude change takes place simultaneously.</p>
+
+<p>In the figure above, we can see a step signal x(t). To test whether it is an odd signal or not, first we do the time reversal i.e. x(-t) and the result is as shown in the figure. Then we reverse the amplitude of the resultant signal i.e. –x(-t) and we get the result as shown in figure.</p>
+
+<p>If we compare the first and the third waveform, we can see that they are same, i.e. x(t)= -x(-t), which satisfies our criteria. Therefore, the above signal is an Odd signal.</p>
+
+<p>Some important results related to even and odd signals are given below.</p>
+
+<h3>Representation of any signal into even or odd form</h3>
+
+<p>Some signals cannot be directly classified into even or odd type. These are represented as a combination of both even and odd signal.</p>
+
+<p>Where x<sub>e</sub>(t) represents the even signal and x<sub>o</sub>(t) represents the odd signal</p>
+
+<p>And</p>
+
+<h3>Example</h3>
+
+<p>Find the even and odd parts of the signal $x(n) = t+t^{2}+t^{3}$</p>
+
+<p><b>Solution</b> &minus; From reversing x(n), we get</p>
+
+<p>Now, according to formula, the even part</p>
+
+<p>Similarly, according to formula the odd part is</p>
+
+<h2>Periodic and Non-Periodic Signals</h2>
+
+<h3>Periodic Signals</h3>
+
+<p>Periodic signal repeats itself after certain interval of time. We can show this in equation form as &minus;</p>
+
+<p>Where, n = an integer (1,2,3……)</p>
+
+<p>T = Fundamental time period (FTP) &ne; 0 and &ne;&infin;</p>
+
+<p>Fundamental time period (FTP) is the smallest positive and fixed value of time for which signal is periodic.</p>
+
+<p>A triangular signal is shown in the figure above of amplitude A. Here, the signal is repeating after every 1 sec. Therefore, we can say that the signal is periodic and its FTP is 1 sec.</p>
+
+<h3>Non-Periodic Signal</h3>
+
+<p>Simply, we can say, the signals, which are not periodic are non-periodic in nature. As obvious, these signals will not repeat themselves after any interval time.</p>
+
+<p>Non-periodic signals do not follow a certain format; therefore, no particular mathematical equation can describe them.</p>
+
+<h2>Energy and Power Signals</h2>
+
+<p>A signal is said to be an Energy signal, if and only if, the total energy contained is finite and nonzero (0&lt;E&lt;&infin;). Therefore, for any energy type signal, the total normalized signal is finite and non-zero.</p>
+
+<p>A sinusoidal AC current signal is a perfect example of Energy type signal because it is in positive half cycle in one case and then is negative in the next half cycle. Therefore, its average power becomes zero.</p>
+
+<p>A lossless capacitor is also a perfect example of Energy type signal because when it is connected to a source it charges up to its optimum level and when the source is removed, it dissipates that equal amount of energy through a load and makes its average power to zero.</p>
+
+<p>For any finite signal x(t) the energy can be symbolized as E and is written as;</p>
+
+<p>Spectral density of energy type signals gives the amount of energy distributed at various frequency levels.</p>
+
+<h3>Power type Signals</h3>
+
+<p>A signal is said to be power type signal, if and only if, normalized average power is finite and non-zero i.e. (0&lt;p&lt;&infin;). For power type signal, normalized average power is finite and non-zero. Almost all the periodic signals are power signals and their average power is finite and non-zero.</p>
+
+<p>In mathematical form, the power of a signal x(t) can be written as;</p>
+
+<h3>Difference between Energy and Power Signals</h3>
+
+<p>The following table summarizes the differences of Energy and Power Signals.</p>
+
+<p>Mathematically,</p>
+
+<p>Mathematically,</p>
+
+<p>$$E = \int_{-\infty}^{+\infty} x^{2}(t)dt$$</p>
+
+<h2>Solved Examples</h2>
+
+<p><b>Example 1</b> &minus; Find the Power of a signal $z(t) = 2\cos(3\Pi t+30^{o})+4\sin(3\Pi +30^{o})$</p>
+
+<p><b>Solution</b> &minus; The above two signals are orthogonal to each other because their frequency terms are identical to each other also they have same phase difference. So, total power will be the summation of individual powers.</p>
+
+<p>Let $z(t) = x(t)+y(t)$</p>
+
+<p>Where $x(t) = 2\cos (3\Pi t+30^{o})$ and $y(t) = 4\sin(3\Pi +30^{o})$</p>
+
+<p>Therefore, <span  style="padding-left:3%">$P(z) = p(x)+p(y) = 2+8 = 10$</span><span  style="padding-left:35%">…Ans.</span></p>
+
+<p><b>Example 2</b> &minus; Test whether the signal given $x(t) = t^{2}+j\sin t$ is conjugate or not?</p>
+
+<p><b>Solution</b> &minus; Here, the real part being t<sup>2</sup> is even and odd part (imaginary) being $\sin t$ is odd. So the above signal is Conjugate signal.</p>
+
+<p><b>Example 3</b> &minus; Verify whether $X(t)= \sin \omega t$ is an odd signal or an even signal.</p>
+
+<p><b>Solution</b> &minus; Given $X(t) = \sin \omega t$</p>
+
+<p>By time reversal, we will get $\sin (-\omega t)$</p>
+
+<p>But we know that $\sin(-\phi) = -\sin \phi$.</p>
+
+<p>Therefore,</p>
+
+<p>This is satisfying the condition for a signal to be odd. Therefore, $\sin \omega t$ is an odd signal.</p>
+
+<h1>DSP - Classification of DT Signals</h1>
+
+<p>Just like Continuous time signals, Discrete time signals can be classified according to the conditions or operations on the signals.</p>
+
+<h2>Even and Odd Signals</h2>
+
+<h3>Even Signal</h3>
+
+<p>A signal is said to be even or symmetric if it satisfies the following condition;</p>
+
+<p>Here, we can see that x(-1) = x(1), x(-2) = x(2) and x(-n) = x(n). Thus, it is an even signal.</p>
+
+<h3>Odd Signal</h3>
+
+<p>A signal is said to be odd if it satisfies the following condition;</p>
+
+<p>From the figure, we can see that x(1) = -x(-1), x(2) = -x(2) and x(n) = -x(-n). Hence, it is an odd as well as anti-symmetric signal.</p>
+
+<h2>Periodic and Non-Periodic Signals</h2>
+
+<p>A discrete time signal is periodic if and only if, it satisfies the following condition &minus;</p>
+
+<p>Here, x(n) signal repeats itself after N period. This can be best understood by considering a cosine signal &minus;</p>
+
+<p>For the signal to become periodic, following condition should be satisfied;</p>
+
+<p>i.e. $2\pi f_{0}N$ is an integral multiple of $2\pi$</p>
+
+<p>Frequencies of discrete sinusoidal signals are separated by integral multiple of $2\pi$.</p>
+
+<h2>Energy and Power Signals</h2>
+
+<h3>Energy Signal</h3>
+
+<p>Energy of a discrete time signal is denoted as E. Mathematically, it can be written as;</p>
+
+<p>If each individual values of $x(n)$ are squared and added, we get the energy signal. Here $x(n)$ is the energy signal and its energy is finite over time i.e $0< E< \infty$</p>
+
+<h3>Power Signal</h3>
+
+<p>Average power of a discrete signal is represented as P. Mathematically, this can be written as;</p>
+
+<p>Here, power is finite i.e. 0&lt;P&lt;&infin;. However, there are some signals, which belong to neither energy nor power type signal.</p>
+
+<h1>DSP - Miscellaneous Signals</h1>
+
+<p>There are other signals, which are a result of operation performed on them. Some common type of signals are discussed below.</p>
+
+<h2>Conjugate Signals</h2>
+
+<p>Signals, which satisfies the condition $x(t) = x*(-t)$ are called conjugate signals.</p>
+
+<p>Let $x(t) = a(t)+jb(t)$<span style="padding-left:47%">...eqn. 1</span></p>
+
+<p>So, <span style="padding-left:25%">$x(-t) = a(-t)+jb(-t)$</span></p>
+
+<p>And <span style="padding-left:21%">$x*(-t) = a(-t)-jb(-t)$</span><span style="padding-left:6%">...eqn. 2</span></p>
+
+<p>By Condition, <span style="padding-left:15%">$x(t) = x*(-t)$</span></p>
+
+<p>If we compare both the derived equations 1 and 2, we can see that the real part is even, whereas the imaginary part is odd. This is the condition for a signal to be a conjugate type.</p>
+
+<h2>Conjugate Anti-Symmetric Signals</h2>
+
+<p>Signals, which satisfy the condition $x(t) = -x*(-t)$ are called conjugate anti-symmetric signal</p>
+
+<p>Let <span style="padding-left:17%">$x(t) = a(t)+jb(t)$</span><span style="padding-left:25%">...eqn. 1</span></p>
+
+<p>So <span style="padding-left:18%">$x(-t) = a(-t)+jb(-t)$</span></p>
+
+<p>And <span style="padding-left:16%">$x*(-t) = a(-t)-jb(-t)$</span></p>
+
+<p>By Condition <span style="padding-left:6%">$x(t) = -x*(-t)$</span></p>
+
+<p>Now, again compare, both the equations just as we did for conjugate signals. Here, we will find that the real part is odd and the imaginary part is even. This is the condition for a signal to become conjugate anti-symmetric type.</p>
+
+<h3>Example</h3>
+
+<p>Let the signal given be $x(t) = \sin t+jt^{2}$.</p>
+
+<p>Here, the real part being $\sin t$ is odd and the imaginary part being $t^2$ is even. So, this signal can be classified as conjugate anti-symmetric signal.</p>
+
+<p>Any function can be divided into two parts. One part being Conjugate symmetry and other part being conjugate anti-symmetric. So any signal x(t) can be written as</p>
+
+<p>Where $xcs(t)$ is conjugate symmetric signal and $xcas(t)$ is conjugate anti symmetric signal</p>
+
+<p>And</p>
+
+<h2>Half Wave Symmetric Signals</h2>
+
+<p>When a signal satisfies the condition $cx(t) = -x(t\pm (\frac{T_{0}}{2}))$, it is called half wave symmetric signal. Here, amplitude reversal and time shifting of the signal takes place by half time. For half wave symmetric signal, average value will be zero but this is not the case when the situation is reversed.</p>
+
+<p>Consider a signal x(t) as shown in figure A above. The first step is to time shift the signal and make it $x[t-(\frac{T}{2})]$. So, the new signal is changed as shown in figure B. Next, we reverse the amplitude of the signal, i.e. make it $-x[t-(\frac{T}{2})]$ as shown in figure C. Since, this signal repeats itself after half-time shifting and reversal of amplitude, it is a half wave symmetric signal.</p>
+
+<h2>Orthogonal Signal</h2>
+
+<p>Two signals x(t) and y(t) are said to be orthogonal if they satisfy the following two conditions.</p>
+
+<p><b>Condition 1</b> &minus; $\int_{-\infty}^{\infty}x(t)y(t) = 0$ [for non-periodic signal]</p>
+
+<p><b>Condition 2</b> &minus; $\int x(t)y(t) = 0$ [For periodic Signal]</p>
+
+<p>The signals, which contain odd harmonics (3<sup>rd</sup>, 5<sup>th</sup>, 7<sup>th</sup> ...etc.) and have different frequencies, are mutually orthogonal to each other.</p>
+
+<p>In trigonometric type signals, sine functions and cosine functions are also orthogonal to each other; provided, they have same frequency and are in same phase. In the same manner DC (Direct current signals) and sinusoidal signals are also orthogonal to each other. If x(t) and y(t) are two orthogonal signals and $z(t) = x(t)+y(t)$ then the power and energy of z(t) can be written as ;</p>
+
+<h3>Example</h3>
+
+<p>Analyze the signal: $z(t) = 3+4\sin(2\pi t+30^0)$</p>
+
+<p>Here, the signal comprises of a DC signal (3) and one sine function. So, by property this signal is an orthogonal signal and the two sub-signals in it are mutually orthogonal to each other.</p>
+
+<h1>DSP - Operations on Signals Shifting</h1>
+
+<p>Shifting means movement of the signal, either in time domain (around Y-axis) or in amplitude domain (around X-axis). Accordingly, we can classify the shifting into two categories named as Time shifting and Amplitude shifting, these are subsequently discussed below.</p>
+
+<h2>Time Shifting</h2>
+
+<p>Time shifting means, shifting of signals in the time domain. Mathematically, it can be written as</p>
+
+<p>This K value may be positive or it may be negative. According to the sign of k value, we have two types of shifting named as Right shifting and Left shifting.</p>
+
+<h3>Case 1 (K &gt; 0)</h3>
+
+<p>When K is greater than zero, the shifting of the signal takes place towards "left" in the time domain. Therefore, this type of shifting is known as Left Shifting of the signal.</p>
+
+<p><b>Example</b></p>
+
+<h3>Case 2 (K &lt; 0)</h3>
+
+<p>When K is less than zero the shifting of signal takes place towards right in the time domain. Therefore, this type of shifting is known as Right shifting.</p>
+
+<p><b>Example</b></p>
+
+<p>The figure given below shows right shifting of a signal by 2.</p>
+
+<h2>Amplitude Shifting</h2>
+
+<p>Amplitude shifting means shifting of signal in the amplitude domain (around X-axis). Mathematically, it can be represented as &minus;</p>
+
+<p>This K value may be positive or negative. Accordingly, we have two types of amplitude shifting which are subsequently discussed below.</p>
+
+<h3>Case 1 (K &gt; 0)</h3>
+
+<p>When K is greater than zero, the shifting of signal takes place towards up in the x-axis. Therefore, this type of shifting is known as upward shifting.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t) which is given as;</p>
+
+<p>Let we have taken K=+1 so new signal can be written as &minus;</p>
+
+<h3>Case 2 (K &lt; 0)</h3>
+
+<p>When K is less than zero shifting of signal takes place towards downward in the X- axis. Therefore, it is called downward shifting of the signal.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t) which is given as;</p>
+
+<p>Let we have taken K = -1 so new signal can be written as;</p>
+
+<p>$y(t)\rightarrow x(t)-1$ So, y(t) can finally be written as;</p>
+
+<h1>DSP - Operations on Signals Scaling</h1>
+
+<p>Scaling of a signal means, a constant is multiplied with the time or amplitude of the signal.</p>
+
+<h2>Time Scaling</h2>
+
+<p>If a constant is multiplied to the time axis then it is known as Time scaling. This can be mathematically represented as;</p>
+
+<p>So the y-axis being same, the x- axis magnitude decreases or increases according to the sign of the constant (whether positive or negative). Therefore, scaling can also be divided into two categories as discussed below.</p>
+
+<h3>Time Compression</h3>
+
+<p>Whenever alpha is greater than zero, the signal’s amplitude gets divided by alpha whereas the value of the Y-axis remains the same. This is known as Time Compression.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a signal x(t), which is shown as in figure below. Let us take the value of alpha as 2. So, y(t) will be x(2t), which is illustrated in the given figure.</p>
+
+<p>Clearly, we can see from the above figures that the time magnitude in y-axis remains the same but the amplitude in x-axis reduces from 4 to 2. Therefore, it is a case of Time Compression.</p>
+
+<h3>Time Expansion</h3>
+
+<p>When the time is divided by the constant alpha, the Y-axis magnitude of the signal get multiplied alpha times, keeping X-axis magnitude as it is. Therefore, this is called Time expansion type signal.</p>
+
+<p><b>Example</b></p>
+
+<p>Let us consider a square signal x(t), of magnitude 1. When we time scaled it by a constant 3, such that $x(t) \rightarrow y(t) \rightarrow x(\frac{t}{3})$, then the signal’s amplitude gets modified by 3 times which is shown in the figure below.</p>
+
+<h2>Amplitude Scaling</h2>
+
+<p>Multiplication of a constant with the amplitude of the signal causes amplitude scaling. Depending upon the sign of the constant, it may be either amplitude scaling or attenuation. Let us consider a square wave signal x(t) = &Pi;(t/4).</p>
+
+<p>Suppose we define another function y(t) = 2 &Pi;(t/4). In this case, value of y-axis will be doubled, keeping the time axis value as it is. The is illustrated in the figure given below.</p>
+
+<p>Consider another square wave function defined as z(t) where z(t) = 0.5 &Pi;(t/4). Here, amplitude of the function z(t) will be half of that of x(t) i.e. time axis remaining same, amplitude axis will be halved. This is illustrated by the figure given below.</p>
+
+<h1>DSP - Operations on Signals Reversal</h1>
+
+<p>Whenever the time in a signal gets multiplied by -1, the signal gets reversed. It produces its mirror image about Y or X-axis. This is known as Reversal of the signal.</p>
+
+<p>Reversal can be classified into two types based on the condition whether the time or the amplitude of the signal is multiplied by -1.</p>
+
+<h2>Time Reversal</h2>
+
+<p>Whenever signal’s time is multiplied by -1, it is known as time reversal of the signal. In this case, the signal produces its mirror image about Y-axis. Mathematically, this can be written as;</p>
+
+<p>This can be best understood by the following example.</p>
+
+<p>In the above example, we can clearly see that the signal has been reversed about its Y-axis. So, it is one kind of time scaling also, but here the scaling quantity is (-1) always.</p>
+
+<h2>Amplitude Reversal</h2>
+
+<p>Whenever the amplitude of a signal is multiplied by -1, then it is known as amplitude reversal. In this case, the signal produces its mirror image about X-axis. Mathematically, this can be written as;</p>
+
+<p>Consider the following example. Amplitude reversal can be seen clearly.</p>
+
+<h1>DSP - Operations on Signals Differentiation</h1>
+
+<p>Two very important operations performed on the signals are Differentiation and Integration.</p>
+
+<h2>Differentiation</h2>
+
+<p>Differentiation of any signal x(t) means slope representation of that signal with respect to time. Mathematically, it is represented as;</p>
+
+<p>In the case of OPAMP differentiation, this methodology is very helpful. We can easily differentiate a signal graphically rather than using the formula. However, the condition is that the signal must be either rectangular or triangular type, which happens in most cases.</p>
+
+<p>The above table illustrates the condition of the signal after being differentiated. For example, a ramp signal converts into a step signal after differentiation. Similarly, a unit step signal becomes an impulse signal.</p>
+
+<h3>Example</h3>
+
+<p>Let the signal given to us be $x(t) = 4[r(t)-r(t-2)]$. When this signal is plotted, it will look like the one on the left side of the figure given below. Now, our aim is to differentiate the given signal.</p>
+
+<p>To start with, we will start differentiating the given equation. We know that the ramp signal after differentiation gives unit step signal.</p>
+
+<p>So our resulting signal y(t) can be written as;</p>
+
+<p>Now this signal is plotted finally, which is shown in the right hand side of the above figure.</p>
+
+<h1>DSP - Operations on Signals Integration</h1>
+
+<p>Integration of any signal means the summation of that signal under particular time domain to get a modified signal. Mathematically, this can be represented as &minus;</p>
+
+<p>Here also, in most of the cases we can do mathematical integration and find the resulted signal but direct integration in quick succession is possible for signals which are depicted in rectangular format graphically. Like differentiation, here also, we will refer a table to get the result quickly.</p>
+
+<h3>Example</h3>
+
+<p>Let us consider a signal $x(t) = u(t)-u(t-3)$. It is shown in Fig-1 below. Clearly, we can see that it is a step signal. Now we will integrate it. Referring to the table, we know that integration of step signal yields ramp signal.</p>
+
+<p>However, we will calculate it mathematically,</p>
+
+<p>The same is plotted as shown in fig-2,</p>
+
+<h1>DSP - Operations on Signals Convolution</h1>
+
+<p>The convolution of two signals in the time domain is equivalent to the multiplication of their representation in frequency domain. Mathematically, we can write the convolution of two signals as</p>
+
+<h2>Steps for convolution</h2>
+
+<h3>Example</h3>
+
+<p>Let us do the convolution of a step signal u(t) with its own kind.</p>
+
+<p>Now this t can be greater than or less than zero, which are shown in below figures</p>
+
+<p>So, with the above case, the result arises with following possibilities</p>
+
+<h2>Properties of Convolution</h2>
+
+<h3>Commutative</h3>
+
+<p>It states that order of convolution does not matter, which can be shown mathematically as</p>
+
+<h3>Associative</h3>
+
+<p>It states that order of convolution involving three signals, can be anything. Mathematically, it can be shown as;</p>
+
+<h3>Distributive</h3>
+
+<p>Two signals can be added first, and then their convolution can be made to the third signal. This is equivalent to convolution of two signals individually with the third signal and added finally. Mathematically, this can be written as;</p>
+
+<h3>Area</h3>
+
+<p>If a signal is the result of convolution of two signals then the area of the signal is the multiplication of those individual signals. Mathematically this can be written</p>
+
+<p>If <span style="padding-left:10%">$y(t) = x_{1}*x_{2}(t)$</span></p>
+
+<p>Then, <span style="padding-left:6%">Area of y(t) = Area of x<sub>1</sub>(t) X Area of x<sub>2</sub>(t)</span></p>
+
+<h3>Scaling</h3>
+
+<p>If two signals are scaled to some unknown constant “a” and convolution is done then resultant signal will also be convoluted to same constant “a” and will be divided by that quantity as shown below.</p>
+
+<p>If, <span style="padding-left:20%">$x_{1}(t)*x_{2}(t) = y(t)$</span></p>
+
+<p>Then, <span style="padding-left:16%">$x_{1}(at)*x_{2}(at) = \frac{y(at)}{a}, a \ne 0$</span></p>
+
+<h3>Delay</h3>
+
+<p>Suppose a signal y(t) is a result from the convolution of two signals x1(t) and x2(t). If the two signals are delayed by time t1 and t2 respectively, then the resultant signal y(t) will be delayed by (t1+t2). Mathematically, it can be written as &minus;</p>
+
+<p>If, <span style="padding-left:20%">$x_{1}(t)*x_{2}(t) = y(t)$</span></p>
+
+<p>Then, <span style="padding-left:16%">$x_{1}(t-t_{1})*x_{2}(t-t_{2}) = y[t-(t_{1}+t_{2})]$</span></p>
+
+<h2>Solved Examples</h2>
+
+<p><b>Example 1</b> &minus; Find the convolution of the signals u(t-1) and u(t-2).</p>
+
+<p><b>Solution</b> &minus; Given signals are u(t-1) and u(t-2). Their convolution can be done as shown below &minus;</p>
+
+<p><b>Example 2</b> &minus; Find the convolution of two signals given by</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>Similarly, <span style="padding-left:4%">$x_{2}(z) = 2+2Z^{-1}+2Z^{-2}+2Z^{-3}+2Z^{-4}$</span></p>
+
+<p>Resultant signal,</p>
+
+<p>Taking inverse Z-transformation of the above, we will get the resultant signal as</p>
+
+<p><b>Example 3</b> &minus; Determine the convolution of following 2 signals &minus;</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>Taking the Z-transformation of the signals, we get,</p>
+
+<p>And <span  style="padding-left:8.5%">$h(n) = 1+2Z^{-1}+3Z^{-2}+Z^{-3}$</span></p>
+
+<p>Now convolution of two signal means multiplication of their Z-transformations</p>
+
+<p>That is <span  style="padding-left:8.5%">$Y(Z) = X(Z) \times h(Z)$</span></p>
+
+<p>Taking the inverse Z-transformation, the resultant signal can be written as;</p>
+
+<h1>Digital Signal Processing - Static Systems</h1>
+
+<p>Some systems have feedback and some do not. Those, which do not have feedback systems, their output depends only upon the present values of the input. Past value of the data is not present at that time. These types of systems are known as static systems. It does not depend upon future values too.</p>
+
+<p>Since these systems do not have any past record, so they do not have any memory also. Therefore, we say all static systems are memory-less systems. Let us take an example to understand this concept much better.</p>
+
+<h2>Example</h2>
+
+<p>Let us verify whether the following systems are static systems or not.</p>
+
+<h3>a) $y(t) = x(t)+x(t-1)$</h3>
+
+<p>Here, x(t) is the present value. It has no relation with the past values of the time. So, it is a static system. However, in case of x(t-1), if we put t = 0, it will reduce to x(-1) which is a past value dependent. So, it is not static. Therefore here y(t) is not a static system.</p>
+
+<h3>b) $y(t) = x(2t)$</h3>
+
+<p>If we substitute t = 2, the result will be y(t) = x(4). Again, it is future value dependent. So, it is also not a static system.</p>
+
+<h3>c) $y(t) = x = \sin [x(t)]$</h3>
+
+<p>In this expression, we are dealing with sine function. The range of sine function lies within -1 to +1. So, whatever the values we substitute for x(t), we will get in between -1 to +1. Therefore, we can say it is not dependent upon any past or future values. Hence, it is a static system.</p>
+
+<p>From the above examples, we can draw the following conclusions &minus;</p>
+
+<h1>Digital Signal Processing - Dynamic Systems</h1>
+
+<p>If a system depends upon the past and future value of the signal at any instant of the time then it is known as dynamic system. Unlike static systems, these are not memory less systems. They store past and future values. Therefore, they require some memory. Let us understand this theory better through some examples.</p>
+
+<h2>Examples</h2>
+
+<p>Find out whether the following systems are dynamic.</p>
+
+<p><b>a) $y(t) = x(t+1)$</b></p>
+
+<p>In this case if we put t = 1 in the equation, it will be converted to x(2), which is a future dependent value. Because here we are giving input as 1 but it is showing value for x(2). As it is a future dependent signal, so clearly it is a dynamic system.</p>
+
+<p><b>b) $y(t) = Real[x(t)]$</b></p>
+
+<p>In this case, whatever the value we will put it will show that time real value signal. It has no dependency on future or past values. Therefore, it is not a dynamic system rather it is a static system.</p>
+
+<p><b>c) $y(t) = Even[x(t)]$</b></p>
+
+<p>Here, if we will substitute t = 1, one signal shows x(1) and another will show x(-1) which is a past value. Similarly, if we will put t = -1 then one signal will show x(-1) and another will show x(1) which is a future value. Therefore, clearly it is a case of Dynamic system.</p>
+
+<p><b>d) $y(t) = \cos [x(t)]$</b></p>
+
+<p>In this case, as the system is cosine function it has a certain domain of values which lies between -1 to +1. Therefore, whatever values we will put we will get the result within specified limit. Therefore, it is a static system</p>
+
+<p>From the above examples, we can draw the following conclusions &minus;</p>
+
+<h1>Digital Signal Processing - Causal Systems</h1>
+
+<p>Previously, we saw that the system needs to be independent from the future and past values to become static. In this case, the condition is almost same with little modification. Here, for the system to be causal, it should be independent from the future values only. That means past dependency will cause no problem for the system from becoming causal.</p>
+
+<p>Causal systems are practically or physically realizable system. Let us consider some examples to understand this much better.</p>
+
+<h2>Examples</h2>
+
+<p>Let us consider the following signals.</p>
+
+<p><b>a) $y(t) = x(t)$</b></p>
+
+<p>Here, the signal is only dependent on the present values of x. For example if we substitute t = 3, the result will show for that instant of time only. Therefore, as it has no dependence on future value, we can call it a Causal system.</p>
+
+<p><b>b) $y(t) = x(t-1)$</b></p>
+
+<p>Here, the system depends on past values. For instance if we substitute t = 3, the expression will reduce to x(2), which is a past value against our input. At no instance, it depends upon future values. Therefore, this system is also a causal system.</p>
+
+<p><b>c) $y(t) = x(t)+x(t+1)$</b></p>
+
+<p>In this case, the system has two parts. The part x(t), as we have discussed earlier, depends only upon the present values. So, there is no issue with it. However, if we take the case of x(t+1), it clearly depends on the future values because if we put t = 1, the expression will reduce to x(2) which is future value. Therefore, it is not causal.</p>
+
+<h1>DSP - Non-Causal Systems</h1>
+
+<p>A non-causal system is just opposite to that of causal system. If a system depends upon the future values of the input at any instant of the time then the system is said to be non-causal system.</p>
+
+<h2>Examples</h2>
+
+<p>Let us take some examples and try to understand this in a better way.</p>
+
+<p><b>a) $y(t) = x(t+1)$</b></p>
+
+<p>We have already discussed this system in causal system too. For any input, it will reduce the system to its future value. For instance, if we put t = 2, it will reduce to x(3), which is a future value. Therefore, the system is Non-Causal.</p>
+
+<p><b>b) $y(t) = x(t)+x(t+2)$</b></p>
+
+<p>In this case, x(t) is purely a present value dependent function. We have already discussed that x(t+2) function is future dependent because for t = 3 it will give values for x(5). Therefore, it is Non-causal.</p>
+
+<p><b>c) $y(t) = x(t-1)+x(t)$</b></p>
+
+<p>In this system, it depends upon the present and past values of the given input. Whatever values we substitute, it will never show any future dependency. Clearly, it is not a non-causal system; rather it is a Causal system.</p>
+
+<h1>DSP - Anti-Causal Systems</h1>
+
+<p>An anti-causal system is just a little bit modified version of a non-causal system. The system depends upon the future values of the input only. It has no dependency either on present or on the past values.</p>
+
+<h2>Examples</h2>
+
+<p>Find out whether the following systems are anti-causal.</p>
+
+<p><b>a) $y(t) = x(t)+x(t-1)$</b></p>
+
+<p>The system has two sub-functions. One sub function x(t+1) depends on the future value of the input but another sub-function x(t) depends only on the future. As the system is dependent on the present value also in addition to future value, this system is not anti-causal.</p>
+
+<p><b>b) $y(t) = x(t+3)$</b></p>
+
+<p>If we analyze the above system, we can see that the system depends only on the future values of the system i.e. if we put t = 0, it will reduce to x(3), which is a future value. This system is a perfect example of anti-causal system.</p>
+
+<h1>Digital Signal Processing - Linear Systems</h1>
+
+<p>A linear system follows the laws of superposition. This law is necessary and sufficient condition to prove the linearity of the system. Apart from this, the system is a combination of two types of laws &minus;</p>
+
+<p>Both, the law of homogeneity and the law of additivity are shown in the above figures. However, there are some other conditions to check whether the system is linear or not.</p>
+
+<p><b>The conditions are</b> &minus;</p>
+
+<p>Examples of non-linear operators &minus;</p>
+
+<p>(a) Trigonometric operators- Sin, Cos, Tan, Cot, Sec, Cosec etc.</p>
+
+<p>(b) Exponential, logarithmic, modulus, square, Cube etc.</p>
+
+<p>(c) sa(i/p) , Sinc (i/p) , Sqn (i/p) etc.</p>
+
+<p>Either input x or output y should not have these non-linear operators.</p>
+
+<h2>Examples</h2>
+
+<p>Let us find out whether the following systems are linear.</p>
+
+<p><b>a) $y(t) = x(t)+3$</b></p>
+
+<p>This system is not a linear system because it violates the first condition. If we put input as zero, making x(t) = 0, then the output is not zero.</p>
+
+<p><b>b) $y(t) = \sin tx(t)$</b></p>
+
+<p>In this system, if we give input as zero, the output will become zero. Hence, the first condition is clearly satisfied. Again, there is no non-linear operator that has been applied on x(t). Hence, second condition is also satisfied. Therefore, the system is a linear system.</p>
+
+<p><b>c) $y(t) = \sin (x(t))$</b></p>
+
+<p>In the above system, first condition is satisfied because if we put x(t) = 0, the output will also be sin(0) = 0. However, the second condition is not satisfied, as there is a non-linear operator which operates x(t). Hence, the system is not linear.</p>
+
+<h1>DSP - Non-Linear Systems</h1>
+
+<p>If we want to define this system, we can say that the systems, which are not linear are non-linear systems. Clearly, all the conditions, which are being violated in the linear systems, should be satisfied in this case.</p>
+
+<h2>Conditions</h2>
+
+<p>The output should not be zero when input applied is zero.</p>
+
+<p>Any non-linear operator can be applied on the either input or on the output to make the system non-linear.</p>
+
+<h3>Examples</h3>
+
+<p>To find out whether the given systems are linear or non-linear.</p>
+
+<p><b>a) $y(t) = e^{x(t)}$</b></p>
+
+<p>In the above system, the first condition is satisfied because if we make the input zero, the output is 1. In addition, exponential non-linear operator is applied to the input. Clearly, it is a case of Non-Linear system.</p>
+
+<p><b>b) $y(t) = x(t+1)+x(t-1)$</b></p>
+
+<p>The above type of system deals with both past and future values. However, if we will make its input zero, then none of its values exists. Therefore, we can say if the input is zero, then the time scaled and time shifted version of input will also be zero, which violates our first condition. Again, there is no non-linear operator present. Therefore, second condition is also violated. Clearly, this system is not a non-linear system; rather it is a linear system.</p>
+
+<h1>DSP - Time-Invariant Systems</h1>
+
+<p>For a time-invariant system, the output and input should be delayed by some time unit. Any delay provided in the input must be reflected in the output for a time invariant system.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(T) = x(2T)$</b></p>
+
+<p>If the above expression, it is first passed through the system and then through the time delay (as shown in the upper part of the figure); then the output will become $x(2T-2t)$. Now, the same expression is passed through a time delay first and then through the system (as shown in the lower part of the figure). The output will become $x(2T-t)$.</p>
+
+<p>Hence, the system is not a time-invariant system.</p>
+
+<p><b>b) $y(T) = \sin [x(T)]$</b></p>
+
+<p>If the signal is first passed through the system and then through the time delay process, the output be $\sin x(T-t)$. Similarly, if the system is passed through the time delay first then through the system then output will be $\sin x(T-t)$. We can see clearly that both the outputs are same. Hence, the system is time invariant.</p>
+
+<h1>DSP - Time-Variant Systems</h1>
+
+<p>For a time variant system, also, output and input should be delayed by some time constant but the delay at the input should not reflect at the output. All time scaling cases are examples of time variant system. Similarly, when coefficient in the system relationship is a function of time, then also, the system is time variant.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = x[\cos T]$</b></p>
+
+<p>If the above signal is first passed through the system and then through the time delay, the output will be $x\cos (T-t)$. If it is passed through the time delay first and then through the system, it will be $x(\cos T-t)$. As the outputs are not same, the system is time variant.</p>
+
+<p><b>b) $y(T) = \cos T.x(T)$</b></p>
+
+<p>If the above expression is first passed through the system and then through the time delay, then the output will be $\cos(T-t)x(T-t)$. However, if the expression is passed through the time delay first and then through the system, the output will be $\cos T.x(T-t)$. As the outputs are not same, clearly the system is time variant.</p>
+
+<h1>Digital Signal Processing - Stable Systems</h1>
+
+<p>A stable system satisfies the BIBO (bounded input for bounded output) condition. Here, bounded means finite in amplitude. For a stable system, output should be bounded or finite, for finite or bounded input, at every instant of time.</p>
+
+<p>Some examples of bounded inputs are functions of sine, cosine, DC, signum and unit step.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = x(t)+10$</b></p>
+
+<p>Here, for a definite bounded input, we can get definite bounded output i.e. if we put $x(t) = 2, y(t) = 12$ which is bounded in nature. Therefore, the system is stable.</p>
+
+<p><b>b) $y(t) = \sin [x(t)]$</b></p>
+
+<p>In the given expression, we know that sine functions have a definite boundary of values, which lies between -1 to +1. So, whatever values we will substitute at x(t), we will get the values within our boundary. Therefore, the system is stable.</p>
+
+<h1>Digital Signal Processing - Unstable Systems</h1>
+
+<p>Unstable systems do not satisfy the BIBO conditions. Therefore, for a bounded input, we cannot expect a bounded output in case of unstable systems.</p>
+
+<h2>Examples</h2>
+
+<p><b>a) $y(t) = tx(t)$</b></p>
+
+<p>Here, for a finite input, we cannot expect a finite output. For example, if we will put $x(t) = 2 \Rightarrow y(t) = 2t$. This is not a finite value because we do not know the value of t. So, it can be ranged from anywhere. Therefore, this system is not stable. It is an unstable system.</p>
+
+<p><b>b) $y(t) = \frac{x(t)}{\sin t}$</b></p>
+
+<p>We have discussed earlier, that the sine function has a definite range from -1 to +1; but here, it is present in the denominator. So, in worst case scenario, if we put t = 0 and sine function becomes zero, then the whole system will tend to infinity. Therefore, this type of system is not at all stable. Obviously, this is an unstable system.</p>
+
+<h1>DSP - System Properties Solved Examples</h1>
+
+<p><b>Example 1</b> &minus; Check whether $y(t) = x*(t)$ is linear or non-linear.</p>
+
+<p><b>Solution</b> &minus; The function represents the conjugate of input. It can be verified by either first law of homogeneity and law of additivity or by the two rules. However, verifying through rules is lot easier, so we will go by that.</p>
+
+<p>If the input to the system is zero, the output also tends to zero. Therefore, our first condition is satisfied. There is no non-linear operator used either at the input nor the output. Therefore, the system is Linear.</p>
+
+<p><b>Example 2</b> &minus; Check whether $y(t)=\begin{cases}x(t+1), &amp; t &gt; 0\\x(t-1), &amp; t\leq 0\end{cases}$ is linear or non linear</p>
+
+<p><b>Solution</b> &minus; Clearly, we can see that when time becomes less than or equal to zero the input becomes zero. So, we can say that at zero input the output is also zero and our first condition is satisfied.</p>
+
+<p>Again, there is no non-linear operator used at the input nor at the output. Therefore, the system is Linear.</p>
+
+<p><b>Example 3</b> &minus; Check whether $y(t) = \sin t.x(t)$ is stable or not.</p>
+
+<p><b>Solution</b> &minus; Suppose, we have taken the value of x(t) as 3. Here, sine function has been multiplied with it and maximum and minimum value of sine function varies between -1 to +1.</p>
+
+<p>Therefore, the maximum and minimum value of the whole function will also vary between -3 and +3. Thus, the system is stable because here we are getting a bounded input for a bounded output.</p>
+
+<h1>DSP - Z-Transform Introduction</h1>
+
+<p>Discrete Time Fourier Transform(DTFT) exists for energy and power signals. Z-transform also exists for neither energy nor Power (NENP) type signal, up to a certain extent only. The replacement $z=e^{jw}$ is used for Z-transform to DTFT conversion only for absolutely summable signal.</p>
+
+<p>So, the Z-transform of the discrete time signal x(n) in a power series can be written as &minus;</p>
+
+<p>The above equation represents a two-sided Z-transform equation.</p>
+
+<p>Generally, when a signal is Z-transformed, it can be represented as &minus;</p>
+
+<p>Or <span style="padding-left:35%">$x(n) \longleftrightarrow X(Z)$</span></p>
+
+<p>If it is a continuous time signal, then Z-transforms are not needed because Laplace transformations are used. However, Discrete time signals can be analyzed through Z-transforms only.</p>
+
+<h2>Region of Convergence</h2>
+
+<p>Region of Convergence is the range of complex variable Z in the Z-plane. The Z- transformation of the signal is finite or convergent. So, ROC represents those set of values of Z, for which X(Z) has a finite value.</p>
+
+<h3>Properties of ROC</h3>
+
+<p>The Z-transform is uniquely characterized by &minus;</p>
+
+<h2>Signals and their ROC</h2>
+
+<h3>Example</h3>
+
+<p>Let us find the Z-transform and the ROC of a signal given as $x(n) = \lbrace 7,3,4,9,5\rbrace$, where origin of the series is at 3.</p>
+
+<p><b>Solution</b> &minus; Applying the formula we have &minus;</p>
+
+<p>ROC is the entire Z-plane excluding Z = 0, &infin;, -&infin;</p>
+
+<h1>DSP - Z-Transform Properties</h1>
+
+<p>In this chapter, we will understand the basic properties of Z-transforms.</p>
+
+<h2>Linearity</h2>
+
+<p>It states that when two or more individual discrete signals are multiplied by constants, their respective Z-transforms will also be multiplied by the same constants.</p>
+
+<p>Mathematically,</p>
+
+<p><b>Proof</b> &minus; We know that,</p>
+
+<p>Here, the ROC is $ROC_1\bigcap ROC_2$.</p>
+
+<h2>Time Shifting</h2>
+
+<p>Time shifting property depicts how the change in the time domain in the discrete signal will affect the Z-domain, which can be written as;</p>
+
+<p>Or <span style="padding-left:31%">$x(n-1)\longleftrightarrow Z^{-1}X(Z)$</span></p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Let s = p-k</p>
+
+<p>Here, ROC can be written as Z = 0 (p&gt;0) or Z = &infin;(p&lt;0)</p>
+
+<h3>Example</h3>
+
+<p>U(n) and U(n-1) can be plotted as follows</p>
+
+<p>Z-transformation of U(n) cab be written as;</p>
+
+<p>Z-transformation of U(n-1) can be written as;</p>
+
+<p>So here $x(n-n_0) = Z^{-n_0}X(Z)$ <span style="padding-left:32%">(Hence Proved)</span></p>
+
+<h2>Time Scaling</h2>
+
+<p>Time Scaling property tells us, what will be the Z-domain of the signal when the time is scaled in its discrete form, which can be written as;</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>ROC: = Mod(ar1) &lt; Mod(Z) &lt; Mod(ar2) where Mod = Modulus</p>
+
+<h3>Example</h3>
+
+<p>Let us determine the Z-transformation of $x(n) = a^n \cos \omega n$ using Time scaling property.</p>
+
+<p><b>Solution</b> &minus;</p>
+
+<p>We already know that the Z-transformation of the signal $\cos (\omega n)$ is given by &minus;</p>
+
+<p>$$\sum_{n=-\infty}^\infty(\cos \omega n)Z^{-n} = (Z^2-Z \cos \omega)/(Z^2-2Z\cos \omega +1)$$</p>
+
+<p>Now, applying Time scaling property, the Z-transformation of $a^n \cos \omega n$ can be written as;</p>
+
+<h2>Successive Differentiation</h2>
+
+<p>Successive Differentiation property shows that Z-transform will take place when we differentiate the discrete signal in time domain, with respect to time. This is shown as below.</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Consider the LHS of the equation &minus; <span style="padding-left:8%">$\frac{dx(n)}{dn}$</span></p>
+
+<p>ROC: R1&lt; Mod (Z) &lt;R2</p>
+
+<h3>Example</h3>
+
+<p>Let us find the Z-transform of a signal given by $x(n) = n^2u(n)$</p>
+
+<p>By property we can write</p>
+
+<p>Now, Z[n.y] can be found out by again applying the property,</p>
+
+<h2>Convolution</h2>
+
+<p>This depicts the change in Z-domain of the system when a convolution takes place in the discrete signal form, which can be written as &minus;</p>
+
+<p><b>Proof</b> &minus;</p>
+
+<p>Let n-k = l, then the above equation cab be written as &minus;</p>
+
+<p>ROC:$ROC\bigcap ROC2$</p>
+
+<h3>Example</h3>
+
+<p>Let us find the convolution given by two signals</p>
+
+<p>Z-transformation of the first equation can be written as;</p>
+
+<p>Z-transformation of the second signal can be written as;</p>
+
+<p>So, the convolution of the above two signals is given by &minus;</p>
+
+<p>Taking the inverse Z-transformation we get,</p>
+
+<h2>Initial Value Theorem</h2>
+
+<p>If x(n) is a causal sequence, which has its Z-transformation as X(z), then the initial value theorem can be written as;</p>
+
+<p><b>Proof</b> &minus; We know that,</p>
+
+<p>Expanding the above series, we get;</p>
+
+<p>In the above case if Z &rarr; &infin; then $Z^{-n}\rightarrow 0$ (Because n&gt;0)</p>
+
+<p>Therefore, we can say;</p>
+
+<h2>Final Value Theorem</h2>
+
+<p>Final Value Theorem states that if the Z-transform of a signal is represented as X(Z) and the poles are all inside the circle, then its final value is denoted as x(n) or X(&infin;) and can be written as &minus;</p>
+
+<p><b>Conditions</b> &minus;</p>
+
+<p><b>Proof</b> &minus; We know that</p>
+
+<p>Here, we can apply advanced property of one-sided Z-Transformation. So, the above equation can be re-written as;</p>
+
+<p>Now putting z = 1 in the above equation, we can expand the above equation &minus;</p>
+
+<p>This can be formulated as;</p>
+
+<h3>Example</h3>
+
+<p>Let us find the Initial and Final value of x(n) whose signal is given by</p>
+
+<p>$X(Z) = 2+3Z^{-1}+4Z^{-2}$</p>
+
+<p><b>Solution</b> &minus; Let us first, find the initial value of the signal by applying the theorem</p>
+
+<p>Now let us find the Final value of signal applying the theorem</p>
+
+<p><b>Some other properties of Z-transform are listed below</b> &minus;</p>
+
+<h2>Differentiation in Frequency</h2>
+
+<p>It gives the change in Z-domain of the signal, when its discrete signal is differentiated with respect to time.</p>
+
+<p>Its ROC can be written as;</p>
+
+<h3>Example</h3>
+
+<p>Let us find the value of x(n) through Differentiation in frequency, whose discrete signal in Z-domain is given by $x(n)\longleftrightarrow X(Z) = log(1+aZ^{-1})$</p>
+
+<p>By property, we can write that</p>
+
+<h2>Multiplication in Time</h2>
+
+<p>It gives the change in Z-domain of the signal when multiplication takes place at discrete signal level.</p>
+
+<h2>Conjugation in Time</h2>
+
+<p>This depicts the representation of conjugated discrete signal in Z-domain.</p>
+
+<h1>DSP - Z-Transform Existence</h1>
+
+<p>A system, which has system function, can only be stable if all the poles lie inside the unit circle. First, we check whether the system is causal or not. If the system is Causal, then we go for its BIBO stability determination; where BIBO stability refers to the bounded input for bounded output condition.</p>
+
+<p>This can be written as;</p>
+
+<p>The above equation shows the condition for existence of Z-transform.</p>
+
+<p>However, the condition for existence of DTFT signal is</p>
+
+<h2>Example 1</h2>
+
+<p>Let us try to find out the Z-transform of the signal, which is given as</p>
+
+<p><b>Solution</b> &minus; Here, for $-(-2)^nu(n)$ the ROC is Left sided and Z&lt;2</p>
+
+<p>For $3^nu(n)$ ROC is right sided and Z&gt;3</p>
+
+<p>Hence, here Z-transform of the signal will not exist because there is no common region.</p>
+
+<h2>Example 2</h2>
+
+<p>Let us try to find out the Z-transform of the signal given by</p>
+
+<p><b>Solution</b> &minus; Here, for $-2^nu(-n-1)$ ROC of the signal is Left sided and Z&lt;2</p>
+
+<p>For signal $(0.5)^nu(n)$ ROC is right sided and Z&gt;0.5</p>
+
+<p>So, the common ROC being formed as 0.5&lt;Z&lt;2</p>
+
+<p>Therefore, Z-transform can be written as;</p>
+
+<h2>Example 3</h2>
+
+<p>Let us try to find out the Z-transform of the signal, which is given as $x(n) = 2^{r(n)}$</p>
+
+<p><b>Solution</b> &minus; r(n) is the ramp signal. So the signal can be written as;</p>
+
+<p>Here, for the signal $u(-n-1)$ and ROC Z&lt;1 and for $2^nu(n)$ with ROC is Z&gt;2.</p>
+
+<p>So, Z-transformation of the signal will not exist.</p>
+
+<h2>Z -Transform for Causal System</h2>
+
+<p>Causal system can be defined as $h(n) = 0,n&lt;0$. For causal system, ROC will be outside the circle in Z-plane.</p>
+
+<p>Expanding the above equation,</p>
+
+<p>For causal systems, expansion of Transfer Function does not include positive powers of Z. For causal system, order of numerator cannot exceed order of denominator. This can be written as-</p>
+
+<p>For stability of causal system, poles of Transfer function should be inside the unit circle in Z-plane.</p>
+
+<h2>Z-transform for Anti-causal System</h2>
+
+<p>Anti-causal system can be defined as $h(n) = 0, n\geq 0$ . For Anti causal system, poles of transfer function should lie outside unit circle in Z-plane. For anti-causal system, ROC will be inside the circle in Z-plane.</p>
+
+<h1>DSP - Z-Transform Inverse</h1>
+
+<p>If we want to analyze a system, which is already represented in frequency domain, as discrete time signal then we go for Inverse Z-transformation.</p>
+
+<p>Mathematically, it can be represented as;</p>
+
+<p>where x(n) is the signal in time domain and X(Z) is the signal in frequency domain.</p>
+
+<p>If we want to represent the above equation in integral format then we can write it as</p>
+
+<p>Here, the integral is over a closed path C. This path is within the ROC of the x(z) and it does contain the origin.</p>
+
+<h2>Methods to Find Inverse Z-Transform</h2>
+
+<p>When the analysis is needed in discrete format, we convert the frequency domain signal back into discrete format through inverse Z-transformation. We follow the following four ways to determine the inverse Z-transformation.</p>
+
+<h2>Long Division Method</h2>
+
+<p>In this method, the Z-transform of the signal x (z) can be represented as the ratio of polynomial as shown below;</p>
+
+<p>Now, if we go on dividing the numerator by denominator, then we will get a series as shown below</p>
+
+<p>The above sequence represents the series of inverse Z-transform of the given signal (for n≥0) and the above system is causal.</p>
+
+<p>However for n&lt;0 the series can be written as;</p>
+
+<h2>Partial Fraction Expansion Method</h2>
+
+<p>Here also the signal is expressed first in N (z)/D (z) form.</p>
+
+<p>If it is a rational fraction it will be represented as follows;</p>
+
+<p>The above one is improper when m&lt;n and an&ne;0</p>
+
+<p>If the ratio is not proper (i.e. Improper), then we have to convert it to the proper form to solve it.</p>
+
+<h2>Residue or Contour Integral Method</h2>
+
+<p>In this method, we obtain inverse Z-transform x(n) by summing residues of $[x(z)Z^{n-1}]$ at all poles. Mathematically, this may be expressed as</p>
+
+<p>Here, the residue for any pole of order m at $z = \beta$ is</p>
+
+<h1>DSP - Z-Transform Solved Examples</h1>
+
+<h2>Example 1</h2>
+
+<p>Find the response of the system $s(n+2)-3s(n+1)+2s(n) = \delta (n)$, when all the initial conditions are zero.</p>
+
+<p><b>Solution</b> &minus; Taking Z-transform on both the sides of the above equation, we get</p>
+
+<p>Taking the inverse Z-transform of the above equation, we get</p>
+
+<h2>Example 2</h2>
+
+<p>Find the system function H(z) and unit sample response h(n) of the system whose difference equation is described as under</p>
+
+<p>where, y(n) and x(n) are the output and input of the system, respectively.</p>
+
+<p><b>Solution</b> &minus; Taking the Z-transform of the above difference equation, we get</p>
+
+<p>This system has a pole at $Z = \frac{1}{2}$ and $Z = 0$ and $H(Z) = \frac{2}{[1-\frac{1}{2}Z^{-1}]}$</p>
+
+<p>Hence, taking the inverse Z-transform of the above, we get</p>
+
+<h2>Example 3</h2>
+
+<p>Determine Y(z),n&ge;0 in the following case &minus;</p>
+
+<p>$y(n)+\frac{1}{2}y(n-1)-\frac{1}{4}y(n-2) = 0\quad given\quad y(-1) = y(-2) = 1$</p>
+
+<p><b>Solution</b> &minus; Applying the Z-transform to the above equation, we get</p>
+
+<h1>Digital Signal Processing - DFT Introduction</h1>
+
+<p>Like continuous time signal Fourier transform, discrete time Fourier Transform can be used to represent a discrete sequence into its equivalent frequency domain representation and LTI discrete time system and develop various computational algorithms.</p>
+
+<p>X (j&omega;) in continuous F.T, is a continuous function of x(n). However, DFT deals with representing x(n) with samples of its spectrum X(&omega;). Hence, this mathematical tool carries much importance computationally in convenient representation. Both, periodic and non-periodic sequences can be processed through this tool. The periodic sequences need to be sampled by extending the period to infinity.</p>
+
+<h2>Frequency Domain Sampling</h2>
+
+<p>From the introduction, it is clear that we need to know how to proceed through frequency domain sampling i.e. sampling X(&omega;). Hence, the relationship between sampled Fourier transform and DFT is established in the following manner.</p>
+
+<p>Similarly, periodic sequences can fit to this tool by extending the period N to infinity.</p>
+
+<p>Let an Non periodic sequence be, $X(n) = \lim_{N \to \infty}x_N(n)$</p>
+
+<p>Defining its Fourier transform,</p>
+
+<p>Here, X(&omega;) is sampled periodically, at every &delta;&omega; radian interval.</p>
+
+<p>As X(&omega;) is periodic in 2&pi; radians, we require samples only in fundamental range. The samples are taken after equidistant intervals in the frequency range 0&le;&omega;&le;2&pi;. Spacing between equivalent intervals is $\delta \omega = \frac{2\pi }{N}k$ radian.</p>
+
+<p>Now evaluating, $\omega = \frac{2\pi}{N}k$</p>
+
+<p>where k=0,1,……N-1</p>
+
+<p>After subdividing the above, and interchanging the order of summation</p>
+
+<p>$\sum_{l=-\infty}^\infty x(n-Nl) = x_p(n) = a\quad  periodic\quad function\quad of\quad period\quad N\quad and\quad its\quad fourier\quad series\quad = \sum_{k = 0}^{N-1}C_ke^{j2\pi nk/N}$</p>
+
+<p>where, n = 0,1,…..,N-1; ‘p’- stands for periodic entity or function</p>
+
+<p>The Fourier coefficients are,</p>
+
+<p>Comparing equations 3 and 4, we get ;</p>
+
+<p>From Fourier series expansion,</p>
+
+<p>Where n=0,1,…,N-1</p>
+
+<p>Here, we got the periodic signal from X(&omega;). $x(n)$ can be extracted from $x_p(n)$ only, if there is no aliasing in the time domain. $N\geq L$</p>
+
+<p>N = period of $x_p(n)$ L= period of $x(n)$</p>
+
+<p>The mapping is achieved in this manner.</p>
+
+<h2>Properties of DFT</h2>
+
+<h3>Linearity</h3>
+
+<p>It states that the DFT of a combination of signals is equal to the sum of DFT of individual signals. Let us take two signals x<sub>1</sub>(n) and x<sub>2</sub>(n), whose DFT s are X<sub>1</sub>(&omega;) and X<sub>2</sub>(&omega;) respectively. So, if</p>
+
+<p>Then <span style="padding-left:5%">$ax_1(n)+bx_2(n)\rightarrow aX_1(\omega)+bX_2(\omega)$</span></p>
+
+<p>where <b>a</b> and <b>b</b> are constants.</p>
+
+<h3>Symmetry</h3>
+
+<p>The symmetry properties of DFT can be derived in a similar way as we derived DTFT symmetry properties. We know that DFT of sequence x(n) is denoted by X(K). Now, if x(n) and X(K) are complex valued sequence, then it can be represented as under</p>
+
+<p>And <span style="padding-left:5%">$X(K) = X_R(K)+jX_1(K),0\leq K\leq N-1$</span></p>
+
+<h3>Duality Property</h3>
+
+<p>Let us consider a signal x(n), whose DFT is given as X(K). Let the finite duration sequence be X(N). Then according to duality theorem,</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$X(N)\longleftrightarrow Nx[((-k))_N]$</span></p>
+
+<p>So, by using this theorem if we know DFT, we can easily find the finite duration sequence.</p>
+
+<h3>Complex Conjugate Properties</h3>
+
+<p>Suppose, there is a signal x(n), whose DFT is also known to us as X(K). Now, if the complex conjugate of the signal is given as x*(n), then we can easily find the DFT without doing much calculation by using the theorem shown below.</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x*(n)\longleftrightarrow X*((K))_N = X*(N-K)$</span></p>
+
+<h3>Circular Frequency Shift</h3>
+
+<p>The multiplication of the sequence x(n) with the complex exponential sequence $e^{j2\Pi kn/N}$ is equivalent to the circular shift of the DFT by L units in frequency. This is the dual to the circular time shifting property.</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x(n)e^{j2\Pi Kn/N}\longleftrightarrow X((K-L))_N$</span></p>
+
+<h3>Multiplication of Two Sequence</h3>
+
+<p>If there are two signal x<sub>1</sub>(n) and x<sub>2</sub>(n) and their respective DFTs are X<sub>1</sub>(k) and X<sub>2</sub>(K), then multiplication of signals in time sequence corresponds to circular convolution of their DFTs.</p>
+
+<p>If, <span style="padding-left:9%">$x_1(n)\longleftrightarrow X_1(K)\quad\&amp;\quad x_2(n)\longleftrightarrow X_2(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$x_1(n)\times x_2(n)\longleftrightarrow X_1(K)&copy; X_2(K)$</span></p>
+
+<h3>Parseval’s Theorem</h3>
+
+<p>For complex valued sequences x(n) and y(n), in general</p>
+
+<p>If, <span style="padding-left:9%">$x(n)\longleftrightarrow X(K)\quad \&amp;\quad y(n)\longleftrightarrow Y(K)$</span></p>
+
+<p>Then, <span style="padding-left:5%">$\sum_{n = 0}^{N-1}x(n)y^*(n) = \frac{1}{N}\sum_{k = 0}^{N-1}X(K)Y^*(K)$</span></p>
+
+<h1>DSP - DFT Time Frequency Transform</h1>
+
+<p>We know that when $\omega = 2\pi K/N$ and $N\rightarrow \infty,\omega$ becomes a continuous variable and limits summation become $-\infty$ to $+\infty$.</p>
+
+<p>Therefore,</p>
+
+<p>We know that, $X(e^{j\omega}) = \sum_{n = -\infty}^\infty x(n)e^{-j\omega n}$</p>
+
+<p>Where, $X(e^{j\omega})$ is continuous and periodic in &omega; and with period 2&pi;.<span style="padding-left:7%">…eq(1)</span></p>
+
+<p>Now,</p>
+
+<p>&omega; becomes continuous and $\frac{2\pi}{N}\rightarrow d\omega$, because of the reasons cited above.</p>
+
+<p>Inverse Discrete Time Fourier Transform</p>
+
+<p>Symbolically,</p>
+
+<p>Necessary and sufficient condition for existence of Discrete Time Fourier Transform for a non-periodic sequence x(n) is absolute summable.</p>
+
+<h2>Properties of DTFT</h2>
+
+<p><b>Linearity</b> : <span style="padding-left:7%">$a_1x_1(n)+a_2x_2(n)\Leftrightarrow a_1X_1(e^{j\omega})+a_2X_2(e^{j\omega})$</span></p>
+
+<p><b>Time shifting</b> &minus; <span style="padding-left:10%">$x(n-k)\Leftrightarrow e^{-j\omega k}.X(e^{j\omega})$</span></p>
+
+<p><b>Time Reversal</b> &minus; <span style="padding-left:10%">$x(-n)\Leftrightarrow X(e^{-j\omega})$</span></p>
+
+<p><b>Frequency shifting</b> &minus; <span style="padding-left:5%">$e^{j\omega _0n}x(n)\Leftrightarrow X(e^{j(\omega -\omega _0)})$</span></p>
+
+<p><b>Differentiation frequency domain</b> &minus; <span style="padding-left:5%">$nx(n) = j\frac{d}{d\omega}X(e^{j\omega})$</span></p>
+
+<p><b>Convolution</b> &minus; <span style="padding-left:11%">$x_1(n)*x_2(n)\Leftrightarrow X_1(e^{j\omega})\times X_2(e^{j\omega})$</span></p>
+
+<p><b>Multiplication</b> &minus; <span style="padding-left:10%">$x_1(n)\times x_2(n)\Leftrightarrow X_1(e^{j\omega})*X_2(e^{j\omega})$</span></p>
+
+<p><b>Co-relation</b> &minus; <span style="padding-left:14%">$y_{x_1\times x_2}(l)\Leftrightarrow X_1(e^{j\omega})\times X_2(e^{j\omega})$</span></p>
+
+<p><b>Modulation theorem</b> &minus; <span style="padding-left:2%">$x(n)\cos \omega _0n = \frac{1}{2}[X_1(e^{j(\omega +\omega _0})*X_2(e^{jw})$</span></p>
+
+<p><b>Symmetry</b> &minus;<span style="padding-left:11%">$x^*(n)\Leftrightarrow X^*(e^{-j\omega})$ ;</span></p>
+
+<p><b>Parseval’s theorem</b> &minus; <span style="padding-left:2%">$\sum_{-\infty}^\infty|x_1(n)|^2 = \frac{1}{2\pi}\int_{-\pi}^{\pi}|X_1(e^{j\omega})|^2d\omega$</span></p>
+
+<p>Earlier, we studied sampling in frequency domain. With that basic knowledge, we sample $X(e^{j\omega})$ in frequency domain, so that a convenient digital analysis can be done from that sampled data. Hence, DFT is sampled in both time and frequency domain. With the assumption $x(n) = x_p(n)$</p>
+
+<p>Hence, DFT is given by &minus;</p>
+
+<p>And IDFT is given by &minus;</p>
+
+<h2>Twiddle Factor</h2>
+
+<p>It is denoted as $W_N$ and defined as $W_N = e^{-j2\pi /N}$ . Its magnitude is always maintained at unity. Phase of $W_N = -2\pi /N$ . It is a vector on unit circle and is used for computational convenience. Mathematically, it can be shown as &minus;</p>
+
+<p>It is function of r and period N.</p>
+
+<p>$W_8^1 = W_8^9 = W_8^{17} = ... = ... = W_8^{33} = ... =\frac{1}{\sqrt 2}= j\frac{1}{\sqrt 2} = 1\angle-\frac{\pi}{4}$</p>
+
+<h2>Linear Transformation</h2>
+
+<p>Let us understand Linear Transformation &minus;</p>
+
+<p>We know that,</p>
+
+<p><b>Note</b> &minus; Computation of DFT can be performed with N<sup>2</sup> complex multiplication and N(N-1) complex addition.</p>
+
+<p>$W_N\longmapsto$ Matrix of linear transformation</p>
+
+<p><span style="padding-left:35%">$Now,\quad x_N = W_N^{-1}X_N$</span></p>
+
+<p>IDFT in Matrix form is given by</p>
+
+<p>Comparing both the expressions of $x_N,\quad W_N^{-1} = \frac{1}{N}W_N^*$ and $W_N\times W_N^* = N[I]_{N\times N}$</p>
+
+<p>Therefore, $W_N$ is a linear transformation matrix, an orthogonal (unitary) matrix.</p>
+
+<p>From periodic property of $W_N$ and from its symmetric property, it can be concluded that, $W_N^{k+N/2} = -W_N^k$</p>
+
+<h2>Circular Symmetry</h2>
+
+<p>N-point DFT of a finite duration x(n) of length N&le;L, is equivalent to the N-point DFT of periodic extension of x(n), i.e. $x_p(n)$ of period N. and $x_p(n) = \sum_{l = -\infty}^\infty x(n-Nl)$ . Now, if we shift the sequence, which is a periodic sequence by k units to the right, another periodic sequence is obtained. This is known as Circular shift and this is given by,</p>
+
+<p>The new finite sequence can be represented as</p>
+
+<p><b>Example</b> &minus; Let x(n)= {1,2,4,3}, N = 4,</p>
+
+<p>$x_p^\prime (n) = x(n-k,modulo\quad N)\equiv x((n-k))_N\quad;ex-if\quad k=2i.e\quad 2\quad unit\quad right\quad shift\quad and\quad N = 4,$</p>
+
+<p>Assumed clockwise direction as positive direction.</p>
+
+<p>We got, $x\prime(n) = x((n-2))_4$</p>
+
+<p>$x\prime(0) = x((-2))_4 = x(2) = 4$</p>
+
+<p>$x\prime(1) = x((-1))_4 = x(3) = 3$</p>
+
+<p>$x\prime(2) = x((-2))_4 = x(0) = 1$</p>
+
+<p>$x\prime(3) = x((1))_4 = x(1) = 2$</p>
+
+<p><b>Conclusion</b> &minus; Circular shift of N-point sequence is equivalent to a linear shift of its periodic extension and vice versa.</p>
+
+<p>Circularly even sequence &minus; <span style="padding-left:3%">$x(N-n) = x(n),\quad 1\leq n\leq N-1$</span></p>
+
+<p>Conjugate even &minus;<span style="padding-left:24%">$x_p(n) = x_p^*(N-n)$</span></p>
+
+<p>Circularly odd sequence &minus; <span style="padding-left:3%">$x(N-n) = -x(n),\quad 1\leq n\leq N-1$</span></p>
+
+<p>Conjugate odd &minus; <span style="padding-left:24%">$x_p(n) = -x_p^*(N-n)$</span></p>
+
+<p>Now, $x_p(n) = x_{pe}+x_{po}(n)$, where,</p>
+
+<p>For any real signal x(n),<span style="padding-left:18%">$X(k) = X^*(N-k)$</p>
+
+<p><b>Time reversal</b> &minus; reversing sample about the 0<sup>th</sup> sample. This is given as;</p>
+
+<p>Time reversal is plotting samples of sequence, in clockwise direction i.e. assumed negative direction.</p>
+
+<h2>Some Other Important Properties</h2>
+
+<p>Other important IDFT properties $x(n)\longleftrightarrow X(k)$</p>
+
+<p><b>Time reversal</b> &minus; $x((-n))_N = x(N-n)\longleftrightarrow X((-k))_N = X(N-k)$</p>
+
+<p><b>Circular time shift</b> &minus; $x((n-l))_N \longleftrightarrow X(k)e^{j2\pi lk/N}$</p>
+
+<p><b>Circular frequency shift</b> &minus; $x(n)e^{j2\pi ln/N} \longleftrightarrow X((k-l))_N$</p>
+
+<p><b>Complex conjugate properties</b> &minus; </p>
+
+<p><b>Multiplication of two sequence</b> &minus; </p>
+
+<p>$\therefore x_1(n)x_2(n)\longleftrightarrow X_1(k)\quadⓃ X_2(k)$</p>
+
+<p><b>Circular convolution</b> &minus; and multiplication of two DFT</p>
+
+<p>$x_1(k)\quad Ⓝ x_2(k) =\sum_{k = 0}^{N-1}x_1(n).x_2((m-n))_n,\quad m = 0,1,2,... .,N-1 $</p>
+
+<p>$x_1(k)\quad Ⓝ x_2(k)\longleftrightarrow X_1(k).X_2(k)$</p>
+
+<p><b>Circular correlation</b> &minus; If $x(n)\longleftrightarrow X(k)$ and $y(n)\longleftrightarrow Y(k)$ , then there exists a cross correlation sequence denoted as $\bar Y_{xy}$ such that $\bar Y_{xy}(l) = \sum_{n = 0}^{N-1}x(n)y^*((n-l))_N = X(k).Y^*(k)$</p>
+
+<p><b>Parseval’s Theorem</b> &minus; If $x(n)\longleftrightarrow X(k)$ and $y(n)\longleftrightarrow Y(k)$;</p>
+
+<h1>DSP - DFT Circular Convolution</h1>
+
+<p>Let us take two finite duration sequences x<sub>1</sub>(n) and x<sub>2</sub>(n), having integer length as N. Their DFTs are X<sub>1</sub>(K) and X<sub>2</sub>(K) respectively, which is shown below &minus;</p>
+
+<p>Now, we will try to find the DFT of another sequence x<sub>3</sub>(n), which is given as X<sub>3</sub>(K)</p>
+
+<p>By taking the IDFT of the above we get</p>
+
+<p>After solving the above equation, finally, we get</p>
+
+<h2>Methods of Circular Convolution</h2>
+
+<p>Generally, there are two methods, which are adopted to perform circular convolution and they are &minus;</p>
+
+<h3>Concentric Circle Method</h3>
+
+<p>Let $x_1(n)$ and $x_2(n)$ be two given sequences. The steps followed for circular convolution of $x_1(n)$ and $x_2(n)$ are</p>
+
+<p>Take two concentric circles. Plot N samples of $x_1(n)$ on the circumference of the outer circle (maintaining equal distance successive points) in anti-clockwise direction.</p>
+
+<p>For plotting $x_2(n)$, plot N samples of $x_2(n)$ in clockwise direction on the inner circle, starting sample placed at the same point as 0<sup>th</sup> sample of $x_1(n)$</p>
+
+<p>Multiply corresponding samples on the two circles and add them to get output.</p>
+
+<p>Rotate the inner circle anti-clockwise with one sample at a time.</p>
+
+<h3>Matrix Multiplication Method</h3>
+
+<p>Matrix method represents the two given sequence $x_1(n)$ and $x_2(n)$ in matrix form.</p>
+
+<p>One of the given sequences is repeated via circular shift of one sample at a time to form a N X N matrix.</p>
+
+<p>The other sequence is represented as column matrix.</p>
+
+<p>The multiplication of two matrices give the result of circular convolution.</p>
+
+<h1>DSP - DFT Linear Filtering</h1>
+
+<p>DFT provides an alternative approach to time domain convolution. It can be used to perform linear filtering in frequency domain.</p>
+
+<p>Thus,<span style="padding-left:10%">$Y(\omega) = X(\omega).H(\omega)\longleftrightarrow y(n)$</span>.</p>
+
+<p>The problem in this frequency domain approach is that $Y(\omega)$, $X(\omega)$ and $H(\omega)$ are continuous function of ω, which is not fruitful for digital computation on computers. However, DFT provides sampled version of these waveforms to solve the purpose.</p>
+
+<p>The advantage is that, having knowledge of faster DFT techniques likes of FFT, a computationally higher efficient algorithm can be developed for digital computer computation in comparison with time domain approach.</p>
+
+<p>Consider a finite duration sequence, $[x(n) = 0,\quad for,n&lt;0\quad and\quad n\geq L]$ (generalized equation), excites a linear filter with impulse response $[h(n) = 0,\quad forn&lt;0\quad and\quad n\geq M]$.</p>
+
+<p>From the convolution analysis, it is clear that, the duration of y(n) is L+M−1.</p>
+
+<p>In frequency domain,</p>
+
+<p>Now, $Y(\omega)$ is a continuous function of ω and it is sampled at a set of discrete frequencies with number of distinct samples which must be equal to or exceeds $L+M-1$.</p>
+
+<p>With $\omega = \frac{2\pi}{N}k$,</p>
+
+<p>Where, X(k) and H(k) are N-point DFTs of x(n) and h(n) respectively. $x(n)\&amp; h(n)$ are padded with zeros up to the length N. It will not distort the continuous spectra $X(\omega)$ and $H(\omega)$. Since $N\geq L+M-1$, N-point DFT of output sequence y(n) is sufficient to represent y(n) in frequency domain and these facts infer that the multiplication of N-point DFTs of X(k) and H(k), followed by the computation of N-point IDFT must yield y(n).</p>
+
+<p>This implies, N-point circular convolution of x(n) and H(n) with zero padding, equals to linear convolution of x(n) and h(n).</p>
+
+<p>Thus, DFT can be used for linear filtering.</p>
+
+<p><b>Caution</b> &minus; N should always be greater than or equal to $L+M-1$. Otherwise, aliasing effect would corrupt the output sequence.</p>
+
+<h1>DSP - DFT Sectional Convolution</h1>
+
+<p>Suppose, the input sequence x(n) of long duration is to be processed with a system having finite duration impulse response by convolving the two sequences. Since, the linear filtering performed via DFT involves operation on a fixed size data block, the input sequence is divided into different fixed size data block before processing.</p>
+
+<p>The successive blocks are then processed one at a time and the results are combined to produce the net result.</p>
+
+<p>As the convolution is performed by dividing the long input sequence into different fixed size sections, it is called sectioned convolution. A long input sequence is segmented to fixed size blocks, prior to FIR filter processing.</p>
+
+<p>Two methods are used to evaluate the discrete convolution &minus;</p>
+
+<p><b>Overlap-save method</b></p>
+
+<p><b>Overlap-add method</b></p>
+
+<h2>Overlap Save Method</h2>
+
+<p>Overlap–save is the traditional name for an efficient way to evaluate the discrete convolution between a very long signal x(n) and a finite impulse response (FIR) filter h(n). Given below are the steps of Overlap save method &minus;</p>
+
+<p>Let the length of input data block = N = L+M-1. Therefore, DFT and IDFT length = N. Each data block carries M-1 data points of previous block followed by L new data points to form a data sequence of length N = L+M-1.</p>
+
+<p>First, N-point DFT is computed for each data block.</p>
+
+<p>By appending (L-1) zeros, the impulse response of FIR filter is increased in length and N point DFT is calculated and stored.</p>
+
+<p>Multiplication of two N-point DFTs H(k) and X<sub>m</sub>(k) : Y&prime;<sub>m</sub>(k) = H(k).X<sub>m</sub>(k), where K=0,1,2,…N-1</p>
+
+<p>Then, IDFT[Y&prime;<sub>m</sub>((k)] = y&prime;((n) = [y&prime;<sub>m</sub>(0), y&prime;<sub>m</sub>(1), y&prime;<sub>m</sub>(2),.......y&prime;<sub>m</sub>(M-1), y&prime;<sub>m</sub>(M),.......y&prime;<sub>m</sub>(N-1)]</p>
+
+<p>(here, N-1 = L+M-2)</p>
+
+<p>First M-1 points are corrupted due to aliasing and hence, they are discarded because the data record is of length N.</p>
+
+<p>The last L points are exactly same as a result of convolution, so</p>
+
+<p>To avoid aliasing, the last M-1 elements of each data record are saved and these points carry forward to the subsequent record and become 1<sup>st</sup> M-1 elements.</p>
+
+<p>Result of IDFT, where first M-1 Points are avoided, to nullify aliasing and remaining L points constitute desired result as that of a linear convolution.</p>
+
+<h2>Overlap Add Method</h2>
+
+<p>Given below are the steps to find out the discrete convolution using Overlap method &minus;</p>
+
+<p>Let the input data block size be L. Therefore, the size of DFT and IDFT: N = L+M-1</p>
+
+<p>Each data block is appended with M-1 zeros to the last.</p>
+
+<p>Compute N-point DFT.</p>
+
+<p>Two N-point DFTs are multiplied: Y<sub>m</sub>(k) = H(k).X<sub>m</sub>(k), where k = 0,,1,2,….,N-1</p>
+
+<p>IDFT [Y<sub>m</sub>(k)] produces blocks of length N which are not affected by aliasing as the size of DFT is N = L+M-1 and increased lengths of the sequences to N-points by appending M-1 zeros to each block.</p>
+
+<p>Last M-1 points of each block must be overlapped and added to first M-1 points of the succeeding block.</p>
+
+<p>Hence, this method is known Overlap-add method. Thus, we get &minus;</p>
+
+<h1>DSP - DFT Discrete Cosine Transform</h1>
+
+<p>DCT (Discrete Cosine Transform) is an N-input sequence x(n) , 0&le;n&le;N-1 , as a linear transformation or combination of complex exponentials. As a result, the DFT coefficients are in general, complex even if x(n) is real.</p>
+
+<p>Suppose, we try to find out an orthogonal transformation which has N×N structure that expressed a real sequence x(n) as a linear combination of cosine sequence. We already know that &minus;</p>
+
+<p>And <span style="padding-left:4%">$x(n) = \frac{1}{N}\sum_{k = 0}^{N-1}x(k)cos\frac{2\Pi kn}{N}0\leq k \leq N-1$</span></p>
+
+<p>This is possible if N point sequence x(n) is real and even. Thus, $x(n) = x(N-n),0\leq n \leq (N-1)$. The resulting DFT itself is real and even. These things make it clear that we could possibly device a discrete cosine transform, for any N point real sequence by taking the 2N point DFT of an “Even extension” of sequence.</p>
+
+<p>DCT is, basically, used in image and speech processing. It is also used in compression of images and speech signals.</p>
+
+<p>$\Rightarrow S(k) = W_{2N}^{-k/2}+\sum_{n = 0}^{N-1}x(n) [W_{2N}^{nk}W_{2N}^{k/2}+W_{2N}^{-nk}W_{2N}^{-k/2}];\quad where\quad 0\leq k\leq 2N-1$</p>
+
+<p>$\Rightarrow S(k) = W_{2N}^{\frac{k}{2}}\sum_{n = 0}^{N-1}x(n)\cos [\frac{\pi}{N}(n+\frac{1}{2})k];\quad where\quad 0\leq k\leq 2N-1$</p>
+
+<p>DCT is defined by,</p>
+
+<p>$V(k) = 2\sum_{n = 0}^{N-1}x(n)\cos [\frac{\pi}{2}(n+\frac{1}{2})k]\quad where\quad 0\leq k\leq N-1$</p>
+
+<h1>DSP - DFT Solved Examples</h1>
+
+<h2>Example 1</h2>
+
+<p>Verify Parseval’s theorem of the sequence $x(n) = \frac{1^n}{4}u(n)$</p>
+
+<p><b>Solution</b> &minus; <span style="padding-left:3%">$\displaystyle\sum\limits_{-\infty}^\infty|x_1(n)|^2 = \frac{1}{2\pi}\int_{-\pi}^{\pi}|X_1(e^{j\omega})|^2d\omega$</span></p>
+
+<p>L.H.S <span style="padding-left:8.5%">$\displaystyle\sum\limits_{-\infty}^\infty|x_1(n)|^2$</span></p>
+
+<p>R.H.S. <span style="padding-left:3%">$X(e^{j\omega}) = \frac{1}{1-\frac{1}{4}e-j\omega} = \frac{1}{1-0.25\cos \omega+j0.25\sin \omega}$</span></p>
+
+<p>Calculating, $X(e^{j\omega}).X^*(e^{j\omega})$</p>
+
+<p>We can see that, LHS = RHS.<span style="padding-left:43%">(Hence Proved)</span></p>
+
+<h2>Example 2</h2>
+
+<p>Compute the N-point DFT of $x(n) = 3\delta (n)$</p>
+
+<p><b>Solution</b> &minus; We know that,</p>
+
+<p>So,<span style="padding-left:25%">$x(k) = 3,0\leq k\leq N-1$</span><span style="padding-left:4%">… Ans.</span></p>
+
+<h2>Example 3</h2>
+
+<p>Compute the N-point DFT of $x(n) = 7(n-n_0)$</p>
+
+<p><b>Solution</b> &minus; We know that,</p>
+
+<p>Substituting the value of x(n),</p>
+
+<h1>DSP - Fast Fourier Transform</h1>
+
+<p>In earlier DFT methods, we have seen that the computational part is too long. We want to reduce that. This can be done through FFT or fast Fourier transform. So, we can say FFT is nothing but computation of discrete Fourier transform in an algorithmic format, where the computational part will be reduced.</p>
+
+<p>The main advantage of having FFT is that through it, we can design the FIR filters. Mathematically, the FFT can be written as follows;</p>
+
+<p>Let us take an example to understand it better. We have considered eight points named from $x_0\quad to\quad x_7$. We will choose the even terms in one group and the odd terms in the other. Diagrammatic view of the above said has been shown below &minus;</p>
+
+<p>Here, points x<sub>0</sub>, x<sub>2</sub>, x<sub>4</sub> and x<sub>6</sub> have been grouped into one category and similarly, points x<sub>1</sub>, x<sub>3</sub>, x<sub>5</sub> and x<sub>7</sub> has been put into another category. Now, we can further make them in a group of two and can proceed with the computation. Now, let us see how these breaking into further two is helping in computation.</p>
+
+<p>Initially, we took an eight-point sequence, but later we broke that one into two parts G[k] and H[k]. G[k] stands for the even part whereas H[k] stands for the odd part. If we want to realize it through a diagram, then it can be shown as below &minus;</p>
+
+<p>From the above figure, we can see that</p>
+
+<p>Similarly, the final values can be written as follows &minus;</p>
+
+<p>The above one is a periodic series. The disadvantage of this system is that K cannot be broken beyond 4 point. Now Let us break down the above into further. We will get the structures something like this</p>
+
+<h3>Example</h3>
+
+<p>Consider the sequence x[n]={ 2,1,-1,-3,0,1,2,1}. Calculate the FFT.</p>
+
+<p><b>Solution</b> &minus; The given sequence is x[n]={ 2,1,-1,-3,0,1,2,1}</p>
+
+<p>Arrange the terms as shown below;</p>
+
+<h1>DSP - In-Place Computation</h1>
+
+<p>This efficient use of memory is important for designing fast hardware to calculate the FFT. The term in-place computation is used to describe this memory usage.</p>
+
+<h2>Decimation in Time Sequence</h2>
+
+<p>In this structure, we represent all the points in binary format i.e. in 0 and 1. Then, we reverse those structures. The sequence we get after that is known as bit reversal sequence. This is also known as decimation in time sequence. In-place computation of an eight-point DFT is shown in a tabular format as shown below &minus;</p>
+
+<h2>Decimation in Frequency Sequence</h2>
+
+<p>Apart from time sequence, an N-point sequence can also be represented in frequency. Let us take a four-point sequence to understand it better.</p>
+
+<p>Let the sequence be $x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]$. We will group two points into one group, initially. Mathematically, this sequence can be written as;</p>
+
+<p>Now let us make one group of sequence number 0 to 3 and another group of sequence 4 to 7. Now, mathematically this can be shown as;</p>
+
+<p>Let us replace n by r, where r = 0, 1 , 2….(N/2-1). Mathematically,</p>
+
+<p>We take the first four points (x[0], x[1], x[2], x[3]) initially, and try to represent them mathematically as follows &minus;</p>
+
+<p>now <span style="padding-left:8%">$X[0] = \sum_{n = 0}^3(X[n]+X[n+4])$</span></p>
+
+<p>We can further break it into two more parts, which means instead of breaking them as 4-point sequence, we can break them into 2-point sequence.</p>
+
+<h1>DSP - Computer Aided Design</h1>
+
+<p>FIR filters can be useful in making computer-aided design of the filters. Let us take an example and see how it works. Given below is a figure of desired filter.</p>
+
+<p>While doing computer designing, we break the whole continuous graph figures into discrete values. Within certain limits, we break it into either 64, 256 or 512 (and so on) number of parts having discrete magnitudes.</p>
+
+<p>In the above example, we have taken limits between -&pi; to +&pi;. We have divided it into 256 parts. The points can be represented as H(0), H(1),….up to H(256). Here, we apply IDFT algorithm and this will give us linear phase characteristics.</p>
+
+<p>Sometimes, we may be interested in some particular order of filter. Let us say we want to realize the above given design through 9<sup>th</sup> order filter. So, we take filter values as h0, h1, h2….h9. Mathematically, it can be shown as below</p>
+
+<p>Where there are large number of dislocations, we take maximum points.</p>
+
+<p>For example, in the above figure, there is a sudden drop of slopping between the points B and C. So, we try to take more discrete values at this point, but there is a constant slope between point C and D. There we take less number of discrete values.</p>
+
+<p>For designing the above filter, we go through minimization process as follows;</p>
+
+<p>Similarly,</p>
+
+<p>Representing the above equation in matrix form, we have &minus;</p>
+
+<p>Let us take the 1000×1 matrix as B, 1000×9 matrix as A and 9×1 matrix as $\hat{h}$.</p>
+
+<p>So, for solving the above matrix, we will write</p>
+
+<p>where A<sup>*</sup> represents the complex conjugate of the matrix A.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Digital Signal Processing Useful Resources</title>
+
+<h1>Digital Signal Processing - Useful Resources</h1>
+
+<p>The following resources contain additional information on Digital Signal Processing. Please use them to get more in-depth knowledge on this.</p>
+
+<h2>Useful Links on Digital Signal Processing</h2>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikipedia.org/wiki/Digital_signal_processing">Digital Signal Processing Wiki</a> &minus; Wikipedia Reference for Digital Signal Processing.</p>
+
+<p><a rel="nofollow" target="_blank" href="http://ocw.mit.edu/resources/res-6-008-digital-signal-processing-spring-2011/video-lectures/">Video Lectures </a> &minus; Video Lectures Digital Signal Processing.</p>
+
+<h2>Useful Books on Digital Signal Processing</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss Digital Signal Processing</title>
+
+<h1>Discuss Digital Signal Processing</h1>
+
+<p>Digital Signal Processing is an important branch of Electronics and Telecommunication engineering that deals with the improvisation of reliability and accuracy of the digital communication by employing multiple techniques. This tutorial explains the basic concepts of digital signal processing in a simple and easy-to-understand manner.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>

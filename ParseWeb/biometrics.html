@@ -1,0 +1,1621 @@
+<!DOCTYPE html><html><body><title>Biometrics Tutorial</title>
+
+<h1>Biometrics Tutorial</h1>
+
+<p>This tutorial provides introductory knowledge on Biometrics. By accessing this tutorial, you would get sufficient information about the basics of biometrics and different biometric modalities such as physiological, behavioral, and combination of both modalities. This tutorial also provides a glimpse of various security issues related to biometric systems, and the comparison of various biometric systems.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial is prepared for the students at beginner level who aspire to understand biometrics and various biometric systems. It would also be useful for enthusiasts in the fields of Electronics, IT security, and Biology.</p>
+
+<h1>Prerequisites</h1>
+
+<p>Biometrics is an advanced concept and we cannot claim that a reader can sail through this tutorial without having any grip over some basic knowledge of Computer Science, and Mathematics. Knowledge of Science is a plus.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometrics Overview</title>
+
+<h1>Biometrics - Overview</h1>
+
+<p>The term Biometrics is composed of two words &minus; <i>Bio</i> (Greek word for Life) and <i>Metrics</i> (Measurements). Biometrics is a branch of information technology that aims towards establishing one’s identity based on personal traits.</p>
+
+<p>Biometrics is presently a buzzword in the domain of information security as it provides high degree of accuracy in identifying an individual.</p>
+
+<h2>What is Biometrics?</h2>
+
+<p>Each human being is unique in terms of characteristics, which make him or her different from all others. The physical attributes such as finger prints, color of iris, color of hair, hand geometry, and behavioral characteristics such as tone and accent of speech, signature, or the way of typing keys of computer keyboard etc., make a person stand separate from the rest.</p>
+
+<p>This uniqueness of a person is then used by the biometric systems to &minus;</p>
+
+<h2>What is a Biometric System?</h2>
+
+<h2>Evolution of Biometrics</h2>
+
+<p>The idea of biometrics was present since few years from now. In 14<sup>th</sup> century, China practiced taking finger prints of merchants and their children to separate them from all others. Fingerprinting is still used today.</p>
+
+<p>In the 19<sup>th</sup> century, an Anthropologist named <b>Alphonse Bertillion</b> developed a method (named <i>Bertillionage</i>) of taking body measurements of persons to identify them. He had realized that even if some features of human body are changed, such as length of hair, weight, etc., some physical traits of body remain unchanged, such as length of fingers. This method diminished quickly as it was found that the persons with same body measurements alone can be falsely taken as one. Subsequently, Richard Edward Henry from Scotland Yard developed a method for fingerprinting.</p>
+
+<p>The idea of retinal identification was conceived by Dr. Carleton Simon and Dr. Isadore Goldstein in 1935. In 1976, a research and development effort was put in at EyeDentify Inc. The first commercial retina scanning system was made available in 1981.</p>
+
+<p>Iris recognition was invented by John Daugman in 1993 at Cambridge University.</p>
+
+<p>In 2001, Biometrics Automated Toolset (BAT) was introduced in Kosovo, which provided a concrete identification means.</p>
+
+<p>Today, biometric has come up as an independent field of study with precise technologies of establishing personal identities.</p>
+
+<h2>Why Biometrics is Required?</h2>
+
+<p>With increasing use of Information Technology in the field of banking, science, medication, etc., there is an immense need to protect the systems and data from unauthorized users.</p>
+
+<p>Biometrics is used for <b>authenticating</b> and <b>authorizing</b> a person. Though these terms are often coupled; they mean different.</p>
+
+<h3>Authentication (Identification)</h3>
+
+<p>This process tries to find out answer of question, “Are you the same who you are claiming to be?”, or, “Do I know you?” This is one-to-many matching and comparison of a person’s biometrics with the whole database.</p>
+
+<h3>Verification</h3>
+
+<p>This is the one-to-one process of matching where live sample entered by the candidate is compared with a previously stored template in the database. If both are matching with more than 70% agreeable similarity, then the verification is successful.</p>
+
+<h3>Authorization</h3>
+
+<p>It is the process of assigning access rights to the authenticated or verified users. It tries to find out the answer for the question, “Are you eligible to have certain rights to access this resource?”</p>
+
+<h3>Shortcomings of Conventional Security Aids</h3>
+
+<p>The conventional methods of information system security used ID cards, passwords, Personal Identification Numbers (PINs), etc. They come with the following disadvantages &minus;</p>
+
+<p>They all mean recognizing some code associated with the person rather than recognizing the person who actually produced it.</p>
+
+<p>They can be forgotten, lost, or stolen.</p>
+
+<p>They can be bypassed or easily compromised.</p>
+
+<p>They are not precise.</p>
+
+<p>In such cases, the security of the system is threatened. When the systems need high level of reliable protection, biometrics comes to help by binding the identity more oriented to individual.</p>
+
+<h2>Basic Components of a Biometric System</h2>
+
+<p>In general, a biometric system can be divided into four basic components. Let us see them briefly &minus;</p>
+
+<h3>Input Interface (Sensors)</h3>
+
+<p>It is the sensing component of a biometrics system that converts human biological data into digital form.</p>
+
+<p>For example,</p>
+
+<p>A Metal Oxide Semiconductor (CMOS) imager or a Charge Coupled Device (CCD) in the case of face recognition, handprint recognition, or iris/retinal recognition systems.</p>
+
+<p>An optical sensor in case of fingerprint systems.</p>
+
+<p>A microphone in case of voice recognition systems.</p>
+
+<h3>Processing Unit</h3>
+
+<p>The processing component is a microprocessor, Digital Signal Processor (DSP), or computer that processes the data captured from the sensors.</p>
+
+<p>The processing of the biometric sample involves &minus;</p>
+
+<h3>Database Store</h3>
+
+<p>The database stores the enrolled sample, which is recalled to perform a match at the time of authentication. For identification, there can be any memory from Random Access Memory (RAM), flash EPROM, or a data server. For verification, a removable storage element like a contact or contactless smart card is used.</p>
+
+<h3>Output Interface</h3>
+
+<p>The output interface communicates the decision of the biometric system to enable the access to the user. This can be a simple serial communication protocol RS232, or the higher bandwidth USB protocol. It could also be TCP/IP protocol, Radio Frequency Identification (RFID), Bluetooth, or one of the many cellular protocols.</p>
+
+<h2>General Working of a Biometric System</h2>
+
+<p>There are four general steps a biometric system takes to perform identification and verification &minus;</p>
+
+<p>The biometric sample is acquired from candidate user. The prominent features are extracted from the sample and it is then compared with all the samples stored in the database. When the input sample matches with one of the samples in the database, the biometric system allows the person to access the resources; otherwise prohibits.</p>
+
+<h2>Biometrics Terminology</h2>
+
+<p><b>Biometric Template</b> &minus; It is a digital reference of the distinct characteristics that are extracted from a biometric sample.</p>
+
+<p><b>Candidate/Subject</b> &minus; A person who enters his biometric sample.</p>
+
+<p><b>Closed-Set Identification</b> &minus; The person is known to be existing in the database.</p>
+
+<p><b>Enrollment</b> &minus; It is when a candidate uses a biometric system for the first time, it records the basic information such as name, address, etc. and then records the candidate’s biometric trait.</p>
+
+<p><b>False Acceptance Rate (FAR)</b> &minus; It is the measure of possibility that a biometric system will incorrectly identify an unauthorized user as a valid user.</p>
+
+<p>A biometric system providing <b>low FAR ensures high security</b>.</p>
+
+<p><b>False Reject Rate (FRR)</b> &minus; It is the measure of possibility that the biometric system will incorrectly reject an authorized user as an invalid user.</p>
+
+<p><b>Open-Set Identification</b> &minus; The person is not guaranteed to be existing in the database.</p>
+
+<p><b>Task</b> &minus; It is when the biometric system searches the database for matching sample.</p>
+
+<h2>Application Areas of Biometrics</h2>
+
+<p>There are a number of applications where biometric systems are useful. Few of them are given below &minus;</p>
+
+<p>Controlling workplace access.</p>
+
+<p>Identity establishment of people for authentic citizenship and immigration systems.</p>
+
+<p>Applying access control to sensitive information and systems.</p>
+
+<p>Identifying criminals by forensics.</p>
+
+<p>Executing online e-commerce transactions.</p>
+
+<p>Fraud and theft reduction.</p>
+
+<p>Law enforcement.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometrics Modalities</title>
+
+<h1>Biometrics - Modalities</h1>
+
+<p>A biometric modality is nothing but a category of a biometric system depending upon the type of human trait it takes as input.</p>
+
+<p>The biometrics is largely statistical. The more the data available from sample, the more the system is likely to be unique and reliable. It can work on various modalities pertaining to measurements of individual’s body and features, and behavioral patterns. The modalities are classified based on the person’s biological traits.</p>
+
+<h2>Types of Biometric Modalities</h2>
+
+<p>There are various traits present in humans, which can be used as biometrics modalities. The biometric modalities fall under three types &minus;</p>
+
+<p>The following table collects the points that differentiate these three modalities &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>Voice Recognition</p>
+
+<p>It depends on health, size, and shape of vocal cord, nasal cavities, mouth cavity, shape of lips, etc., and the emotional status, age, illness (behavior) of a person.</p>
+
+<p>In the subsequent chapters, we will discuss each of these modalities in greater detail.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Physiological Modalities</title>
+
+<h1>Physiological Modalities</h1>
+
+<p>As depicted earlier, the physiological modalities are based on the direct measurement of parts of human body such as iris, fingerprint, shape, and position of fingers, etc.</p>
+
+<p>There are some physical traits which remain unaltered throughout a person’s life. They can be an excellent resource for identification of an individual.</p>
+
+<h2>Fingerprint Recognition System</h2>
+
+<p>It is the most known and used biometrics solution to authenticate people on biometric systems. The reasons for it being so popular are there are ten available sources of biometric and ease of acquisition.</p>
+
+<p>Every person has a unique fingerprint which is composed of ridges, grooves, and direction of the lines. There are three basic patterns of ridges namely, <b>arch, loop</b>, and <b>whorl</b>. The uniqueness of fingerprint is determined by these features as well as <b>minutiae features</b> such as bifurcation and spots (ridge endings).</p>
+
+<p>Fingerprint is one of oldest and most popular recognition technique. Fingerprint matching techniques are of three types &minus;</p>
+
+<p><b>Minutiae Based Techniques</b> &minus; In these minutiae points are found and then mapped to their relative position on finger. There are some difficulties such as if image is of low quality, then it is difficult to find minutiae points correctly. Another difficulty is, it considers local position of ridges and furrows; not global.</p>
+
+<p><b>Correlation Based Method</b> &minus; It uses richer gray scale information. It overcomes problems of minutiae-based method, by being able to work with bad quality data. But it has some of its own problems like localization of points.</p>
+
+<p><b>Pattern Based (Image Based) Matching</b> &minus; Pattern based algorithms compare the basic fingerprint patterns (arch, whorl, and loop) between a stored template and a candidate fingerprint.</p>
+
+<h3>Merits of Finger Recognition System</h3>
+
+<h3>Demerits of Finger Recognition System</h3>
+
+<h3>Applications of Finger Recognition System</h3>
+
+<h2>Facial Recognition System</h2>
+
+<p>Facial recognition is based on determining shape and size of jaw, chin, shape and location of the eyes, eyebrows, nose, lips, and cheekbones. 2D facial scanners start reading face geometry and recording it on the grid. The facial geometry is transferred to the database in terms of points. The comparison algorithms perform face matching and come up with the results. Facial recognition is performed in the following ways &minus;</p>
+
+<p><b>Facial Metrics</b> &minus; In this type, the distances between pupils or from nose to lip or chin are measured.</p>
+
+<p><b>Eigen faces</b> &minus; It is the process of analyzing the overall face image as a weighted combination of a number of faces.</p>
+
+<p><b>Skin Texture Analysis</b> &minus; The unique lines, patterns, and spots apparent in a person’s skin are located.</p>
+
+<h3>Merits of Facial Recognition System</h3>
+
+<h3>Demerits of Facial Recognition System</h3>
+
+<h3>Applications of Facial Recognition System</h3>
+
+<h2>Iris Recognition System</h2>
+
+<p>Iris recognition works on the basis of iris pattern in human eye. The iris is the pigmented elastic tissue that has adjustable circular opening in center. It controls the diameter of pupil. In adult humans, the texture of iris is stable throughout their lives. The iris patterns of left and right eyes are different. The iris patterns and colors change from person to person.</p>
+
+<p>It involves taking the picture of iris with a capable camera, storing it, and comparing the same with the candidate eyes using mathematical algorithms.</p>
+
+<h3>Merits of Iris Recognition System</h3>
+
+<p>It is highly accurate as the chance of matching two irises is 1 in 10 billion people.</p>
+
+<p>It is highly scalable as the iris pattern remains same throughout a person’s lifetime.</p>
+
+<p>The candidate need not remove glasses or contact lenses; they do not hamper the accuracy of the system.</p>
+
+<p>It involves no physical contact with the system.</p>
+
+<p>It provides instant verification (2 to 5 seconds) because of its small template size.</p>
+
+<h3>Demerits of Iris Recognition System</h3>
+
+<h3>Applications of Iris Recognition System</h3>
+
+<p>National security and Identity cards such as <i>Adhaar card</i> in India.</p>
+
+<p>Google uses iris recognition for accessing their datacenters.</p>
+
+<h2>Hand Geometry Recognition System</h2>
+
+<p>It includes measuring length and width of palm, surface area, length and position of fingers, and overall bone structure of the hand. A person’s hand is unique and can be used to identify a person from others. There are two Hand Geometry systems &minus;</p>
+
+<p><b>Contact Based</b> &minus; a hand is placed on a scanner’s surface. This placement is positioned by five pins, which guide the candidate hand to position correctly for the camera.</p>
+
+<p><b>Contact Less</b> &minus; In this approach neither pins nor platform are required for hand image acquisition.</p>
+
+<h3>Merits of Hand Geometry Recognition System</h3>
+
+<h3>Demerits of Hand Geometry Recognition System</h3>
+
+<p>Since the hand geometry is not unique, it is not very reliable.</p>
+
+<p>It is effective in case of adults and not for the growing children.</p>
+
+<p>If candidate’s hand is with jewelry, plaster, or arthritis, it is likely to introduce a problem.</p>
+
+<h3>Applications of Hand Geometry Recognition System</h3>
+
+<h2>Retinal Scanning System</h2>
+
+<p>Retina is the lining layer at the back of the eyeball that covers 65% of the eyeball’s inner surface. It contains <b>photosensitive</b> cells. Each person’s retina is unique due to the complex network of blood vessels that supply blood.</p>
+
+<p>It is a reliable biometric as the retina pattern remains unchanged throughout the person’s life, barring the patterns of persons having diabetes, glaucoma, or some degenerative disorders.</p>
+
+<p>In retinal scanning process, a person is asked to remove lenses or eyeglasses. A low-intensity infrared light beam is casted into a person’s eye for 10 to 15 seconds. This infrared light is absorbed by the blood vessels forming a pattern of blood vessels during the scan. This pattern is then digitized and stored in the database.</p>
+
+<h3>Merits of Retinal Scanning System</h3>
+
+<p>It cannot be forged.</p>
+
+<p>It is highly reliable as the error rate is 1 out of a crore samples (which is almost 0%).</p>
+
+<h3>Demerits of Retinal Scanning System</h3>
+
+<p>It is not very user friendly as the user needs to maintain steadiness that can cause discomfort.</p>
+
+<p>It tends to reveal some poor health conditions such as hypertension or diabetes, which causes privacy issues.</p>
+
+<p>Accuracy of the results is prone to diseases such as cataracts, glaucoma, diabetes, etc.</p>
+
+<h3>Applications of Retinal Scanning System</h3>
+
+<h2>DNA Recognition System</h2>
+
+<p><b>D</b>eoxyribo <b>N</b>euclic <b>A</b>cid (DNA) is the genetic material found in humans. Every human barring identical twins, is uniquely identifiable by the traits found in their DNA, which is located in the nucleus of the cell. There are number of sources from which DNA patterns can be collected such as blood, saliva, nails, hair, etc.</p>
+
+<p>Within cells, DNA is organized in long double helix structure called <b>chromosomes</b>. There are 23 pairs of chromosomes in humans. Out of the 46 total chromosomes, the offspring inherits 23 chromosomes from each biological parent. 99.7% of an offspring’s DNA is shared with their parents. The remaining 0.3% DNA contains repetitive coding unique to an individual.</p>
+
+<p>The fundamental steps of DNA profiling are &minus;</p>
+
+<p>Separating the DNA from sample acquired from either of blood, saliva, hair, semen, or tissue.</p>
+
+<p>Separating the DNA sample into shorter segments.</p>
+
+<p>Organizing the DNA segments according to size.</p>
+
+<p>Comparing the DNA segments from various samples.</p>
+
+<p>The more detailed the sample is, the more precise the comparison and in turn the identification of the individual is.</p>
+
+<p>DNA Biometrics differs from all others in the following ways &minus;</p>
+
+<p>It needs a tangible physical sample instead of image.</p>
+
+<p>DNA matching is done on physical samples. There is no feature extraction or template saving.</p>
+
+<h3>Merit of DNA Recognition System</h3>
+
+<p>It provides the highest accuracy.</p>
+
+<h3>Demerits of DNA Recognition System</h3>
+
+<h3>Applications of DNA Recognition System</h3>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Behavioral Modalities</title>
+
+<h1>Behavioral Modalities</h1>
+
+<p>Behavioral biometrics pertains to the behavior exhibited by people or the manner in which people perform tasks such as walking, signing, and typing on the keyboard.</p>
+
+<p>Behavioral biometrics modalities have higher variations as they primarily depend on the external factors such as fatigue, mood, etc. This causes higher FAR and FRR as compared to solutions based on a physiological biometrics.</p>
+
+<h2>Gait Recognition</h2>
+
+<p><b>Gait</b> is the manner of a person’s walking. People show different traits while walking such as body posture, distance between two feet while walking, swaying, etc., which help to recognize them uniquely.</p>
+
+<p>A gait recognition based on the analyzing the video images of candidate’s walk. The sample of candidate’s walk cycle is recorded by Video. The sample is then analyzed for position of joints such as knees and ankles, and the angles made between them while walking.</p>
+
+<p>A respective mathematical model is created for every candidate person and stored in the database. At the time of verification, this model is compared with the live sample of the candidate walk to determine its identity.</p>
+
+<h3>Merits of Gait Recognition System</h3>
+
+<p>It is non-invasive.</p>
+
+<p>It does not need the candidate’s cooperation as it can be used from a distance.</p>
+
+<p>It can be used for determining medical disorders by spotting changes in walking pattern of a person in case of Parkinson’s disease.</p>
+
+<h3>Demerits of Gait Recognition System</h3>
+
+<p>For this biometric technique, no model is developed with complete accuracy till now.</p>
+
+<p>It may not be as reliable as other established biometric techniques.</p>
+
+<h3>Application of Gait Recognition System</h3>
+
+<p>It is well-suited for identifying criminals in the crime scenario.</p>
+
+<h2>Signature Recognition System</h2>
+
+<p>In this case, more emphasis is given on the behavioral patterns in which the signature is signed than the way a signature looks in terms of graphics.</p>
+
+<p>The behavioral patterns include the changes in the timing of writing, pauses, pressure, direction of strokes, and speed during the course of signing. It could be easy to duplicate the graphical appearance of the signature but it is not easy to imitate the signature with the same behavior the person shows while signing.</p>
+
+<p>This technology consists of a pen and a specialized writing tablet, both connected to a computer for template comparison and verification. A high quality tablet can capture the behavioral traits such as speed, pressure, and timing while signing.</p>
+
+<p>During enrollment phase, the candidate must sign on the writing tablet multiple times for data acquisition. The signature recognition algorithms then extracts the unique features such as timing, pressure, speed, direction of strokes, important points on the path of signature, and the size of signature. The algorithm assigns different values of weights to those points.</p>
+
+<p>At the time of identification, the candidate enters the live sample of the signature, which is compared with the signatures in the database.</p>
+
+<h3>Constraints of Signature Recognition System</h3>
+
+<p>To acquire adequate amount of data, the signature should be small enough to fit on tablet and big enough to be able to deal with.</p>
+
+<p>The quality of the writing tablet decides the robustness of signature recognition enrollment template.</p>
+
+<p>The candidate must perform the verification processes in the same type of environment and conditions as they were at the time of enrollment. If there is a change, then the enrollment template and live sample template may differ from each other.</p>
+
+<h3>Merits of Signature Recognition System</h3>
+
+<p>Signature recognition process has a high resistance to imposters as it is very difficult to imitate the behavior patterns associated with the signature.</p>
+
+<p>It works very well in high amount business transactions. For example, Signature recognition could be used to positively verify the business representatives involved in the transaction before any classified documents are opened and signed.</p>
+
+<p>It is a non-invasive tool.</p>
+
+<p>We all use our signature in some sort of commerce, and thus there are virtually no privacy rights issues involved.</p>
+
+<p>Even if the system is hacked and the template is stolen, it is easy to restore the template.</p>
+
+<h3>Demerits of Signature Recognition System</h3>
+
+<p>The live sample template is prone to change with respect to the changes in behavior while signing. For example, signing with a hand held in plaster.</p>
+
+<p>User need to get accustomed of using signing tablet. Error rate is high till it happens.</p>
+
+<h3>Applications of Signature Recognition System</h3>
+
+<p>It is used in document verification and authorization.</p>
+
+<p>The Chase Manhattan Bank, Chicago is known as the first bank to adopt Signature Recognition technology.</p>
+
+<h2>Keystroke Recognition System</h2>
+
+<p>During the World War II, a technique known as <i>Fist of the Sender</i> was used by military intelligence to determine if the Morse code was sent by enemy or ally based on the rhythm of typing. These days, keystroke dynamics the easiest biometric solution to implement in terms of hardware.</p>
+
+<p>This biometric analyzes candidate’s typing pattern, the rhythm, and the speed of typing on a keyboard. The <b>dwell time</b> and <b>flight time</b> measurements are used in keystroke recognition.</p>
+
+<p><b>Dwell time</b> &minus; It is the duration of time for which a key is pressed.</p>
+
+<p><b>Flight time</b> &minus; It is the time elapsed between releasing a key and pressing the following key.</p>
+
+<p>The candidates differ in the way they type on the keyboard as the time they take to find the right key, the flight time, and the dwelling time. Their speed and rhythm of typing also varies according to their level of comfort with the keyboard. Keystroke recognition system monitors the keyboard inputs thousands of times per second in a single attempt to identify users based on their habits of typing.</p>
+
+<p>There are two types of keystroke recognition &minus;</p>
+
+<p><b>Static</b> &minus; It is one time recognition at the start of interaction.</p>
+
+<p><b>Continuous</b> &minus; It is throughout the course of interaction.</p>
+
+<h3>Application of Keystroke Dynamics</h3>
+
+<p>Keystroke Recognition is used for identification/verification. It is used with user ID/password as a form of <b>multifactor authentication</b>.</p>
+
+<p>It is used for surveillance. Some software solutions track keystroke behavior for each user account without end-user’s knowledge. This tracking is used to analyze if the account was being shared or used by anyone else than the genuine account owner. It is used to verify if some software license is being shared.</p>
+
+<h3>Merits of Keystroke Recognition System</h3>
+
+<h3>Demerits of Keystroke Recognition System</h3>
+
+<p>The candidate’s typing rhythm can change between a number of days or within a day itself because of tiredness, sickness, influence of medicines or alcohol, change of keyboard, etc.</p>
+
+<p>There are no known features dedicated solely to carry out discriminating information.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Voice Recognition</title>
+
+<h1>Voice Recognition</h1>
+
+<p>Voice recognition biometric modality is a combination of both physiological and behavioral modalities. Voice recognition is nothing but sound recognition. It relies on features influenced by &minus;</p>
+
+<p><b>Physiological Component</b> &minus; Physical shape, size, and health of a person’s vocal cord, and lips, teeth, tongue, and mouth cavity.</p>
+
+<p><b>Behavioral Component</b> &minus; Emotional status of the person while speaking, accents, tone, pitch, pace of talking, mumbling, etc.</p>
+
+<h2>Voice Recognition System</h2>
+
+<p>Voice Recognition is also called Speaker Recognition. At the time of enrollment, the user needs to speak a word or phrase into a microphone. This is necessary to acquire speech sample of a candidate.</p>
+
+<p>The electrical signal from the microphone is converted into digital signal by an Analog to Digital (ADC) converter. It is recorded into the computer memory as a digitized sample. The computer then compares and attempts to match the input voice of candidate with the stored digitized voice sample and identifies the candidate.</p>
+
+<h3>Voice Recognition Modalities</h3>
+
+<p>There are two variants of voice recognition &minus; <b>speaker dependent</b> and <b>speaker independent</b>.</p>
+
+<p>Speaker dependent voice recognition relies on the knowledge of candidate's particular voice characteristics. This system learns those characteristics through voice training (or enrollment).</p>
+
+<p>The system needs to be trained on the users to accustom it to a particular accent and tone before employing to recognize what was said.</p>
+
+<p>It is a good option if there is only one user going to use the system.</p>
+
+<p>Speaker independent systems are able to recognize the speech from different users by restricting the contexts of the speech such as words and phrases. These systems are used for automated telephone interfaces.</p>
+
+<p>They do not require training the system on each individual user.</p>
+
+<p>They are a good choice to be used by different individuals where it is not required to recognize each candidate’s speech characteristics.</p>
+
+<h2>Difference between Voice and Speech Recognition</h2>
+
+<p>Speaker recognition and Speech recognition are mistakenly taken as same; but they are different technologies. Let us see, how &minus;</p>
+
+<h3>Merits of Voice Recognition</h3>
+
+<h3>Demerits of Voice Recognition</h3>
+
+<p>It is susceptible to quality of microphone and noise.</p>
+
+<p>The inability to control the factors affecting the input system can significantly decrease performance.</p>
+
+<p>Some speaker verification systems are also susceptible to spoofing attacks through recorded voice.</p>
+
+<h3>Applications of Voice Recognition</h3>
+
+<p>Performing telephone and internet transactions.</p>
+
+<p>Working with Interactive Voice Response (IRV)-based banking and health systems.</p>
+
+<p>Applying audio signatures for digital documents.</p>
+
+<p>In entertainment and emergency services.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Multimodal Biometric Systems</title>
+
+<h1>Multimodal Biometric Systems</h1>
+
+<p>All the biometric systems we discussed till now were unimodal, which take single source of information for authentication. As the name depicts, multimodal biometric systems work on accepting information from two or more biometric inputs.</p>
+
+<p>A multimodal biometric system increases the scope and variety of input information the system takes from the users for authentication.</p>
+
+<h2>Why Multimodal Biometrics is Required?</h2>
+
+<p>The unimodal systems have to deal with various challenges such as lack of secrecy, non-universality of samples, extent of user’s comfort and freedom while dealing with the system, spoofing attacks on stored data, etc.</p>
+
+<p>Some of these challenges can be addressed by employing a multimodal biometric system.</p>
+
+<p>There are several more reasons for its requirement, such as &minus;</p>
+
+<p>Availability of multiple traits makes the multimodal system more reliable.</p>
+
+<p>A multimodal biometric system increases security and secrecy of user data.</p>
+
+<p>A multimodal biometric system conducts fusion strategies to combine decisions from each subsystem and then comes up with a conclusion. This makes a multimodal system more accurate.</p>
+
+<p>If any of the identifiers fail to work for known or unknown reasons, the system still can provide security by employing the other identifier.</p>
+
+<p>Multimodal systems can provide knowledge about “liveliness” of the sample being entered by applying liveliness detection techniques. This makes them capable to detect and handle spoofing.</p>
+
+<h2>Working of Multimodal Biometric System</h2>
+
+<p>Multimodal biometric system has all the conventional modules a unimodal system has &minus;</p>
+
+<p>In addition, it has a fusion technique to integrate the information from two different authentication systems. The fusion can be done at any of the following levels &minus;</p>
+
+<p>The multimodal biometric systems that integrate or fuse the information at initial stage are considered to be more effective than the systems those integrate the information at the later stages. The obvious reason to this is, the early stage contains more accurate information than the matching scores of the comparison modules.</p>
+
+<h3>Fusion Scenarios in Multimodal Biometric System</h3>
+
+<p>Within a multimodal biometric system, there can be variety in number of traits and components. They can be as follows &minus;</p>
+
+<p>Single biometric trait, multiple sensors.</p>
+
+<p>Single biometric trait, multiple classifiers (say, minutiae-based matcher and texture-based matcher).</p>
+
+<p>Single biometric trait, multiple units (say, multiple fingers).</p>
+
+<p>Multiple biometric traits of an individual (say, iris, fingerprint, etc.).</p>
+
+<p>These traits are then operated upon to confirm user’s identity.</p>
+
+<h2>Design Issues with Multimodal Biometric Systems</h2>
+
+<p>You need to consider a number of factors while designing a multimodal biometric system &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometric Modality Selection</title>
+
+<h1>Biometric Modality Selection</h1>
+
+<p>To be able to select a proper biometric system, you need to compare them on various aspects. You need to assess the suitability of the systems to your requirements in terms of convenience, system specifications and performance, and your budget.</p>
+
+<p>You can select best suitable biometric system by studying various criteria for their effectiveness.</p>
+
+<h2>Criteria for Effective Biometric System</h2>
+
+<p>There are seven basic criteria for measuring effectiveness of a biometric system &minus;</p>
+
+<p><b>Uniqueness</b> &minus; It determines how uniquely a biometric system can recognize a user from a group of users. It is a primary criterion.</p>
+
+<p><b>Universality</b> &minus; It indicates requirement for unique characteristics of each person in the world, which cannot be reproduced. It is a secondary criterion.</p>
+
+<p><b>Permanence</b> &minus; It indicates that a personal trait recorded needs to be constant in the database for a certain time period.</p>
+
+<p><b>Collectability</b> &minus; It is the ease at which a person’s trait can be acquired, measured, or processed further.</p>
+
+<p><b>Performance</b> &minus; It is the efficiency of system in terms of accuracy, speed, fault handling, and robustness.</p>
+
+<p><b>Acceptability</b> &minus; It is the user-friendliness, or how good the users accept the technology such that they are cooperative to let their biometric trait captured and assessed.</p>
+
+<p><b>Circumvention</b> &minus; It is the ease with which a trait is possibly imitated using an artifact or substitute.</p>
+
+<h2>Comparison of Various Biometric Modalities</h2>
+
+<p>Let us compare all the biometric system in the following terms &minus;</p>
+
+<p>You can select an appropriate biometric system depending upon the criteria you need to deal with as shown in the table.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometric System Performance</title>
+
+<h1>Biometric System Performance</h1>
+
+<p>Biometric system manufacturers claim high system performance which is practically difficult to achieve in actual operating environments. The possible reasons are, tests conducted in controlled environment setups, limitations on hardware, etc.</p>
+
+<p>For example, a voice recognition system can work efficiently only in quiet environment, a facial recognition system can work fine if lighting conditions are controlled, and candidates can be trained to clean and place their fingers properly on the fingerprint scanners.</p>
+
+<p>However, in practice, such ideal conditions may not be available in the target operating environment.</p>
+
+<h2>Performance Measurements</h2>
+
+<p>The performance measurements of a biometric system are closely tied to False Reject Rate (FRR) and False Accept Rate (FAR).</p>
+
+<p><b>FRR</b> is also known as <b>Type-I error</b> or False Non Match Rate (FNMR) which states the likelihood of a legitimate user being rejected by the system.</p>
+
+<p><b>FAR</b> is referred to as <b>Type-II error</b> or False Match Rate (FMR) which states the likelihood of a false identity claim being accepted by the system.</p>
+
+<p>An ideal biometric system is expected to produce zero value for both FAR and FRR. Means it should accept all genuine users and reject all fake identity claims, which is practically not achievable.</p>
+
+<p><b>FAR</b> and <b>FRR</b> are inversely proportional to each other. If FAR is improved, then the FRR declines. A biometric system providing <b>high FRR ensures high security</b>. If the FRR is too high, then the system requires to enter the live sample a number of times, which makes it less efficient.</p>
+
+<p>The performance of current biometrics technologies is far from the ideal. Hence the system developers need to keep a good balance between these two factors depending on the security requirements.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Pattern Recognition and Biometrics</title>
+
+<h1>Pattern Recognition &amp; Biometrics</h1>
+
+<p>Pattern recognition deals with identifying a pattern and confirming it again. In general, a pattern can be a fingerprint image, a handwritten cursive word, a human face, a speech signal, a bar code, or a web page on the Internet.</p>
+
+<p>The individual patterns are often grouped into various categories based on their properties. When the patterns of same properties are grouped together, the resultant group is also a pattern, which is often called a pattern <b>class</b>.</p>
+
+<p>Pattern recognition is the science for observing, distinguishing the patterns of interest, and making correct decisions about the patterns or pattern classes. Thus, a biometric system applies pattern recognition to identify and classify the individuals, by comparing it with the stored templates.</p>
+
+<h2>Pattern Recognition in Biometrics</h2>
+
+<p>The pattern recognition technique conducts the following tasks &minus;</p>
+
+<p><b>Classification</b> &minus; Identifying handwritten characters, CAPTCHAs, distinguishing humans from computers.</p>
+
+<p><b>Segmentation</b> &minus; Detecting text regions or face regions in images.</p>
+
+<p><b>Syntactic Pattern Recognition</b> &minus; Determining how a group of math symbols or operators are related, and how they form a meaningful expression.</p>
+
+<p>The following table highlights the role of pattern recognition in biometrics &minus;</p>
+
+<h2>Components of Pattern Recognition</h2>
+
+<p>Pattern recognition technique extracts a random pattern of human trait into a compact digital signature, which can serve as a biological identifier. The biometric systems use pattern recognition techniques to classify the users and identify them separately.</p>
+
+<p>The components of pattern recognition are as follows &minus;</p>
+
+<h2>Popular Algorithms in Pattern Recognition</h2>
+
+<p>The most popular pattern generation algorithms are &minus;</p>
+
+<h3>Nearest Neighbor Algorithm</h3>
+
+<p>You need to take the unknown individual’s vector and compute its distance from all the patterns in the database. The smallest distance gives the best match.</p>
+
+<h3>Back-Propagation (Backprop) Algorithm</h3>
+
+<p>It is a bit complex but very useful algorithm that involves a lot of mathematical computations.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signal Processing and Biometrics</title>
+
+<h1>Signal Processing &amp; Biometrics</h1>
+
+<p>There are various signals we can get in the real world such as sound, light, radio signals, biomedical signals from human body, etc. All these signals are in the form of a continuous stream of information, called analog signals. Human voice is a kind of signal we get from the real world and use as biometric input.</p>
+
+<h2>What is a Signal?</h2>
+
+<p>A signal is a measurable physical quantity containing some information, which can be conveyed, displayed, recorded, or modified.</p>
+
+<h2>Signal Processing in Biometrics</h2>
+
+<p>There are various reasons for processing signals. The biometric systems, require voice processing for various reasons &minus;</p>
+
+<p>The analog signal processing module converts real world information such as sound wave in the form of 0s and 1s to make it understandable and usable by the contemporary digital systems such as biometric systems. The keystrokes, hand geometry, signature, and speech fall into the domains of signal processing and pattern recognition.</p>
+
+<h2>Digital Signal Processing Systems (DSPs)</h2>
+
+<p>There are two types of signals &minus; analog and digital. The analog signals are uninterrupted, continuous stream of information whereas digital signal is a stream of 0s and 1s.</p>
+
+<p>DSP systems are one of the important components of biometric systems, which convert analog signals into a stream of discrete digital values by sampling and digitizing using an Analog-to-Digital Converter (ADC).</p>
+
+<p>DSPs are single-chip digital microcomputers, which process electrical signals generated by electronic sensors from cameras, fingerprint sensors, microphones, etc.</p>
+
+<h2>DSP in Biometrics</h2>
+
+<p>A DSP allows the biometric system to be small and easily portable, to perform efficiently and to be overall less costly.</p>
+
+<p>The DSP architecture is built to support complex mathematical algorithms that involve a significant amount of multiplication and addition. The DSP can execute multiply/add in a single cycle with the help of the multiply/accumulate (MAC) hardware inside its Arithmetic Logic Unit (ALU).</p>
+
+<p>It can also enhance the resolution of the captured image with the use of two-dimensional Fast Fourier Transforms (FFT) and finite IR filters.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometrics and Image Processing</title>
+
+<h1>Biometrics &amp; Image Processing</h1>
+
+<p>Images have a huge share in this era of information. In biometrics, image processing is required for identifying an individual whose biometric image is stored in the database previously. Faces, fingerprints, irises, etc., are image-based biometrics, which require image processing and pattern recognition techniques.</p>
+
+<p>For an image based biometric system to work accurately, it needs to have the sample image of user’s biometric in a very clear and non-adulterated form.</p>
+
+<h2>Requirement of Image Processing in Biometrics</h2>
+
+<p>The image of user’s biometric is fed into the biometric system. The system is programmed to manipulate the image using equations, and then store the results of the computation for each pixel.</p>
+
+<p>To selectively enhance certain fine features in the data and to remove certain noise, the digital data is subjected to various image processing operations.</p>
+
+<p>Image processing methods can be grouped into three functional categories &minus;</p>
+
+<h3>Image Restoration</h3>
+
+<p>Image restoration mainly includes &minus;</p>
+
+<p>Image smoothing reduces noise in the image. Smoothing is carried out by replacing each pixel by the average value with the neighboring pixel. The biometric system uses various filtering algorithms and noise reduction techniques such as Median Filtering, Adaptive Filtering, Statistical Histogram, Wavelet Transforms, etc.</p>
+
+<h3>Image Enhancement</h3>
+
+<p>Image enhancement techniques improve the visibility of any portion or feature of the image and suppress the information in other parts. It is done only after restoration is completed. It includes brightening, sharpening, adjusting contrast, etc., so that the image is usable for further processing.</p>
+
+<h3>Feature Extraction</h3>
+
+<p>Two types of features are extracted from image, namely &minus;</p>
+
+<p><b>General features</b> &minus; The features such as shape, texture, color, etc., which are used to describe content of the image.</p>
+
+<p><b>Domain-specific features</b> &minus; They are application dependent features such as face, iris, fingerprint, etc. Gabor filters are used to extract features.</p>
+
+<p>When the features are extracted from the image, you need to choose a suitable classifier. The widely used classifier <b>Nearest Neighbor classifier</b>, which compares the feature vector of the candidate image with the vector of the image stored in the database.</p>
+
+<p><b>B-Splines</b> are approximations applied to describe curve patterns in fingerprint biometric systems. The coefficients of B-Splines are used as features. In case of iris recognition system, the images of iris are decomposed using Discrete Wavelet Transform (DWT) and the DWT coefficients are then used as features.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometric System Security</title>
+
+<h1>Biometric System Security</h1>
+
+<p>The operations of a biometric system depend heavily on the input devices that are subjected to operational limitations. At times, the devices themselves may fail to capture the necessary input samples. They may not capture the sample sufficiently. This makes the system unreliable and vulnerable.</p>
+
+<p>The more vulnerable a biometric system is, the more insecure it is.</p>
+
+<h2>Biometric System Vulnerability</h2>
+
+<p>There are the two major causes of biometric system vulnerability &minus;</p>
+
+<h3>System Failures</h3>
+
+<p>There are two ways in which a biometric system can fail to work &minus;</p>
+
+<p><b>Intrinsic failures</b> &minus; They are failures such as non-working sensors, failure of feature extraction, matching, or decision making modules, etc.</p>
+
+<p><b>Failures due to attacks</b> &minus; They are due to loopholes in the biometric system design, availability of any computations to the attackers, insider attacks from unethical system administrators, etc.</p>
+
+<h3>Non-secure Infrastructure</h3>
+
+<p>The biometric system can be accessible to malicious users if its hardware, software, and user data are not safeguarded.</p>
+
+<h2>Risks with Biometric System Security</h2>
+
+<p>The security of a biometric system is important as the biometric data is not easy to revoke or replace. There are following prominent risks regarding security of biometric systems &minus;</p>
+
+<h3>Risk of User Data Being Stolen</h3>
+
+<p>If the biometric system is vulnerable, the hacker can breach the security of it and collect the user data recorded in the database. It creates more hazards to privacy.</p>
+
+<h3>Risk of User Data Getting Compromised</h3>
+
+<p>After acquiring the biometric sample, the hacker can present a fake sample to the system. If user data is compromised, it remains compromised forever. The obvious reason is, user has only a limited number of biometrics and they are difficult to replace, unlike passwords or ID cards.</p>
+
+<p>Though biometric data is encrypted and stored, it needs to be decrypted for matching purpose. At the time of matching a hacker may breach the security.</p>
+
+<h2>Biometric System Security</h2>
+
+<p>A number of solutions are proposed to address the biometric system security issue. Biometric templates are never stored in the raw form. They are encrypted; sometimes even twice.</p>
+
+<p>In the case of biometrics, there are various resources involved such as humans (subjects or candidates), entities (system components or processes), and biometric data (information). The security requirements of <b>confidentiality, integrity, authenticity, non-repudiation</b>, and <b>availability</b> are essential in biometrics. Let us go through them briefly &minus;</p>
+
+<h3>Authenticity</h3>
+
+<p>It is the quality or the state of being pure, genuine, or original, rather than being reproduced. Information is authentic when it is in the same state and quality when it was created, stored, or transferred.</p>
+
+<p>There are two authenticities in a biometric system &minus; <b>entity authenticity</b> and <b>data origin authenticity</b>. Entity authenticity confirms that all entities involved in the overall processing are the ones they claim to be. Data origin authenticity ensures genuineness and originality of data. For example, the biometrics data is captured with sensor devices. The captured data that came from a genuine sensor is not spoofed from a previous recording.</p>
+
+<h3>Confidentiality</h3>
+
+<p>It is limiting information access and disclosure to authorized users and preventing access by or disclosure to unauthorized people. In cases of a biometric system, it mainly refers to biometric and related authentication information when it is captured and stored, which needs to be kept secret from unauthorized entities.</p>
+
+<p>The biometric information should only be accessible completely to the person it belongs. During identification and variation, the accessing candidate needs to be restricted with appropriate security measures.</p>
+
+<h3>Integrity</h3>
+
+<p>It is the condition of being complete and unaltered that refers to its consistency, accuracy, and correctness. For a biometric system, the integrity should be high. Any malicious manipulations during operation and storage should be kept away or detected earliest by including its notification and correction.</p>
+
+<h3>Non-repudiation</h3>
+
+<p>It is identification of involved resources such as entities and components. It is also seen as accountability. For example, it prohibits a sender or a recipient of biometric information from denying having sent or received biometric information.</p>
+
+<h3>Availability</h3>
+
+<p>A resource has the property of availability with respect to a set of entities if all members of the set can access the resource. An aspect called <b>reachability</b> ensures that the humans or system processes either can or cannot be contacted, depending on user interests.</p>
+
+<p>Attackers can make the system unusable for genuine users, thus preventing them from using authenticated applications. These attackers target the availability of the information.</p>
+
+<h2>Criteria for Generating Biometric Templates</h2>
+
+<p>Here are the criteria for generating biometric templates &minus;</p>
+
+<p>Ensuring that the template comes from a human candidate and is captured by a genuine sensor and software.</p>
+
+<p>Securing a biometric template by encryption with irreversibility properties. This makes it difficult for hackers to compute the original biometric information from secure template.</p>
+
+<p>Creating an <b>unlikable (unique)</b> biometric template. A biometric system should not be able to access the template of the same candidate recorded into another biometric system. In case if a hacker manages to retrieve a biometric template from one biometric system, he should not be able to use this template to gain access through another biometric system even though both verifications may be based on the same biometric template of the candidate. Further, an unlinkable biometric system should make it impossible to derive any information based on the relation between two templates.</p>
+
+<p>Creating a <b>cancellable</b> and <b>renewable</b> template. It emphasizes on the ability to cancel or deactivate the compromised template and reproduce another one, in a similar manner that a lost or stolen smartcard can be reproduced.</p>
+
+<p>The ‘renewable’ and ‘unlinkable’ characteristics are achieved through <b>salting techniques</b>. Salting adds randomly generated unique data known as ‘salt’ to the original information to make it distinct from the others.</p>
+
+<p>Designing a biometric system accuracy with respect to both FAR and FRR.</p>
+
+<p>Selecting a suitable encryption algorithm carefully. Some algorithms may amplify even small variations inherent in an individual’s biometric data, which can lead to higher FRR.</p>
+
+<p>Using an important encryption technique such as <b>hashing method</b>, which is effective when a different permutation is applied with each template generation. Different permutations ensure the uniqueness of each template despite using the same input biometric data.</p>
+
+<p>Employing an effective protection scheme to elevate the <b>performance</b> of the system.</p>
+
+<p>A lot of research and development is being done towards the security and privacy of biometric data.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometrics Quick Guide</title>
+
+<h1>Biometrics - Quick Guide</h1>
+
+<h1>Biometrics - Overview</h1>
+
+<p>The term Biometrics is composed of two words &minus; <i>Bio</i> (Greek word for Life) and <i>Metrics</i> (Measurements). Biometrics is a branch of information technology that aims towards establishing one’s identity based on personal traits.</p>
+
+<p>Biometrics is presently a buzzword in the domain of information security as it provides high degree of accuracy in identifying an individual.</p>
+
+<h2>What is Biometrics?</h2>
+
+<p>Each human being is unique in terms of characteristics, which make him or her different from all others. The physical attributes such as finger prints, color of iris, color of hair, hand geometry, and behavioral characteristics such as tone and accent of speech, signature, or the way of typing keys of computer keyboard etc., make a person stand separate from the rest.</p>
+
+<p>This uniqueness of a person is then used by the biometric systems to &minus;</p>
+
+<h2>What is a Biometric System?</h2>
+
+<h2>Evolution of Biometrics</h2>
+
+<p>The idea of biometrics was present since few years from now. In 14<sup>th</sup> century, China practiced taking finger prints of merchants and their children to separate them from all others. Fingerprinting is still used today.</p>
+
+<p>In the 19<sup>th</sup> century, an Anthropologist named <b>Alphonse Bertillion</b> developed a method (named <i>Bertillionage</i>) of taking body measurements of persons to identify them. He had realized that even if some features of human body are changed, such as length of hair, weight, etc., some physical traits of body remain unchanged, such as length of fingers. This method diminished quickly as it was found that the persons with same body measurements alone can be falsely taken as one. Subsequently, Richard Edward Henry from Scotland Yard developed a method for fingerprinting.</p>
+
+<p>The idea of retinal identification was conceived by Dr. Carleton Simon and Dr. Isadore Goldstein in 1935. In 1976, a research and development effort was put in at EyeDentify Inc. The first commercial retina scanning system was made available in 1981.</p>
+
+<p>Iris recognition was invented by John Daugman in 1993 at Cambridge University.</p>
+
+<p>In 2001, Biometrics Automated Toolset (BAT) was introduced in Kosovo, which provided a concrete identification means.</p>
+
+<p>Today, biometric has come up as an independent field of study with precise technologies of establishing personal identities.</p>
+
+<h2>Why Biometrics is Required?</h2>
+
+<p>With increasing use of Information Technology in the field of banking, science, medication, etc., there is an immense need to protect the systems and data from unauthorized users.</p>
+
+<p>Biometrics is used for <b>authenticating</b> and <b>authorizing</b> a person. Though these terms are often coupled; they mean different.</p>
+
+<h3>Authentication (Identification)</h3>
+
+<p>This process tries to find out answer of question, “Are you the same who you are claiming to be?”, or, “Do I know you?” This is one-to-many matching and comparison of a person’s biometrics with the whole database.</p>
+
+<h3>Verification</h3>
+
+<p>This is the one-to-one process of matching where live sample entered by the candidate is compared with a previously stored template in the database. If both are matching with more than 70% agreeable similarity, then the verification is successful.</p>
+
+<h3>Authorization</h3>
+
+<p>It is the process of assigning access rights to the authenticated or verified users. It tries to find out the answer for the question, “Are you eligible to have certain rights to access this resource?”</p>
+
+<h3>Shortcomings of Conventional Security Aids</h3>
+
+<p>The conventional methods of information system security used ID cards, passwords, Personal Identification Numbers (PINs), etc. They come with the following disadvantages &minus;</p>
+
+<p>They all mean recognizing some code associated with the person rather than recognizing the person who actually produced it.</p>
+
+<p>They can be forgotten, lost, or stolen.</p>
+
+<p>They can be bypassed or easily compromised.</p>
+
+<p>They are not precise.</p>
+
+<p>In such cases, the security of the system is threatened. When the systems need high level of reliable protection, biometrics comes to help by binding the identity more oriented to individual.</p>
+
+<h2>Basic Components of a Biometric System</h2>
+
+<p>In general, a biometric system can be divided into four basic components. Let us see them briefly &minus;</p>
+
+<h3>Input Interface (Sensors)</h3>
+
+<p>It is the sensing component of a biometrics system that converts human biological data into digital form.</p>
+
+<p>For example,</p>
+
+<p>A Metal Oxide Semiconductor (CMOS) imager or a Charge Coupled Device (CCD) in the case of face recognition, handprint recognition, or iris/retinal recognition systems.</p>
+
+<p>An optical sensor in case of fingerprint systems.</p>
+
+<p>A microphone in case of voice recognition systems.</p>
+
+<h3>Processing Unit</h3>
+
+<p>The processing component is a microprocessor, Digital Signal Processor (DSP), or computer that processes the data captured from the sensors.</p>
+
+<p>The processing of the biometric sample involves &minus;</p>
+
+<h3>Database Store</h3>
+
+<p>The database stores the enrolled sample, which is recalled to perform a match at the time of authentication. For identification, there can be any memory from Random Access Memory (RAM), flash EPROM, or a data server. For verification, a removable storage element like a contact or contactless smart card is used.</p>
+
+<h3>Output Interface</h3>
+
+<p>The output interface communicates the decision of the biometric system to enable the access to the user. This can be a simple serial communication protocol RS232, or the higher bandwidth USB protocol. It could also be TCP/IP protocol, Radio Frequency Identification (RFID), Bluetooth, or one of the many cellular protocols.</p>
+
+<h2>General Working of a Biometric System</h2>
+
+<p>There are four general steps a biometric system takes to perform identification and verification &minus;</p>
+
+<p>The biometric sample is acquired from candidate user. The prominent features are extracted from the sample and it is then compared with all the samples stored in the database. When the input sample matches with one of the samples in the database, the biometric system allows the person to access the resources; otherwise prohibits.</p>
+
+<h2>Biometrics Terminology</h2>
+
+<p><b>Biometric Template</b> &minus; It is a digital reference of the distinct characteristics that are extracted from a biometric sample.</p>
+
+<p><b>Candidate/Subject</b> &minus; A person who enters his biometric sample.</p>
+
+<p><b>Closed-Set Identification</b> &minus; The person is known to be existing in the database.</p>
+
+<p><b>Enrollment</b> &minus; It is when a candidate uses a biometric system for the first time, it records the basic information such as name, address, etc. and then records the candidate’s biometric trait.</p>
+
+<p><b>False Acceptance Rate (FAR)</b> &minus; It is the measure of possibility that a biometric system will incorrectly identify an unauthorized user as a valid user.</p>
+
+<p>A biometric system providing <b>low FAR ensures high security</b>.</p>
+
+<p><b>False Reject Rate (FRR)</b> &minus; It is the measure of possibility that the biometric system will incorrectly reject an authorized user as an invalid user.</p>
+
+<p><b>Open-Set Identification</b> &minus; The person is not guaranteed to be existing in the database.</p>
+
+<p><b>Task</b> &minus; It is when the biometric system searches the database for matching sample.</p>
+
+<h2>Application Areas of Biometrics</h2>
+
+<p>There are a number of applications where biometric systems are useful. Few of them are given below &minus;</p>
+
+<p>Controlling workplace access.</p>
+
+<p>Identity establishment of people for authentic citizenship and immigration systems.</p>
+
+<p>Applying access control to sensitive information and systems.</p>
+
+<p>Identifying criminals by forensics.</p>
+
+<p>Executing online e-commerce transactions.</p>
+
+<p>Fraud and theft reduction.</p>
+
+<p>Law enforcement.</p>
+
+<h1>Biometrics - Modalities</h1>
+
+<p>A biometric modality is nothing but a category of a biometric system depending upon the type of human trait it takes as input.</p>
+
+<p>The biometrics is largely statistical. The more the data available from sample, the more the system is likely to be unique and reliable. It can work on various modalities pertaining to measurements of individual’s body and features, and behavioral patterns. The modalities are classified based on the person’s biological traits.</p>
+
+<h2>Types of Biometric Modalities</h2>
+
+<p>There are various traits present in humans, which can be used as biometrics modalities. The biometric modalities fall under three types &minus;</p>
+
+<p>The following table collects the points that differentiate these three modalities &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>For example &minus;</p>
+
+<p>Voice Recognition</p>
+
+<p>It depends on health, size, and shape of vocal cord, nasal cavities, mouth cavity, shape of lips, etc., and the emotional status, age, illness (behavior) of a person.</p>
+
+<p>In the subsequent chapters, we will discuss each of these modalities in greater detail.</p>
+
+<h1>Physiological Modalities</h1>
+
+<p>As depicted earlier, the physiological modalities are based on the direct measurement of parts of human body such as iris, fingerprint, shape, and position of fingers, etc.</p>
+
+<p>There are some physical traits which remain unaltered throughout a person’s life. They can be an excellent resource for identification of an individual.</p>
+
+<h2>Fingerprint Recognition System</h2>
+
+<p>It is the most known and used biometrics solution to authenticate people on biometric systems. The reasons for it being so popular are there are ten available sources of biometric and ease of acquisition.</p>
+
+<p>Every person has a unique fingerprint which is composed of ridges, grooves, and direction of the lines. There are three basic patterns of ridges namely, <b>arch, loop</b>, and <b>whorl</b>. The uniqueness of fingerprint is determined by these features as well as <b>minutiae features</b> such as bifurcation and spots (ridge endings).</p>
+
+<p>Fingerprint is one of oldest and most popular recognition technique. Fingerprint matching techniques are of three types &minus;</p>
+
+<p><b>Minutiae Based Techniques</b> &minus; In these minutiae points are found and then mapped to their relative position on finger. There are some difficulties such as if image is of low quality, then it is difficult to find minutiae points correctly. Another difficulty is, it considers local position of ridges and furrows; not global.</p>
+
+<p><b>Correlation Based Method</b> &minus; It uses richer gray scale information. It overcomes problems of minutiae-based method, by being able to work with bad quality data. But it has some of its own problems like localization of points.</p>
+
+<p><b>Pattern Based (Image Based) Matching</b> &minus; Pattern based algorithms compare the basic fingerprint patterns (arch, whorl, and loop) between a stored template and a candidate fingerprint.</p>
+
+<h3>Merits of Finger Recognition System</h3>
+
+<h3>Demerits of Finger Recognition System</h3>
+
+<h3>Applications of Finger Recognition System</h3>
+
+<h2>Facial Recognition System</h2>
+
+<p>Facial recognition is based on determining shape and size of jaw, chin, shape and location of the eyes, eyebrows, nose, lips, and cheekbones. 2D facial scanners start reading face geometry and recording it on the grid. The facial geometry is transferred to the database in terms of points. The comparison algorithms perform face matching and come up with the results. Facial recognition is performed in the following ways &minus;</p>
+
+<p><b>Facial Metrics</b> &minus; In this type, the distances between pupils or from nose to lip or chin are measured.</p>
+
+<p><b>Eigen faces</b> &minus; It is the process of analyzing the overall face image as a weighted combination of a number of faces.</p>
+
+<p><b>Skin Texture Analysis</b> &minus; The unique lines, patterns, and spots apparent in a person’s skin are located.</p>
+
+<h3>Merits of Facial Recognition System</h3>
+
+<h3>Demerits of Facial Recognition System</h3>
+
+<h3>Applications of Facial Recognition System</h3>
+
+<h2>Iris Recognition System</h2>
+
+<p>Iris recognition works on the basis of iris pattern in human eye. The iris is the pigmented elastic tissue that has adjustable circular opening in center. It controls the diameter of pupil. In adult humans, the texture of iris is stable throughout their lives. The iris patterns of left and right eyes are different. The iris patterns and colors change from person to person.</p>
+
+<p>It involves taking the picture of iris with a capable camera, storing it, and comparing the same with the candidate eyes using mathematical algorithms.</p>
+
+<h3>Merits of Iris Recognition System</h3>
+
+<p>It is highly accurate as the chance of matching two irises is 1 in 10 billion people.</p>
+
+<p>It is highly scalable as the iris pattern remains same throughout a person’s lifetime.</p>
+
+<p>The candidate need not remove glasses or contact lenses; they do not hamper the accuracy of the system.</p>
+
+<p>It involves no physical contact with the system.</p>
+
+<p>It provides instant verification (2 to 5 seconds) because of its small template size.</p>
+
+<h3>Demerits of Iris Recognition System</h3>
+
+<h3>Applications of Iris Recognition System</h3>
+
+<p>National security and Identity cards such as <i>Adhaar card</i> in India.</p>
+
+<p>Google uses iris recognition for accessing their datacenters.</p>
+
+<h2>Hand Geometry Recognition System</h2>
+
+<p>It includes measuring length and width of palm, surface area, length and position of fingers, and overall bone structure of the hand. A person’s hand is unique and can be used to identify a person from others. There are two Hand Geometry systems &minus;</p>
+
+<p><b>Contact Based</b> &minus; a hand is placed on a scanner’s surface. This placement is positioned by five pins, which guide the candidate hand to position correctly for the camera.</p>
+
+<p><b>Contact Less</b> &minus; In this approach neither pins nor platform are required for hand image acquisition.</p>
+
+<h3>Merits of Hand Geometry Recognition System</h3>
+
+<h3>Demerits of Hand Geometry Recognition System</h3>
+
+<p>Since the hand geometry is not unique, it is not very reliable.</p>
+
+<p>It is effective in case of adults and not for the growing children.</p>
+
+<p>If candidate’s hand is with jewelry, plaster, or arthritis, it is likely to introduce a problem.</p>
+
+<h3>Applications of Hand Geometry Recognition System</h3>
+
+<h2>Retinal Scanning System</h2>
+
+<p>Retina is the lining layer at the back of the eyeball that covers 65% of the eyeball’s inner surface. It contains <b>photosensitive</b> cells. Each person’s retina is unique due to the complex network of blood vessels that supply blood.</p>
+
+<p>It is a reliable biometric as the retina pattern remains unchanged throughout the person’s life, barring the patterns of persons having diabetes, glaucoma, or some degenerative disorders.</p>
+
+<p>In retinal scanning process, a person is asked to remove lenses or eyeglasses. A low-intensity infrared light beam is casted into a person’s eye for 10 to 15 seconds. This infrared light is absorbed by the blood vessels forming a pattern of blood vessels during the scan. This pattern is then digitized and stored in the database.</p>
+
+<h3>Merits of Retinal Scanning System</h3>
+
+<p>It cannot be forged.</p>
+
+<p>It is highly reliable as the error rate is 1 out of a crore samples (which is almost 0%).</p>
+
+<h3>Demerits of Retinal Scanning System</h3>
+
+<p>It is not very user friendly as the user needs to maintain steadiness that can cause discomfort.</p>
+
+<p>It tends to reveal some poor health conditions such as hypertension or diabetes, which causes privacy issues.</p>
+
+<p>Accuracy of the results is prone to diseases such as cataracts, glaucoma, diabetes, etc.</p>
+
+<h3>Applications of Retinal Scanning System</h3>
+
+<h2>DNA Recognition System</h2>
+
+<p><b>D</b>eoxyribo <b>N</b>euclic <b>A</b>cid (DNA) is the genetic material found in humans. Every human barring identical twins, is uniquely identifiable by the traits found in their DNA, which is located in the nucleus of the cell. There are number of sources from which DNA patterns can be collected such as blood, saliva, nails, hair, etc.</p>
+
+<p>Within cells, DNA is organized in long double helix structure called <b>chromosomes</b>. There are 23 pairs of chromosomes in humans. Out of the 46 total chromosomes, the offspring inherits 23 chromosomes from each biological parent. 99.7% of an offspring’s DNA is shared with their parents. The remaining 0.3% DNA contains repetitive coding unique to an individual.</p>
+
+<p>The fundamental steps of DNA profiling are &minus;</p>
+
+<p>Separating the DNA from sample acquired from either of blood, saliva, hair, semen, or tissue.</p>
+
+<p>Separating the DNA sample into shorter segments.</p>
+
+<p>Organizing the DNA segments according to size.</p>
+
+<p>Comparing the DNA segments from various samples.</p>
+
+<p>The more detailed the sample is, the more precise the comparison and in turn the identification of the individual is.</p>
+
+<p>DNA Biometrics differs from all others in the following ways &minus;</p>
+
+<p>It needs a tangible physical sample instead of image.</p>
+
+<p>DNA matching is done on physical samples. There is no feature extraction or template saving.</p>
+
+<h3>Merit of DNA Recognition System</h3>
+
+<p>It provides the highest accuracy.</p>
+
+<h3>Demerits of DNA Recognition System</h3>
+
+<h3>Applications of DNA Recognition System</h3>
+
+<h1>Behavioral Modalities</h1>
+
+<p>Behavioral biometrics pertains to the behavior exhibited by people or the manner in which people perform tasks such as walking, signing, and typing on the keyboard.</p>
+
+<p>Behavioral biometrics modalities have higher variations as they primarily depend on the external factors such as fatigue, mood, etc. This causes higher FAR and FRR as compared to solutions based on a physiological biometrics.</p>
+
+<h2>Gait Recognition</h2>
+
+<p><b>Gait</b> is the manner of a person’s walking. People show different traits while walking such as body posture, distance between two feet while walking, swaying, etc., which help to recognize them uniquely.</p>
+
+<p>A gait recognition based on the analyzing the video images of candidate’s walk. The sample of candidate’s walk cycle is recorded by Video. The sample is then analyzed for position of joints such as knees and ankles, and the angles made between them while walking.</p>
+
+<p>A respective mathematical model is created for every candidate person and stored in the database. At the time of verification, this model is compared with the live sample of the candidate walk to determine its identity.</p>
+
+<h3>Merits of Gait Recognition System</h3>
+
+<p>It is non-invasive.</p>
+
+<p>It does not need the candidate’s cooperation as it can be used from a distance.</p>
+
+<p>It can be used for determining medical disorders by spotting changes in walking pattern of a person in case of Parkinson’s disease.</p>
+
+<h3>Demerits of Gait Recognition System</h3>
+
+<p>For this biometric technique, no model is developed with complete accuracy till now.</p>
+
+<p>It may not be as reliable as other established biometric techniques.</p>
+
+<h3>Application of Gait Recognition System</h3>
+
+<p>It is well-suited for identifying criminals in the crime scenario.</p>
+
+<h2>Signature Recognition System</h2>
+
+<p>In this case, more emphasis is given on the behavioral patterns in which the signature is signed than the way a signature looks in terms of graphics.</p>
+
+<p>The behavioral patterns include the changes in the timing of writing, pauses, pressure, direction of strokes, and speed during the course of signing. It could be easy to duplicate the graphical appearance of the signature but it is not easy to imitate the signature with the same behavior the person shows while signing.</p>
+
+<p>This technology consists of a pen and a specialized writing tablet, both connected to a computer for template comparison and verification. A high quality tablet can capture the behavioral traits such as speed, pressure, and timing while signing.</p>
+
+<p>During enrollment phase, the candidate must sign on the writing tablet multiple times for data acquisition. The signature recognition algorithms then extracts the unique features such as timing, pressure, speed, direction of strokes, important points on the path of signature, and the size of signature. The algorithm assigns different values of weights to those points.</p>
+
+<p>At the time of identification, the candidate enters the live sample of the signature, which is compared with the signatures in the database.</p>
+
+<h3>Constraints of Signature Recognition System</h3>
+
+<p>To acquire adequate amount of data, the signature should be small enough to fit on tablet and big enough to be able to deal with.</p>
+
+<p>The quality of the writing tablet decides the robustness of signature recognition enrollment template.</p>
+
+<p>The candidate must perform the verification processes in the same type of environment and conditions as they were at the time of enrollment. If there is a change, then the enrollment template and live sample template may differ from each other.</p>
+
+<h3>Merits of Signature Recognition System</h3>
+
+<p>Signature recognition process has a high resistance to imposters as it is very difficult to imitate the behavior patterns associated with the signature.</p>
+
+<p>It works very well in high amount business transactions. For example, Signature recognition could be used to positively verify the business representatives involved in the transaction before any classified documents are opened and signed.</p>
+
+<p>It is a non-invasive tool.</p>
+
+<p>We all use our signature in some sort of commerce, and thus there are virtually no privacy rights issues involved.</p>
+
+<p>Even if the system is hacked and the template is stolen, it is easy to restore the template.</p>
+
+<h3>Demerits of Signature Recognition System</h3>
+
+<p>The live sample template is prone to change with respect to the changes in behavior while signing. For example, signing with a hand held in plaster.</p>
+
+<p>User need to get accustomed of using signing tablet. Error rate is high till it happens.</p>
+
+<h3>Applications of Signature Recognition System</h3>
+
+<p>It is used in document verification and authorization.</p>
+
+<p>The Chase Manhattan Bank, Chicago is known as the first bank to adopt Signature Recognition technology.</p>
+
+<h2>Keystroke Recognition System</h2>
+
+<p>During the World War II, a technique known as <i>Fist of the Sender</i> was used by military intelligence to determine if the Morse code was sent by enemy or ally based on the rhythm of typing. These days, keystroke dynamics the easiest biometric solution to implement in terms of hardware.</p>
+
+<p>This biometric analyzes candidate’s typing pattern, the rhythm, and the speed of typing on a keyboard. The <b>dwell time</b> and <b>flight time</b> measurements are used in keystroke recognition.</p>
+
+<p><b>Dwell time</b> &minus; It is the duration of time for which a key is pressed.</p>
+
+<p><b>Flight time</b> &minus; It is the time elapsed between releasing a key and pressing the following key.</p>
+
+<p>The candidates differ in the way they type on the keyboard as the time they take to find the right key, the flight time, and the dwelling time. Their speed and rhythm of typing also varies according to their level of comfort with the keyboard. Keystroke recognition system monitors the keyboard inputs thousands of times per second in a single attempt to identify users based on their habits of typing.</p>
+
+<p>There are two types of keystroke recognition &minus;</p>
+
+<p><b>Static</b> &minus; It is one time recognition at the start of interaction.</p>
+
+<p><b>Continuous</b> &minus; It is throughout the course of interaction.</p>
+
+<h3>Application of Keystroke Dynamics</h3>
+
+<p>Keystroke Recognition is used for identification/verification. It is used with user ID/password as a form of <b>multifactor authentication</b>.</p>
+
+<p>It is used for surveillance. Some software solutions track keystroke behavior for each user account without end-user’s knowledge. This tracking is used to analyze if the account was being shared or used by anyone else than the genuine account owner. It is used to verify if some software license is being shared.</p>
+
+<h3>Merits of Keystroke Recognition System</h3>
+
+<h3>Demerits of Keystroke Recognition System</h3>
+
+<p>The candidate’s typing rhythm can change between a number of days or within a day itself because of tiredness, sickness, influence of medicines or alcohol, change of keyboard, etc.</p>
+
+<p>There are no known features dedicated solely to carry out discriminating information.</p>
+
+<h1>Voice Recognition</h1>
+
+<p>Voice recognition biometric modality is a combination of both physiological and behavioral modalities. Voice recognition is nothing but sound recognition. It relies on features influenced by &minus;</p>
+
+<p><b>Physiological Component</b> &minus; Physical shape, size, and health of a person’s vocal cord, and lips, teeth, tongue, and mouth cavity.</p>
+
+<p><b>Behavioral Component</b> &minus; Emotional status of the person while speaking, accents, tone, pitch, pace of talking, mumbling, etc.</p>
+
+<h2>Voice Recognition System</h2>
+
+<p>Voice Recognition is also called Speaker Recognition. At the time of enrollment, the user needs to speak a word or phrase into a microphone. This is necessary to acquire speech sample of a candidate.</p>
+
+<p>The electrical signal from the microphone is converted into digital signal by an Analog to Digital (ADC) converter. It is recorded into the computer memory as a digitized sample. The computer then compares and attempts to match the input voice of candidate with the stored digitized voice sample and identifies the candidate.</p>
+
+<h3>Voice Recognition Modalities</h3>
+
+<p>There are two variants of voice recognition &minus; <b>speaker dependent</b> and <b>speaker independent</b>.</p>
+
+<p>Speaker dependent voice recognition relies on the knowledge of candidate's particular voice characteristics. This system learns those characteristics through voice training (or enrollment).</p>
+
+<p>The system needs to be trained on the users to accustom it to a particular accent and tone before employing to recognize what was said.</p>
+
+<p>It is a good option if there is only one user going to use the system.</p>
+
+<p>Speaker independent systems are able to recognize the speech from different users by restricting the contexts of the speech such as words and phrases. These systems are used for automated telephone interfaces.</p>
+
+<p>They do not require training the system on each individual user.</p>
+
+<p>They are a good choice to be used by different individuals where it is not required to recognize each candidate’s speech characteristics.</p>
+
+<h2>Difference between Voice and Speech Recognition</h2>
+
+<p>Speaker recognition and Speech recognition are mistakenly taken as same; but they are different technologies. Let us see, how &minus;</p>
+
+<h3>Merits of Voice Recognition</h3>
+
+<h3>Demerits of Voice Recognition</h3>
+
+<p>It is susceptible to quality of microphone and noise.</p>
+
+<p>The inability to control the factors affecting the input system can significantly decrease performance.</p>
+
+<p>Some speaker verification systems are also susceptible to spoofing attacks through recorded voice.</p>
+
+<h3>Applications of Voice Recognition</h3>
+
+<p>Performing telephone and internet transactions.</p>
+
+<p>Working with Interactive Voice Response (IRV)-based banking and health systems.</p>
+
+<p>Applying audio signatures for digital documents.</p>
+
+<p>In entertainment and emergency services.</p>
+
+<h1>Multimodal Biometric Systems</h1>
+
+<p>All the biometric systems we discussed till now were unimodal, which take single source of information for authentication. As the name depicts, multimodal biometric systems work on accepting information from two or more biometric inputs.</p>
+
+<p>A multimodal biometric system increases the scope and variety of input information the system takes from the users for authentication.</p>
+
+<h2>Why Multimodal Biometrics is Required?</h2>
+
+<p>The unimodal systems have to deal with various challenges such as lack of secrecy, non-universality of samples, extent of user’s comfort and freedom while dealing with the system, spoofing attacks on stored data, etc.</p>
+
+<p>Some of these challenges can be addressed by employing a multimodal biometric system.</p>
+
+<p>There are several more reasons for its requirement, such as &minus;</p>
+
+<p>Availability of multiple traits makes the multimodal system more reliable.</p>
+
+<p>A multimodal biometric system increases security and secrecy of user data.</p>
+
+<p>A multimodal biometric system conducts fusion strategies to combine decisions from each subsystem and then comes up with a conclusion. This makes a multimodal system more accurate.</p>
+
+<p>If any of the identifiers fail to work for known or unknown reasons, the system still can provide security by employing the other identifier.</p>
+
+<p>Multimodal systems can provide knowledge about “liveliness” of the sample being entered by applying liveliness detection techniques. This makes them capable to detect and handle spoofing.</p>
+
+<h2>Working of Multimodal Biometric System</h2>
+
+<p>Multimodal biometric system has all the conventional modules a unimodal system has &minus;</p>
+
+<p>In addition, it has a fusion technique to integrate the information from two different authentication systems. The fusion can be done at any of the following levels &minus;</p>
+
+<p>The multimodal biometric systems that integrate or fuse the information at initial stage are considered to be more effective than the systems those integrate the information at the later stages. The obvious reason to this is, the early stage contains more accurate information than the matching scores of the comparison modules.</p>
+
+<h3>Fusion Scenarios in Multimodal Biometric System</h3>
+
+<p>Within a multimodal biometric system, there can be variety in number of traits and components. They can be as follows &minus;</p>
+
+<p>Single biometric trait, multiple sensors.</p>
+
+<p>Single biometric trait, multiple classifiers (say, minutiae-based matcher and texture-based matcher).</p>
+
+<p>Single biometric trait, multiple units (say, multiple fingers).</p>
+
+<p>Multiple biometric traits of an individual (say, iris, fingerprint, etc.).</p>
+
+<p>These traits are then operated upon to confirm user’s identity.</p>
+
+<h2>Design Issues with Multimodal Biometric Systems</h2>
+
+<p>You need to consider a number of factors while designing a multimodal biometric system &minus;</p>
+
+<h1>Biometric Modality Selection</h1>
+
+<p>To be able to select a proper biometric system, you need to compare them on various aspects. You need to assess the suitability of the systems to your requirements in terms of convenience, system specifications and performance, and your budget.</p>
+
+<p>You can select best suitable biometric system by studying various criteria for their effectiveness.</p>
+
+<h2>Criteria for Effective Biometric System</h2>
+
+<p>There are seven basic criteria for measuring effectiveness of a biometric system &minus;</p>
+
+<p><b>Uniqueness</b> &minus; It determines how uniquely a biometric system can recognize a user from a group of users. It is a primary criterion.</p>
+
+<p><b>Universality</b> &minus; It indicates requirement for unique characteristics of each person in the world, which cannot be reproduced. It is a secondary criterion.</p>
+
+<p><b>Permanence</b> &minus; It indicates that a personal trait recorded needs to be constant in the database for a certain time period.</p>
+
+<p><b>Collectability</b> &minus; It is the ease at which a person’s trait can be acquired, measured, or processed further.</p>
+
+<p><b>Performance</b> &minus; It is the efficiency of system in terms of accuracy, speed, fault handling, and robustness.</p>
+
+<p><b>Acceptability</b> &minus; It is the user-friendliness, or how good the users accept the technology such that they are cooperative to let their biometric trait captured and assessed.</p>
+
+<p><b>Circumvention</b> &minus; It is the ease with which a trait is possibly imitated using an artifact or substitute.</p>
+
+<h2>Comparison of Various Biometric Modalities</h2>
+
+<p>Let us compare all the biometric system in the following terms &minus;</p>
+
+<p>You can select an appropriate biometric system depending upon the criteria you need to deal with as shown in the table.</p>
+
+<h1>Biometric System Performance</h1>
+
+<p>Biometric system manufacturers claim high system performance which is practically difficult to achieve in actual operating environments. The possible reasons are, tests conducted in controlled environment setups, limitations on hardware, etc.</p>
+
+<p>For example, a voice recognition system can work efficiently only in quiet environment, a facial recognition system can work fine if lighting conditions are controlled, and candidates can be trained to clean and place their fingers properly on the fingerprint scanners.</p>
+
+<p>However, in practice, such ideal conditions may not be available in the target operating environment.</p>
+
+<h2>Performance Measurements</h2>
+
+<p>The performance measurements of a biometric system are closely tied to False Reject Rate (FRR) and False Accept Rate (FAR).</p>
+
+<p><b>FRR</b> is also known as <b>Type-I error</b> or False Non Match Rate (FNMR) which states the likelihood of a legitimate user being rejected by the system.</p>
+
+<p><b>FAR</b> is referred to as <b>Type-II error</b> or False Match Rate (FMR) which states the likelihood of a false identity claim being accepted by the system.</p>
+
+<p>An ideal biometric system is expected to produce zero value for both FAR and FRR. Means it should accept all genuine users and reject all fake identity claims, which is practically not achievable.</p>
+
+<p><b>FAR</b> and <b>FRR</b> are inversely proportional to each other. If FAR is improved, then the FRR declines. A biometric system providing <b>high FRR ensures high security</b>. If the FRR is too high, then the system requires to enter the live sample a number of times, which makes it less efficient.</p>
+
+<p>The performance of current biometrics technologies is far from the ideal. Hence the system developers need to keep a good balance between these two factors depending on the security requirements.</p>
+
+<h1>Pattern Recognition &amp; Biometrics</h1>
+
+<p>Pattern recognition deals with identifying a pattern and confirming it again. In general, a pattern can be a fingerprint image, a handwritten cursive word, a human face, a speech signal, a bar code, or a web page on the Internet.</p>
+
+<p>The individual patterns are often grouped into various categories based on their properties. When the patterns of same properties are grouped together, the resultant group is also a pattern, which is often called a pattern <b>class</b>.</p>
+
+<p>Pattern recognition is the science for observing, distinguishing the patterns of interest, and making correct decisions about the patterns or pattern classes. Thus, a biometric system applies pattern recognition to identify and classify the individuals, by comparing it with the stored templates.</p>
+
+<h2>Pattern Recognition in Biometrics</h2>
+
+<p>The pattern recognition technique conducts the following tasks &minus;</p>
+
+<p><b>Classification</b> &minus; Identifying handwritten characters, CAPTCHAs, distinguishing humans from computers.</p>
+
+<p><b>Segmentation</b> &minus; Detecting text regions or face regions in images.</p>
+
+<p><b>Syntactic Pattern Recognition</b> &minus; Determining how a group of math symbols or operators are related, and how they form a meaningful expression.</p>
+
+<p>The following table highlights the role of pattern recognition in biometrics &minus;</p>
+
+<h2>Components of Pattern Recognition</h2>
+
+<p>Pattern recognition technique extracts a random pattern of human trait into a compact digital signature, which can serve as a biological identifier. The biometric systems use pattern recognition techniques to classify the users and identify them separately.</p>
+
+<p>The components of pattern recognition are as follows &minus;</p>
+
+<h2>Popular Algorithms in Pattern Recognition</h2>
+
+<p>The most popular pattern generation algorithms are &minus;</p>
+
+<h3>Nearest Neighbor Algorithm</h3>
+
+<p>You need to take the unknown individual’s vector and compute its distance from all the patterns in the database. The smallest distance gives the best match.</p>
+
+<h3>Back-Propagation (Backprop) Algorithm</h3>
+
+<p>It is a bit complex but very useful algorithm that involves a lot of mathematical computations.</p>
+
+<h1>Signal Processing &amp; Biometrics</h1>
+
+<p>There are various signals we can get in the real world such as sound, light, radio signals, biomedical signals from human body, etc. All these signals are in the form of a continuous stream of information, called analog signals. Human voice is a kind of signal we get from the real world and use as biometric input.</p>
+
+<h2>What is a Signal?</h2>
+
+<p>A signal is a measurable physical quantity containing some information, which can be conveyed, displayed, recorded, or modified.</p>
+
+<h2>Signal Processing in Biometrics</h2>
+
+<p>There are various reasons for processing signals. The biometric systems, require voice processing for various reasons &minus;</p>
+
+<p>The analog signal processing module converts real world information such as sound wave in the form of 0s and 1s to make it understandable and usable by the contemporary digital systems such as biometric systems. The keystrokes, hand geometry, signature, and speech fall into the domains of signal processing and pattern recognition.</p>
+
+<h2>Digital Signal Processing Systems (DSPs)</h2>
+
+<p>There are two types of signals &minus; analog and digital. The analog signals are uninterrupted, continuous stream of information whereas digital signal is a stream of 0s and 1s.</p>
+
+<p>DSP systems are one of the important components of biometric systems, which convert analog signals into a stream of discrete digital values by sampling and digitizing using an Analog-to-Digital Converter (ADC).</p>
+
+<p>DSPs are single-chip digital microcomputers, which process electrical signals generated by electronic sensors from cameras, fingerprint sensors, microphones, etc.</p>
+
+<h2>DSP in Biometrics</h2>
+
+<p>A DSP allows the biometric system to be small and easily portable, to perform efficiently and to be overall less costly.</p>
+
+<p>The DSP architecture is built to support complex mathematical algorithms that involve a significant amount of multiplication and addition. The DSP can execute multiply/add in a single cycle with the help of the multiply/accumulate (MAC) hardware inside its Arithmetic Logic Unit (ALU).</p>
+
+<p>It can also enhance the resolution of the captured image with the use of two-dimensional Fast Fourier Transforms (FFT) and finite IR filters.</p>
+
+<h1>Biometrics &amp; Image Processing</h1>
+
+<p>Images have a huge share in this era of information. In biometrics, image processing is required for identifying an individual whose biometric image is stored in the database previously. Faces, fingerprints, irises, etc., are image-based biometrics, which require image processing and pattern recognition techniques.</p>
+
+<p>For an image based biometric system to work accurately, it needs to have the sample image of user’s biometric in a very clear and non-adulterated form.</p>
+
+<h2>Requirement of Image Processing in Biometrics</h2>
+
+<p>The image of user’s biometric is fed into the biometric system. The system is programmed to manipulate the image using equations, and then store the results of the computation for each pixel.</p>
+
+<p>To selectively enhance certain fine features in the data and to remove certain noise, the digital data is subjected to various image processing operations.</p>
+
+<p>Image processing methods can be grouped into three functional categories &minus;</p>
+
+<h3>Image Restoration</h3>
+
+<p>Image restoration mainly includes &minus;</p>
+
+<p>Image smoothing reduces noise in the image. Smoothing is carried out by replacing each pixel by the average value with the neighboring pixel. The biometric system uses various filtering algorithms and noise reduction techniques such as Median Filtering, Adaptive Filtering, Statistical Histogram, Wavelet Transforms, etc.</p>
+
+<h3>Image Enhancement</h3>
+
+<p>Image enhancement techniques improve the visibility of any portion or feature of the image and suppress the information in other parts. It is done only after restoration is completed. It includes brightening, sharpening, adjusting contrast, etc., so that the image is usable for further processing.</p>
+
+<h3>Feature Extraction</h3>
+
+<p>Two types of features are extracted from image, namely &minus;</p>
+
+<p><b>General features</b> &minus; The features such as shape, texture, color, etc., which are used to describe content of the image.</p>
+
+<p><b>Domain-specific features</b> &minus; They are application dependent features such as face, iris, fingerprint, etc. Gabor filters are used to extract features.</p>
+
+<p>When the features are extracted from the image, you need to choose a suitable classifier. The widely used classifier <b>Nearest Neighbor classifier</b>, which compares the feature vector of the candidate image with the vector of the image stored in the database.</p>
+
+<p><b>B-Splines</b> are approximations applied to describe curve patterns in fingerprint biometric systems. The coefficients of B-Splines are used as features. In case of iris recognition system, the images of iris are decomposed using Discrete Wavelet Transform (DWT) and the DWT coefficients are then used as features.</p>
+
+<h1>Biometric System Security</h1>
+
+<p>The operations of a biometric system depend heavily on the input devices that are subjected to operational limitations. At times, the devices themselves may fail to capture the necessary input samples. They may not capture the sample sufficiently. This makes the system unreliable and vulnerable.</p>
+
+<p>The more vulnerable a biometric system is, the more insecure it is.</p>
+
+<h2>Biometric System Vulnerability</h2>
+
+<p>There are the two major causes of biometric system vulnerability &minus;</p>
+
+<h3>System Failures</h3>
+
+<p>There are two ways in which a biometric system can fail to work &minus;</p>
+
+<p><b>Intrinsic failures</b> &minus; They are failures such as non-working sensors, failure of feature extraction, matching, or decision making modules, etc.</p>
+
+<p><b>Failures due to attacks</b> &minus; They are due to loopholes in the biometric system design, availability of any computations to the attackers, insider attacks from unethical system administrators, etc.</p>
+
+<h3>Non-secure Infrastructure</h3>
+
+<p>The biometric system can be accessible to malicious users if its hardware, software, and user data are not safeguarded.</p>
+
+<h2>Risks with Biometric System Security</h2>
+
+<p>The security of a biometric system is important as the biometric data is not easy to revoke or replace. There are following prominent risks regarding security of biometric systems &minus;</p>
+
+<h3>Risk of User Data Being Stolen</h3>
+
+<p>If the biometric system is vulnerable, the hacker can breach the security of it and collect the user data recorded in the database. It creates more hazards to privacy.</p>
+
+<h3>Risk of User Data Getting Compromised</h3>
+
+<p>After acquiring the biometric sample, the hacker can present a fake sample to the system. If user data is compromised, it remains compromised forever. The obvious reason is, user has only a limited number of biometrics and they are difficult to replace, unlike passwords or ID cards.</p>
+
+<p>Though biometric data is encrypted and stored, it needs to be decrypted for matching purpose. At the time of matching a hacker may breach the security.</p>
+
+<h2>Biometric System Security</h2>
+
+<p>A number of solutions are proposed to address the biometric system security issue. Biometric templates are never stored in the raw form. They are encrypted; sometimes even twice.</p>
+
+<p>In the case of biometrics, there are various resources involved such as humans (subjects or candidates), entities (system components or processes), and biometric data (information). The security requirements of <b>confidentiality, integrity, authenticity, non-repudiation</b>, and <b>availability</b> are essential in biometrics. Let us go through them briefly &minus;</p>
+
+<h3>Authenticity</h3>
+
+<p>It is the quality or the state of being pure, genuine, or original, rather than being reproduced. Information is authentic when it is in the same state and quality when it was created, stored, or transferred.</p>
+
+<p>There are two authenticities in a biometric system &minus; <b>entity authenticity</b> and <b>data origin authenticity</b>. Entity authenticity confirms that all entities involved in the overall processing are the ones they claim to be. Data origin authenticity ensures genuineness and originality of data. For example, the biometrics data is captured with sensor devices. The captured data that came from a genuine sensor is not spoofed from a previous recording.</p>
+
+<h3>Confidentiality</h3>
+
+<p>It is limiting information access and disclosure to authorized users and preventing access by or disclosure to unauthorized people. In cases of a biometric system, it mainly refers to biometric and related authentication information when it is captured and stored, which needs to be kept secret from unauthorized entities.</p>
+
+<p>The biometric information should only be accessible completely to the person it belongs. During identification and variation, the accessing candidate needs to be restricted with appropriate security measures.</p>
+
+<h3>Integrity</h3>
+
+<p>It is the condition of being complete and unaltered that refers to its consistency, accuracy, and correctness. For a biometric system, the integrity should be high. Any malicious manipulations during operation and storage should be kept away or detected earliest by including its notification and correction.</p>
+
+<h3>Non-repudiation</h3>
+
+<p>It is identification of involved resources such as entities and components. It is also seen as accountability. For example, it prohibits a sender or a recipient of biometric information from denying having sent or received biometric information.</p>
+
+<h3>Availability</h3>
+
+<p>A resource has the property of availability with respect to a set of entities if all members of the set can access the resource. An aspect called <b>reachability</b> ensures that the humans or system processes either can or cannot be contacted, depending on user interests.</p>
+
+<p>Attackers can make the system unusable for genuine users, thus preventing them from using authenticated applications. These attackers target the availability of the information.</p>
+
+<h2>Criteria for Generating Biometric Templates</h2>
+
+<p>Here are the criteria for generating biometric templates &minus;</p>
+
+<p>Ensuring that the template comes from a human candidate and is captured by a genuine sensor and software.</p>
+
+<p>Securing a biometric template by encryption with irreversibility properties. This makes it difficult for hackers to compute the original biometric information from secure template.</p>
+
+<p>Creating an <b>unlikable (unique)</b> biometric template. A biometric system should not be able to access the template of the same candidate recorded into another biometric system. In case if a hacker manages to retrieve a biometric template from one biometric system, he should not be able to use this template to gain access through another biometric system even though both verifications may be based on the same biometric template of the candidate. Further, an unlinkable biometric system should make it impossible to derive any information based on the relation between two templates.</p>
+
+<p>Creating a <b>cancellable</b> and <b>renewable</b> template. It emphasizes on the ability to cancel or deactivate the compromised template and reproduce another one, in a similar manner that a lost or stolen smartcard can be reproduced.</p>
+
+<p>The ‘renewable’ and ‘unlinkable’ characteristics are achieved through <b>salting techniques</b>. Salting adds randomly generated unique data known as ‘salt’ to the original information to make it distinct from the others.</p>
+
+<p>Designing a biometric system accuracy with respect to both FAR and FRR.</p>
+
+<p>Selecting a suitable encryption algorithm carefully. Some algorithms may amplify even small variations inherent in an individual’s biometric data, which can lead to higher FRR.</p>
+
+<p>Using an important encryption technique such as <b>hashing method</b>, which is effective when a different permutation is applied with each template generation. Different permutations ensure the uniqueness of each template despite using the same input biometric data.</p>
+
+<p>Employing an effective protection scheme to elevate the <b>performance</b> of the system.</p>
+
+<p>A lot of research and development is being done towards the security and privacy of biometric data.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Biometrics Useful Resources</title>
+
+<h1>Biometrics - Useful Resources</h1>
+
+<p>The following resources contain additional information on Biometrics. Please use them to get more in-depth knowledge on this topic.</p>
+
+<h2>Useful Links on Biometrics</h2>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikipedia.org/wiki/Biometrics">Biometrics Wiki</a> &minus; This site details the basics of Biometrics</p>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikipedia.org/wiki/Biometric_points">Biometrics</a> &minus; Useful Points of Biometrics</p>
+
+<h2>Useful Books on Biometrics</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss Biometrics</title>
+
+<h1>Discuss Biometrics</h1>
+
+<p>This tutorial provides introductory knowledge on Biometrics. By accessing this tutorial, you would get sufficient information about the basics of biometrics and different biometric modalities such as physiological, behavioral, and combination of both modalities. This tutorial also provides a glimpse of various security issues related to biometric systems, and the comparison of various biometric systems.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>

@@ -1,0 +1,1975 @@
+<!DOCTYPE html><html><body><title>Communication Technologies Tutorial</title>
+
+<h1>Communication Technologies Tutorial</h1>
+
+<p>Exchange of information through the use of speech, signs or symbols is called communication. When early humans started speaking, some 5,00,000 years ago, that was the first mode of communication. Communication over a long distance when people who are communicating are not in direct line of each other’s site is called telecommunication.</p>
+
+<p>Invention of telephone and establishment of commercial telephony in 1878 marked a turnaround in communication systems and real telecommunication was born. Telephones slowly gave way to television, videophone, satellite and finally computer networks. Computer networks have revolutionized modern day communication and communication technologies.</p>
+
+<p>In this tutorial, we will discuss in detail how networks have evolved since the first network known as ARPANET. We will also discuss the hardware and software components of networking and the concept of global communication via Internet.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial is designed for anyone who wants to understand the basic concepts of networking and how a network functions.</p>
+
+<h1>Prerequisites</h1>
+
+<p>There are no prerequisites for this course except an appetite for learning how networks in general and Internet in particular operate.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Introduction</title>
+
+<h1>Communication Technologies - Introduction</h1>
+
+<p>Exchange of information through the use of speech, signs or symbols is called communication. When early humans started speaking, some 5,00,000 years ago, that was the first mode of communication. Before we dive into modern technologies that drive communication in contemporary world, we need to know how humans developed better communication techniques to share knowledge with each other.</p>
+
+<h2>History of Communication</h2>
+
+<p>Communicating with people over a distance is known as <b>telecommunication</b>. The first forms of telecommunication were <b>smoke signals, drums</b> or fire <b>torches</b>. The major disadvantage with these communication systems was that only a set of pre-determined messages could be transmitted. This was overcome in the 18<sup>th</sup> and 19<sup>th</sup> century through development of <b>telegraphy</b> and <b>Morse code</b>.</p>
+
+<p>Invention of telephone and establishment of commercial telephony in 1878 marked a turnaround in communication systems and real telecommunication was born. International Telecommunication Union (ITU) defines telecommunication as transmission, emission and reception of any signs, signals or messages by electromagnetic systems. Now we had the communication technology to connect with people physically located thousands of kilometers away.</p>
+
+<p>Telephones slowly gave way to television, videophone, satellite and finally computer networks. Computer networks have revolutionized modern day communication and communication technologies. That will be the subject of our in-depth study in subsequent chapters.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies History Of Networking</title>
+
+<h1>History Of Networking</h1>
+
+<h2>ARPANET - the First Network</h2>
+
+<p><b>ARPANET</b> &minus; <b>Advanced Research Projects Agency Network</b> &minus; the granddad of Internet was a network established by the US Department of Defense (DOD). The work for establishing the network started in the early 1960s and DOD sponsored major research work, which resulted in development on initial protocols, languages and frameworks for network communication.</p>
+
+<p>It had four nodes at University of California at Los Angeles (UCLA), Stanford Research Institute (SRI), University of California at Santa Barbara (UCSB) and University of Utah. On October 29, 1969, the first message was exchanged between UCLA and SRI. E-mail was created by Roy Tomlinson in 1972 at Bolt Beranek and Newman, Inc. (BBN) after UCLA was connected to BBN.</p>
+
+<h2>Internet</h2>
+
+<p>ARPANET expanded to connect DOD with those universities of the US that were carrying out defense-related research. It covered most of the major universities across the country. The concept of networking got a boost when University College of London (UK) and Royal Radar Network (Norway) connected to the ARPANET and a network of networks was formed.</p>
+
+<p>The term Internet was coined by Vinton Cerf, Yogen Dalal and Carl Sunshine of Stanford University to describe this network of networks. Together they also developed protocols to facilitate information exchange over the Internet. Transmission Control Protocol (TCP) still forms the backbone of networking.</p>
+
+<h2>Telenet</h2>
+
+<p>Telenet was the first commercial adaptation of ARPANET introduced in 1974. With this the concept of Internet Service Provider (ISP) was also introduced. The main function of an ISP is to provide uninterrupted Internet connection to its customers at affordable rates.</p>
+
+<h2>World Wide Web</h2>
+
+<p>With commercialization of internet, more and more networks were developed in different part of the world. Each network used different protocols for communicating over the network. This prevented different networks from connecting together seamlessly. In the 1980s, Tim Berners-Lee led a group of Computer scientists at CERN, Switzerland, to create a seamless network of varied networks, called the World Wide Web (WWW).</p>
+
+<p>World Wide Web is a complex web of websites and web pages connected together through hypertexts. Hypertext is a word or group of words linking to another web page of the same or different website. When the hypertext is clicked, another web page opens.</p>
+
+<p>The evolution from ARPANET to WWW was possible due to many new achievements by researchers and computer scientists all over the world. Here are some of those developments &minus;</p>
+
+<p>Advanced Research Project Agency formed by US</p>
+
+<p>ARPANET became functional</p>
+
+<p>ARPANET connected to BBNs</p>
+
+<p>Roy Tomlinson develops network messaging or E-mail. Symbol @ comes to mean "at"</p>
+
+<p>APRANET connected to Royal Radar Network of Norway</p>
+
+<p>Term Internet coined</p>
+
+<p>First commercial use of ARPANET, Telenet, is approved</p>
+
+<p>TCP/IP introduced as standard protocol on ARPANET</p>
+
+<p>Domain Name System introduced</p>
+
+<p>National Science Foundation brings connectivity to more people with its NSFNET program</p>
+
+<p>ARPANET decommissioned</p>
+
+<p>First web browser Nexus developed</p>
+
+<p>HTML developed</p>
+
+<p>Web 2.0 is born</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Terminologies</title>
+
+<h1>Communication Technologies - Terminologies</h1>
+
+<p>Before we dive into details of networking, let us discuss some common terms associated with data communication.</p>
+
+<h2>Channel</h2>
+
+<p>Physical medium like cables over which information is exchanged is called <b>channel</b>. Transmission channel may be <b>analog</b> or <b>digital</b>. As the name suggests, analog channels transmit data using <b>analog signals</b> while digital channels transmit data using <b>digital signals</b>.</p>
+
+<p>In popular network terminology, path over which data is sent or received is called <b>data channel</b>. This data channel may be a tangible medium like copper wire cables or broadcast medium like <b>radio waves</b>.</p>
+
+<h2>Data Transfer Rate</h2>
+
+<p>The speed of data transferred or received over transmission channel, measured per unit time, is called data transfer rate. The smallest unit of measurement is bits per second (bps). 1 bps means 1 bit (0 or 1) of data is transferred in 1 second.</p>
+
+<p>Here are some commonly used data transfer rates &minus;</p>
+
+<h2>Bandwidth</h2>
+
+<p>Data transfer rates that can be supported by a network is called its bandwidth. It is measured in bits per second (bps). Modern day networks provide bandwidth in Kbps, Mbps and Gbps. Some of the factors affecting a network’s bandwidth include &minus;</p>
+
+<h2>Throughput</h2>
+
+<p>Throughput is the actual speed with which data gets transferred over the network. Besides transmitting the actual data, network bandwidth is used for transmitting error messages, acknowledgement frames, etc.</p>
+
+<p>Throughput is a better measurement of network speed, efficiency and capacity utilization rather than bandwidth.</p>
+
+<h2>Protocol</h2>
+
+<p>Protocol is a set of rules and regulations used by devices to communicate over the network. Just like humans, computers also need rules to ensure successful communication. If two people start speaking at the same time or in different languages when no interpreter is present, no meaningful exchange of information can occur.</p>
+
+<p>Similarly, devices connected on the network need to follow rules defining situations like when and how to transmit data, when to receive data, how to give error-free message, etc.</p>
+
+<p>Some common protocols used over the Internet are &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Switching Techniques</title>
+
+<h1>Switching Techniques</h1>
+
+<p>In large networks, there may be more than one paths for transmitting data from <b>sender</b> to receiver. Selecting a path that data must take out of the available options is called <b>switching</b>. There are two popular switching techniques – circuit switching and packet switching.</p>
+
+<h2>Circuit Switching</h2>
+
+<p>When a dedicated path is established for data transmission between sender and receiver, it is called circuit switching. When any network node wants to send data, be it audio, video, text or any other type of information, a <b>call request signal</b> is sent to the receiver and acknowledged back to ensure availability of dedicated path. This dedicated path is then used to send data. ARPANET used circuit switching for communication over the network.</p>
+
+<h3>Advantages of Circuit Switching</h3>
+
+<p>Circuit switching provides these advantages over other switching techniques &minus;</p>
+
+<h3>Disadvantages of Circuit Switching</h3>
+
+<p>Circuit switching has its disadvantages too &minus;</p>
+
+<p>Long set up time is required</p>
+
+<p>A request token must travel to the receiver and then acknowledged before any transmission can happen</p>
+
+<p>Line may be held up for a long time</p>
+
+<h2>Packet Switching</h2>
+
+<p>As we discussed, the major problem with circuit switching is that it needs a dedicated line for transmission. In packet switching, data is broken down into small packets with each packet having source and destination addresses, travelling from one router to the next router.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Transmission Media</title>
+
+<h1>Transmission Media</h1>
+
+<p>For any networking to be effective, raw stream of data is to be transported from one device to other over some medium. Various transmission media can be used for transfer of data. These transmission media may be of two types &minus;</p>
+
+<p><b>Guided</b> &minus; In guided media, transmitted data travels through cabling system that has a fixed path. For example, copper wires, fibre optic wires, etc.</p>
+
+<p><b>Unguided</b> &minus; In unguided media, transmitted data travels through free space in form of electromagnetic signal. For example, radio waves, lasers, etc.</p>
+
+<p>Each transmission media has its own advantages and disadvantages in terms of bandwidth, speed, delay, cost per bit, ease of installation and maintenance, etc. Let’s discuss some of the most commonly used media in detail.</p>
+
+<h2>Twisted Pair Cable</h2>
+
+<p>Copper wires are the most common wires used for transmitting signals because of good performance at low costs. They are most commonly used in telephone lines. However, if two or more wires are lying together, they can interfere with each other’s signals. To reduce this electromagnetic interference, pair of copper wires are twisted together in helical shape like a DNA molecule. Such twisted copper wires are called <b>twisted pair</b>. To reduce interference between nearby twisted pairs, the twist rates are different for each pair.</p>
+
+<p>Up to 25 twisted pair are put together in a protective covering to form twisted pair cables that are the backbone of telephone systems and Ethernet networks.</p>
+
+<h3>Advantages of twisted pair cable</h3>
+
+<p>Twisted pair cable are the oldest and most popular cables all over the world. This is due to the many advantages that they offer &minus;</p>
+
+<h3>Disadvantages of twisted pair cable</h3>
+
+<p>With its many advantages, twisted pair cables offer some disadvantages too &minus;</p>
+
+<h2>Shielding twisted pair cable</h2>
+
+<p>To counter the tendency of twisted pair cables to pick up noise signals, wires are shielded in the following three ways &minus;</p>
+
+<p>Such twisted pairs are called <b>shielded twisted pair (STP) cables</b>. The wires that are not shielded but simply bundled together in a protective sheath are called <b>unshielded twisted pair (UTP) cables</b>. These cables can have maximum length of 100 metres.</p>
+
+<p>Shielding makes the cable bulky, so UTP are more popular than STP. UTP cables are used as the last mile network connection in homes and offices.</p>
+
+<h2>Coaxial Cable</h2>
+
+<p><b>Coaxial cables</b> are copper cables with better <b>shielding</b> than twisted pair cables, so that transmitted signals may travel longer distances at higher speeds. A coaxial cable consists of these layers, starting from the innermost &minus;</p>
+
+<p>Stiff copper wire as <b>core</b></p>
+
+<p><b>Insulating material</b> surrounding the core</p>
+
+<p>Closely woven braided mesh of <b>conducting material</b> surrounding the <b>insulator</b></p>
+
+<p>Protective <b>plastic sheath</b> encasing the wire</p>
+
+<p>Coaxial cables are widely used for <b>cable TV</b> connections and <b>LANs</b>.</p>
+
+<h3>Advantages of Coaxial Cables</h3>
+
+<p>These are the advantages of coaxial cables &minus;</p>
+
+<p>Excellent noise immunity</p>
+
+<p>Signals can travel longer distances at higher speeds, e.g. 1 to 2 Gbps for 1 Km cable</p>
+
+<p>Can be used for both analog and digital signals</p>
+
+<p>Inexpensive as compared to fibre optic cables</p>
+
+<p>Easy to install and maintain</p>
+
+<h3>Disadvantages of Coaxial Cables</h3>
+
+<p>These are some of the disadvantages of coaxial cables &minus;</p>
+
+<h2>Optical Fibre</h2>
+
+<p>Thin glass or plastic threads used to transmit data using light waves are called <b>optical fibre</b>. Light Emitting Diodes (LEDs) or Laser Diodes (LDs) emit light waves at the <b>source</b>, which is read by a <b>detector</b> at the other end. <b>Optical fibre cable</b> has a bundle of such threads or fibres bundled together in a protective covering. Each fibre is made up of these three layers, starting with the innermost layer &minus;</p>
+
+<p><b>Core</b> made of high quality <b>silica glass</b> or <b>plastic</b></p>
+
+<p><b>Cladding</b> made of high quality <b>silica glass</b> or <b>plastic</b>, with a lower refractive index than the core</p>
+
+<p>Protective outer covering called <b>buffer</b></p>
+
+<p>Note that both core and cladding are made of similar material. However, as <b>refractive index</b> of the cladding is lower, any stray light wave trying to escape the core is reflected back due to <b>total internal reflection</b>.</p>
+
+<p>Optical fibre is rapidly replacing copper wires in telephone lines, internet communication and even cable TV connections because transmitted data can travel very long distances without weakening. <b>Single node</b> fibre optic cable can have maximum segment length of 2 kms and bandwidth of up to 100 Mbps. <b>Multi-node</b> fibre optic cable can have maximum segment length of 100 kms and bandwidth up to 2 Gbps.</p>
+
+<h3>Advantages of Optical Fibre</h3>
+
+<p>Optical fibre is fast replacing copper wires because of these advantages that it offers &minus;</p>
+
+<h3>Disadvantages of Optical Fibre</h3>
+
+<p>Despite long segment lengths and high bandwidth, using optical fibre may not be a viable option for every one due to these disadvantages &minus;</p>
+
+<h2>Infrared</h2>
+
+<p>Low frequency infrared waves are used for very short distance communication like TV remote, wireless speakers, automatic doors, hand held devices etc. Infrared signals can propagate within a room but cannot penetrate walls. However, due to such short range, it is considered to be one of the most secure transmission modes.</p>
+
+<h2>Radio Wave</h2>
+
+<p>Transmission of data using radio frequencies is called <b>radio-wave transmission</b>. We all are familiar with radio channels that broadcast entertainment programs. Radio stations transmit radio waves using <b>transmitters</b>, which are received by the receiver installed in our devices.</p>
+
+<p>Both transmitters and receivers use antennas to radiate or capture radio signals. These radio frequencies can also be used for <b>direct voice communication</b> within the <b>allocated range</b>. This range is usually 10 miles.</p>
+
+<h3>Advantages of Radio Wave</h3>
+
+<p>These are some of the advantages of radio wave transmissions &minus;</p>
+
+<h3>Disadvantages of Radio Wave</h3>
+
+<p>These are some of the disadvantages of radio wave transmissions &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Network Devices</title>
+
+<h1>Network Devices</h1>
+
+<p>Hardware devices that are used to connect computers, printers, fax machines and other electronic devices to a network are called <b>network devices</b>. These devices transfer data in a fast, secure and correct way over same or different networks. Network devices may be inter-network or intra-network. Some devices are installed on the device, like NIC card or RJ45 connector, whereas some are part of the network, like router, switch, etc. Let us explore some of these devices in greater detail.</p>
+
+<h2>Modem</h2>
+
+<p>Modem is a device that enables a computer to send or receive data over telephone or cable lines. The data stored on the computer is digital whereas a telephone line or cable wire can transmit only analog data.</p>
+
+<p>The main function of the modem is to convert digital signal into analog and vice versa. Modem is a combination of two devices &minus; <b>modulator</b> and <b>demodulator</b>. The <b>modulator</b> converts digital data into analog data when the data is being sent by the computer. The <b>demodulator</b> converts analog data signals into digital data when it is being received by the computer.</p>
+
+<h2>Types of Modem</h2>
+
+<p>Modem can be categorized in several ways like direction in which it can transmit data, type of connection to the transmission line, transmission mode, etc.</p>
+
+<p>Depending on direction of data transmission, modem can be of these types &minus;</p>
+
+<p><b>Simplex</b> &minus; A simplex modem can transfer data in only one direction, from digital device to network (modulator) or network to digital device (demodulator).</p>
+
+<p><b>Half duplex</b> &minus; A half-duplex modem has the capacity to transfer data in both the directions but only one at a time.</p>
+
+<p><b>Full duplex</b> &minus; A full duplex modem can transmit data in both the directions simultaneously.</p>
+
+<h2>RJ45 Connector</h2>
+
+<p>RJ45 is the acronym for <b>Registered Jack 45. RJ45 connector</b> is an 8-pin jack used by devices to physically connect to <b>Ethernet</b> based <b>local area networks (LANs)</b>. <b>Ethernet</b> is a technology that defines protocols for establishing a LAN. The cable used for Ethernet LANs are twisted pair ones and have <b>RJ45 connector pins</b> at both ends. These pins go into the corresponding socket on devices and connect the device to the network.</p>
+
+<h2>Ethernet Card</h2>
+
+<p><b>Ethernet card</b>, also known as <b>network interface card (NIC)</b>, is a hardware component used by computers to connect to <b>Ethernet LAN</b> and communicate with other devices on the LAN. The earliest <b>Ethernet cards</b> were external to the system and needed to be installed manually. In modern computer systems, it is an internal hardware component. The NIC has <b>RJ45 socket</b> where network cable is physically plugged in.</p>
+
+<p><b>Ethernet card speeds</b> may vary depending upon the protocols it supports. Old Ethernet cards had maximum speed of <b>10 Mbps</b>. However, modern cards support fast Ethernets up to a speed of <b>100 Mbps</b>. Some cards even have capacity of <b>1 Gbps</b>.</p>
+
+<h2>Router</h2>
+
+<p>A <b>router</b> is a <b>network layer</b> hardware device that transmits data from one LAN to another if both networks support the same set of protocols. So a <b>router</b> is typically connected to at least two LANs and the <b>internet service provider</b> (ISP). It receives its data in the form of <b>packets</b>, which are <b>data frames</b> with their <b>destination address</b> added. Router also strengthens the signals before transmitting them. That is why it is also called <b>repeater</b>.</p>
+
+<h2>Routing Table</h2>
+
+<p>A router reads its routing table to decide the best available route the packet can take to reach its destination quickly and accurately. The routing table may be of these two types &minus;</p>
+
+<p><b>Static</b> &minus; In a static routing table the routes are fed manually. So it is suitable only for very small networks that have maximum two to three routers.</p>
+
+<p><b>Dynamic</b> &minus; In a dynamic routing table, the router communicates with other routers through protocols to determine which routes are free. This is suited for larger networks where manual feeding may not be feasible due to large number of routers.</p>
+
+<h2>Switch</h2>
+
+<p><b>Switch</b> is a network device that connects other devices to <b>Ethernet</b> networks through <b>twisted pair</b> cables. It uses <b>packet switching</b> technique to <b>receive, store</b> and <b>forward data packets</b> on the network. The switch maintains a list of network addresses of all the devices connected to it.</p>
+
+<p>On receiving a packet, it checks the destination address and transmits the packet to the correct port. Before forwarding, the packets are checked for collision and other network errors. The data is transmitted in full duplex mode</p>
+
+<p>Data transmission speed in switches can be double that of other network devices like hubs used for networking. This is because switch shares its maximum speed with all the devices connected to it. This helps in maintaining network speed even during high traffic. In fact, higher data speeds are achieved on networks through use of multiple switches.</p>
+
+<h2>Gateway</h2>
+
+<p><b>Gateway</b> is a network device used to connect two or more dissimilar networks. In networking parlance, networks that use different protocols are <b>dissimilar networks</b>. A gateway usually is a computer with multiple <b>NICs</b> connected to different networks. A gateway can also be configured completely using software. As networks connect to a different network through gateways, these gateways are usually hosts or end points of the network.</p>
+
+<p><b>Gateway</b> uses <b>packet switching</b> technique to transmit data from one network to another. In this way it is similar to a <b>router</b>, the only difference being router can transmit data only over networks that use same protocols.</p>
+
+<h2>Wi-Fi Card</h2>
+
+<p><b>Wi-Fi</b> is the acronym for <b>wireless fidelity. Wi-Fi technology</b> is used to achieve <b>wireless connection</b> to any network. <b>Wi-Fi card</b> is a <b>card</b> used to connect any device to the local network wirelessly. The physical area of the network which provides internet access through Wi-Fi is called <b>Wi-Fi hotspot</b>. Hotspots can be set up at home, office or any public space. Hotspots themselves are connected to the network through wires.</p>
+
+<p>A <b>Wi-Fi card</b> is used to add capabilities like <b>teleconferencing, downloading</b> digital camera images, <b>video chat</b>, etc. to old devices. Modern devices come with their in-built <b>wireless network adapter</b>.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Network Topologies</title>
+
+<h1>Network Topologies</h1>
+
+<p>The way in which devices are interconnected to form a network is called network topology. Some of the factors that affect choice of topology for a network are &minus;</p>
+
+<p><b>Cost</b> &minus; Installation cost is a very important factor in overall cost of setting up an infrastructure. So cable lengths, distance between nodes, location of servers, etc. have to be considered when designing a network.</p>
+
+<p><b>Flexibility</b> &minus; Topology of a network should be flexible enough to allow reconfiguration of office set up, addition of new nodes and relocation of existing nodes.</p>
+
+<p><b>Reliability</b> &minus; Network should be designed in such a way that it has minimum down time. Failure of one node or a segment of cabling should not render the whole network useless.</p>
+
+<p><b>Scalability</b> &minus; Network topology should be scalable, i.e. it can accommodate load of new devices and nodes without perceptible drop in performance.</p>
+
+<p><b>Ease of installation</b> &minus; Network should be easy to install in terms of hardware, software and technical personnel requirements.</p>
+
+<p><b>Ease of maintenance</b> &minus; Troubleshooting and maintenance of network should be easy.</p>
+
+<h2>Bus Topology</h2>
+
+<p>Data network with bus topology has a <b>linear transmission cable</b>, usually <b>coaxial</b>, to which many <b>network devices</b> and <b>workstations</b> are attached along the length. <b>Server</b> is at one end of the bus. When a workstation has to send data, it transmits <b>packets</b> with <b>destination address</b> in its header along the bus.</p>
+
+<p>The data travels in both the directions along the bus. When the destination terminal sees the data, it copies it to the local disk.</p>
+
+<h3>Advantages of Bus Topology</h3>
+
+<p>These are the advantages of using bus topology &minus;</p>
+
+<h3>Disadvantages of Bus Topology</h3>
+
+<p>These are some disadvantages of using bus topology &minus;</p>
+
+<h2>Ring Topology</h2>
+
+<p>In <b>ring topology</b> each terminal is connected to exactly <b>two nodes</b>, giving the network a circular shape. Data travels in only one pre-determined direction.</p>
+
+<p>When a terminal has to send data, it transmits it to the neighboring node which transmits it to the next one. Before further transmission data may be amplified. In this way, data raverses the network and reaches the destination node, which removes it from the network. If the data reaches the sender, it removes the data and resends it later.</p>
+
+<h3>Advantages of Ring Topology</h3>
+
+<p>These are the advantages of using ring topology &minus;</p>
+
+<h3>Disadvantages of Ring Topology</h3>
+
+<p>These are some the disadvantages of using ring topology &minus;</p>
+
+<p>Failure of single node brings down the whole network</p>
+
+<p>Troubleshooting is difficult as many nodes may have to be inspected before faulty one is identified</p>
+
+<p>Difficult to remove one or more nodes while keeping the rest of the network intact</p>
+
+<h2>Star Topology</h2>
+
+<p>In star topology, server is connected to each node individually. Server is also called the central node. Any exchange of data between two nodes must take place through the server. It is the most popular topology for information and voice networks as central node can process data received from source node before sending it to the destination node.</p>
+
+<h3>Advantages of Star Topology</h3>
+
+<p>These are the advantages of using star topology &minus;</p>
+
+<p>Failure of one node does not affect the network</p>
+
+<p>Troubleshooting is easy as faulty node can be detected from central node immediately</p>
+
+<p>Simple access protocols required as one of the communicating nodes is always the central node</p>
+
+<h3>Disadvantages of Star Topology</h3>
+
+<p>These are the disadvantages of using star topology &minus;</p>
+
+<p>Long cables may be required to connect each node to the server</p>
+
+<p>Failure of central node brings down the whole network</p>
+
+<h2>Tree Topology</h2>
+
+<p>Tree topology has a group of star networks connected to a linear bus backbone cable. It incorporates features of both star and bus topologies. Tree topology is also called hierarchical topology.</p>
+
+<h3>Advantages of Tree Topology</h3>
+
+<p>These are some of the advantages of using tree topology &minus;</p>
+
+<p>Existing network can be easily expanded</p>
+
+<p>Point-to-point wiring for individual segments means easier installation and maintenance</p>
+
+<p>Well suited for temporary networks</p>
+
+<h3>Disadvantages of Tree Topology</h3>
+
+<p>These are some of the disadvantages of using tree topology &minus;</p>
+
+<p>Technical expertise required to configure and wire tree topology</p>
+
+<p>Failure of backbone cable brings down entire network</p>
+
+<p>Insecure network</p>
+
+<p>Maintenance difficult for large networks</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Types of Networks</title>
+
+<h1>Types of Networks</h1>
+
+<p>Networks can be categorized depending on size, complexity, level of security, or geographical range. We will discuss some of the most popular topologies based on geographical spread.</p>
+
+<h2>PAN</h2>
+
+<p>PAN is the acronym for Personal Area Network. PAN is the interconnection between devices within the range of a person’s private space, typically within a range of 10 metres. If you have transferred images or songs from your laptop to mobile or from mobile to your friend’s mobile using Bluetooth, you have set up and used a personal area network.</p>
+
+<p>A person can connect her laptop, smart phone, personal digital assistant and portable printer in a network at home. This network could be fully Wi-Fi or a combination of wired and wireless.</p>
+
+<h2>LAN</h2>
+
+<p>LAN or Local Area Network is a wired network spread over a single site like an office, building or manufacturing unit. LAN is set up to when team members need to share software and hardware resources with each other but not with the outside world. Typical software resources include official documents, user manuals, employee handbook, etc. Hardware resources that can be easily shared over the network include printer, fax machines, modems, memory space, etc. This decreases infrastructure costs for the organization drastically.</p>
+
+<p>A LAN may be set up using wired or wireless connections. A LAN that is completely wireless is called Wireless LAN or WLAN.</p>
+
+<h2>MAN</h2>
+
+<p>MAN is the acronym for Metropolitan Area Network. It is a network spread over a city, college campus or a small region. MAN is larger than a LAN and typically spread over several kilometres. Objective of MAN is to share hardware and software resources, thereby decreasing infrastructure costs. MAN can be built by connecting several LANs.</p>
+
+<p>The most common example of MAN is cable TV network.</p>
+
+<h2>WAN</h2>
+
+<p>WAN or Wide Area Network is spread over a country or many countries. WAN is typically a network of many LANs, MANs and WANs. Network is set up using wired or wireless connections, depending on availability and reliability.</p>
+
+<p>The most common example of WAN is the Internet.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Network Protocols</title>
+
+<h1>Network Protocols</h1>
+
+<p><b>Network Protocols</b> are a set of rules governing exchange of information in an easy, reliable and secure way. Before we discuss the most common protocols used to transmit and receive data over a network, we need to understand how a network is logically organized or designed. The most popular model used to establish open communication between two systems is the <b>Open Systems Interface (OSI) model</b> proposed by ISO.</p>
+
+<h2>OSI Model</h2>
+
+<p>OSI model is not a <b>network architecture</b> because it does not specify the exact services and protocols for each layer. It simply tells what each layer should do by defining its input and output data. It is up to network architects to implement the layers according to their needs and resources available.</p>
+
+<p>These are the seven layers of the OSI model &minus;</p>
+
+<p><b>Physical layer</b> &minus;It is the first layer that physically connects the two systems that need to communicate. It transmits data in bits and manages simplex or duplex transmission by modem. It also manages Network Interface Card’s hardware interface to the network, like cabling, cable terminators, topography, voltage levels, etc.</p>
+
+<p><b>Data link layer</b> &minus; It is the firmware layer of Network Interface Card. It assembles datagrams into frames and adds start and stop flags to each frame. It also resolves problems caused by damaged, lost or duplicate frames.</p>
+
+<p><b>Network layer</b> &minus; It is concerned with routing, switching and controlling flow of information between the workstations. It also breaks down transport layer datagrams into smaller datagrams.</p>
+
+<p><b>Transport layer</b> &minus; Till the session layer, file is in its own form. Transport layer breaks it down into data frames, provides error checking at network segment level and prevents a fast host from overrunning a slower one. Transport layer isolates the upper layers from network hardware.</p>
+
+<p><b>Session layer</b> &minus; This layer is responsible for establishing a session between two workstations that want to exchange data.</p>
+
+<p><b>Presentation layer</b> &minus; This layer is concerned with correct representation of data, i.e. syntax and semantics of information. It controls file level security and is also responsible for converting data to network standards.</p>
+
+<p><b>Application layer</b> &minus; It is the topmost layer of the network that is responsible for sending application requests by the user to the lower levels. Typical applications include file transfer, E-mail, remote logon, data entry, etc.</p>
+
+<p>It is not necessary for every network to have all the layers. For example, network layer is not there in broadcast networks.</p>
+
+<p>When a system wants to share data with another workstation or send a request over the network, it is received by the application layer. Data then proceeds to lower layers after processing till it reaches the physical layer.</p>
+
+<p>At the physical layer, the data is actually transferred and received by the physical layer of the destination workstation. There, the data proceeds to upper layers after processing till it reaches application layer.</p>
+
+<p>At the application layer, data or request is shared with the workstation. So each layer has opposite functions for source and destination workstations. For example, data link layer of the source workstation adds start and stop flags to the frames but the same layer of the destination workstation will remove the start and stop flags from the frames.</p>
+
+<p>Let us now see some of the protocols used by different layers to accomplish user requests.</p>
+
+<h2>TCP/IP</h2>
+
+<p>TCP/IP stands for <b>Transmission Control Protocol/Internet Protocol</b>. TCP/IP is a set of layered protocols used for communication over the Internet. The communication model of this suite is client-server model. A computer that sends a request is the client and a computer to which the request is sent is the server.</p>
+
+<p>TCP/IP has four layers &minus;</p>
+
+<p><b>Application layer</b> &minus; Application layer protocols like HTTP and FTP are used.</p>
+
+<p><b>Transport layer</b> &minus; Data is transmitted in form of datagrams using the Transmission Control Protocol (TCP). TCP is responsible for breaking up data at the client side and then reassembling it on the server side.</p>
+
+<p><b>Network layer</b> &minus; Network layer connection is established using Internet Protocol (IP) at the network layer. Every machine connected to the Internet is assigned an address called IP address by the protocol to easily identify source and destination machines.</p>
+
+<p><b>Data link layer</b> &minus; Actual data transmission in bits occurs at the data link layer using the destination address provided by network layer.</p>
+
+<p>TCP/IP is widely used in many communication networks other than the Internet.</p>
+
+<h2>FTP</h2>
+
+<p>As we have seen, the need for network came up primarily to facilitate sharing of files between researchers. And to this day, file transfer remains one of the most used facilities.The protocol that handles these requests is <b>File Transfer Protocol</b> or <b>FTP</b>.</p>
+
+<p>Using FTP to transfer files is helpful in these ways &minus;</p>
+
+<p>Easily transfers files between two different networks</p>
+
+<p>Can resume file transfer sessions even if connection is dropped, if protocol is configure appropriately</p>
+
+<p>Enables collaboration between geographically separated teams</p>
+
+<h2>PPP</h2>
+
+<p>Point to Point Protocol or PPP is a data link layer protocol that enables transmission of TCP/IP traffic over serial connection, like telephone line.</p>
+
+<p>To do this, PPP defines these three things &minus;</p>
+
+<p>A framing method to clearly define end of one frame and start of another, incorporating errors detection as well.</p>
+
+<p>Link control protocol (LCP) for bringing communication lines up, authenticating and bringing them down when no longer needed.</p>
+
+<p>Network control protocol (NCP) for each network layer protocol supported by other networks.</p>
+
+<p>Using PPP, home users can avail Internet connection over telephone lines.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Mobile Communication Protocols</title>
+
+<h1>Mobile Communication Protocols</h1>
+
+<p>Any device that does not need to remain at one place to carry out its functions is a mobile device. So laptops, smartphones and personal digital assistants are some examples of mobile devices. Due to their portable nature, mobile devices connect to networks wirelessly. Mobile devices typically use radio waves to communicate with other devices and networks. Here we will discuss the protocols used to carry out mobile communication.</p>
+
+<p>Mobile communication protocols use multiplexing to send information. Multiplexing is a method to combine multiple digital or analog signals into one signal over the data channel. This ensures optimum utilization of expensive resource and time. At the destination these signals are de-multiplexed to recover individual signals.</p>
+
+<p>These are the types of multiplexing options available to communication channels &minus;</p>
+
+<p><b>FDM (Frequency Division Multiplexing)</b> &minus; Here each user is assigned a different frequency from the complete spectrum. All the frequencies can then simultaneously travel on the data channel.</p>
+
+<p><b>TDM (Time Division Multiplexing)</b> &minus; A single radio frequency is divided into multiple slots and each slot is assigned to a different user. So multiple users can be supported simultaneously.</p>
+
+<p><b>CDMA (Code Division Multiplexing)</b> &minus; Here several users share the same frequency spectrum simultaneously. They are differentiated by assigning unique codes to them. The receiver has the unique key to identify the individual calls.</p>
+
+<h2>GSM</h2>
+
+<p>GSM technology uses TDMA (Time Division Multiple Access) to support up to eight calls simultaneously. It also uses encryption to make the data more secure.</p>
+
+<p>The frequencies used by the international standard is 900 MHz to 1800 MHz However, GSM phones used in the US use 1900 MHz frequency and hence are not compatible with the international system.</p>
+
+<h2>CDMA</h2>
+
+<p>CDMA stands for Code Division Multiple Access. It was first used by the British military during World War II. After the war its use spread to civilian areas due to high service quality. As each user gets the entire spectrum all the time, voice quality is very high. Also, it is automatically encrypted and hence provides high security against signal interception and eavesdropping.</p>
+
+<h2>WLL</h2>
+
+<p>WLL stands for Wireless in Local Loop. It is a wireless local telephone service that can be provided in homes or offices. The subscribers connect to their local exchange instead of the central exchange wirelessly. Using wireless link eliminates last mile or first mile construction of network connection, thereby reducing cost and set up time. As data is transferred over very short range, it is more secure than wired networks.</p>
+
+<p>WLL system consists of user handsets and a base station. The base station is connected to the central exchange as well as an antenna. The antenna transmits to and receives calls from users through terrestrial microwave links. Each base station can support multiple handsets depending on its capacity.</p>
+
+<h2>GPRS</h2>
+
+<p>GPRS is the mobile communication protocol used by second (2G) and third generation (3G) of mobile telephony. It pledges a speed of 56 kbps to 114 kbps, however the actual speed may vary depending on network load.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Mobile</title>
+
+<h1>Communication Technologies - Mobile</h1>
+
+<p>Since the introduction of first commercial mobile phone in 1983 by Motorola, mobile technology has come a long way. Be it technology, protocols, services offered or speed, the changes in mobile telephony have been recorded as generation of mobile communication. Here we will discuss the basic features of these generations that differentiate it from the previous generations.</p>
+
+<h2>1G Technology</h2>
+
+<p>1G refers to the first generation of wireless mobile communication where analog signals were used to transmit data. It was introduced in the US in early 1980s and designed exclusively for voice communication. Some characteristics of 1G communication are &minus;</p>
+
+<h2>2G Technology</h2>
+
+<p>2G refers to the second generation of mobile telephony which used digital signals for the first time. It was launched in Finland in 1991 and used GSM technology. Some prominent characteristics of 2G communication are &minus;</p>
+
+<p>When GPRS technology was introduced, it enabled web browsing, e-mail services and fast upload/download speeds. 2G with GPRS is also referred as 2.5G, a step short of next mobile generation.</p>
+
+<h2>3G Technology</h2>
+
+<p>Third generation (3G) of mobile telephony began with the start of the new millennium and offered major advancement over previous generations. Some of the characteristics of this generation are &minus;</p>
+
+<p>Data speeds of 144 kbps to 2 Mbps</p>
+
+<p>High speed web browsing</p>
+
+<p>Running web based applications like video conferencing, multimedia e-mails, etc.</p>
+
+<p>Fast and easy transfer of audio and video files</p>
+
+<p>3D gaming</p>
+
+<p>Every coin has two sides. Here are some downsides of 3G technology &minus;</p>
+
+<p>The intermediate generation, 3.5G grouped together dissimilar mobile telephony and data technologies and paved way for the next generation of mobile communication.</p>
+
+<h2>4G Technology</h2>
+
+<p>Keeping up the trend of a new mobile generation every decade, fourth generation (4G) of mobile communication was introduced in 2011. Its major characteristics are &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Email Protocols</title>
+
+<h1>Email Protocols</h1>
+
+<p>Email is one of the most popular uses of Internet world wide. As per a 2015 study, there are 2.6 billion email users worldwide who send some 205 billion email messages per day. With email accounting for so much traffic on the Internet, email protocols need to be very robust. Here we discuss some of the most popular email protocols used worldwide.</p>
+
+<h2>SMTP</h2>
+
+<p>SMTP stands for <b>Simple Mail Transfer Protocol</b>. It is connection oriented <b>application layer</b> protocol that is widely used to send and receive email messages. It was introduced in 1982 by <b>RFC 821</b> and last updated in 2008 by <b>RFC 5321</b>. The updated version is most widely used email protocol.</p>
+
+<p><b>Mail servers</b> and mail transfer agents use <b>SMTP</b> to both send and receive messages. However, user level applications use it only for sending messages. For retrieving they use IMAP or POP3 because they provide <b>mail box management</b></p>
+
+<p>RFC or <b>Request for Comments</b> is a peer reviewed document jointly published by Internet Engineering Task Force and the Internet Society. It is written by researchers and computer scientists describing how the Internet should work and protocols and systems supporting them.</p>
+
+<h2>POP3</h2>
+
+<p><b>POP3</b> or <b>Post Office Protocol Version 3</b> is an <b>application layer</b> protocol used by email clients to retrieve email messages from mail servers over <b>TCP/IP</b> network. POP was designed to move the messages from server to local disk but version 3 has the option of leaving a copy on the server</p>
+
+<p>POP3 is a very simple protocol to implement but that limits its usage. For example, POP3 supports only one mail server for each mailbox. It has now has been made obsolete by modern protocols like <b>IMAP</b>.</p>
+
+<h2>IMAP</h2>
+
+<p><b>IMAP</b> stands for <b>Internet Message Access Protocol</b>. IMAP was defined by <b>RFC 3501</b> to enable email clients to retrieve email messages from mail servers over a TCP/IP connection. IMAP is designed to retrieve messages from multiple mail servers and consolidate them all in the user’s mailbox. A typical example is a corporate client handling multiple corporate accounts through a local mailbox located on her system.</p>
+
+<p>All modern email clients and servers like Gmail, Outlook and Yahoo Mail support IMAP or POP3 protocol. These are some advantages that IMAP offers over POP3 &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies VoIP</title>
+
+<h1>Communication Technologies - VoIP</h1>
+
+<p>VoIP is the acronym for <b>Voice over Internet Protocol</b>. It means telephone services over Internet. Traditionally Internet had been used for exchanging messages but due to advancement in technology, its service quality has increased manifold. It is now possible to deliver voice communication over IP networks by converting voce data into packets. VoIP is a set of protocols and systems developed to provide this service seamlessly.</p>
+
+<p>Here are some of the protocols used for VoIP &minus;</p>
+
+<p>We will discuss two of the most fundamental protocols – H.323 and SIP – here.</p>
+
+<h2>H.323</h2>
+
+<p>H.323 is a VoIP standard for defining the components, protocols and procedures to provide real-time multimedia sessions including audio, video and data transmissions over packetswitched networks. Some of the services facilitated by H.323 include &minus;</p>
+
+<h2>SIP</h2>
+
+<p>SIP is an acronym for Session Initiation Protocol. SIP is a protocol to establish, modify and terminate multimedia sessions like IP telephony. All systems that need multimedia sessions are registered and provided SIP address, much like IP address. Using this address, caller can check callee’s availability and invite it for a VoIP session accordingly.</p>
+
+<p>SIP facilitates multiparty multimedia sessions like video conferencing involving three or more people. In a short span of time SIP has become integral to VoIP and largely replaced H.323.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Wireless Technologies</title>
+
+<h1>Wireless Technologies</h1>
+
+<p>Wireless connection to internet is very common these days. Often an external modem is connected to the Internet and other devices connect to it wirelessly. This eliminated the need for last mile or first mile wiring. There are two ways of connecting to the Internet wirelessly – Wi-Fi and WiMAx.</p>
+
+<h2>Wi-Fi</h2>
+
+<p><b>Wi-Fi</b> is the acronym for <b>wireless fidelity</b>. <b>Wi-Fi technology</b> is used to achieve connection to the Internet without a direct cable between device and Internet Service Provider. Wi-Fi enabled device and wireless router are required for setting up a Wi-Fi connection. These are some characteristics of wireless Internet connection &minus;</p>
+
+<p>If a PC or laptop does not have Wi-Fi capacity, it can be added using a Wi-Fi card.</p>
+
+<p>The physical area of the network which provides Internet access through Wi-Fi is called <b>Wi-Fi hotspot</b>. <b>Hotspots</b> can be set up at home, office or any public space like airport, railway stations, etc. Hotspots themselves are connected to the network through wires.</p>
+
+<h2>WiMax</h2>
+
+<p>To overcome the drawback of <b>Wi-Fi</b> connections, <b>WiMax (Worldwide Interoperability for Microwave Access)</b> was developed. WiMax is a collection of wireless communication standards based on <b>IEEE 802.16</b>. WiMax provides multiple <b>physical layer</b> and <b>media access control</b> (MAC) options.</p>
+
+<p><b>WiMax Forum</b>, established in 2001, is the principal body responsible to ensure conformity and interoperability among various commercial vendors. These are some of the characteristics of WiMax &minus;</p>
+
+<p>The main components of a WiMax unit are &minus;</p>
+
+<p><b>WiMax Base Station</b> &minus; It is a tower similar to mobile towers and connected to Internet through high speed wired connection.</p>
+
+<p><b>WiMax Subscriber Unit (SU)</b> &minus; It is a WiMax version of wireless modem. The only difference is that modem is connected to the Internet through cable connection whereas WiMax SU receives Internet connection wirelessly through microwaves.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Network Security</title>
+
+<h1>Network Security</h1>
+
+<p>Computer networks are an integral part of our personal and professional lives because we carry out lots of day-to-day activities through the Internet or local organizational network. The downside of this is that huge amount of data, from official documents to personal details, gets shared over the network. So it becomes necessary to ensure that the data is not accessed by unauthorized people.</p>
+
+<p>Practices adopted to monitor and prevent unauthorized access and misuse of network resources and data on them is called <b>network security</b>.</p>
+
+<p>A network has two components – hardware and software. Both these components have their own vulnerability to threats. <b>Threat</b> is a possible risk that might exploit a network weakness to breach security and cause harm. Examples of hardware threats include &minus;</p>
+
+<p>Hardware threats form only 10% of network security threats worldwide because the components need to be accessed physically. 90% threats are through software vulnerabilities. Here we discuss the major types of software security threats.</p>
+
+<h2>Virus</h2>
+
+<p>A <b>virus</b> is a malicious program or <b>malware</b> that attaches itself to a host and makes multiple copies of itself (like a real virus!), slowing down, corrupting or destroying the system.</p>
+
+<p>Some harmful activities that can be undertaken by a virus are &minus;</p>
+
+<p>Viruses mostly attack Windows systems. Till a few years ago, Mac systems were deemed immune from viruses, however now a handful of viruses for them exist as well.</p>
+
+<p>Viruses spread through e-mails and need a host program to function. Whenever a new program runs on the infected system, the virus attaches itself to that program. If you are an expert who tinkers with the OS files, they can get infected too.</p>
+
+<h2>Trojan Horse</h2>
+
+<p><b>Trojan horse</b> is a malware that hides itself within another program like games or documents and harms the system. As it is masked within another program that appears harmless, the user is not aware of the threat. It functions in a way similar to <b>viruses</b> in that it needs a host program to attach itself and harms systems in the same ways.</p>
+
+<p>Trojan horses spread through emails and exchange of data through hard drives or pen drives. Even worms could spread Trojan horses.</p>
+
+<h2>Worms</h2>
+
+<p><b>Worms</b> are autonomous programs sent by the attacker to infect a system by replicating itself. They usually infect multitasking systems that are connected to a network. Some of the harmful activities undertaken by worms include &minus;</p>
+
+<h2>Spams</h2>
+
+<p>Electronic junk mail, unsolicited mail or junk newsroom postings are called spam. Sending multiple unsolicited mails simultaneously is called <b>spamming</b>. Spamming is usually done as part of marketing tactics to announce a product or share political or social views with a wide base of people.</p>
+
+<p>The first spam mail was sent by Gary Thuerk on ARPANET in 1978 to announce launch of new model of Digital Equipment Corporation computers. It was sent to 393 recipients and together with lots of hue and cry it generated sales for the company as well.</p>
+
+<p>Almost all mail servers give you the option of stopping spams by marking a received mail as junk. You should take care to share your email ID only with trusted people or websites, who will not sell them to spammers.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Firewall</title>
+
+<h1>Communication Technologies - Firewall</h1>
+
+<p>There exist multiple approaches to counter or at least reduce security threats. Some of these are &minus;</p>
+
+<p>Firewalls are the first line of defense against unauthorized access to private networks. They can be used effectively against virus, Trojan or worm attacks.</p>
+
+<h2>How Firewalls Work</h2>
+
+<p>Dictionary defines <b>firewall</b> as a wall or partition designed to inhibit or prevent spread of fire. In networks, a system designed to protect an intranet from <b>unauthorized access</b> is called firewall. A private network created using World Wide Web software is called an <b>intranet</b>. Firewall may be implemented in both hardware and software.</p>
+
+<p>All traffic to and from the network is routed through the firewall. The firewall examines each message and blocks those that does not meet the <b>pre-defined security criteria</b>.</p>
+
+<p>These are some of the prevalent techniques used by firewalls &minus;</p>
+
+<p><b>Packet level filtering</b> &minus; Here each packet is examined depending on user-defined rules. It is very effective and transparent to users, but difficult to configure. Also, as IP address is used to identify users, <b>IP spoofing</b> by malicious parties can prove counterproductive.</p>
+
+<p><b>Circuit level filtering</b> &minus; Like good old telephone connections, circuit level filtering applies security mechanisms while connection between two systems is being established. Once the connection is deemed secure, data transmission can take place for that session.</p>
+
+<p><b>Application level filtering</b> &minus; Here, security mechanisms are applied to commonly used applications like Telnet, FTP servers, storage servers, etc. This is very effective but slows down performance of the applications.</p>
+
+<p><b>Proxy server</b> &minus; As the name suggests, proxy server is used to interrupt all incoming and outgoing messages and mask the true server address.</p>
+
+<p>A firewall may use a combination of two or more techniques to secure the network, depending on extent of security required.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Cookies</title>
+
+<h1>Communication Technologies - Cookies</h1>
+
+<p><b>Cookies</b> are small text files with their <b>unique ID</b> stored on your system by a website. The website stores your browsing details like preferences, customizations, login ID, pages clicked, etc. specific to that website. Storing this information enables the website to provide you with a customized experience the next time you visit it.</p>
+
+<h2>How Cookies Work</h2>
+
+<p>When you visit a website through your browser, the website creates and stores a cookie file in your browser or program data folder/sub-folder. This cookie may be of two types &minus;</p>
+
+<p><b>Session cookie</b> &minus; It is valid only till the session lasts. Once you exit the website the cookie is automatically deleted.</p>
+
+<p><b>Persistent cookie</b> It is valid beyond your current session. Its expiration date is mentioned within the cookie itself.</p>
+
+<p>A cookie stores these information &minus;</p>
+
+<p>A cookie is meaningless by itself. It can be read only by the server that stored it. When you visit the website subsequently, its server matches cookie ID with its own database of cookies and loads webpages according to your browsing history.</p>
+
+<h2>Handling Cookies</h2>
+
+<p>Cookies were initially designed to enhance user’s web browsing experience. However, in the current aggressive marketing scenario, <b>rogue cookies</b> are being used to create your profile based on your browsing patterns without consent. So you need to be wary of cookies if you care about your privacy and security.</p>
+
+<p>Almost all modern-day browsers give you options to allow, disallow or limit cookies on your system. You can view the cookies active on your computer and make decisions accordingly.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Hacking</title>
+
+<h1>Communication Technologies - Hacking</h1>
+
+<p>Unauthorized access to data in a device, system or network is called <b>hacking</b>. A person hacking another person’s system is called hacker. A hacker is a highly accomplished computer expert who can exploit the smallest of vulnerabilities in your system or network to hack it.</p>
+
+<p>A hacker may hack due to any of the following reasons &minus;</p>
+
+<h2>Types of Hacking</h2>
+
+<p>Depending on the application or system being broken into, these are some categories of hacking common in the cyber world &minus;</p>
+
+<h2>Ethical Hacking</h2>
+
+<p>As iron sharpens iron, hacking counters hacking. Using hacking techniques to identify potential threats to a system or network is called <b>ethical hacking</b>. For a hacking activity to be termed ethical, it must adhere to these criteria &minus;</p>
+
+<p>Hacker must have written permission to identify potential security threats</p>
+
+<p>Individual’s or company’s privacy must be maintained</p>
+
+<p>Possible security breaches discovered must be intimated to the concerned authorities</p>
+
+<p>At a later date, no one should be able to exploit ethical hacker’s inroads into the network</p>
+
+<h2>Cracking</h2>
+
+<p>A term that goes hand in glove with hacking is cracking. Gaining unauthorized access to a system or network with malicious intent is called <b>cracking</b>. Cracking is a crime and it may have devastating impact on its victims. Crackers are criminals and strong cyber laws have been put into place to tackle them.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Security Acts And Laws</title>
+
+<h1>Security Acts And Laws</h1>
+
+<h2>Cyber Crimes</h2>
+
+<p>Any unlawful activity involving or related to computer and networks is called <b>cybercrime</b>. Dr. K. Jaishankar, Professor and Head of the Department of Criminology, Raksha Shakti University, and Dr. Debarati Halder, lawyer and legal researcher, define cybercrime thus &minus;</p>
+
+<p><i>Offences that are committed against individuals or groups of individuals with a criminal motive to intentionally harm the reputation of the victim or cause physical or mental harm, or loss, to the victim directly or indirectly, using modern telecommunication networks such as Internet (networks including but not limited to Chat rooms, emails, notice boards and groups) and mobile phones (Bluetooth/SMS/MMS).</i></p>
+
+<p>This definition implies that any crime perpetrated on the Internet or using computers is a cybercrime.</p>
+
+<p>Examples of cybercrimes include &minus;</p>
+
+<h2>Cyber Law</h2>
+
+<p><b>Cyber law</b> is a term that encompasses legal issues related to use of <b>Internet</b> and <b>cyberspace</b>. It is a broad term that covers varied issues like freedom of expression, internet usage, online privacy, child abuse, etc. Most of the countries have one or the other form of cyber law in place to tackle the growing menace of cybercrimes.</p>
+
+<p>A major issue here is that in any crime perpetrator, victim and instruments used might be spread across multiple locations nationally as well as internationally. So investigating the crime needs close collaboration between computer experts and multiple government authorities, sometimes in more than one country.</p>
+
+<h2>Indian IT Act</h2>
+
+<p>Information Technology Act, <b>2000</b> is the primary Indian law dealing with <b>cybercrime</b> and <b>e-commerce</b>. The law, also called <b>ITA-2000</b> or <b>IT Act</b>, was notified on 17<sup>th</sup> October 2000 and is based on the United Nations Model Law on Electronic Commerce 1996 recommended by the UN General Assembly on 30<sup>th</sup> January 1997.</p>
+
+<p>The IT Act covers whole of India and recognizes electronic records and digital signatures. Some of its prominent features include &minus;</p>
+
+<p>Formation of Controller of Certifying Authorities to regulate issuance of digital signatures</p>
+
+<p>Establishment of Cyber Appellate Tribunal to resolve disputes due to the new law</p>
+
+<p>Amendment in sections of Indian Penal Code, Indian Evidence Act, Banker’s Book Evidence Act and RBI Act to make them technology compliant</p>
+
+<p>The IT Act was framed to originally to provide legal infrastructure for e-commerce in India. However, major amendments were made in 2008 to address issues like cyber terrorism, data protection, child pornography, stalking, etc. It also gave authorities the power to intercept, monitor or decrypt any information through computer resources.</p>
+
+<h2>IPR Issues</h2>
+
+<p>IPR stands for <b>Intellectual Property Rights</b>. IPR is legal protection provided to creators of <b>Intellectual Property (IP)</b>. IP is any creation of the intellect or mind, like art, music, literature, inventions, logo, symbols, tag lines, etc. Protecting the rights of intellectual property creators is essentially a moral issue. However, law of the land does provide legal protection in case of violation of these rights.</p>
+
+<p>Intellectual Property Rights include &minus;</p>
+
+<p>Violation of Intellectual Property Rights is called <b>infringement</b> in case of patents, copyrights and trademarks, and <b>misappropriation</b> in case of trade secrets. Any published material that you view or read on the Internet is copyright of its creator and hence protected by IPR. You are legally and morally obliged not to use it and pass it off as your own. That would be infringement of creator’s copyright and you may incur legal action.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Communication Technologies Web Services</title>
+
+<h1>Communication Technologies - Web Services</h1>
+
+<p>Let us discuss some terms commonly used with regard to the Internet.</p>
+
+<h2>WWW</h2>
+
+<p>WWW is the acronym for <b>World Wide Web</b>. WWW is an information space inhabited by interlinked documents and other media that can be accessed via the Internet. WWW was invented by British scientist Tim Berners-Lee in 1989 and developed the <b>first web browser</b> in 1990 to facilitate exchange of information through the use of interlinked <b>hypertexts</b>.</p>
+
+<p>A text that contains link to another piece of text is called hypertext. The web resources were identified by a unique name called <b>URL</b> to avoid confusion.</p>
+
+<p>World Wide Web has revolutionized the way we create, store and exchange information. Success of WWW can be attributed to these factors &minus;</p>
+
+<h2>HTML</h2>
+
+<p>HTML stands for <b>Hypertext Markup Language</b>. A language designed such that parts of text can be marked to specify its structure, layout and style in context of the whole page is called a <b>markup language</b>. Its primary function is defining, processing and presenting text.</p>
+
+<p><b>HTML</b> is the standard language for creating web pages and web applications, and loading them in <b>web browsers</b>. Like WWW it was created by Time Berners-Lee to enable users to access pages from any page easily.</p>
+
+<p>When you send request for a page, the web server sends file in HTML form. This HTML file is interpreted by the web browser and displayed.</p>
+
+<h2>XML</h2>
+
+<p>XML stands for <b>eXtensible Markup Language</b>. It is a markup language designed to store and transport data in safe, secure and correct way. As the word extensible indicates, XML provides users with a tool to define their own language, especially to display documents on the Internet.</p>
+
+<p>Any XML document has two parts – <b>structure</b> and <b>content</b>. Let’s take an example to understand this. Suppose your school library wants to create a database of magazines it subscribes to. This is the CATALOG XML file that needs to be created.</p>
+
+<p>Each magazine has title, publisher, frequency and price information stored about it. This is the structure of catalog. Values like Magic Pot, MM Publication, Monthly, Weekly, etc. are the content.</p>
+
+<p>This XML file has information about all the magazines available in the library. Remember that this file will not do anything on its own. But another piece of code can be easily written to extract, analyze and present data stored here.</p>
+
+<h2>HTTP</h2>
+
+<p>HTTP stands for <b>Hypertext Transfer Protocol</b>. It is the most fundamental protocol used for transferring text, graphics, image, video and other multimedia files on the <b>World Wide Web</b>. HTTP is an <b>application layer</b> protocol of the <b>TCP/IP</b> suite in <b>client-server </b>networking model and was outlined for the first time by Time Berners-Lee, father of World Wide Web.</p>
+
+<p>HTTP is a <b>request-response</b> protocol. Here is how it functions &minus;</p>
+
+<p>Client submits request to HTTP.</p>
+
+<p>TCP connection is established with the server.</p>
+
+<p>After necessary processing server sends back status request as well as a message. The message may have the requested content or an error message.</p>
+
+<p>An HTTP request is called method. Some of the most popular methods are <b>GET, PUT, POST, CONNECT,</b> etc. Methods that have in-built security mechanisms are called safe methods while others are called <b>unsafe</b>. The version of HTTP that is completely secure is HTTPS where S stands for secure. Here all methods are secure.</p>
+
+<p>An example of use of HTTP protocol is &minus;</p>
+
+<p><a href="/videotutorials/index.htm"><u>https</u>://www.tutorialspoint.com/videotutorials/index.htm</a></p>
+
+<p>The user is requesting (by clicking on a link) the index page of video tutorials on the tutorialspoint.com website. Other parts of the request are discussed later in the chapter.</p>
+
+<h2>Domain Names</h2>
+
+<p>Domain name is a unique name given to a server to identify it on the World Wide Web. In the example request given earlier &minus;</p>
+
+<p><a href="/videotutorials/index.htm">https://www.<u>tutorialspoint.com</u>/videotutorials/index.htm</a></p>
+
+<p>tutorialspoint.com is the domain name. Domain name has multiple parts called labels separated by dots. Let us discuss the labels of this domain name. The right most label .com is called <b>top level domain</b> (TLD). Other examples of TLDs include <b>.net, .org, .co, .au,</b> etc.</p>
+
+<p>The label left to the TLD, i.e. tutorialspoint, is the <b>second level domain</b>. In the above image, <b>.co</b> label in <b>.co.uk </b>is second level domain and <b>.uk</b> is the TLD. <b>www</b> is simply a label used to create the <b>subdomain</b> of tutorialspoint.com. Another label could be <b>ftp</b> to create the subdomain ftp.tutorialspoint.com.</p>
+
+<p>This logical tree structure of domain names, starting from top level domain to lower level domain names is called <b>domain name hierarchy</b>. Root of the domain name hierarchy is <b>nameless</b>. The maximum length of complete domain name is 253 ASCII characters.</p>
+
+<h2>URL</h2>
+
+<p>URL stands for <b>Uniform Resource Locator</b>. URL refers to the location of a web resource on computer network and mechanism for retrieving it. Let us continue with the above example &minus;</p>
+
+<p><a href="/videotutorials/index.htm">https://www.tutorialspoint.com/videotutorials/index.htm</a></p>
+
+<p>This complete string is a URL. Let’s discuss its parts &minus;</p>
+
+<p><b>index.htm</b> is the <b>resource</b> (web page in this case) that needs to be retrieved</p>
+
+<p><b>www.tutorialspoint.com</b> is the server on which this page is located</p>
+
+<p><b>videotutorials</b> is the folder on server where the resource is located</p>
+
+<p><b>www.tutorialspoint.com/videotutorials</b> is the complete pathname of the resource</p>
+
+<p><b>https</b> is the protocol to be used to retrieve the resource</p>
+
+<p>URL is displayed in the address bar of the web browser.</p>
+
+<h2>Websites</h2>
+
+<p><b>Website</b> is a set of <b>web pages</b> under a single domain name. <b>Web page</b> is a text document located on a server and connected to the <b>World Wide Web</b> through hypertexts. Using the image depicting domain name hierarchy, these are the websites that can be constructed &minus;</p>
+
+<p>Note that there is no protocol associated with websites 3 and 4 but they will still load, using their default protocol.</p>
+
+<h2>Web Browsers</h2>
+
+<p><b>Web browser</b> is an <b>application software</b> for accessing, retrieving, presenting and traversing any resource identified by a <b>URL</b> on the <b>World Wide Web</b>. Most popular web browsers include &minus;</p>
+
+<h2>Web Servers</h2>
+
+<p><b>Web server</b> is any <b>software application, computer</b> or <b>networked device</b> that serves files to the users as per their request. These requests are sent by client devices through HTTP or HTTPS requests. Popular web server software include <b>Apache</b>, <b>Microsoft IIS</b>, and <b>Nginx</b>.</p>
+
+<h2>Web Hosting</h2>
+
+<p><b>Web hosting</b> is an Internet service that enables individuals, organizations or businesses to store <b>web pages</b> that can be accessed on the Internet. <b>Web hosting service providers</b> have web servers on which they host web sites and their pages. They also provide the technologies necessary for making a web page available upon client request, as discussed in HTTP above.</p>
+
+<h2>Web Scripting</h2>
+
+<p><b>Script</b> is a set of instructions written using any <b>programming language</b> and <b>interpreted</b> (rather than <b>compiled</b>) by another program. Embedding scripts within web pages to make them dynamic is called <b>web scripting</b>.</p>
+
+<p>As you know, <b>web pages</b> are created using <b>HTML</b>, stored on the server and then loaded into <b>web browsers</b> upon client’s request. Earlier these web pages were <b>static</b> in nature, i.e. what was once created was the only version displayed to the users. However, modern users as well as website owners demand some interaction with the web pages.</p>
+
+<p>Examples of interaction includes validating online forms filled by users, showing messages after user has registered a choice, etc. All this can be achieved by web scripting. Web scripting is of two types &minus;</p>
+
+<p><b>Client side scripting</b> &minus; Here the scripts embedded in a page are executed by the client computer itself using web browser. Most popular client side scripting languages are JavaScript, VBScript, AJAX, etc.</p>
+
+<p><b>Server side scripting</b> &minus; Here scripts are run on the server. Web page requested by the client is generated and sent after the scripts are run. Most popular server side scripting languages are PHP, Python, ASP .Net, etc.</p>
+
+<h2>Web 2.0</h2>
+
+<p><b>Web 2.0</b> is the second stage of development in <b>World Wide Web</b> where the emphasis is on <b>dynamic</b> and <b>user generated content</b> rather than static content. As discussed above, World Wide Web initially supported creation and presentation of static content using HTML. However, as the users evolved, demand for interactive content grew and web scripting was used to add this dynamism to content.</p>
+
+<p>In 1999, Darcy DiNucci coined the term Web 2.0 to emphasize the paradigm shift in the way web pages were being designed and presented to the user. It became popularity around 2004.</p>
+
+<p>Examples of user generated content in Web 2.0 include social media websites, virtual communities, live chats, etc. These have revolutionized the way we experience and use the Internet.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="prettyprint notralate">
+&lt;CATALOG&gt;
+   &lt;MAGAZINE&gt;
+      &lt;TITLE&gt;Magic Pot&lt;/TITLE&gt;
+      &lt;PUBLISHER&gt;MM Publications&lt;/PUBLISHER&gt;
+      &lt;FREQUENCY&gt;Weekly&lt;/FREQUENCY&gt;
+      &lt;PRICE&gt;15&lt;/PRICE&gt;
+   &lt;/MAGAZINE&gt;
+   
+   &lt;MAGAZINE&gt;
+      &lt;TITLE&gt;Competition Refresher&lt;/TITLE&gt;
+      &lt;PUBLISHER&gt;Bright Publications&lt;/PUBLISHER&gt;
+      &lt;FREQUENCY&gt;Monthly&lt;/FREQUENC&gt;
+      &lt;PRICE&gt;100&lt;/PRICE&gt;
+   &lt;/MAGAZINE&gt;
+&lt;/CATALOG&gt;
+</pre>
+
+<title>Communication Technologies Quick Guide</title>
+
+<h1>Communication Technologies - Quick Guide</h1>
+
+<h1>Communication Technologies - Introduction</h1>
+
+<p>Exchange of information through the use of speech, signs or symbols is called communication. When early humans started speaking, some 5,00,000 years ago, that was the first mode of communication. Before we dive into modern technologies that drive communication in contemporary world, we need to know how humans developed better communication techniques to share knowledge with each other.</p>
+
+<h2>History of Communication</h2>
+
+<p>Communicating with people over a distance is known as <b>telecommunication</b>. The first forms of telecommunication were <b>smoke signals, drums</b> or fire <b>torches</b>. The major disadvantage with these communication systems was that only a set of pre-determined messages could be transmitted. This was overcome in the 18<sup>th</sup> and 19<sup>th</sup> century through development of <b>telegraphy</b> and <b>Morse code</b>.</p>
+
+<p>Invention of telephone and establishment of commercial telephony in 1878 marked a turnaround in communication systems and real telecommunication was born. International Telecommunication Union (ITU) defines telecommunication as transmission, emission and reception of any signs, signals or messages by electromagnetic systems. Now we had the communication technology to connect with people physically located thousands of kilometers away.</p>
+
+<p>Telephones slowly gave way to television, videophone, satellite and finally computer networks. Computer networks have revolutionized modern day communication and communication technologies. That will be the subject of our in-depth study in subsequent chapters.</p>
+
+<h1>History Of Networking</h1>
+
+<h2>ARPANET - the First Network</h2>
+
+<p><b>ARPANET</b> &minus; <b>Advanced Research Projects Agency Network</b> &minus; the granddad of Internet was a network established by the US Department of Defense (DOD). The work for establishing the network started in the early 1960s and DOD sponsored major research work, which resulted in development on initial protocols, languages and frameworks for network communication.</p>
+
+<p>It had four nodes at University of California at Los Angeles (UCLA), Stanford Research Institute (SRI), University of California at Santa Barbara (UCSB) and University of Utah. On October 29, 1969, the first message was exchanged between UCLA and SRI. E-mail was created by Roy Tomlinson in 1972 at Bolt Beranek and Newman, Inc. (BBN) after UCLA was connected to BBN.</p>
+
+<h2>Internet</h2>
+
+<p>ARPANET expanded to connect DOD with those universities of the US that were carrying out defense-related research. It covered most of the major universities across the country. The concept of networking got a boost when University College of London (UK) and Royal Radar Network (Norway) connected to the ARPANET and a network of networks was formed.</p>
+
+<p>The term Internet was coined by Vinton Cerf, Yogen Dalal and Carl Sunshine of Stanford University to describe this network of networks. Together they also developed protocols to facilitate information exchange over the Internet. Transmission Control Protocol (TCP) still forms the backbone of networking.</p>
+
+<h2>Telenet</h2>
+
+<p>Telenet was the first commercial adaptation of ARPANET introduced in 1974. With this the concept of Internet Service Provider (ISP) was also introduced. The main function of an ISP is to provide uninterrupted Internet connection to its customers at affordable rates.</p>
+
+<h2>World Wide Web</h2>
+
+<p>With commercialization of internet, more and more networks were developed in different part of the world. Each network used different protocols for communicating over the network. This prevented different networks from connecting together seamlessly. In the 1980s, Tim Berners-Lee led a group of Computer scientists at CERN, Switzerland, to create a seamless network of varied networks, called the World Wide Web (WWW).</p>
+
+<p>World Wide Web is a complex web of websites and web pages connected together through hypertexts. Hypertext is a word or group of words linking to another web page of the same or different website. When the hypertext is clicked, another web page opens.</p>
+
+<p>The evolution from ARPANET to WWW was possible due to many new achievements by researchers and computer scientists all over the world. Here are some of those developments &minus;</p>
+
+<p>Advanced Research Project Agency formed by US</p>
+
+<p>ARPANET became functional</p>
+
+<p>ARPANET connected to BBNs</p>
+
+<p>Roy Tomlinson develops network messaging or E-mail. Symbol @ comes to mean "at"</p>
+
+<p>APRANET connected to Royal Radar Network of Norway</p>
+
+<p>Term Internet coined</p>
+
+<p>First commercial use of ARPANET, Telenet, is approved</p>
+
+<p>TCP/IP introduced as standard protocol on ARPANET</p>
+
+<p>Domain Name System introduced</p>
+
+<p>National Science Foundation brings connectivity to more people with its NSFNET program</p>
+
+<p>ARPANET decommissioned</p>
+
+<p>First web browser Nexus developed</p>
+
+<p>HTML developed</p>
+
+<p>Web 2.0 is born</p>
+
+<h1>Communication Technologies - Terminologies</h1>
+
+<p>Before we dive into details of networking, let us discuss some common terms associated with data communication.</p>
+
+<h2>Channel</h2>
+
+<p>Physical medium like cables over which information is exchanged is called <b>channel</b>. Transmission channel may be <b>analog</b> or <b>digital</b>. As the name suggests, analog channels transmit data using <b>analog signals</b> while digital channels transmit data using <b>digital signals</b>.</p>
+
+<p>In popular network terminology, path over which data is sent or received is called <b>data channel</b>. This data channel may be a tangible medium like copper wire cables or broadcast medium like <b>radio waves</b>.</p>
+
+<h2>Data Transfer Rate</h2>
+
+<p>The speed of data transferred or received over transmission channel, measured per unit time, is called data transfer rate. The smallest unit of measurement is bits per second (bps). 1 bps means 1 bit (0 or 1) of data is transferred in 1 second.</p>
+
+<p>Here are some commonly used data transfer rates &minus;</p>
+
+<h2>Bandwidth</h2>
+
+<p>Data transfer rates that can be supported by a network is called its bandwidth. It is measured in bits per second (bps). Modern day networks provide bandwidth in Kbps, Mbps and Gbps. Some of the factors affecting a network’s bandwidth include &minus;</p>
+
+<h2>Throughput</h2>
+
+<p>Throughput is the actual speed with which data gets transferred over the network. Besides transmitting the actual data, network bandwidth is used for transmitting error messages, acknowledgement frames, etc.</p>
+
+<p>Throughput is a better measurement of network speed, efficiency and capacity utilization rather than bandwidth.</p>
+
+<h2>Protocol</h2>
+
+<p>Protocol is a set of rules and regulations used by devices to communicate over the network. Just like humans, computers also need rules to ensure successful communication. If two people start speaking at the same time or in different languages when no interpreter is present, no meaningful exchange of information can occur.</p>
+
+<p>Similarly, devices connected on the network need to follow rules defining situations like when and how to transmit data, when to receive data, how to give error-free message, etc.</p>
+
+<p>Some common protocols used over the Internet are &minus;</p>
+
+<h1>Switching Techniques</h1>
+
+<p>In large networks, there may be more than one paths for transmitting data from <b>sender</b> to receiver. Selecting a path that data must take out of the available options is called <b>switching</b>. There are two popular switching techniques – circuit switching and packet switching.</p>
+
+<h2>Circuit Switching</h2>
+
+<p>When a dedicated path is established for data transmission between sender and receiver, it is called circuit switching. When any network node wants to send data, be it audio, video, text or any other type of information, a <b>call request signal</b> is sent to the receiver and acknowledged back to ensure availability of dedicated path. This dedicated path is then used to send data. ARPANET used circuit switching for communication over the network.</p>
+
+<h3>Advantages of Circuit Switching</h3>
+
+<p>Circuit switching provides these advantages over other switching techniques &minus;</p>
+
+<h3>Disadvantages of Circuit Switching</h3>
+
+<p>Circuit switching has its disadvantages too &minus;</p>
+
+<p>Long set up time is required</p>
+
+<p>A request token must travel to the receiver and then acknowledged before any transmission can happen</p>
+
+<p>Line may be held up for a long time</p>
+
+<h2>Packet Switching</h2>
+
+<p>As we discussed, the major problem with circuit switching is that it needs a dedicated line for transmission. In packet switching, data is broken down into small packets with each packet having source and destination addresses, travelling from one router to the next router.</p>
+
+<h1>Transmission Media</h1>
+
+<p>For any networking to be effective, raw stream of data is to be transported from one device to other over some medium. Various transmission media can be used for transfer of data. These transmission media may be of two types &minus;</p>
+
+<p><b>Guided</b> &minus; In guided media, transmitted data travels through cabling system that has a fixed path. For example, copper wires, fibre optic wires, etc.</p>
+
+<p><b>Unguided</b> &minus; In unguided media, transmitted data travels through free space in form of electromagnetic signal. For example, radio waves, lasers, etc.</p>
+
+<p>Each transmission media has its own advantages and disadvantages in terms of bandwidth, speed, delay, cost per bit, ease of installation and maintenance, etc. Let’s discuss some of the most commonly used media in detail.</p>
+
+<h2>Twisted Pair Cable</h2>
+
+<p>Copper wires are the most common wires used for transmitting signals because of good performance at low costs. They are most commonly used in telephone lines. However, if two or more wires are lying together, they can interfere with each other’s signals. To reduce this electromagnetic interference, pair of copper wires are twisted together in helical shape like a DNA molecule. Such twisted copper wires are called <b>twisted pair</b>. To reduce interference between nearby twisted pairs, the twist rates are different for each pair.</p>
+
+<p>Up to 25 twisted pair are put together in a protective covering to form twisted pair cables that are the backbone of telephone systems and Ethernet networks.</p>
+
+<h3>Advantages of twisted pair cable</h3>
+
+<p>Twisted pair cable are the oldest and most popular cables all over the world. This is due to the many advantages that they offer &minus;</p>
+
+<h3>Disadvantages of twisted pair cable</h3>
+
+<p>With its many advantages, twisted pair cables offer some disadvantages too &minus;</p>
+
+<h2>Shielding twisted pair cable</h2>
+
+<p>To counter the tendency of twisted pair cables to pick up noise signals, wires are shielded in the following three ways &minus;</p>
+
+<p>Such twisted pairs are called <b>shielded twisted pair (STP) cables</b>. The wires that are not shielded but simply bundled together in a protective sheath are called <b>unshielded twisted pair (UTP) cables</b>. These cables can have maximum length of 100 metres.</p>
+
+<p>Shielding makes the cable bulky, so UTP are more popular than STP. UTP cables are used as the last mile network connection in homes and offices.</p>
+
+<h2>Coaxial Cable</h2>
+
+<p><b>Coaxial cables</b> are copper cables with better <b>shielding</b> than twisted pair cables, so that transmitted signals may travel longer distances at higher speeds. A coaxial cable consists of these layers, starting from the innermost &minus;</p>
+
+<p>Stiff copper wire as <b>core</b></p>
+
+<p><b>Insulating material</b> surrounding the core</p>
+
+<p>Closely woven braided mesh of <b>conducting material</b> surrounding the <b>insulator</b></p>
+
+<p>Protective <b>plastic sheath</b> encasing the wire</p>
+
+<p>Coaxial cables are widely used for <b>cable TV</b> connections and <b>LANs</b>.</p>
+
+<h3>Advantages of Coaxial Cables</h3>
+
+<p>These are the advantages of coaxial cables &minus;</p>
+
+<p>Excellent noise immunity</p>
+
+<p>Signals can travel longer distances at higher speeds, e.g. 1 to 2 Gbps for 1 Km cable</p>
+
+<p>Can be used for both analog and digital signals</p>
+
+<p>Inexpensive as compared to fibre optic cables</p>
+
+<p>Easy to install and maintain</p>
+
+<h3>Disadvantages of Coaxial Cables</h3>
+
+<p>These are some of the disadvantages of coaxial cables &minus;</p>
+
+<h2>Optical Fibre</h2>
+
+<p>Thin glass or plastic threads used to transmit data using light waves are called <b>optical fibre</b>. Light Emitting Diodes (LEDs) or Laser Diodes (LDs) emit light waves at the <b>source</b>, which is read by a <b>detector</b> at the other end. <b>Optical fibre cable</b> has a bundle of such threads or fibres bundled together in a protective covering. Each fibre is made up of these three layers, starting with the innermost layer &minus;</p>
+
+<p><b>Core</b> made of high quality <b>silica glass</b> or <b>plastic</b></p>
+
+<p><b>Cladding</b> made of high quality <b>silica glass</b> or <b>plastic</b>, with a lower refractive index than the core</p>
+
+<p>Protective outer covering called <b>buffer</b></p>
+
+<p>Note that both core and cladding are made of similar material. However, as <b>refractive index</b> of the cladding is lower, any stray light wave trying to escape the core is reflected back due to <b>total internal reflection</b>.</p>
+
+<p>Optical fibre is rapidly replacing copper wires in telephone lines, internet communication and even cable TV connections because transmitted data can travel very long distances without weakening. <b>Single node</b> fibre optic cable can have maximum segment length of 2 kms and bandwidth of up to 100 Mbps. <b>Multi-node</b> fibre optic cable can have maximum segment length of 100 kms and bandwidth up to 2 Gbps.</p>
+
+<h3>Advantages of Optical Fibre</h3>
+
+<p>Optical fibre is fast replacing copper wires because of these advantages that it offers &minus;</p>
+
+<h3>Disadvantages of Optical Fibre</h3>
+
+<p>Despite long segment lengths and high bandwidth, using optical fibre may not be a viable option for every one due to these disadvantages &minus;</p>
+
+<h2>Infrared</h2>
+
+<p>Low frequency infrared waves are used for very short distance communication like TV remote, wireless speakers, automatic doors, hand held devices etc. Infrared signals can propagate within a room but cannot penetrate walls. However, due to such short range, it is considered to be one of the most secure transmission modes.</p>
+
+<h2>Radio Wave</h2>
+
+<p>Transmission of data using radio frequencies is called <b>radio-wave transmission</b>. We all are familiar with radio channels that broadcast entertainment programs. Radio stations transmit radio waves using <b>transmitters</b>, which are received by the receiver installed in our devices.</p>
+
+<p>Both transmitters and receivers use antennas to radiate or capture radio signals. These radio frequencies can also be used for <b>direct voice communication</b> within the <b>allocated range</b>. This range is usually 10 miles.</p>
+
+<h3>Advantages of Radio Wave</h3>
+
+<p>These are some of the advantages of radio wave transmissions &minus;</p>
+
+<h3>Disadvantages of Radio Wave</h3>
+
+<p>These are some of the disadvantages of radio wave transmissions &minus;</p>
+
+<h1>Network Devices</h1>
+
+<p>Hardware devices that are used to connect computers, printers, fax machines and other electronic devices to a network are called <b>network devices</b>. These devices transfer data in a fast, secure and correct way over same or different networks. Network devices may be inter-network or intra-network. Some devices are installed on the device, like NIC card or RJ45 connector, whereas some are part of the network, like router, switch, etc. Let us explore some of these devices in greater detail.</p>
+
+<h2>Modem</h2>
+
+<p>Modem is a device that enables a computer to send or receive data over telephone or cable lines. The data stored on the computer is digital whereas a telephone line or cable wire can transmit only analog data.</p>
+
+<p>The main function of the modem is to convert digital signal into analog and vice versa. Modem is a combination of two devices &minus; <b>modulator</b> and <b>demodulator</b>. The <b>modulator</b> converts digital data into analog data when the data is being sent by the computer. The <b>demodulator</b> converts analog data signals into digital data when it is being received by the computer.</p>
+
+<h2>Types of Modem</h2>
+
+<p>Modem can be categorized in several ways like direction in which it can transmit data, type of connection to the transmission line, transmission mode, etc.</p>
+
+<p>Depending on direction of data transmission, modem can be of these types &minus;</p>
+
+<p><b>Simplex</b> &minus; A simplex modem can transfer data in only one direction, from digital device to network (modulator) or network to digital device (demodulator).</p>
+
+<p><b>Half duplex</b> &minus; A half-duplex modem has the capacity to transfer data in both the directions but only one at a time.</p>
+
+<p><b>Full duplex</b> &minus; A full duplex modem can transmit data in both the directions simultaneously.</p>
+
+<h2>RJ45 Connector</h2>
+
+<p>RJ45 is the acronym for <b>Registered Jack 45. RJ45 connector</b> is an 8-pin jack used by devices to physically connect to <b>Ethernet</b> based <b>local area networks (LANs)</b>. <b>Ethernet</b> is a technology that defines protocols for establishing a LAN. The cable used for Ethernet LANs are twisted pair ones and have <b>RJ45 connector pins</b> at both ends. These pins go into the corresponding socket on devices and connect the device to the network.</p>
+
+<h2>Ethernet Card</h2>
+
+<p><b>Ethernet card</b>, also known as <b>network interface card (NIC)</b>, is a hardware component used by computers to connect to <b>Ethernet LAN</b> and communicate with other devices on the LAN. The earliest <b>Ethernet cards</b> were external to the system and needed to be installed manually. In modern computer systems, it is an internal hardware component. The NIC has <b>RJ45 socket</b> where network cable is physically plugged in.</p>
+
+<p><b>Ethernet card speeds</b> may vary depending upon the protocols it supports. Old Ethernet cards had maximum speed of <b>10 Mbps</b>. However, modern cards support fast Ethernets up to a speed of <b>100 Mbps</b>. Some cards even have capacity of <b>1 Gbps</b>.</p>
+
+<h2>Router</h2>
+
+<p>A <b>router</b> is a <b>network layer</b> hardware device that transmits data from one LAN to another if both networks support the same set of protocols. So a <b>router</b> is typically connected to at least two LANs and the <b>internet service provider</b> (ISP). It receives its data in the form of <b>packets</b>, which are <b>data frames</b> with their <b>destination address</b> added. Router also strengthens the signals before transmitting them. That is why it is also called <b>repeater</b>.</p>
+
+<h2>Routing Table</h2>
+
+<p>A router reads its routing table to decide the best available route the packet can take to reach its destination quickly and accurately. The routing table may be of these two types &minus;</p>
+
+<p><b>Static</b> &minus; In a static routing table the routes are fed manually. So it is suitable only for very small networks that have maximum two to three routers.</p>
+
+<p><b>Dynamic</b> &minus; In a dynamic routing table, the router communicates with other routers through protocols to determine which routes are free. This is suited for larger networks where manual feeding may not be feasible due to large number of routers.</p>
+
+<h2>Switch</h2>
+
+<p><b>Switch</b> is a network device that connects other devices to <b>Ethernet</b> networks through <b>twisted pair</b> cables. It uses <b>packet switching</b> technique to <b>receive, store</b> and <b>forward data packets</b> on the network. The switch maintains a list of network addresses of all the devices connected to it.</p>
+
+<p>On receiving a packet, it checks the destination address and transmits the packet to the correct port. Before forwarding, the packets are checked for collision and other network errors. The data is transmitted in full duplex mode</p>
+
+<p>Data transmission speed in switches can be double that of other network devices like hubs used for networking. This is because switch shares its maximum speed with all the devices connected to it. This helps in maintaining network speed even during high traffic. In fact, higher data speeds are achieved on networks through use of multiple switches.</p>
+
+<h2>Gateway</h2>
+
+<p><b>Gateway</b> is a network device used to connect two or more dissimilar networks. In networking parlance, networks that use different protocols are <b>dissimilar networks</b>. A gateway usually is a computer with multiple <b>NICs</b> connected to different networks. A gateway can also be configured completely using software. As networks connect to a different network through gateways, these gateways are usually hosts or end points of the network.</p>
+
+<p><b>Gateway</b> uses <b>packet switching</b> technique to transmit data from one network to another. In this way it is similar to a <b>router</b>, the only difference being router can transmit data only over networks that use same protocols.</p>
+
+<h2>Wi-Fi Card</h2>
+
+<p><b>Wi-Fi</b> is the acronym for <b>wireless fidelity. Wi-Fi technology</b> is used to achieve <b>wireless connection</b> to any network. <b>Wi-Fi card</b> is a <b>card</b> used to connect any device to the local network wirelessly. The physical area of the network which provides internet access through Wi-Fi is called <b>Wi-Fi hotspot</b>. Hotspots can be set up at home, office or any public space. Hotspots themselves are connected to the network through wires.</p>
+
+<p>A <b>Wi-Fi card</b> is used to add capabilities like <b>teleconferencing, downloading</b> digital camera images, <b>video chat</b>, etc. to old devices. Modern devices come with their in-built <b>wireless network adapter</b>.</p>
+
+<h1>Network Topologies</h1>
+
+<p>The way in which devices are interconnected to form a network is called network topology. Some of the factors that affect choice of topology for a network are &minus;</p>
+
+<p><b>Cost</b> &minus; Installation cost is a very important factor in overall cost of setting up an infrastructure. So cable lengths, distance between nodes, location of servers, etc. have to be considered when designing a network.</p>
+
+<p><b>Flexibility</b> &minus; Topology of a network should be flexible enough to allow reconfiguration of office set up, addition of new nodes and relocation of existing nodes.</p>
+
+<p><b>Reliability</b> &minus; Network should be designed in such a way that it has minimum down time. Failure of one node or a segment of cabling should not render the whole network useless.</p>
+
+<p><b>Scalability</b> &minus; Network topology should be scalable, i.e. it can accommodate load of new devices and nodes without perceptible drop in performance.</p>
+
+<p><b>Ease of installation</b> &minus; Network should be easy to install in terms of hardware, software and technical personnel requirements.</p>
+
+<p><b>Ease of maintenance</b> &minus; Troubleshooting and maintenance of network should be easy.</p>
+
+<h2>Bus Topology</h2>
+
+<p>Data network with bus topology has a <b>linear transmission cable</b>, usually <b>coaxial</b>, to which many <b>network devices</b> and <b>workstations</b> are attached along the length. <b>Server</b> is at one end of the bus. When a workstation has to send data, it transmits <b>packets</b> with <b>destination address</b> in its header along the bus.</p>
+
+<p>The data travels in both the directions along the bus. When the destination terminal sees the data, it copies it to the local disk.</p>
+
+<h3>Advantages of Bus Topology</h3>
+
+<p>These are the advantages of using bus topology &minus;</p>
+
+<h3>Disadvantages of Bus Topology</h3>
+
+<p>These are some disadvantages of using bus topology &minus;</p>
+
+<h2>Ring Topology</h2>
+
+<p>In <b>ring topology</b> each terminal is connected to exactly <b>two nodes</b>, giving the network a circular shape. Data travels in only one pre-determined direction.</p>
+
+<p>When a terminal has to send data, it transmits it to the neighboring node which transmits it to the next one. Before further transmission data may be amplified. In this way, data raverses the network and reaches the destination node, which removes it from the network. If the data reaches the sender, it removes the data and resends it later.</p>
+
+<h3>Advantages of Ring Topology</h3>
+
+<p>These are the advantages of using ring topology &minus;</p>
+
+<h3>Disadvantages of Ring Topology</h3>
+
+<p>These are some the disadvantages of using ring topology &minus;</p>
+
+<p>Failure of single node brings down the whole network</p>
+
+<p>Troubleshooting is difficult as many nodes may have to be inspected before faulty one is identified</p>
+
+<p>Difficult to remove one or more nodes while keeping the rest of the network intact</p>
+
+<h2>Star Topology</h2>
+
+<p>In star topology, server is connected to each node individually. Server is also called the central node. Any exchange of data between two nodes must take place through the server. It is the most popular topology for information and voice networks as central node can process data received from source node before sending it to the destination node.</p>
+
+<h3>Advantages of Star Topology</h3>
+
+<p>These are the advantages of using star topology &minus;</p>
+
+<p>Failure of one node does not affect the network</p>
+
+<p>Troubleshooting is easy as faulty node can be detected from central node immediately</p>
+
+<p>Simple access protocols required as one of the communicating nodes is always the central node</p>
+
+<h3>Disadvantages of Star Topology</h3>
+
+<p>These are the disadvantages of using star topology &minus;</p>
+
+<p>Long cables may be required to connect each node to the server</p>
+
+<p>Failure of central node brings down the whole network</p>
+
+<h2>Tree Topology</h2>
+
+<p>Tree topology has a group of star networks connected to a linear bus backbone cable. It incorporates features of both star and bus topologies. Tree topology is also called hierarchical topology.</p>
+
+<h3>Advantages of Tree Topology</h3>
+
+<p>These are some of the advantages of using tree topology &minus;</p>
+
+<p>Existing network can be easily expanded</p>
+
+<p>Point-to-point wiring for individual segments means easier installation and maintenance</p>
+
+<p>Well suited for temporary networks</p>
+
+<h3>Disadvantages of Tree Topology</h3>
+
+<p>These are some of the disadvantages of using tree topology &minus;</p>
+
+<p>Technical expertise required to configure and wire tree topology</p>
+
+<p>Failure of backbone cable brings down entire network</p>
+
+<p>Insecure network</p>
+
+<p>Maintenance difficult for large networks</p>
+
+<h1>Types of Networks</h1>
+
+<p>Networks can be categorized depending on size, complexity, level of security, or geographical range. We will discuss some of the most popular topologies based on geographical spread.</p>
+
+<h2>PAN</h2>
+
+<p>PAN is the acronym for Personal Area Network. PAN is the interconnection between devices within the range of a person’s private space, typically within a range of 10 metres. If you have transferred images or songs from your laptop to mobile or from mobile to your friend’s mobile using Bluetooth, you have set up and used a personal area network.</p>
+
+<p>A person can connect her laptop, smart phone, personal digital assistant and portable printer in a network at home. This network could be fully Wi-Fi or a combination of wired and wireless.</p>
+
+<h2>LAN</h2>
+
+<p>LAN or Local Area Network is a wired network spread over a single site like an office, building or manufacturing unit. LAN is set up to when team members need to share software and hardware resources with each other but not with the outside world. Typical software resources include official documents, user manuals, employee handbook, etc. Hardware resources that can be easily shared over the network include printer, fax machines, modems, memory space, etc. This decreases infrastructure costs for the organization drastically.</p>
+
+<p>A LAN may be set up using wired or wireless connections. A LAN that is completely wireless is called Wireless LAN or WLAN.</p>
+
+<h2>MAN</h2>
+
+<p>MAN is the acronym for Metropolitan Area Network. It is a network spread over a city, college campus or a small region. MAN is larger than a LAN and typically spread over several kilometres. Objective of MAN is to share hardware and software resources, thereby decreasing infrastructure costs. MAN can be built by connecting several LANs.</p>
+
+<p>The most common example of MAN is cable TV network.</p>
+
+<h2>WAN</h2>
+
+<p>WAN or Wide Area Network is spread over a country or many countries. WAN is typically a network of many LANs, MANs and WANs. Network is set up using wired or wireless connections, depending on availability and reliability.</p>
+
+<p>The most common example of WAN is the Internet.</p>
+
+<h1>Network Protocols</h1>
+
+<p><b>Network Protocols</b> are a set of rules governing exchange of information in an easy, reliable and secure way. Before we discuss the most common protocols used to transmit and receive data over a network, we need to understand how a network is logically organized or designed. The most popular model used to establish open communication between two systems is the <b>Open Systems Interface (OSI) model</b> proposed by ISO.</p>
+
+<h2>OSI Model</h2>
+
+<p>OSI model is not a <b>network architecture</b> because it does not specify the exact services and protocols for each layer. It simply tells what each layer should do by defining its input and output data. It is up to network architects to implement the layers according to their needs and resources available.</p>
+
+<p>These are the seven layers of the OSI model &minus;</p>
+
+<p><b>Physical layer</b> &minus;It is the first layer that physically connects the two systems that need to communicate. It transmits data in bits and manages simplex or duplex transmission by modem. It also manages Network Interface Card’s hardware interface to the network, like cabling, cable terminators, topography, voltage levels, etc.</p>
+
+<p><b>Data link layer</b> &minus; It is the firmware layer of Network Interface Card. It assembles datagrams into frames and adds start and stop flags to each frame. It also resolves problems caused by damaged, lost or duplicate frames.</p>
+
+<p><b>Network layer</b> &minus; It is concerned with routing, switching and controlling flow of information between the workstations. It also breaks down transport layer datagrams into smaller datagrams.</p>
+
+<p><b>Transport layer</b> &minus; Till the session layer, file is in its own form. Transport layer breaks it down into data frames, provides error checking at network segment level and prevents a fast host from overrunning a slower one. Transport layer isolates the upper layers from network hardware.</p>
+
+<p><b>Session layer</b> &minus; This layer is responsible for establishing a session between two workstations that want to exchange data.</p>
+
+<p><b>Presentation layer</b> &minus; This layer is concerned with correct representation of data, i.e. syntax and semantics of information. It controls file level security and is also responsible for converting data to network standards.</p>
+
+<p><b>Application layer</b> &minus; It is the topmost layer of the network that is responsible for sending application requests by the user to the lower levels. Typical applications include file transfer, E-mail, remote logon, data entry, etc.</p>
+
+<p>It is not necessary for every network to have all the layers. For example, network layer is not there in broadcast networks.</p>
+
+<p>When a system wants to share data with another workstation or send a request over the network, it is received by the application layer. Data then proceeds to lower layers after processing till it reaches the physical layer.</p>
+
+<p>At the physical layer, the data is actually transferred and received by the physical layer of the destination workstation. There, the data proceeds to upper layers after processing till it reaches application layer.</p>
+
+<p>At the application layer, data or request is shared with the workstation. So each layer has opposite functions for source and destination workstations. For example, data link layer of the source workstation adds start and stop flags to the frames but the same layer of the destination workstation will remove the start and stop flags from the frames.</p>
+
+<p>Let us now see some of the protocols used by different layers to accomplish user requests.</p>
+
+<h2>TCP/IP</h2>
+
+<p>TCP/IP stands for <b>Transmission Control Protocol/Internet Protocol</b>. TCP/IP is a set of layered protocols used for communication over the Internet. The communication model of this suite is client-server model. A computer that sends a request is the client and a computer to which the request is sent is the server.</p>
+
+<p>TCP/IP has four layers &minus;</p>
+
+<p><b>Application layer</b> &minus; Application layer protocols like HTTP and FTP are used.</p>
+
+<p><b>Transport layer</b> &minus; Data is transmitted in form of datagrams using the Transmission Control Protocol (TCP). TCP is responsible for breaking up data at the client side and then reassembling it on the server side.</p>
+
+<p><b>Network layer</b> &minus; Network layer connection is established using Internet Protocol (IP) at the network layer. Every machine connected to the Internet is assigned an address called IP address by the protocol to easily identify source and destination machines.</p>
+
+<p><b>Data link layer</b> &minus; Actual data transmission in bits occurs at the data link layer using the destination address provided by network layer.</p>
+
+<p>TCP/IP is widely used in many communication networks other than the Internet.</p>
+
+<h2>FTP</h2>
+
+<p>As we have seen, the need for network came up primarily to facilitate sharing of files between researchers. And to this day, file transfer remains one of the most used facilities.The protocol that handles these requests is <b>File Transfer Protocol</b> or <b>FTP</b>.</p>
+
+<p>Using FTP to transfer files is helpful in these ways &minus;</p>
+
+<p>Easily transfers files between two different networks</p>
+
+<p>Can resume file transfer sessions even if connection is dropped, if protocol is configure appropriately</p>
+
+<p>Enables collaboration between geographically separated teams</p>
+
+<h2>PPP</h2>
+
+<p>Point to Point Protocol or PPP is a data link layer protocol that enables transmission of TCP/IP traffic over serial connection, like telephone line.</p>
+
+<p>To do this, PPP defines these three things &minus;</p>
+
+<p>A framing method to clearly define end of one frame and start of another, incorporating errors detection as well.</p>
+
+<p>Link control protocol (LCP) for bringing communication lines up, authenticating and bringing them down when no longer needed.</p>
+
+<p>Network control protocol (NCP) for each network layer protocol supported by other networks.</p>
+
+<p>Using PPP, home users can avail Internet connection over telephone lines.</p>
+
+<h1>Mobile Communication Protocols</h1>
+
+<p>Any device that does not need to remain at one place to carry out its functions is a mobile device. So laptops, smartphones and personal digital assistants are some examples of mobile devices. Due to their portable nature, mobile devices connect to networks wirelessly. Mobile devices typically use radio waves to communicate with other devices and networks. Here we will discuss the protocols used to carry out mobile communication.</p>
+
+<p>Mobile communication protocols use multiplexing to send information. Multiplexing is a method to combine multiple digital or analog signals into one signal over the data channel. This ensures optimum utilization of expensive resource and time. At the destination these signals are de-multiplexed to recover individual signals.</p>
+
+<p>These are the types of multiplexing options available to communication channels &minus;</p>
+
+<p><b>FDM (Frequency Division Multiplexing)</b> &minus; Here each user is assigned a different frequency from the complete spectrum. All the frequencies can then simultaneously travel on the data channel.</p>
+
+<p><b>TDM (Time Division Multiplexing)</b> &minus; A single radio frequency is divided into multiple slots and each slot is assigned to a different user. So multiple users can be supported simultaneously.</p>
+
+<p><b>CDMA (Code Division Multiplexing)</b> &minus; Here several users share the same frequency spectrum simultaneously. They are differentiated by assigning unique codes to them. The receiver has the unique key to identify the individual calls.</p>
+
+<h2>GSM</h2>
+
+<p>GSM technology uses TDMA (Time Division Multiple Access) to support up to eight calls simultaneously. It also uses encryption to make the data more secure.</p>
+
+<p>The frequencies used by the international standard is 900 MHz to 1800 MHz However, GSM phones used in the US use 1900 MHz frequency and hence are not compatible with the international system.</p>
+
+<h2>CDMA</h2>
+
+<p>CDMA stands for Code Division Multiple Access. It was first used by the British military during World War II. After the war its use spread to civilian areas due to high service quality. As each user gets the entire spectrum all the time, voice quality is very high. Also, it is automatically encrypted and hence provides high security against signal interception and eavesdropping.</p>
+
+<h2>WLL</h2>
+
+<p>WLL stands for Wireless in Local Loop. It is a wireless local telephone service that can be provided in homes or offices. The subscribers connect to their local exchange instead of the central exchange wirelessly. Using wireless link eliminates last mile or first mile construction of network connection, thereby reducing cost and set up time. As data is transferred over very short range, it is more secure than wired networks.</p>
+
+<p>WLL system consists of user handsets and a base station. The base station is connected to the central exchange as well as an antenna. The antenna transmits to and receives calls from users through terrestrial microwave links. Each base station can support multiple handsets depending on its capacity.</p>
+
+<h2>GPRS</h2>
+
+<p>GPRS is the mobile communication protocol used by second (2G) and third generation (3G) of mobile telephony. It pledges a speed of 56 kbps to 114 kbps, however the actual speed may vary depending on network load.</p>
+
+<h1>Communication Technologies - Mobile</h1>
+
+<p>Since the introduction of first commercial mobile phone in 1983 by Motorola, mobile technology has come a long way. Be it technology, protocols, services offered or speed, the changes in mobile telephony have been recorded as generation of mobile communication. Here we will discuss the basic features of these generations that differentiate it from the previous generations.</p>
+
+<h2>1G Technology</h2>
+
+<p>1G refers to the first generation of wireless mobile communication where analog signals were used to transmit data. It was introduced in the US in early 1980s and designed exclusively for voice communication. Some characteristics of 1G communication are &minus;</p>
+
+<h2>2G Technology</h2>
+
+<p>2G refers to the second generation of mobile telephony which used digital signals for the first time. It was launched in Finland in 1991 and used GSM technology. Some prominent characteristics of 2G communication are &minus;</p>
+
+<p>When GPRS technology was introduced, it enabled web browsing, e-mail services and fast upload/download speeds. 2G with GPRS is also referred as 2.5G, a step short of next mobile generation.</p>
+
+<h2>3G Technology</h2>
+
+<p>Third generation (3G) of mobile telephony began with the start of the new millennium and offered major advancement over previous generations. Some of the characteristics of this generation are &minus;</p>
+
+<p>Data speeds of 144 kbps to 2 Mbps</p>
+
+<p>High speed web browsing</p>
+
+<p>Running web based applications like video conferencing, multimedia e-mails, etc.</p>
+
+<p>Fast and easy transfer of audio and video files</p>
+
+<p>3D gaming</p>
+
+<p>Every coin has two sides. Here are some downsides of 3G technology &minus;</p>
+
+<p>The intermediate generation, 3.5G grouped together dissimilar mobile telephony and data technologies and paved way for the next generation of mobile communication.</p>
+
+<h2>4G Technology</h2>
+
+<p>Keeping up the trend of a new mobile generation every decade, fourth generation (4G) of mobile communication was introduced in 2011. Its major characteristics are &minus;</p>
+
+<h1>Email Protocols</h1>
+
+<p>Email is one of the most popular uses of Internet world wide. As per a 2015 study, there are 2.6 billion email users worldwide who send some 205 billion email messages per day. With email accounting for so much traffic on the Internet, email protocols need to be very robust. Here we discuss some of the most popular email protocols used worldwide.</p>
+
+<h2>SMTP</h2>
+
+<p>SMTP stands for <b>Simple Mail Transfer Protocol</b>. It is connection oriented <b>application layer</b> protocol that is widely used to send and receive email messages. It was introduced in 1982 by <b>RFC 821</b> and last updated in 2008 by <b>RFC 5321</b>. The updated version is most widely used email protocol.</p>
+
+<p><b>Mail servers</b> and mail transfer agents use <b>SMTP</b> to both send and receive messages. However, user level applications use it only for sending messages. For retrieving they use IMAP or POP3 because they provide <b>mail box management</b></p>
+
+<p>RFC or <b>Request for Comments</b> is a peer reviewed document jointly published by Internet Engineering Task Force and the Internet Society. It is written by researchers and computer scientists describing how the Internet should work and protocols and systems supporting them.</p>
+
+<h2>POP3</h2>
+
+<p><b>POP3</b> or <b>Post Office Protocol Version 3</b> is an <b>application layer</b> protocol used by email clients to retrieve email messages from mail servers over <b>TCP/IP</b> network. POP was designed to move the messages from server to local disk but version 3 has the option of leaving a copy on the server</p>
+
+<p>POP3 is a very simple protocol to implement but that limits its usage. For example, POP3 supports only one mail server for each mailbox. It has now has been made obsolete by modern protocols like <b>IMAP</b>.</p>
+
+<h2>IMAP</h2>
+
+<p><b>IMAP</b> stands for <b>Internet Message Access Protocol</b>. IMAP was defined by <b>RFC 3501</b> to enable email clients to retrieve email messages from mail servers over a TCP/IP connection. IMAP is designed to retrieve messages from multiple mail servers and consolidate them all in the user’s mailbox. A typical example is a corporate client handling multiple corporate accounts through a local mailbox located on her system.</p>
+
+<p>All modern email clients and servers like Gmail, Outlook and Yahoo Mail support IMAP or POP3 protocol. These are some advantages that IMAP offers over POP3 &minus;</p>
+
+<h1>Communication Technologies - VoIP</h1>
+
+<p>VoIP is the acronym for <b>Voice over Internet Protocol</b>. It means telephone services over Internet. Traditionally Internet had been used for exchanging messages but due to advancement in technology, its service quality has increased manifold. It is now possible to deliver voice communication over IP networks by converting voce data into packets. VoIP is a set of protocols and systems developed to provide this service seamlessly.</p>
+
+<p>Here are some of the protocols used for VoIP &minus;</p>
+
+<p>We will discuss two of the most fundamental protocols – H.323 and SIP – here.</p>
+
+<h2>H.323</h2>
+
+<p>H.323 is a VoIP standard for defining the components, protocols and procedures to provide real-time multimedia sessions including audio, video and data transmissions over packetswitched networks. Some of the services facilitated by H.323 include &minus;</p>
+
+<h2>SIP</h2>
+
+<p>SIP is an acronym for Session Initiation Protocol. SIP is a protocol to establish, modify and terminate multimedia sessions like IP telephony. All systems that need multimedia sessions are registered and provided SIP address, much like IP address. Using this address, caller can check callee’s availability and invite it for a VoIP session accordingly.</p>
+
+<p>SIP facilitates multiparty multimedia sessions like video conferencing involving three or more people. In a short span of time SIP has become integral to VoIP and largely replaced H.323.</p>
+
+<h1>Wireless Technologies</h1>
+
+<p>Wireless connection to internet is very common these days. Often an external modem is connected to the Internet and other devices connect to it wirelessly. This eliminated the need for last mile or first mile wiring. There are two ways of connecting to the Internet wirelessly – Wi-Fi and WiMAx.</p>
+
+<h2>Wi-Fi</h2>
+
+<p><b>Wi-Fi</b> is the acronym for <b>wireless fidelity</b>. <b>Wi-Fi technology</b> is used to achieve connection to the Internet without a direct cable between device and Internet Service Provider. Wi-Fi enabled device and wireless router are required for setting up a Wi-Fi connection. These are some characteristics of wireless Internet connection &minus;</p>
+
+<p>If a PC or laptop does not have Wi-Fi capacity, it can be added using a Wi-Fi card.</p>
+
+<p>The physical area of the network which provides Internet access through Wi-Fi is called <b>Wi-Fi hotspot</b>. <b>Hotspots</b> can be set up at home, office or any public space like airport, railway stations, etc. Hotspots themselves are connected to the network through wires.</p>
+
+<h2>WiMax</h2>
+
+<p>To overcome the drawback of <b>Wi-Fi</b> connections, <b>WiMax (Worldwide Interoperability for Microwave Access)</b> was developed. WiMax is a collection of wireless communication standards based on <b>IEEE 802.16</b>. WiMax provides multiple <b>physical layer</b> and <b>media access control</b> (MAC) options.</p>
+
+<p><b>WiMax Forum</b>, established in 2001, is the principal body responsible to ensure conformity and interoperability among various commercial vendors. These are some of the characteristics of WiMax &minus;</p>
+
+<p>The main components of a WiMax unit are &minus;</p>
+
+<p><b>WiMax Base Station</b> &minus; It is a tower similar to mobile towers and connected to Internet through high speed wired connection.</p>
+
+<p><b>WiMax Subscriber Unit (SU)</b> &minus; It is a WiMax version of wireless modem. The only difference is that modem is connected to the Internet through cable connection whereas WiMax SU receives Internet connection wirelessly through microwaves.</p>
+
+<h1>Network Security</h1>
+
+<p>Computer networks are an integral part of our personal and professional lives because we carry out lots of day-to-day activities through the Internet or local organizational network. The downside of this is that huge amount of data, from official documents to personal details, gets shared over the network. So it becomes necessary to ensure that the data is not accessed by unauthorized people.</p>
+
+<p>Practices adopted to monitor and prevent unauthorized access and misuse of network resources and data on them is called <b>network security</b>.</p>
+
+<p>A network has two components – hardware and software. Both these components have their own vulnerability to threats. <b>Threat</b> is a possible risk that might exploit a network weakness to breach security and cause harm. Examples of hardware threats include &minus;</p>
+
+<p>Hardware threats form only 10% of network security threats worldwide because the components need to be accessed physically. 90% threats are through software vulnerabilities. Here we discuss the major types of software security threats.</p>
+
+<h2>Virus</h2>
+
+<p>A <b>virus</b> is a malicious program or <b>malware</b> that attaches itself to a host and makes multiple copies of itself (like a real virus!), slowing down, corrupting or destroying the system.</p>
+
+<p>Some harmful activities that can be undertaken by a virus are &minus;</p>
+
+<p>Viruses mostly attack Windows systems. Till a few years ago, Mac systems were deemed immune from viruses, however now a handful of viruses for them exist as well.</p>
+
+<p>Viruses spread through e-mails and need a host program to function. Whenever a new program runs on the infected system, the virus attaches itself to that program. If you are an expert who tinkers with the OS files, they can get infected too.</p>
+
+<h2>Trojan Horse</h2>
+
+<p><b>Trojan horse</b> is a malware that hides itself within another program like games or documents and harms the system. As it is masked within another program that appears harmless, the user is not aware of the threat. It functions in a way similar to <b>viruses</b> in that it needs a host program to attach itself and harms systems in the same ways.</p>
+
+<p>Trojan horses spread through emails and exchange of data through hard drives or pen drives. Even worms could spread Trojan horses.</p>
+
+<h2>Worms</h2>
+
+<p><b>Worms</b> are autonomous programs sent by the attacker to infect a system by replicating itself. They usually infect multitasking systems that are connected to a network. Some of the harmful activities undertaken by worms include &minus;</p>
+
+<h2>Spams</h2>
+
+<p>Electronic junk mail, unsolicited mail or junk newsroom postings are called spam. Sending multiple unsolicited mails simultaneously is called <b>spamming</b>. Spamming is usually done as part of marketing tactics to announce a product or share political or social views with a wide base of people.</p>
+
+<p>The first spam mail was sent by Gary Thuerk on ARPANET in 1978 to announce launch of new model of Digital Equipment Corporation computers. It was sent to 393 recipients and together with lots of hue and cry it generated sales for the company as well.</p>
+
+<p>Almost all mail servers give you the option of stopping spams by marking a received mail as junk. You should take care to share your email ID only with trusted people or websites, who will not sell them to spammers.</p>
+
+<h1>Communication Technologies - Firewall</h1>
+
+<p>There exist multiple approaches to counter or at least reduce security threats. Some of these are &minus;</p>
+
+<p>Firewalls are the first line of defense against unauthorized access to private networks. They can be used effectively against virus, Trojan or worm attacks.</p>
+
+<h2>How Firewalls Work</h2>
+
+<p>Dictionary defines <b>firewall</b> as a wall or partition designed to inhibit or prevent spread of fire. In networks, a system designed to protect an intranet from <b>unauthorized access</b> is called firewall. A private network created using World Wide Web software is called an <b>intranet</b>. Firewall may be implemented in both hardware and software.</p>
+
+<p>All traffic to and from the network is routed through the firewall. The firewall examines each message and blocks those that does not meet the <b>pre-defined security criteria</b>.</p>
+
+<p>These are some of the prevalent techniques used by firewalls &minus;</p>
+
+<p><b>Packet level filtering</b> &minus; Here each packet is examined depending on user-defined rules. It is very effective and transparent to users, but difficult to configure. Also, as IP address is used to identify users, <b>IP spoofing</b> by malicious parties can prove counterproductive.</p>
+
+<p><b>Circuit level filtering</b> &minus; Like good old telephone connections, circuit level filtering applies security mechanisms while connection between two systems is being established. Once the connection is deemed secure, data transmission can take place for that session.</p>
+
+<p><b>Application level filtering</b> &minus; Here, security mechanisms are applied to commonly used applications like Telnet, FTP servers, storage servers, etc. This is very effective but slows down performance of the applications.</p>
+
+<p><b>Proxy server</b> &minus; As the name suggests, proxy server is used to interrupt all incoming and outgoing messages and mask the true server address.</p>
+
+<p>A firewall may use a combination of two or more techniques to secure the network, depending on extent of security required.</p>
+
+<h1>Communication Technologies - Cookies</h1>
+
+<p><b>Cookies</b> are small text files with their <b>unique ID</b> stored on your system by a website. The website stores your browsing details like preferences, customizations, login ID, pages clicked, etc. specific to that website. Storing this information enables the website to provide you with a customized experience the next time you visit it.</p>
+
+<h2>How Cookies Work</h2>
+
+<p>When you visit a website through your browser, the website creates and stores a cookie file in your browser or program data folder/sub-folder. This cookie may be of two types &minus;</p>
+
+<p><b>Session cookie</b> &minus; It is valid only till the session lasts. Once you exit the website the cookie is automatically deleted.</p>
+
+<p><b>Persistent cookie</b> It is valid beyond your current session. Its expiration date is mentioned within the cookie itself.</p>
+
+<p>A cookie stores these information &minus;</p>
+
+<p>A cookie is meaningless by itself. It can be read only by the server that stored it. When you visit the website subsequently, its server matches cookie ID with its own database of cookies and loads webpages according to your browsing history.</p>
+
+<h2>Handling Cookies</h2>
+
+<p>Cookies were initially designed to enhance user’s web browsing experience. However, in the current aggressive marketing scenario, <b>rogue cookies</b> are being used to create your profile based on your browsing patterns without consent. So you need to be wary of cookies if you care about your privacy and security.</p>
+
+<p>Almost all modern-day browsers give you options to allow, disallow or limit cookies on your system. You can view the cookies active on your computer and make decisions accordingly.</p>
+
+<h1>Communication Technologies - Hacking</h1>
+
+<p>Unauthorized access to data in a device, system or network is called <b>hacking</b>. A person hacking another person’s system is called hacker. A hacker is a highly accomplished computer expert who can exploit the smallest of vulnerabilities in your system or network to hack it.</p>
+
+<p>A hacker may hack due to any of the following reasons &minus;</p>
+
+<h2>Types of Hacking</h2>
+
+<p>Depending on the application or system being broken into, these are some categories of hacking common in the cyber world &minus;</p>
+
+<h2>Ethical Hacking</h2>
+
+<p>As iron sharpens iron, hacking counters hacking. Using hacking techniques to identify potential threats to a system or network is called <b>ethical hacking</b>. For a hacking activity to be termed ethical, it must adhere to these criteria &minus;</p>
+
+<p>Hacker must have written permission to identify potential security threats</p>
+
+<p>Individual’s or company’s privacy must be maintained</p>
+
+<p>Possible security breaches discovered must be intimated to the concerned authorities</p>
+
+<p>At a later date, no one should be able to exploit ethical hacker’s inroads into the network</p>
+
+<h2>Cracking</h2>
+
+<p>A term that goes hand in glove with hacking is cracking. Gaining unauthorized access to a system or network with malicious intent is called <b>cracking</b>. Cracking is a crime and it may have devastating impact on its victims. Crackers are criminals and strong cyber laws have been put into place to tackle them.</p>
+
+<h1>Security Acts And Laws</h1>
+
+<h2>Cyber Crimes</h2>
+
+<p>Any unlawful activity involving or related to computer and networks is called <b>cybercrime</b>. Dr. K. Jaishankar, Professor and Head of the Department of Criminology, Raksha Shakti University, and Dr. Debarati Halder, lawyer and legal researcher, define cybercrime thus &minus;</p>
+
+<p><i>Offences that are committed against individuals or groups of individuals with a criminal motive to intentionally harm the reputation of the victim or cause physical or mental harm, or loss, to the victim directly or indirectly, using modern telecommunication networks such as Internet (networks including but not limited to Chat rooms, emails, notice boards and groups) and mobile phones (Bluetooth/SMS/MMS).</i></p>
+
+<p>This definition implies that any crime perpetrated on the Internet or using computers is a cybercrime.</p>
+
+<p>Examples of cybercrimes include &minus;</p>
+
+<h2>Cyber Law</h2>
+
+<p><b>Cyber law</b> is a term that encompasses legal issues related to use of <b>Internet</b> and <b>cyberspace</b>. It is a broad term that covers varied issues like freedom of expression, internet usage, online privacy, child abuse, etc. Most of the countries have one or the other form of cyber law in place to tackle the growing menace of cybercrimes.</p>
+
+<p>A major issue here is that in any crime perpetrator, victim and instruments used might be spread across multiple locations nationally as well as internationally. So investigating the crime needs close collaboration between computer experts and multiple government authorities, sometimes in more than one country.</p>
+
+<h2>Indian IT Act</h2>
+
+<p>Information Technology Act, <b>2000</b> is the primary Indian law dealing with <b>cybercrime</b> and <b>e-commerce</b>. The law, also called <b>ITA-2000</b> or <b>IT Act</b>, was notified on 17<sup>th</sup> October 2000 and is based on the United Nations Model Law on Electronic Commerce 1996 recommended by the UN General Assembly on 30<sup>th</sup> January 1997.</p>
+
+<p>The IT Act covers whole of India and recognizes electronic records and digital signatures. Some of its prominent features include &minus;</p>
+
+<p>Formation of Controller of Certifying Authorities to regulate issuance of digital signatures</p>
+
+<p>Establishment of Cyber Appellate Tribunal to resolve disputes due to the new law</p>
+
+<p>Amendment in sections of Indian Penal Code, Indian Evidence Act, Banker’s Book Evidence Act and RBI Act to make them technology compliant</p>
+
+<p>The IT Act was framed to originally to provide legal infrastructure for e-commerce in India. However, major amendments were made in 2008 to address issues like cyber terrorism, data protection, child pornography, stalking, etc. It also gave authorities the power to intercept, monitor or decrypt any information through computer resources.</p>
+
+<h2>IPR Issues</h2>
+
+<p>IPR stands for <b>Intellectual Property Rights</b>. IPR is legal protection provided to creators of <b>Intellectual Property (IP)</b>. IP is any creation of the intellect or mind, like art, music, literature, inventions, logo, symbols, tag lines, etc. Protecting the rights of intellectual property creators is essentially a moral issue. However, law of the land does provide legal protection in case of violation of these rights.</p>
+
+<p>Intellectual Property Rights include &minus;</p>
+
+<p>Violation of Intellectual Property Rights is called <b>infringement</b> in case of patents, copyrights and trademarks, and <b>misappropriation</b> in case of trade secrets. Any published material that you view or read on the Internet is copyright of its creator and hence protected by IPR. You are legally and morally obliged not to use it and pass it off as your own. That would be infringement of creator’s copyright and you may incur legal action.</p>
+
+<h1>Communication Technologies - Web Services</h1>
+
+<p>Let us discuss some terms commonly used with regard to the Internet.</p>
+
+<h2>WWW</h2>
+
+<p>WWW is the acronym for <b>World Wide Web</b>. WWW is an information space inhabited by interlinked documents and other media that can be accessed via the Internet. WWW was invented by British scientist Tim Berners-Lee in 1989 and developed the <b>first web browser</b> in 1990 to facilitate exchange of information through the use of interlinked <b>hypertexts</b>.</p>
+
+<p>A text that contains link to another piece of text is called hypertext. The web resources were identified by a unique name called <b>URL</b> to avoid confusion.</p>
+
+<p>World Wide Web has revolutionized the way we create, store and exchange information. Success of WWW can be attributed to these factors &minus;</p>
+
+<h2>HTML</h2>
+
+<p>HTML stands for <b>Hypertext Markup Language</b>. A language designed such that parts of text can be marked to specify its structure, layout and style in context of the whole page is called a <b>markup language</b>. Its primary function is defining, processing and presenting text.</p>
+
+<p><b>HTML</b> is the standard language for creating web pages and web applications, and loading them in <b>web browsers</b>. Like WWW it was created by Time Berners-Lee to enable users to access pages from any page easily.</p>
+
+<p>When you send request for a page, the web server sends file in HTML form. This HTML file is interpreted by the web browser and displayed.</p>
+
+<h2>XML</h2>
+
+<p>XML stands for <b>eXtensible Markup Language</b>. It is a markup language designed to store and transport data in safe, secure and correct way. As the word extensible indicates, XML provides users with a tool to define their own language, especially to display documents on the Internet.</p>
+
+<p>Any XML document has two parts – <b>structure</b> and <b>content</b>. Let’s take an example to understand this. Suppose your school library wants to create a database of magazines it subscribes to. This is the CATALOG XML file that needs to be created.</p>
+
+<p>Each magazine has title, publisher, frequency and price information stored about it. This is the structure of catalog. Values like Magic Pot, MM Publication, Monthly, Weekly, etc. are the content.</p>
+
+<p>This XML file has information about all the magazines available in the library. Remember that this file will not do anything on its own. But another piece of code can be easily written to extract, analyze and present data stored here.</p>
+
+<h2>HTTP</h2>
+
+<p>HTTP stands for <b>Hypertext Transfer Protocol</b>. It is the most fundamental protocol used for transferring text, graphics, image, video and other multimedia files on the <b>World Wide Web</b>. HTTP is an <b>application layer</b> protocol of the <b>TCP/IP</b> suite in <b>client-server </b>networking model and was outlined for the first time by Time Berners-Lee, father of World Wide Web.</p>
+
+<p>HTTP is a <b>request-response</b> protocol. Here is how it functions &minus;</p>
+
+<p>Client submits request to HTTP.</p>
+
+<p>TCP connection is established with the server.</p>
+
+<p>After necessary processing server sends back status request as well as a message. The message may have the requested content or an error message.</p>
+
+<p>An HTTP request is called method. Some of the most popular methods are <b>GET, PUT, POST, CONNECT,</b> etc. Methods that have in-built security mechanisms are called safe methods while others are called <b>unsafe</b>. The version of HTTP that is completely secure is HTTPS where S stands for secure. Here all methods are secure.</p>
+
+<p>An example of use of HTTP protocol is &minus;</p>
+
+<p><a href="/videotutorials/index.htm"><u>https</u>://www.tutorialspoint.com/videotutorials/index.htm</a></p>
+
+<p>The user is requesting (by clicking on a link) the index page of video tutorials on the tutorialspoint.com website. Other parts of the request are discussed later in the chapter.</p>
+
+<h2>Domain Names</h2>
+
+<p>Domain name is a unique name given to a server to identify it on the World Wide Web. In the example request given earlier &minus;</p>
+
+<p><a href="/videotutorials/index.htm">https://www.<u>tutorialspoint.com</u>/videotutorials/index.htm</a></p>
+
+<p>tutorialspoint.com is the domain name. Domain name has multiple parts called labels separated by dots. Let us discuss the labels of this domain name. The right most label .com is called <b>top level domain</b> (TLD). Other examples of TLDs include <b>.net, .org, .co, .au,</b> etc.</p>
+
+<p>The label left to the TLD, i.e. tutorialspoint, is the <b>second level domain</b>. In the above image, <b>.co</b> label in <b>.co.uk </b>is second level domain and <b>.uk</b> is the TLD. <b>www</b> is simply a label used to create the <b>subdomain</b> of tutorialspoint.com. Another label could be <b>ftp</b> to create the subdomain ftp.tutorialspoint.com.</p>
+
+<p>This logical tree structure of domain names, starting from top level domain to lower level domain names is called <b>domain name hierarchy</b>. Root of the domain name hierarchy is <b>nameless</b>. The maximum length of complete domain name is 253 ASCII characters.</p>
+
+<h2>URL</h2>
+
+<p>URL stands for <b>Uniform Resource Locator</b>. URL refers to the location of a web resource on computer network and mechanism for retrieving it. Let us continue with the above example &minus;</p>
+
+<p><a href="/videotutorials/index.htm">https://www.tutorialspoint.com/videotutorials/index.htm</a></p>
+
+<p>This complete string is a URL. Let’s discuss its parts &minus;</p>
+
+<p><b>index.htm</b> is the <b>resource</b> (web page in this case) that needs to be retrieved</p>
+
+<p><b>www.tutorialspoint.com</b> is the server on which this page is located</p>
+
+<p><b>videotutorials</b> is the folder on server where the resource is located</p>
+
+<p><b>www.tutorialspoint.com/videotutorials</b> is the complete pathname of the resource</p>
+
+<p><b>https</b> is the protocol to be used to retrieve the resource</p>
+
+<p>URL is displayed in the address bar of the web browser.</p>
+
+<h2>Websites</h2>
+
+<p><b>Website</b> is a set of <b>web pages</b> under a single domain name. <b>Web page</b> is a text document located on a server and connected to the <b>World Wide Web</b> through hypertexts. Using the image depicting domain name hierarchy, these are the websites that can be constructed &minus;</p>
+
+<p>Note that there is no protocol associated with websites 3 and 4 but they will still load, using their default protocol.</p>
+
+<h2>Web Browsers</h2>
+
+<p><b>Web browser</b> is an <b>application software</b> for accessing, retrieving, presenting and traversing any resource identified by a <b>URL</b> on the <b>World Wide Web</b>. Most popular web browsers include &minus;</p>
+
+<h2>Web Servers</h2>
+
+<p><b>Web server</b> is any <b>software application, computer</b> or <b>networked device</b> that serves files to the users as per their request. These requests are sent by client devices through HTTP or HTTPS requests. Popular web server software include <b>Apache</b>, <b>Microsoft IIS</b>, and <b>Nginx</b>.</p>
+
+<h2>Web Hosting</h2>
+
+<p><b>Web hosting</b> is an Internet service that enables individuals, organizations or businesses to store <b>web pages</b> that can be accessed on the Internet. <b>Web hosting service providers</b> have web servers on which they host web sites and their pages. They also provide the technologies necessary for making a web page available upon client request, as discussed in HTTP above.</p>
+
+<h2>Web Scripting</h2>
+
+<p><b>Script</b> is a set of instructions written using any <b>programming language</b> and <b>interpreted</b> (rather than <b>compiled</b>) by another program. Embedding scripts within web pages to make them dynamic is called <b>web scripting</b>.</p>
+
+<p>As you know, <b>web pages</b> are created using <b>HTML</b>, stored on the server and then loaded into <b>web browsers</b> upon client’s request. Earlier these web pages were <b>static</b> in nature, i.e. what was once created was the only version displayed to the users. However, modern users as well as website owners demand some interaction with the web pages.</p>
+
+<p>Examples of interaction includes validating online forms filled by users, showing messages after user has registered a choice, etc. All this can be achieved by web scripting. Web scripting is of two types &minus;</p>
+
+<p><b>Client side scripting</b> &minus; Here the scripts embedded in a page are executed by the client computer itself using web browser. Most popular client side scripting languages are JavaScript, VBScript, AJAX, etc.</p>
+
+<p><b>Server side scripting</b> &minus; Here scripts are run on the server. Web page requested by the client is generated and sent after the scripts are run. Most popular server side scripting languages are PHP, Python, ASP .Net, etc.</p>
+
+<h2>Web 2.0</h2>
+
+<p><b>Web 2.0</b> is the second stage of development in <b>World Wide Web</b> where the emphasis is on <b>dynamic</b> and <b>user generated content</b> rather than static content. As discussed above, World Wide Web initially supported creation and presentation of static content using HTML. However, as the users evolved, demand for interactive content grew and web scripting was used to add this dynamism to content.</p>
+
+<p>In 1999, Darcy DiNucci coined the term Web 2.0 to emphasize the paradigm shift in the way web pages were being designed and presented to the user. It became popularity around 2004.</p>
+
+<p>Examples of user generated content in Web 2.0 include social media websites, virtual communities, live chats, etc. These have revolutionized the way we experience and use the Internet.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<pre class="prettyprint notralate">
+&lt;CATALOG&gt;
+   &lt;MAGAZINE&gt;
+      &lt;TITLE&gt;Magic Pot&lt;/TITLE&gt;
+      &lt;PUBLISHER&gt;MM Publications&lt;/PUBLISHER&gt;
+      &lt;FREQUENCY&gt;Weekly&lt;/FREQUENCY&gt;
+      &lt;PRICE&gt;15&lt;/PRICE&gt;
+   &lt;/MAGAZINE&gt;
+   
+   &lt;MAGAZINE&gt;
+      &lt;TITLE&gt;Competition Refresher&lt;/TITLE&gt;
+      &lt;PUBLISHER&gt;Bright Publications&lt;/PUBLISHER&gt;
+      &lt;FREQUENCY&gt;Monthly&lt;/FREQUENC&gt;
+      &lt;PRICE&gt;100&lt;/PRICE&gt;
+   &lt;/MAGAZINE&gt;
+&lt;/CATALOG&gt;
+</pre>
+
+<title>Communication Technologies Useful Resources</title>
+
+<h1>Communication Technologies - Resources</h1>
+
+<p>The following resources contain additional information on Communication Technologies. Please use them to get more in-depth knowledge on this.</p>
+
+<h2>Useful Links on Communication Technologies</h2>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikipedia.org/wiki/Information_and_communications_technology">Communication Technologies Wiki</a> &minus; Wikipedia Reference for Communication Technologies</p>
+
+<h2>Useful Books on Communication Technologies</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss Communication Technologies</title>
+
+<h1>Discuss Communication Technologies</h1>
+
+<p>Exchange of information through the use of speech, signs or symbols is called communication. When early humans started speaking, some 5,00,000 years ago, that was the first mode of communication. Communication over a long distance when people who are communicating are not in direct line of each other’s site is called telecommunication.</p>
+
+<p>Invention of telephone and establishment of commercial telephony in 1878 marked a turnaround in communication systems and real telecommunication was born. Telephones slowly gave way to television, videophone, satellite and finally computer networks. Computer networks have revolutionized modern day communication and communication technologies.</p>
+
+<p>In this tutorial, we will discuss in detail how networks have evolved since the first network known as ARPANET. We will also discuss the hardware and software components of networking and the concept of global communication via Internet.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>

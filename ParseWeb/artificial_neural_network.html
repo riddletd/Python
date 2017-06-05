@@ -1,0 +1,3439 @@
+<!DOCTYPE html><html><body><title>Artificial Neural Network Tutorial</title>
+
+<h1>Artificial Neural Network Tutorial</h1>
+
+<p>Neural networks are parallel computing devices, which are basically an attempt to make a computer model of the brain. The main objective is to develop a system to perform various computational tasks faster than the traditional systems. This tutorial covers the basic concept and terminologies involved in Artificial Neural Network. Sections of this tutorial also explain the architecture as well as the training algorithm of various networks used in ANN.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial will be useful for graduates, post graduates, and research students who either have an interest in this subject or have this subject as a part of their curriculum. The reader can be a beginner or an advanced learner.</p>
+
+<h1>Prerequisites</h1>
+
+<p>ANN is an advanced topic, hence the reader must have basic knowledge of Algorithms, Programming, and Mathematics.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Basic Concepts</title>
+
+<h1>Artificial Neural Network - Basic Concepts</h1>
+
+<p>Neural networks are parallel computing devices, which is basically an attempt to make a computer model of the brain. The main objective is to develop a system to perform various computational tasks faster than the traditional systems. These tasks include pattern recognition and classification, approximation, optimization, and data clustering.</p>
+
+<h2>What is Artificial Neural Network?</h2>
+
+<p>Artificial Neural Network (ANN) is an efficient computing system whose central theme is borrowed from the analogy of biological neural networks. ANNs are also named as “artificial neural systems,” or “parallel distributed processing systems,” or “connectionist systems.”  ANN acquires a large collection of units that are interconnected in some pattern to allow communication between the units. These units, also referred to as nodes or neurons, are simple processors which operate in parallel.</p>
+
+<p>Every neuron is connected with other neuron through a connection link. Each connection link is associated with a weight that has information about the input signal. This is the most useful information for neurons to solve a particular problem because the weight usually excites or inhibits the signal that is being communicated. Each neuron has an internal state, which is called an activation signal. Output signals, which are produced after combining the input signals and activation rule, may be sent to other units.</p>
+
+<h2>A Brief History of ANN</h2>
+
+<p>The history of ANN can be divided into the following three eras &minus;</p>
+
+<h3>ANN during 1940s to 1960s</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1943</b> &minus; It has been assumed that the concept of neural network started with the work of physiologist, Warren McCulloch, and mathematician, Walter Pitts, when in 1943 they modeled a simple neural network using electrical circuits in order to describe how neurons in the brain might work.</p>
+
+<p><b>1949</b> &minus; Donald Hebb’s book, <i>The Organization of Behavior</i>, put forth the fact that repeated activation of one neuron by another increases its strength each time they are used.</p>
+
+<p><b>1956</b> &minus; An associative memory network was introduced by Taylor.</p>
+
+<p><b>1958</b> &minus; A learning method for McCulloch and Pitts neuron model named Perceptron was invented by Rosenblatt.</p>
+
+<p><b>1960</b> &minus; Bernard Widrow and Marcian Hoff developed models called "ADALINE" and “MADALINE.”</p>
+
+<h3>ANN during 1960s to 1980s</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1961</b> &minus; Rosenblatt made an unsuccessful attempt but proposed the “backpropagation” scheme for multilayer networks.</p>
+
+<p><b>1964</b> &minus; Taylor constructed a winner-take-all circuit with inhibitions among output units.</p>
+
+<p><b>1969</b> &minus; Multilayer perceptron (MLP) was invented by Minsky and Papert.</p>
+
+<p><b>1971</b> &minus; Kohonen developed Associative memories.</p>
+
+<p><b>1976</b> &minus; Stephen Grossberg and Gail Carpenter developed Adaptive resonance theory.</p>
+
+<h3>ANN from 1980s till Present</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1982</b> &minus; The major development was Hopfield’s Energy approach.</p>
+
+<p><b>1985</b> &minus; Boltzmann machine was developed by Ackley, Hinton, and Sejnowski.</p>
+
+<p><b>1986</b> &minus; Rumelhart, Hinton, and Williams introduced Generalised Delta Rule.</p>
+
+<p><b>1988</b> &minus; Kosko developed Binary Associative Memory (BAM) and also gave the concept of Fuzzy Logic in ANN.</p>
+
+<p>The historical review shows that significant progress has been made in this field. Neural network based chips are emerging and applications to complex problems are being developed. Surely, today is a period of transition for neural network technology.</p>
+
+<h2>Biological Neuron</h2>
+
+<p>A nerve cell (neuron) is a special biological cell that processes information. According to an estimation, there are huge number of neurons, approximately 10<sup>11</sup> with numerous interconnections, approximately 10<sup>15</sup>.</p>
+
+<h3>Schematic Diagram</h3>
+
+<h3>Working of a Biological Neuron</h3>
+
+<p>As shown in the above diagram, a typical neuron consists of the following four parts with the help of which we can explain its working &minus;</p>
+
+<p><b>Dendrites</b> &minus; They are tree-like branches, responsible for receiving the information from other neurons it is connected to. In other sense, we can say that they are like the ears of neuron.</p>
+
+<p><b>Soma</b> &minus; It is the cell body of the neuron and is responsible for processing of information, they have received from dendrites.</p>
+
+<p><b>Axon</b> &minus; It is just like a cable through which neurons send the information.</p>
+
+<p><b>Synapses</b> &minus; It is the connection between the axon and other neuron dendrites.</p>
+
+<h3>ANN versus BNN</h3>
+
+<p>Before taking a look at the differences between Artificial Neural Network (ANN) and Biological Neural Network (BNN), let us take a look at the similarities based on the terminology between these two.</p>
+
+<p>The following table shows the comparison between ANN and BNN based on some criteria mentioned.</p>
+
+<h2>Model of Artificial Neural Network</h2>
+
+<p>The following diagram represents the general model of ANN followed by its processing.</p>
+
+<p>For the above general model of artificial neural network, the net input can be calculated as follows &minus;</p>
+
+<p>$$y_{in}\:=\:x_{1}.w_{1}\:+\:x_{2}.w_{2}\:+\:x_{3}.w_{3}\:\dotso\: x_{m}.w_{m}$$</p>
+
+<p>The output can be calculated by applying the activation function over the net input.</p>
+
+<p>$$Y\:=\:F(y_{in}) $$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Building Blocks</title>
+
+<h1>Artificial Neural Network - Building Blocks</h1>
+
+<p>Processing of ANN depends upon the following three building blocks &minus;</p>
+
+<p>In this chapter, we will discuss in detail about these three building blocks of ANN</p>
+
+<h2>Network Topology</h2>
+
+<p>A network topology is the arrangement of a network along with its nodes and connecting lines. According to the topology, ANN can be classified as the following kinds &minus;</p>
+
+<h3>Feedforward Network</h3>
+
+<p>It is a non-recurrent network having processing units/nodes in layers and all the nodes in a layer are connected with the nodes of the previous layers. The connection has different weights upon them. There is no feedback loop means the signal can only flow in one direction, from input to output. It may be divided into the following two types &minus;</p>
+
+<p><b>Single layer feedforward network</b> &minus; The concept is of feedforward ANN having only one weighted layer. In other words, we can say the input layer is fully connected to the output layer.</p>
+
+<p><b>Multilayer feedforward network</b> &minus; The concept is of feedforward ANN having more than one weighted layer. As this network has one or more layers between the input and the output layer, it is called hidden layers.</p>
+
+<h3>Feedback Network</h3>
+
+<p>As the name suggests, a feedback network has feedback paths, which means the signal can flow in both directions using loops. This makes it a non-linear dynamic system, which changes continuously until it reaches a state of equilibrium. It may be divided into the following types &minus;</p>
+
+<p><b>Recurrent networks</b> &minus; They are feedback networks with closed loops. Following are the two types of recurrent networks.</p>
+
+<p><b>Fully recurrent network</b> &minus; It is the simplest neural network architecture because all nodes are connected to all other nodes and each node works as both input and output.</p>
+
+<p><b>Jordan network</b> &minus; It is a closed loop network in which the output will go to the input again as feedback as shown in the following diagram.</p>
+
+<h2>Adjustments of Weights or Learning</h2>
+
+<p>Learning, in artificial neural network, is the method of modifying the weights of connections between the neurons of a specified network. Learning in ANN can be classified into three categories namely supervised learning, unsupervised learning, and reinforcement learning.</p>
+
+<h3>Supervised Learning</h3>
+
+<p>As the name suggests, this type of learning is done under the supervision of a teacher. This learning process is dependent.</p>
+
+<p>During the training of ANN under supervised learning, the input vector is presented to the network, which will give an output vector. This output vector is compared with the desired output vector. An error signal is generated, if there is a difference between the actual output and the desired output vector. On the basis of this error signal, the weights are adjusted until the actual output is matched with the desired output.</p>
+
+<h3>Unsupervised Learning</h3>
+
+<p>As the name suggests, this type of learning is done without the supervision of a teacher. This learning process is independent.</p>
+
+<p>During the training of ANN under unsupervised learning, the input vectors of similar type are combined to form clusters. When a new input pattern is applied, then the neural network gives an output response indicating the class to which the input pattern belongs.</p>
+
+<p>There is no feedback from the environment as to what should be the desired output and if it is correct or incorrect. Hence, in this type of learning, the network itself must discover the patterns and features from the input data, and the relation for the input data over the output.</p>
+
+<h3>Reinforcement Learning</h3>
+
+<p>As the name suggests, this type of learning is used to reinforce or strengthen the network over some critic information. This learning process is similar to supervised learning, however we might have very less information.</p>
+
+<p>During the training of network under reinforcement learning, the network receives some feedback from the environment. This makes it somewhat similar to supervised learning. However, the feedback obtained here is evaluative not instructive, which means there is no teacher as in supervised learning. After receiving the feedback, the network performs adjustments of the weights to get better critic information in future.</p>
+
+<h2>Activation Functions</h2>
+
+<p>It may be defined as the extra force or effort applied over the input to obtain an exact output. In ANN, we can also apply activation functions over the input to get the exact output. Followings are some activation functions of interest &minus;</p>
+
+<h3>Linear Activation Function</h3>
+
+<p>It is also called the identity function as it performs no input editing. It can be defined as &minus;</p>
+
+<p>$$F(x)\:=\:x$$</p>
+
+<h3>Sigmoid Activation Function</h3>
+
+<p>It is of two type as follows &minus;</p>
+
+<p><b>Binary sigmoidal function</b> &minus; This activation function performs input editing between 0 and 1. It is positive in nature. It is always bounded, which means its output cannot be less than 0 and more than 1. It is also strictly increasing in nature, which means more the input higher would be the output. It can be defined as</p>
+
+<p>$$F(x)\:=\:sigm(x)\:=\:\frac{1}{1\:+\:exp(-x)}$$</p>
+
+<p><b>Bipolar sigmoidal function</b> &minus; This activation function performs input editing between -1 and 1. It can be positive or negative in nature. It is always bounded, which means its output cannot be less than -1 and more than 1. It is also strictly increasing in nature like sigmoid function. It can be defined as</p>
+
+<p>$$F(x)\:=\:sigm(x)\:=\:\frac{2}{1\:+\:exp(-x)}\:-\:1\:=\:\frac{1\:-\:exp(x)}{1\:+\:exp(x)}$$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Learning and Adaptation</title>
+
+<h1>Learning and Adaptation</h1>
+
+<p>As stated earlier, ANN is completely inspired by the way biological nervous system, i.e. the human brain works. The most impressive characteristic of the human brain is to learn, hence the same feature is acquired by ANN.</p>
+
+<h3>What Is Learning in ANN?</h3>
+
+<p>Basically, learning means to do and adapt the change in itself as and when there is a change in environment. ANN is a complex system or more precisely we can say that it is a complex adaptive system, which can change its internal structure based on the information passing through it.</p>
+
+<h3>Why Is It important?</h3>
+
+<p>Being a complex adaptive system, learning in ANN implies that a processing unit is capable of changing its input/output behavior due to the change in environment. The importance of learning in ANN increases because of the fixed activation function as well as the input/output vector, when a particular network is constructed. Now to change the input/output behavior, we need to adjust the weights.</p>
+
+<h3>Classification</h3>
+
+<p>It may be defined as the process of learning to distinguish the data of samples into different classes by finding common features between the samples of the same classes. For example, to perform training of ANN, we have some training samples with unique features, and to perform its testing we have some testing samples with other unique features. Classification is an example of supervised learning.</p>
+
+<h2>Neural Network Learning Rules</h2>
+
+<p>We know that, during ANN learning, to change the input/output behavior, we need to adjust the weights. Hence, a method is required with the help of which the weights can be modified. These methods are called Learning rules, which are simply algorithms or equations. Following are some learning rules for the neural network &minus;</p>
+
+<h3>Hebbian Learning Rule</h3>
+
+<p>This rule, one of the oldest and simplest, was introduced by Donald Hebb in his book <i>The Organization of Behavior</i> in 1949. It is a kind of feed-forward, unsupervised learning.</p>
+
+<p><b>Basic Concept</b> &minus; This rule is based on a proposal given by Hebb, who wrote &minus;</p>
+
+<p>“When an axon of cell A is near enough to excite a cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells such that A’s efficiency, as one of the cells firing B, is increased.”</p>
+
+<p>From the above postulate, we can conclude that the connections between two neurons might be strengthened if the neurons fire at the same time and might weaken if they fire at different times.</p>
+
+<p><b>Mathematical Formulation</b> &minus; According to Hebbian learning rule, following is the formula to increase the weight of connection at every time step.</p>
+
+<p>$$\Delta w_{ji}(t)\:=\:\alpha x_{i}(t).y_{j}(t)$$</p>
+
+<p>Here, $\Delta w_{ji}(t)$ ⁡= increment by which the weight of connection increases at time step <b>t</b></p>
+
+<h3>Perceptron Learning Rule</h3>
+
+<p>This rule is an error correcting the supervised learning algorithm of single layer feedforward networks with linear activation function, introduced by Rosenblatt.</p>
+
+<p><b>Basic Concept</b> &minus; As being supervised in nature, to calculate the error, there would be a comparison between the desired/target output and the actual output. If there is any difference found, then a change must be made to the weights of connection.</p>
+
+<p><b>Mathematical Formulation</b> &minus; To explain its mathematical formulation, suppose we have ‘n’ number of finite input vectors, x(n), along with its desired/target output vector t(n), where n = 1 to N.</p>
+
+<p>Now the output ‘y’ can be calculated, as explained earlier on the basis of the net input, and activation function being applied over that net input can be expressed as follows &minus;</p>
+
+<p>$$y\:=\:f(y_{in})\:=\:\begin{cases}1, & y_{in}\:>\:\theta \\0, & y_{in}\:\leqslant\:\theta\end{cases}$$</p>
+
+<p>Where <b>&theta;</b> is threshold.</p>
+
+<p>The updating of weight can be done in the following two cases &minus;</p>
+
+<p><b>Case I</b> &minus; when <b>t &ne; y</b>, then</p>
+
+<p>$$w(new)\:=\:w(old)\:+\;tx$$</p>
+
+<p><b>Case II</b> &minus; when <b>t = y</b>, then</p>
+
+<h3>Delta Learning Rule (Widrow-Hoff Rule)</h3>
+
+<p>It is introduced by Bernard Widrow and Marcian Hoff, also called Least Mean Square (LMS) method, to minimize the error over all training patterns. It is kind of supervised learning algorithm with having continuous activation function.</p>
+
+<p><b>Basic Concept</b> &minus; The base of this rule is gradient-descent approach, which continues forever. Delta rule updates the synaptic weights so as to minimize the net input to the output unit and the target value.</p>
+
+<p><b>Mathematical Formulation</b> &minus; To update the synaptic weights, delta rule is given by</p>
+
+<p>$$\Delta w_{i}\:=\:\alpha\:.x_{i}.e_{j}$$</p>
+
+<p>Here $\Delta w_{i}$ = weight change for i<sup>th</sup> ⁡pattern;</p>
+
+<p>The above delta rule is for a single output unit only.</p>
+
+<p>The updating of weight can be done in the following two cases &minus;</p>
+
+<p><b>Case-I</b> &minus; when <b>t &ne; y</b>, then</p>
+
+<p>$$w(new)\:=\:w(old)\:+\:\Delta w$$</p>
+
+<p><b>Case-II</b> &minus; when <b>t = y</b>, then</p>
+
+<h3>Competitive Learning Rule (Winner-takes-all)</h3>
+
+<p>It is concerned with unsupervised training in which the output nodes try to compete with each other to represent the input pattern. To understand this learning rule, we must understand the competitive network which is given as follows &minus;</p>
+
+<p><b>Basic Concept of Competitive Network</b> &minus; This network is just like a single layer feedforward network with feedback connection between outputs. The connections between outputs are inhibitory type, shown by dotted lines, which means the competitors never support themselves.</p>
+
+<p><b>Basic Concept of Competitive Learning Rule</b> &minus; As said earlier, there will be a competition among the output nodes. Hence, the main concept is that during training, the output unit with the highest activation to a given input pattern, will be declared the winner. This rule is also called Winner-takes-all because only the winning neuron is updated and the rest of the neurons are left unchanged.</p>
+
+<p><b>Mathematical formulation</b> &minus; Following are the three important factors for mathematical formulation of this learning rule &minus;</p>
+
+<p><b>Condition to be a winner</b> &minus; Suppose if a neuron $y_{k}$⁡                        ⁡wants to be the winner then there would be the following condition &minus;</p>
+
+<p>$$y_{k}\:=\:\begin{cases}1 & if\:v_{k}\:>\:v_{j}\:for\:all\:j,\:j\:\neq\:k\\0 & otherwise\end{cases}$$</p>
+
+<p>It means that if any neuron, say $y_{k}$⁡                       , wants to win, then its induced local field (the output of summation unit), say $v_{k}$, must be the largest among all the other neurons in the network.</p>
+
+<p><b>Condition of sum total of weight</b> &minus; Another constraint over the competitive learning rule is, the sum total of weights to a particular output neuron is going to be 1. For example, if we consider neuron <b>k</b> then &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j}w_{kj}\:=\:1\:\:\:\:\:\:\:\:\:for\:all\:k$$</p>
+
+<p></p>
+
+<p><b>Change of weight for winner</b> &minus; If a neuron does not respond to the input pattern, then no learning takes place in that neuron. However, if a particular neuron wins, then the corresponding weights are adjusted as follows</p>
+
+<p>$$\Delta w_{kj}\:=\:\begin{cases}-\alpha(x_{j}\:-\:w_{kj}), & if\:neuron\:k\:wins\\0, & if\:neuron\:k\:losses\end{cases}$$</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<p>This clearly shows that we are favoring the winning neuron by adjusting its weight and if there is a neuron loss, then we need not bother to re-adjust its weight.</p>
+
+<h3>Outstar Learning Rule</h3>
+
+<p>This rule, introduced by Grossberg, is concerned with supervised learning because the desired outputs are known. It is also called Grossberg learning.</p>
+
+<p><b>Basic Concept</b> &minus; This rule is applied over the neurons arranged in a layer. It is specially designed to produce a desired output <b>d</b> of the layer of <b>p</b> neurons.</p>
+
+<p><b>Mathematical Formulation</b> &minus; The weight adjustments in this rule are computed as follows</p>
+
+<p>$$\Delta w_{j}\:=\:\alpha\:(d\:-\:w_{j})$$</p>
+
+<p>Here <b>d</b> is the desired neuron output and $\alpha$ is the learning rate.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Supervised Learning</title>
+
+<h1>Supervised Learning</h1>
+
+<p>As the name suggests, <b>supervised learning</b> takes place under the supervision of a teacher. This learning process is dependent. During the training of ANN under supervised learning, the input vector is presented to the network, which will produce an output vector. This output vector is compared with the desired/target output vector. An error signal is generated if there is a difference between the actual output and the desired/target output vector. On the basis of this error signal, the weights would be adjusted until the actual output is matched with the desired output.</p>
+
+<h2>Perceptron</h2>
+
+<p>Developed by Frank Rosenblatt by using McCulloch and Pitts model, perceptron is the basic operational unit of artificial neural networks. It employs supervised learning rule and is able to classify the data into two classes.</p>
+
+<p>Operational characteristics of the perceptron: It consists of a single neuron with an arbitrary number of inputs along with adjustable weights, but the output of the neuron is 1 or 0 depending upon the threshold. It also consists of a bias whose weight is always 1. Following figure gives a schematic representation of the perceptron.</p>
+
+<p>Perceptron thus has the following three basic elements &minus;</p>
+
+<p><b>Links</b> &minus; It would have a set of connection links, which carries a weight including a bias always having weight 1.</p>
+
+<p><b>Adder</b> &minus; It adds the input after they are multiplied with their respective weights.</p>
+
+<p><b>Activation function</b> &minus; It limits the output of neuron. The most basic activation function is a Heaviside step function that has two possible outputs. This function returns 1, if the input is positive, and 0 for any negative input.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>Perceptron network can be trained for single output unit as well as multiple output units.</p>
+
+<h3>Training Algorithm for Single Output Unit</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Now obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}.\:w_{i}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output.</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{in}\:>\:\theta\\0 & if \: -\theta\:\leqslant\:y_{in}\:\leqslant\:\theta\\-1 & if\:y_{in}\:<\:-\theta \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)\:+\:\alpha\:tx_{i}$$</p>
+
+<p>$$b(new)\:=\:b(old)\:+\:\alpha t$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y = t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)$$</p>
+
+<p>$$b(new)\:=\:b(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which would happen when there is no change in weight.</p>
+
+<h3>Training Algorithm for Multiple Output Units</h3>
+
+<p>The following diagram is the architecture of perceptron for multiple output classes.</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{ij}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output for each output unit <b>j = 1 to m</b> &minus;</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{inj}\:>\:\theta\\0 & if \: -\theta\:\leqslant\:y_{inj}\:\leqslant\:\theta\\-1 & if\:y_{inj}\:<\:-\theta \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias for <b>x = 1 to n</b> and <b>j = 1 to m</b> as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y<sub>j</sub> &ne; t<sub>j</sub></b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\alpha\:t_{j}x_{i}$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)\:+\:\alpha t_{j}$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y<sub>j</sub> = t<sub>j</sub></b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight.</p>
+
+<h2>Adaptive Linear Neuron (Adaline)</h2>
+
+<p>Adaline which stands for Adaptive Linear Neuron, is a network having a single linear unit. It was developed by Widrow and Hoff in 1960. Some important points about Adaline are as follows &minus;</p>
+
+<p>It uses bipolar activation function.</p>
+
+<p>It uses delta rule for training to minimize the Mean-Squared Error (MSE) between the actual output and the desired/target output.</p>
+
+<p>The weights and the bias are adjustable.</p>
+
+<h3>Architecture</h3>
+
+<p>The basic structure of Adaline is similar to perceptron having an extra feedback loop with the help of which the actual output is compared with the desired/target output. After comparison on the basis of training algorithm, the weights and bias will be updated.</p>
+
+<h3>Training Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every bipolar training pair <b>s:t</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{i}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output &minus;</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{in}\:\geqslant\:0 \\-1 & if\:y_{in}\:<\:0 \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)\:+\: \alpha(t\:-\:y_{in})x_{i}$$</p>
+
+<p>$$b(new)\:=\:b(old)\:+\: \alpha(t\:-\:y_{in})$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y = t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)$$</p>
+
+<p>$$b(new)\:=\:b(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p>$(t\:-\;y_{in})$ is the computed error.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight or the highest weight change occurred during training is smaller than the specified tolerance.</p>
+
+<h2>Multiple Adaptive Linear Neuron (Madaline)</h2>
+
+<p>Madaline which stands for Multiple Adaptive Linear Neuron, is a network which consists of many Adalines in parallel. It will have a single output unit. Some important points about Madaline are as follows &minus;</p>
+
+<p>It is just like a multilayer perceptron, where Adaline will act as a hidden unit between the input and the Madaline layer.</p>
+
+<p>The weights and the bias between the input and Adaline layers, as in we see in the Adaline architecture, are adjustable.</p>
+
+<p>The Adaline and Madaline layers have fixed weights and bias of 1.</p>
+
+<p>Training can be done with the help of Delta rule.</p>
+
+<h3>Architecture</h3>
+
+<p>The architecture of Madaline consists of <b>“n”</b> neurons of the input layer, <b>“m”</b> neurons of the Adaline layer, and 1 neuron of the Madaline layer. The Adaline layer can be considered as the hidden layer as it is between the input layer and the output layer, i.e. the Madaline layer.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>By now we know that only the weights and bias between the input and the Adaline layer are to be adjusted, and the weights and bias between the Adaline and the Madaline layer are fixed.</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every bipolar training pair <b>s:t</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input at each hidden layer, i.e. the Adaline layer with the following relation &minus;</p>
+
+<p>$$Q_{inj}\:=\:b_{j}\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{ij}\:\:\:j\:=\:1\:to\:m$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output at the Adaline and the Madaline layer &minus;</p>
+
+<p>$$f(x)\:=\:\begin{cases}1 & if\:x\:\geqslant\:0 \\-1 & if\:x\:<\:0 \end{cases}$$</p>
+
+<p>Output at the hidden (Adaline) unit</p>
+
+<p>$$Q_{j}\:=\:f(Q_{inj})$$</p>
+
+<p>Final output of the network</p>
+
+<p>$$y\:=\:f(y_{in})$$</p>
+
+<p><b>Step 7</b> &minus; Calculate the error and adjust the weights as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> and <b>t = 1</b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\: \alpha(1\:-\:Q_{inj})x_{i}$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)\:+\: \alpha(1\:-\:Q_{inj})$$</p>
+
+<p>In this case, the weights would be updated on <b>Q<sub>j</sub></b> where the net input is close to 0 because <b>t = 1</b>.</p>
+
+<p><b>Case 2</b> &minus; if <b>y &ne; t</b> and <b>t = -1</b> then,</p>
+
+<p>$$w_{ik}(new)\:=\:w_{ik}(old)\:+\: \alpha(-1\:-\:Q_{ink})x_{i}$$</p>
+
+<p>$$b_{k}(new)\:=\:b_{k}(old)\:+\: \alpha(-1\:-\:Q_{ink})$$</p>
+
+<p>In this case, the weights would be updated on <b>Q<sub>k</sub></b> where the net input is positive because <b>t = -1</b>.</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Case 3</b> &minus; if <b>y = t</b> then</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight or the highest weight change occurred during training is smaller than the specified tolerance.</p>
+
+<h2>Back Propagation Neural Networks</h2>
+
+<p>Back Propagation Neural (BPN) is a multilayer neural network consisting of the input layer, at least one hidden layer and output layer. As its name suggests, back propagating will take place in this network. The error which is calculated at the output layer, by comparing the target output and the actual output, will be propagated back towards the input layer.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the diagram, the architecture of BPN has three interconnected layers having weights on them. The hidden layer as well as the output layer also has bias, whose weight is always 1, on them. As is clear from the diagram, the working of BPN is in two phases. One phase sends the signal from the input layer to the output layer, and the other phase back propagates the error from the output layer to the input layer.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, BPN will use binary sigmoid activation function. The training of BPN will have the following three phases.</p>
+
+<p><b>Phase 1</b> &minus; Feed Forward Phase</p>
+
+<p><b>Phase 2</b> &minus; Back Propagation of error</p>
+
+<p><b>Phase 3</b> &minus; Updating of weights</p>
+
+<p>All these steps will be concluded in the algorithm as follows</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, take some small random values.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-11 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-10 for every training pair.</p>
+
+<h3>Phase 1</h3>
+
+<p><b>Step 4</b> &minus; Each input unit receives input signal <b>x<sub>i</sub></b> and sends it to the hidden unit for all <b>i = 1 to n</b></p>
+
+<p><b>Step 5</b> &minus; Calculate the net input at the hidden unit using the following relation &minus;</p>
+
+<p>$$Q_{inj}\:=\:b_{0j}\:+\:\sum_{i=1}^n x_{i}v_{ij}\:\:\:\:j\:=\:1\:to\:p$$</p>
+
+<p>Here <b>b<sub>0j</sub></b> is the bias on hidden unit, <b>v<sub>ij</sub></b> is the weight on <b>j</b> unit of the hidden layer coming from <b>i</b> unit of the input layer.</p>
+
+<p>Now calculate the net output by applying the following activation function</p>
+
+<p>$$Q_{j}\:=\:f(Q_{inj})$$</p>
+
+<p>Send these output signals of the hidden layer units to the output layer units.</p>
+
+<p><b>Step 6</b> &minus; Calculate the net input at the output layer unit using the following relation &minus;</p>
+
+<p>$$y_{ink}\:=\:b_{0k}\:+\:\sum_{j = 1}^p\:Q_{j}\:w_{jk}\:\:k\:=\:1\:to\:m$$</p>
+
+<p>Here <b>b<sub>0k</sub></b> ⁡is the bias on output unit, <b>w<sub>jk</sub></b> is the weight on <b>k</b> unit of the output layer coming from <b>j</b> unit of the hidden layer.</p>
+
+<p>Calculate the net output by applying the following activation function</p>
+
+<p>$$y_{k}\:=\:f(y_{ink})$$</p>
+
+<h3>Phase 2</h3>
+
+<p><b>Step 7</b> &minus; Compute the error correcting term, in correspondence with the target pattern received at each output unit, as follows &minus;</p>
+
+<p>$$\delta_{k}\:=\:(t_{k}\:-\:y_{k})f^{'}(y_{ink})$$</p>
+
+<p>On this basis, update the weight and bias as follows &minus;</p>
+
+<p>$$\Delta v_{jk}\:=\:\alpha \delta_{k}\:Q_{ij}$$</p>
+
+<p>$$\Delta b_{0k}\:=\:\alpha \delta_{k}$$</p>
+
+<p>Then, send $\delta_{k}$ back to the hidden layer.</p>
+
+<p><b>Step 8</b> &minus; Now each hidden unit will be the sum of its delta inputs from the output units.</p>
+
+<p>$$\delta_{inj}\:=\:\displaystyle\sum\limits_{k=1}^m \delta_{k}\:w_{jk}$$</p>
+
+<p>Error term can be calculated as follows &minus;</p>
+
+<p>$$\delta_{j}\:=\:\delta_{inj}f^{'}(Q_{inj})$$</p>
+
+<p>On this basis, update the weight and bias as follows &minus;</p>
+
+<p>$$\Delta w_{ij}\:=\:\alpha\delta_{j}x_{i}$$</p>
+
+<p>$$\Delta b_{0j}\:=\:\alpha\delta_{j}$$</p>
+
+<h3>Phase 3</h3>
+
+<p><b>Step 9</b> &minus; Each output unit <b><i>(y<sub>k</sub>k = 1 to m)</i></b> updates the weight and bias as follows &minus;</p>
+
+<p>$$v_{jk}(new)\:=\:v_{jk}(old)\:+\:\Delta v_{jk}$$</p>
+
+<p>$$b_{0k}(new)\:=\:b_{0k}(old)\:+\:\Delta b_{0k}$$</p>
+
+<p><b>Step 10</b> &minus; Each output unit <b><i>(z<sub>j</sub>j = 1 to p)</i></b> updates the weight and bias as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\Delta w_{ij}$$</p>
+
+<p>$$b_{0j}(new)\:=\:b_{0j}(old)\:+\:\Delta b_{0j}$$</p>
+
+<p><b>Step 11</b> &minus; Check for the stopping condition, which may be either the number of epochs reached or the target output matches the actual output.</p>
+
+<h2>Generalized Delta Learning Rule</h2>
+
+<p>Delta rule works only for the output layer. On the other hand, generalized delta rule, also called as <b>back-propagation</b> rule, is a way of creating the desired values of the hidden layer.</p>
+
+<h3>Mathematical Formulation</h3>
+
+<p>For the activation function $y_{k}\:=\:f(y_{ink})$ the derivation of net input on Hidden layer as well as on output layer can be given by</p>
+
+<p>$$y_{ink}\:=\:\displaystyle\sum\limits_i\:z_{i}w_{jk}$$</p>
+
+<p>Now the error which has to be minimized is</p>
+
+<p>$$E\:=\:\frac{1}{2}\displaystyle\sum\limits_{k}\:[t_{k}\:-\:y_{k}]^2$$</p>
+
+<p>By using the chain rule, we have</p>
+
+<p>$$\frac{\partial E}{\partial w_{jk}}\:=\:\frac{\partial }{\partial w_{jk}}(\frac{1}{2}\displaystyle\sum\limits_{k}\:[t_{k}\:-\:y_{k}]^2)$$</p>
+
+<p>$$=\:\frac{\partial }{\partial w_{jk}}\lgroup\frac{1}{2}[t_{k}\:-\:t(y_{ink})]^2\rgroup$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]\frac{\partial }{\partial w_{jk}}f(y_{ink})$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]f(y_{ink})\frac{\partial }{\partial w_{jk}}(y_{ink})$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]f^{'}(y_{ink})z_{j}$$</p>
+
+<p>The weights on connections to the hidden unit <b>z<sub>j</sub></b> can be given by &minus;</p>
+
+<p>$$\frac{\partial E}{\partial v_{ij}}\:=\:- \displaystyle\sum\limits_{k} \delta_{k}\frac{\partial }{\partial v_{ij}}\:(y_{ink})$$</p>
+
+<p>Putting the value of $y_{ink}$ we will get the following</p>
+
+<p>$$\delta_{j}\:=\:-\displaystyle\sum\limits_{k}\delta_{k}w_{jk}f^{'}(z_{inj})$$</p>
+
+<p>Weight updating can be done as follows &minus;</p>
+
+<p>For the output unit &minus;</p>
+
+<p>$$\Delta w_{jk}\:=\:-\alpha\frac{\partial E}{\partial w_{jk}}$$</p>
+
+<p>$$=\:\alpha\:\delta_{k}\:z_{j}$$</p>
+
+<p>For the hidden unit &minus;</p>
+
+<p>$$\Delta v_{ij}\:=\:-\alpha\frac{\partial E}{\partial v_{ij}}$$</p>
+
+<p>$$=\:\alpha\:\delta_{j}\:x_{i}$$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Unsupervised Learning</title>
+
+<h1>Unsupervised Learning</h1>
+
+<p>As the name suggests, this type of learning is done without the supervision of a teacher. This learning process is independent. During the training of ANN under unsupervised learning, the input vectors of similar type are combined to form clusters. When a new input pattern is applied, then the neural network gives an output response indicating the class to which input pattern belongs. In this, there would be no feedback from the environment as to what should be the desired output and whether it is correct or incorrect. Hence, in this type of learning the network itself must discover the patterns, features from the input data and the relation for the input data over the output.</p>
+
+<h2>Winner-Takes-All Networks</h2>
+
+<p>These kinds of networks are based on the competitive learning rule and will use the strategy where it chooses the neuron with the greatest total inputs as a winner. The connections between the output neurons show the competition between them and one of them would be ‘ON’ which means it would be the winner and others would be ‘OFF’.</p>
+
+<p>Following are some of the networks based on this simple concept using unsupervised learning.</p>
+
+<h3>Hamming Network</h3>
+
+<p>In most of the neural networks using unsupervised learning, it is essential to compute the distance and perform comparisons. This kind of network is Hamming network, where for every given input vectors, it would be clustered into different groups. Following are some important features of Hamming Networks &minus;</p>
+
+<p>Lippmann started working on Hamming networks in 1987.</p>
+
+<p>It is a single layer network.</p>
+
+<p>The inputs can be either binary {0, 1} of bipolar {-1, 1}.</p>
+
+<p>The weights of the net are calculated by the exemplar vectors.</p>
+
+<p>It is a fixed weight network which means the weights would remain the same even during training.</p>
+
+<h3>Max Net</h3>
+
+<p>This is also a fixed weight network, which serves as a subnet for selecting the node having the highest input. All the nodes are fully interconnected and there exists symmetrical weights in all these weighted interconnections.</p>
+
+<h3>Architecture</h3>
+
+<p>It uses the mechanism which is an iterative process and each node receives inhibitory inputs from all other nodes through connections. The single node whose value is maximum would be active or winner and the activations of all other nodes would be inactive. Max Net uses identity activation function with $$f(x)\:=\:\begin{cases}x & if\:x > 0\\0 & if\:x \leq 0\end{cases}$$</p>
+
+<p>The task of this net is accomplished by the self-excitation weight of +1 and mutual inhibition magnitude, which is set like [0 &lt; &#603; &lt; $\frac{1}{m}$] where <b>“m”</b> is the total number of the nodes.</p>
+
+<h2>Competitive Learning in ANN</h2>
+
+<p>It is concerned with unsupervised training in which the output nodes try to compete with each other to represent the input pattern. To understand this learning rule we will have to understand competitive net which is explained as follows &minus;</p>
+
+<h3>Basic Concept of Competitive Network</h3>
+
+<p>This network is just like a single layer feed-forward network having feedback connection between the outputs. The connections between the outputs are inhibitory type, which is shown by dotted lines, which means the competitors never support themselves.</p>
+
+<h2>Basic Concept of Competitive Learning Rule</h2>
+
+<p>As said earlier, there would be competition among the output nodes so the main concept is - during training, the output unit that has the highest activation to a given input pattern, will be declared the winner. This rule is also called Winner-takes-all because only the winning neuron is updated and the rest of the neurons are left unchanged.</p>
+
+<h3>Mathematical Formulation</h3>
+
+<p>Following are the three important factors for mathematical formulation of this learning rule &minus;</p>
+
+<p>Condition to be a winner</p>
+
+<p>Suppose if a neuron <b><i>y<sub>k</sub></i></b> wants to be the winner, then there would be the following condition</p>
+
+<p>$$y_{k}\:=\:\begin{cases}1 & if\:v_{k} > v_{j}\:for\:all\:\:j,\:j\:\neq\:k\\0 & otherwise\end{cases}$$</p>
+
+<p>It means that if any neuron, say, <b>y<sub>k</sub></b> wants to win, then its induced local field (the output of the summation unit), say <b>v<sub>k</sub></b>, must be the largest among all the other neurons in the network.</p>
+
+<p>Condition of the sum total of weight</p>
+
+<p>Another constraint over the competitive learning rule is the sum total of weights to a particular output neuron is going to be 1. For example, if we consider neuron <b>k</b> then</p>
+
+<p>$$\displaystyle\sum\limits_{k} w_{kj}\:=\:1\:\:\:\:for\:all\:\:k$$</p>
+
+<p>Change of weight for the winner</p>
+
+<p>If a neuron does not respond to the input pattern, then no learning takes place in that neuron. However, if a particular neuron wins, then the corresponding weights are adjusted as follows &minus;</p>
+
+<p>$$\Delta w_{kj}\:=\:\begin{cases}-\alpha(x_{j}\:-\:w_{kj}), & if\:neuron\:k\:wins\\0 & if\:neuron\:k\:losses\end{cases}$$</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<p>This clearly shows that we are favoring the winning neuron by adjusting its weight and if a neuron is lost, then we need not bother to re-adjust its weight.</p>
+
+<h3>K-means Clustering Algorithm</h3>
+
+<p>K-means is one of the most popular clustering algorithm in which we use the concept of partition procedure. We start with an initial partition and repeatedly move patterns from one cluster to another, until we get a satisfactory result.</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Select <b>k</b> points as the initial centroids. Initialize <b>k</b> prototypes <b>(w<sub>1</sub>,…,w<sub>k</sub>)</b>, for example we can identifying them with randomly chosen input vectors &minus;</p>
+
+<p>$$W_{j}\:=\:i_{p},\:\:\: where\:j\:\in \lbrace1,....,k\rbrace\:and\:p\:\in \lbrace1,....,n\rbrace$$</p>
+
+<p>Each cluster <b>C<sub>j</sub></b> is associated with prototype <b>w<sub>j</sub></b>.</p>
+
+<p><b>Step 2</b> &minus; Repeat step 3-5 until E no longer decreases, or the cluster membership no longer changes.</p>
+
+<p><b>Step 3</b> &minus; For each input vector <b>i<sub>p</sub></b> where <b>p &isin; {1,…,n}</b>, put <b>i<sub>p</sub></b> in the cluster <b>C<sub>j*</sub></b> with the nearest prototype <b>w<sub>j*</sub></b> having the following relation</p>
+
+<p>$$|i_{p}\:-\:w_{j*}|\:\leq\:|i_{p}\:-\:w_{j}|,\:j\:\in \lbrace1,....,k\rbrace$$</p>
+
+<p><b>Step 4</b> &minus; For each cluster <b>C<sub>j</sub></b>, where <b>j &isin; { 1,…,k}</b>, update the prototype <b>w<sub>j</sub></b> to be the centroid of all samples currently in <b>C<sub>j</sub></b> , so that</p>
+
+<p>$$w_{j}\:=\:\sum_{i_{p}\in C_{j}}\frac{i_{p}}{|C_{j}|}$$</p>
+
+<p><b>Step 5</b> &minus; Compute the total quantization error as follows &minus;</p>
+
+<p>$$E\:=\:\sum_{j=1}^k\sum_{i_{p}\in w_{j}}|i_{p}\:-\:w_{j}|^2$$</p>
+
+<h2>Neocognitron</h2>
+
+<p>It is a multilayer feedforward network, which was developed by Fukushima in 1980s. This model is based on supervised learning and is used for visual pattern recognition, mainly hand-written characters. It is basically an extension of Cognitron network, which was also developed by Fukushima in 1975.</p>
+
+<h3>Architecture</h3>
+
+<p>It is a hierarchical network, which comprises many layers and there is a pattern of connectivity locally in those layers.</p>
+
+<p>As we have seen in the above diagram, neocognitron is divided into different connected layers and each layer has two cells. Explanation of these cells is as follows &minus;</p>
+
+<p><b>S-Cell</b> &minus; It is called a simple cell, which is trained to respond to a particular pattern or a group of patterns.</p>
+
+<p><b>C-Cell</b> &minus; It is called a complex cell, which combines the output from S-cell and simultaneously lessens the number of units in each array. In another sense, C-cell displaces the result of S-cell.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>Training of neocognitron is found to be progressed layer by layer. The weights from the input layer to the first layer are trained and frozen. Then, the weights from the first layer to the second layer are trained, and so on. The internal calculations between S-cell and Ccell depend upon the weights coming from the previous layers. Hence, we can say that the training algorithm depends upon the calculations on S-cell and C-cell.</p>
+
+<h3>Calculations in S-cell</h3>
+
+<p>The S-cell possesses the excitatory signal received from the previous layer and possesses inhibitory signals obtained within the same layer.</p>
+
+<p>$$\theta=\:\sqrt{\sum\sum t_{i} c_{i}^2}$$</p>
+
+<p>Here, <b>t<sub>i</sub></b> is the fixed weight and <b>c<sub>i</sub></b> is the output from C-cell.</p>
+
+<p>The scaled input of S-cell can be calculated as follows &minus;</p>
+
+<p>$$x\:=\:\frac{1\:+\:e}{1\:+\:vw_{0}}\:-\:1$$</p>
+
+<p>Here, $e\:=\:\sum_i c_{i}w_{i}$</p>
+
+<p><b>w<sub>i</sub></b> is the weight adjusted from C-cell to S-cell.</p>
+
+<p><b>w<sub>0</sub></b> is the weight adjustable between the input and S-cell.</p>
+
+<p><b>v</b> is the excitatory input from C-cell.</p>
+
+<p>The activation of the output signal is,</p>
+
+<p>$$s\:=\:\begin{cases}x, & if\:x \geq 0\\0, & if\:x < 0\end{cases}$$</p>
+
+<h3>Calculations in C-cell</h3>
+
+<p>The net input of C-layer is</p>
+
+<p>$$C\:=\:\displaystyle\sum\limits_i s_{i}x_{i}$$</p>
+
+<p>Here, <b>s<sub>i</sub></b>  is the output from S-cell and <b>x<sub>i</sub></b> is the fixed weight from S-cell to C-cell.</p>
+
+<p>The final output is as follows &minus;</p>
+
+<p>$$C_{out}\:=\:\begin{cases}\frac{C}{a+C}, & if\:C > 0\\0, & otherwise\end{cases}$$</p>
+
+<p>Here <b>‘a’</b> is the parameter that depends on the performance of the network.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Learning Vector Quantization</title>
+
+<h1>Learning Vector Quantization</h1>
+
+<p>Learning Vector Quantization (LVQ), different from Vector quantization (VQ) and Kohonen Self-Organizing Maps (KSOM), basically is a competitive network which uses supervised learning. We may define it as a process of classifying the patterns where each output unit represents a class. As it uses supervised learning, the network will be given a set of training patterns with known classification along with an initial distribution of the output class. After completing the training process, LVQ will classify an input vector by assigning it to the same class as that of the output unit.</p>
+
+<h2>Architecture</h2>
+
+<p>Following figure shows the architecture of LVQ which is quite similar to the architecture of KSOM. As we can see, there are <b>“n”</b> number of input units and <b>“m”</b> number of output units. The layers are fully interconnected with having weights on them.</p>
+
+<h2>Parameters Used</h2>
+
+<p>Following are the parameters used in LVQ training process as well as in the flowchart</p>
+
+<p><b>x</b> = training vector (x<sub>1</sub>,...,x<sub>i</sub>,...,x<sub>n</sub>)</p>
+
+<p><b>T</b> = class for training vector <b>x</b></p>
+
+<p><b>w<sub>j</sub></b> = weight vector for <b>j<sup>th</sup></b> output unit</p>
+
+<p><b>C<sub>j</sub></b> = class associated with the <b>j<sup>th</sup></b> output unit</p>
+
+<h2>Training Algorithm</h2>
+
+<p><b>Step 1</b> &minus; Initialize reference vectors, which can be done as follows &minus;</p>
+
+<p><b>Step 1(a)</b> &minus; From the given set of training vectors, take the first “<b>m</b>” (number of clusters) training vectors and use them as weight vectors. The remaining vectors can be used for training.</p>
+
+<p><b>Step 1(b)</b> &minus; Assign the initial weight and classification randomly.</p>
+
+<p><b>Step 1(c)</b> &minus; Apply K-means clustering method.</p>
+
+<p><b>Step 2</b> &minus; Initialize reference vector $\alpha$</p>
+
+<p><b>Step 3</b> &minus; Continue with steps 4-9, if the condition for stopping this algorithm is not met.</p>
+
+<p><b>Step 4</b> &minus; Follow steps 5-6 for every training input vector <b>x</b>.</p>
+
+<p><b>Step 5</b> &minus; Calculate Square of Euclidean Distance for <b>j = 1 to m</b> and <b>i = 1 to n</b></p>
+
+<p>$$D(j)\:=\:\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{j=1}^m (x_{i}\:-\:w_{ij})^2$$</p>
+
+<p><b>Step 6</b> &minus; Obtain the winning unit <b>J</b> where <b>D(j)</b> is minimum.</p>
+
+<p><b>Step 7</b> &minus; Calculate the new weight of the winning unit by the following relation &minus;</p>
+
+<p><b>Step 8</b> &minus; Reduce the learning rate $\alpha$.</p>
+
+<p><b>Step 9</b> &minus; Test for the stopping condition. It may be as follows &minus;</p>
+
+<h2>Flowchart</h2>
+
+<h2>Variants</h2>
+
+<p>Three other variants namely LVQ2, LVQ2.1 and LVQ3 have been developed by Kohonen. Complexity in all these three variants, due to the concept that the winner as well as the runner-up unit will learn, is more than in LVQ.</p>
+
+<h2>LVQ2</h2>
+
+<p>As discussed, the concept of other variants of LVQ above, the condition of LVQ2 is formed by window. This window will be based on the following parameters &minus;</p>
+
+<p><b>x</b> &minus; the current input vector</p>
+
+<p><b>y<sub>c</sub></b> &minus; the reference vector closest to <b>x</b></p>
+
+<p><b>y<sub>r</sub></b> &minus; the other reference vector, which is next closest to <b>x</b></p>
+
+<p><b>d<sub>c</sub></b> &minus; the distance from <b>x</b> to <b>y<sub>c</sub></b></p>
+
+<p><b>d<sub>r</sub></b> &minus; the distance from <b>x</b> to <b>y<sub>r</sub></b></p>
+
+<p>The input vector <b>x</b> falls in the window, if</p>
+
+<p>$$\frac{d_{c}}{d_{r}}\:>\:1\:-\:\theta\:\:and\:\:\frac{d_{r}}{d_{c}}\:>\:1\:+\:\theta$$</p>
+
+<p>Here, $\theta$ is the number of training samples.</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<h2>LVQ2.1</h2>
+
+<p>In LVQ2.1, we will take the two closest vectors namely <b>y<sub>c1</sub></b> and <b>y<sub>c2</sub></b> and the condition for window is as follows &minus;</p>
+
+<p>$$Min\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:>\:(1\:-\:\theta)$$</p>
+
+<p>$$Max\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:<\:(1\:+\:\theta)$$</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here, $\alpha$ is the learning rate.</p>
+
+<h2>LVQ3</h2>
+
+<p>In LVQ3, we will take the two closest vectors namely <b>y<sub>c1</sub></b> and <b>y<sub>c2</sub></b> and the condition for window is as follows &minus;</p>
+
+<p>$$Min\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:>\:(1\:-\:\theta)(1\:+\:\theta)$$</p>
+
+<p>Here $\theta\approx 0.2$</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here $\beta$ is the multiple of the learning rate $\alpha$ and <b>$\beta\:=\:m \alpha(t)$</b> for every <b>0.1 &lt; m &lt; 0.5</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Adaptive Resonance Theory</title>
+
+<h1>Adaptive Resonance Theory</h1>
+
+<p>This network was developed by Stephen Grossberg and Gail Carpenter in 1987. It is based on competition and uses unsupervised learning model. Adaptive Resonance Theory (ART) networks, as the name suggests, is always open to new learning (adaptive) without losing the old patterns (resonance). Basically, ART network is a vector classifier which accepts an input vector and classifies it into one of the categories depending upon which of the stored pattern it resembles the most.</p>
+
+<h2>Operating Principal</h2>
+
+<p>The main operation of ART classification can be divided into the following phases &minus;</p>
+
+<p><b>Recognition phase</b> &minus; The input vector is compared with the classification presented at every node in the output layer. The output of the neuron becomes “1” if it best matches with the classification applied, otherwise it becomes “0”.</p>
+
+<p><b>Comparison phase</b> &minus; In this phase, a comparison of the input vector to the comparison layer vector is done. The condition for reset is that the degree of similarity would be less than vigilance parameter.</p>
+
+<p><b>Search phase</b> &minus; In this phase, the network will search for reset as well as the match done in the above phases. Hence, if there would be no reset and the match is quite good, then the classification is over. Otherwise, the process would be repeated and the other stored pattern must be sent to find the correct match.</p>
+
+<h2>ART1</h2>
+
+<p>It is a type of ART, which is designed to cluster binary vectors. We can understand about this with the architecture of it.</p>
+
+<h3>Architecture of ART1</h3>
+
+<p>It consists of the following two units &minus;</p>
+
+<p><b>Computational Unit</b> &minus; It is made up of the following &minus;</p>
+
+<p><b>Input unit (F<sub>1</sub> layer)</b> &minus; It further has the following two portions &minus;</p>
+
+<p><b>F<sub>1</sub>(a) layer (Input portion)</b> &minus; In ART1, there would be no processing in this portion rather than having the input vectors only. It is connected to F<sub>1</sub>(b) layer (interface portion).</p>
+
+<p><b>F<sub>1</sub>(b) layer (Interface portion)</b> &minus; This portion combines the signal from the input portion with that of F<sub>2</sub> layer. F<sub>1</sub>(b) layer is connected to F<sub>2</sub> layer through bottom up weights <b>b<sub>ij</sub></b> and F<sub>2</sub> layer is connected to F<sub>1</sub>(b) layer through top down weights <b>t<sub>ji</sub></b>.</p>
+
+<p><b>Cluster Unit (F<sub>2</sub> layer)</b> &minus; This is a competitive layer. The unit having the largest net input is selected to learn the input pattern. The activation of all other cluster unit are set to 0.</p>
+
+<p><b>Reset Mechanism</b> &minus; The work of this mechanism is based upon the similarity between the top-down weight and the input vector. Now, if the degree of this similarity is less than the vigilance parameter, then the cluster is not allowed to learn the pattern and a rest would happen.</p>
+
+<p><b>Supplement Unit</b> &minus; Actually the issue with Reset mechanism is that the layer <b>F<sub>2</sub></b> must have to be inhibited under certain conditions and must also be available when some learning happens. That is why two supplemental units namely, <b>G<sub>1</sub></b> and <b>G<sub>2</sub></b> is added along with reset unit, <b>R</b>. They are called <b>gain control units</b>. These units receive and send signals to the other units present in the network. <b>‘+’</b> indicates an excitatory signal, while <b>‘&minus;’</b> indicates an inhibitory signal.</p>
+
+<p></p>
+
+<h3>Parameters Used</h3>
+
+<p>Following parameters are used &minus;</p>
+
+<p><b>n</b> &minus; Number of components in the input vector</p>
+
+<p><b>m</b> &minus; Maximum number of clusters that can be formed</p>
+
+<p><b>b<sub>ij</sub></b> &minus; Weight from F<sub>1</sub>(b) to F<sub>2</sub> layer, i.e. bottom-up weights</p>
+
+<p><b>t<sub>ji</sub></b> &minus; Weight from F<sub>2</sub> to F<sub>1</sub>(b) layer, i.e. top-down weights</p>
+
+<p><b>&rho;</b> &minus; Vigilance parameter</p>
+
+<p><b>||x||</b> &minus; Norm of vector x</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the learning rate, the vigilance parameter, and the weights as follows &minus;</p>
+
+<p>$$\alpha\:>\:1\:\:and\:\:0\:<\rho\:\leq\:1$$</p>
+
+<p>$$0\:<\:b_{ij}(0)\:<\:\frac{\alpha}{\alpha\:-\:1\:+\:n}\:\:and\:\:t_{ij}(0)\:=\:1$$</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-9, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training input.</p>
+
+<p><b>Step 4</b> &minus; Set activations of all F<sub>1</sub>(a) and F<sub>1</sub> units as follows</p>
+
+<p><b>Step 5</b> &minus; Input signal from F<sub>1</sub>(a) to F<sub>1</sub>(b) layer must be sent like</p>
+
+<p>$$s_{i}\:=\:x_{i}$$</p>
+
+<p><b>Step 6</b> &minus; For every inhibited F<sub>2</sub> node</p>
+
+<p><b>Step 7</b> &minus; Perform step 8-10, when the reset is true.</p>
+
+<p><b>Step 8</b> &minus; Find <b>J</b> for <b>y<sub>J</sub> &ge; y<sub>j</sub></b> for all nodes <b>j</b></p>
+
+<p><b>Step 9</b> &minus; Again calculate the activation on F<sub>1</sub>(b) as follows</p>
+
+<p>$$x_{i}\:=\:sitJi$$</p>
+
+<p><b>Step 10</b> &minus; Now, after calculating the norm of vector <b>x</b> and vector <b>s</b>, we need to check the reset condition as follows &minus;</p>
+
+<p><b>Step 11</b> &minus; Weight updating for node <b>J</b> can be done as follows &minus;</p>
+
+<p>$$b_{ij}(new)\:=\:\frac{\alpha x_{i}}{\alpha\:-\:1\:+\:||x||}$$</p>
+
+<p>$$t_{ij}(new)\:=\:x_{i}$$</p>
+
+<p><b>Step 12</b> &minus; The stopping condition for algorithm must be checked and it may be as follows &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Kohonen Self-Organizing Feature Maps</title>
+
+<h1>Kohonen Self-Organizing Feature Maps</h1>
+
+<p>Suppose we have some pattern of arbitrary dimensions, however, we need them in one dimension or two dimensions. Then the process of feature mapping would be very useful to convert the wide pattern space into a typical feature space. Now, the question arises why do we require self-organizing feature map? The reason is, along with the capability to convert the arbitrary dimensions into 1-D or 2-D, it must also have the ability to preserve the neighbor topology.</p>
+
+<h2>Neighbor Topologies in Kohonen SOM</h2>
+
+<p>There can be various topologies, however the following two topologies are used the most &minus;</p>
+
+<h3>Rectangular Grid Topology</h3>
+
+<p>This topology has 24 nodes in the distance-2 grid, 16 nodes in the distance-1 grid, and 8 nodes in the distance-0 grid, which means the difference between each rectangular grid is 8 nodes. The winning unit is indicated by #.</p>
+
+<h3>Hexagonal Grid Topology</h3>
+
+<p>This topology has 18 nodes in the distance-2 grid, 12 nodes in the distance-1 grid, and 6 nodes in the distance-0 grid, which means the difference between each rectangular grid is 6 nodes. The winning unit is indicated by #.</p>
+
+<h3>Architecture</h3>
+
+<p>The architecture of KSOM is similar to that of the competitive network. With the help of neighborhood schemes, discussed earlier, the training can take place over the extended region of the network.</p>
+
+<h3>Algorithm for training</h3>
+
+<p><b>Step 1</b> &minus; Initialize the weights, the learning rate <b>&alpha;</b> and the neighborhood topological scheme.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-9, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every input vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Calculate Square of Euclidean Distance for <b>j = 1 to m</b></p>
+
+<p>$$D(j)\:=\:\displaystyle\sum\limits_{i=1}^n \displaystyle\sum\limits_{j=1}^m (x_{i}\:-\:w_{ij})^2$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the winning unit <b>J</b> where <b><i>D(j)</i></b> is minimum.</p>
+
+<p><b>Step 6</b> &minus; Calculate the new weight of the winning unit by the following relation &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\alpha[x_{i}\:-\:w_{ij}(old)]$$</p>
+
+<p><b>Step 7</b> &minus; Update the learning rate <b>&alpha;</b> by the following relation &minus;</p>
+
+<p>$$\alpha(t\:+\:1)\:=\:0.5\alpha t$$</p>
+
+<p><b>Step 8</b> &minus; Reduce the radius of topological scheme.</p>
+
+<p><b>Step 9</b> &minus; Check for the stopping condition for the network.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Associate Memory Network</title>
+
+<h1>Associate Memory Network</h1>
+
+<p>These kinds of neural networks work on the basis of pattern association, which means they can store different patterns and at the time of giving an output they can produce one of the stored patterns by matching them with the given input pattern. These types of memories are also called <b>Content-Addressable Memory</b> (CAM). Associative memory makes a parallel search with the stored patterns as data files.</p>
+
+<p>Following are the two types of associative memories we can observe &minus;</p>
+
+<h2>Auto Associative Memory</h2>
+
+<p>This is a single layer neural network in which the input training vector and the output target vectors are the same. The weights are determined so that the network stores a set of patterns.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the following figure, the architecture of Auto Associative memory network has <b>‘n’</b> number of input training vectors and similar <b>‘n’</b> number of output target vectors.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, this network is using the Hebb or Delta learning rule.</p>
+
+<p><b>Step 1</b> &minus; Initialize all the weights to zero as <b>w<sub>ij</sub> = 0 (i = 1 to n, j = 1 to n)</b></p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-4 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 4</b> &minus; Activate each output unit as follows &minus;</p>
+
+<p>$$y_{j}\:=\:s_{j}\:(j\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Adjust the weights as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:x_{i}y_{j}$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p></p>
+
+<p><b>Step 1</b> &minus; Set the weights obtained during training for Hebb’s rule.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-5 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Set the activation of the input units equal to that of the input vector.</p>
+
+<p><b>Step 4</b> &minus; Calculate the net input to each output unit <b>j = 1 to n</b></p>
+
+<p>$$y_{inj}\:=\:\displaystyle\sum\limits_{i=1}^n x_{i}w_{ij}$$</p>
+
+<p><b>Step 5</b> &minus; Apply the following activation function to calculate the output</p>
+
+<p>$$y_{j}\:=\:f(y_{inj})\:=\:\begin{cases}+1 & if\:y_{inj}\:>\:0\\-1 & if\:y_{inj}\:\leqslant\:0\end{cases}$$</p>
+
+<h2>Hetero Associative memory</h2>
+
+<p>Similar to Auto Associative Memory network, this is also a single layer neural network. However, in this network the input training vector and the output target vectors are not the same. The weights are determined so that the network stores a set of patterns. Hetero associative network is static in nature, hence, there would be no non-linear and delay operations.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the following figure, the architecture of Hetero Associative Memory network has <b>‘n’</b> number of input training vectors and <b>‘m’</b> number of output target vectors.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, this network is using the Hebb or Delta learning rule.</p>
+
+<p><b>Step 1</b> &minus; Initialize all the weights to zero as <b>w<sub>ij</sub> = 0 (i = 1 to n, j = 1 to m)</b></p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-4 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 4</b> &minus; Activate each output unit as follows &minus;</p>
+
+<p>$$y_{j}\:=\:s_{j}\:(j\:=\:1\:to\:m)$$</p>
+
+<p><b>Step 5</b> &minus; Adjust the weights as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:x_{i}y_{j}$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p></p>
+
+<p><b>Step 1</b> &minus; Set the weights obtained during training for Hebb’s rule.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-5 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Set the activation of the input units equal to that of the input vector.</p>
+
+<p><b>Step 4</b> &minus; Calculate the net input to each output unit <b>j = 1 to m;</b></p>
+
+<p>$$y_{inj}\:=\:\displaystyle\sum\limits_{i=1}^n x_{i}w_{ij}$$</p>
+
+<p><b>Step 5</b> &minus; Apply the following activation function to calculate the output</p>
+
+<p>$$y_{j}\:=\:f(y_{inj})\:=\:\begin{cases}+1 & if\:y_{inj}\:>\:0\\0 & if\:y_{inj}\:=\:0\\-1 & if\:y_{inj}\:<\:0\end{cases}$$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Hopfield Networks</title>
+
+<h1>Artificial Neural Network - Hopfield Networks</h1>
+
+<p>Hopfield neural network was invented by Dr. John J. Hopfield in 1982. It consists of a single layer which contains one or more fully connected recurrent neurons. The Hopfield network is commonly used for auto-association and optimization tasks.</p>
+
+<h2>Discrete Hopfield Network</h2>
+
+<p>A Hopfield network which operates in a discrete line fashion or in other words, it can be said the input and output patterns are discrete vector, which can be either binary (0,1) or bipolar (+1, -1) in nature. The network has symmetrical weights with no self-connections i.e., <b>w<sub>ij</sub> = w<sub>ji</sub></b> and <b>w<sub>ii</sub> = 0</b>.</p>
+
+<h3>Architecture</h3>
+
+<p>Following are some important points to keep in mind about discrete Hopfield network &minus;</p>
+
+<p>This model consists of neurons with one inverting and one non-inverting output.</p>
+
+<p>The output of each neuron should be the input of other neurons but not the input of self.</p>
+
+<p>Weight/connection strength is represented by <b>w<sub>ij</sub></b>.</p>
+
+<p>Connections can be excitatory as well as inhibitory. It would be excitatory, if the output of the neuron is same as the input, otherwise inhibitory.</p>
+
+<p>Weights should be symmetrical, i.e. <b>w<sub>ij</sub> = w<sub>ji</sub></b></p>
+
+<p>The output from <b>Y<sub>1</sub></b> going to <b>Y<sub>2</sub></b>, <b>Y<sub>i</sub></b> and <b>Y<sub>n</sub></b> have the weights <b>w<sub>12</sub></b>, <b>w<sub>1i</sub></b> and <b>w<sub>1n</sub></b> respectively. Similarly, other arcs have the weights on them.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>During training of discrete Hopfield network, weights will be updated. As we know that we can have the binary input vectors as well as bipolar input vectors. Hence, in both the cases, weight updates can be done with the following relation</p>
+
+<p><b>Case 1</b> &minus; Binary input patterns</p>
+
+<p>$$w_{ij}\:=\:\sum_{p=1}^P[2s_{i}(p)-\:1][2s_{j}(p)-\:1]\:\:\:\:\:for\:i\:\neq\:j$$</p>
+
+<p><b>Case 2</b> &minus; Bipolar input patterns</p>
+
+<p>$$w_{ij}\:=\:\sum_{p=1}^P[s_{i}(p)][s_{j}(p)]\:\:\:\:\:for\:i\:\neq\:j$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the weights, which are obtained from training algorithm by using Hebbian principle.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-9, if the activations of the network is not consolidated.</p>
+
+<p><b>Step 3</b> &minus; For each input vector <b>X</b>, perform steps 4-8.</p>
+
+<p><b>Step 4</b> &minus; Make initial activation of the network equal to the external input vector <b>X</b> as follows &minus;</p>
+
+<p>$$y_{i}\:=\:x_{i}\:\:\:for\:i\:=\:1\:to\:n$$</p>
+
+<p><b>Step 5</b> &minus; For each unit <b>Y<sub>i</sub></b>, perform steps 6-9.</p>
+
+<p><b>Step 6</b> &minus; Calculate the net input of the network as follows &minus;</p>
+
+<p>$$y_{ini}\:=\:x_{i}\:+\:\displaystyle\sum\limits_{j}y_{j}w_{ji}$$</p>
+
+<p><b>Step 7</b> &minus; Apply the activation as follows over the net input to calculate the output &minus;</p>
+
+<p>$$y_{i}\:=\begin{cases}1 & if\:y_{ini}\:>\:\theta_{i}\\y_{i} & if\:y_{ini}\:=\:\theta_{i}\\0 & if\:y_{ini}\:<\:\theta_{i}\end{cases}$$</p>
+
+<p>Here $\theta_{i}$ is the threshold.</p>
+
+<p><b>Step 8</b> &minus; Broadcast this output <b>y<sub>i</sub></b> to all other units.</p>
+
+<p><b>Step 9</b> &minus; Test the network for conjunction.</p>
+
+<h3>Energy Function Evaluation</h3>
+
+<p>An energy function is defined as a function that is bonded and non-increasing function of the state of the system.</p>
+
+<p>Energy function <b>E<sub>f</sub></b>⁡, ⁡also called <b>Lyapunov function</b> determines the stability of discrete Hopfield network, and is characterized as follows &minus;</p>
+
+<p>$$E_{f}\:=\:-\frac{1}{2}\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{j=1}^n y_{i}y_{j}w_{ij}\:-\:\displaystyle\sum\limits_{i=1}^n x_{i}y_{i}\:+\:\displaystyle\sum\limits_{i=1}^n \theta_{i}y_{i}$$</p>
+
+<p><b>Condition</b> &minus; In a stable network, whenever the state of node changes, the above energy function will decrease.</p>
+
+<p>Suppose when node <b>i</b> has changed state from $y_i^{(k)}$ to $y_i^{(k\:+\:1)}$ ⁡then the Energy change $\Delta E_{f}$ is given by the following relation</p>
+
+<p>$$\Delta E_{f}\:=\:E_{f}(y_i^{(k+1)})\:-\:E_{f}(y_i^{(k)})$$</p>
+
+<p>$$=\:-\left(\begin{array}{c}\displaystyle\sum\limits_{j=1}^n w_{ij}y_i^{(k)}\:+\:x_{i}\:-\:\theta_{i}\end{array}\right)(y_i^{(k+1)}\:-\:y_i^{(k)})$$</p>
+
+<p>$$=\:-\:(net_{i})\Delta y_{i}$$</p>
+
+<p>Here $\Delta y_{i}\:=\:y_i^{(k\:+\:1)}\:-\:y_i^{(k)}$</p>
+
+<p>The change in energy depends on the fact that only one unit can update its activation at a time.</p>
+
+<h2>Continuous Hopfield Network</h2>
+
+<p>In comparison with Discrete Hopfield network, continuous network has time as a continuous variable. It is also used in auto association and optimization problems such as travelling salesman problem.</p>
+
+<p><b>Model</b> &minus; The model or architecture can be build up by adding electrical components such as amplifiers which can map the input voltage to the output voltage over a sigmoid activation function.</p>
+
+<h3>Energy Function Evaluation</h3>
+
+<p>$$E_f = \frac{1}{2}\displaystyle\sum\limits_{i=1}^n\sum_{\substack{j = 1\\ j \ne i}}^n y_i y_j w_{ij} - \displaystyle\sum\limits_{i=1}^n x_i y_i + \frac{1}{\lambda} \displaystyle\sum\limits_{i=1}^n \sum_{\substack{j = 1\\ j \ne i}}^n w_{ij} g_{ri} \int_{0}^{y_i} a^{-1}(y) dy$$</p>
+
+<p>Here <b>&lambda;</b> is gain parameter and <b>g<sub>ri</sub></b> input conductance.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Boltzmann Machine</title>
+
+<h1>Boltzmann Machine</h1>
+
+<p>These are stochastic learning processes having recurrent structure and are the basis of the early optimization techniques used in ANN. Boltzmann Machine was invented by Geoffrey Hinton and Terry Sejnowski in 1985. More clarity can be observed in the words of Hinton on Boltzmann Machine.</p>
+
+<p>“A surprising feature of this network is that it uses only locally available information. The change of weight depends only on the behavior of the two units it connects, even though the change optimizes a global measure” - Ackley, Hinton 1985.</p>
+
+<p>Some important points about Boltzmann Machine &minus;</p>
+
+<p>They use recurrent structure.</p>
+
+<p>They consist of stochastic neurons, which have one of the two possible states, either 1 or 0.</p>
+
+<p>Some of the neurons in this are adaptive (free state) and some are clamped (frozen state).</p>
+
+<p>If we apply simulated annealing on discrete Hopfield network, then it would become Boltzmann Machine.</p>
+
+<h2>Objective of Boltzmann Machine</h2>
+
+<p>The main purpose of Boltzmann Machine is to optimize the solution of a problem. It is the work of Boltzmann Machine to optimize the weights and quantity related to that particular problem.</p>
+
+<h3>Architecture</h3>
+
+<p>The following diagram shows the architecture of Boltzmann machine. It is clear from the diagram, that it is a two-dimensional array of units. Here, weights on interconnections between units are <b>–p</b> where <b>p &gt; 0</b>. The weights of self-connections are given by <b>b</b> where <b>b &gt; 0</b>.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>As we know that Boltzmann machines have fixed weights, hence there will be no training algorithm as we do not need to update the weights in the network. However, to test the network we have to set the weights as well as to find the consensus function (CF).</p>
+
+<p>Boltzmann machine has a set of units <b>U<sub>i</sub></b> and <b>U<sub>j</sub></b> and has bi-directional connections on them.</p>
+
+<p>We are considering the fixed weight say <b>w<sub>ij</sub></b>.</p>
+
+<p><b>w<sub>ij</sub> &ne; 0</b> if <b>U<sub>i</sub></b> and <b>U<sub>j</sub></b> are connected.</p>
+
+<p>There also exists a symmetry in weighted interconnection, i.e. <b><b>w<sub>ij</sub></b> = <b>w<sub>ji</sub></b></b>.</p>
+
+<p><b>w<sub>ii</sub></b> also exists, i.e. there would be the self-connection between units.</p>
+
+<p>For any unit <b>U<sub>i</sub></b>, its state <b>u<sub>i</sub></b> would be either 1 or 0.</p>
+
+<p>The main objective of Boltzmann Machine is to maximize the Consensus Function (CF) which can be given by the following relation</p>
+
+<p>$$CF\:=\:\displaystyle\sum\limits_{i} \displaystyle\sum\limits_{j\leqslant i} w_{ij}u_{i}u_{j}$$</p>
+
+<p>Now, when the state changes from either 1 to 0 or from 0 to 1, then the change in consensus can be given by the following relation &minus;</p>
+
+<p>$$\Delta CF\:=\:(1\:-\:2u_{i})(w_{ij}\:+\:\displaystyle\sum\limits_{j\neq i} u_{i} w_{ij})$$</p>
+
+<p>Here <b>u<sub>i</sub></b> is the current state of <b>U<sub>i</sub></b>.</p>
+
+<p>The variation in coefficient (<b>1 - 2u<sub>i</sub></b>) is given by the following relation &minus;</p>
+
+<p>$$(1\:-\:2u_{i})\:=\:\begin{cases}+1, & U_{i}\:is\:currently\:off\\-1, & U_{i}\:is\:currently\:on\end{cases}$$</p>
+
+<p>Generally, unit <b>U<sub>i</sub></b> does not change its state, but if it does then the information would be residing local to the unit. With that change, there would also be an increase in the consensus of the network.</p>
+
+<p>Probability of the network to accept the change in the state of the unit is given by the following relation &minus;</p>
+
+<p>$$AF(i,T)\:=\:\frac{1}{1\:+\:exp[-\frac{\Delta CF(i)}{T}]}$$</p>
+
+<p>Here, <b>T</b> is the controlling parameter. It will decrease as CF reaches the maximum value.</p>
+
+<h3>Testing Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p><b>Step 2</b> &minus; Continue steps 3-8, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Perform steps 4-7.</p>
+
+<p><b>Step 4</b> &minus; Assume that one of the state has changed the weight and choose the integer <b>I, J</b> as random values between <b>1</b> and <b>n</b>.</p>
+
+<p><b>Step 5</b> &minus; Calculate the change in consensus as follows &minus;</p>
+
+<p>$$\Delta CF\:=\:(1\:-\:2u_{i})(w_{ij}\:+\:\displaystyle\sum\limits_{j\neq i} u_{i} w_{ij})$$</p>
+
+<p><b>Step 6</b> &minus; Calculate the probability that this network would accept the change in state</p>
+
+<p>$$AF(i,T)\:=\:\frac{1}{1\:+\:exp[-\frac{\Delta CF(i)}{T}]}$$</p>
+
+<p><b>Step 7</b> &minus; Accept or reject this change as follows &minus;</p>
+
+<p><b>Case I</b> &minus; if <b>R &lt; AF</b>, accept the change.</p>
+
+<p><b>Case II</b> &minus; if <b>R &ge; AF</b>, reject the change.</p>
+
+<p>Here, <b>R</b> is the random number between 0 and 1.</p>
+
+<p><b>Step 8</b> &minus; Reduce the control parameter (temperature) as follows &minus;</p>
+
+<p><b>Step 9</b> &minus; Test for the stopping conditions which may be as follows &minus;</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Brain-State-in-a-Box Network</title>
+
+<h1>Brain-State-in-a-Box Network</h1>
+
+<p>The Brain-State-in-a-Box (BSB) neural network is a nonlinear auto-associative neural network and can be extended to hetero-association with two or more layers. It is also similar to Hopfield network. It was proposed by J.A. Anderson, J.W. Silverstein, S.A. Ritz and R.S. Jones in 1977.</p>
+
+<p>Some important points to remember about BSB Network &minus;</p>
+
+<p>It is a fully connected network with the maximum number of nodes depending upon the dimensionality <b>n</b> of the input space.</p>
+
+<p>All the neurons are updated simultaneously.</p>
+
+<p>Neurons take values between -1 to +1.</p>
+
+<h2>Mathematical Formulations</h2>
+
+<p>The node function used in BSB network is a ramp function, which can be defined as follows &minus;</p>
+
+<p>$$f(net)\:=\:min(1,\:max(-1,\:net))$$</p>
+
+<p>This ramp function is bounded and continuous.</p>
+
+<p>As we know that each node would change its state, it can be done with the help of the following mathematical relation &minus;</p>
+
+<p>$$x_{t}(t\:+\:1)\:=\:f\left(\begin{array}{c}\displaystyle\sum\limits_{j=1}^n w_{i,j}x_{j}(t)\end{array}\right)$$</p>
+
+<p>Here, <b>x<sub>i</sub>(t)</b> is the state of the <b>i<sub>th</sub></b> node at time <b>t</b>.</p>
+
+<p>Weights from <b>i<sub>th</sub></b> node to <b>j<sub>th</sub></b> node can be measured with the following relation &minus;</p>
+
+<p>$$w_{ij}\:=\:\frac{1}{P}\displaystyle\sum\limits_{p=1}^P (v_{p,i}\:v_{p,j})$$</p>
+
+<p>Here, <b>P</b> is the number of training patterns, which are bipolar.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Optimization Using Hopfield Network</title>
+
+<h1>Optimization Using Hopfield Network</h1>
+
+<p>Optimization is an action of making something such as design, situation, resource, and system as effective as possible. Using a resemblance between the cost function and energy function, we can use highly interconnected neurons to solve optimization problems. Such a kind of neural network is Hopfield network, that consists of a single layer containing one or more fully connected recurrent neurons. This can be used for optimization.</p>
+
+<p>Points to remember while using Hopfield network for optimization &minus;</p>
+
+<p>The energy function must be minimum of the network.</p>
+
+<p>It will find satisfactory solution rather than select one out of the stored patterns.</p>
+
+<p>The quality of the solution found by Hopfield network depends significantly on the initial state of the network.</p>
+
+<h2>Travelling Salesman Problem</h2>
+
+<p>Finding the shortest route travelled by the salesman is one of the computational problems, which can be optimized by using Hopfield neural network.</p>
+
+<h3>Basic Concept of TSP</h3>
+
+<p>Travelling Salesman Problem (TSP) is a classical optimization problem in which a salesman has to travel <b>n</b> cities, which are connected with each other, keeping the cost as well as the distance travelled minimum. For example, the salesman has to travel a set of 4 cities A, B, C, D and the goal is to find the shortest circular tour, A-B-C–D, so as to minimize the cost, which also includes the cost of travelling from the last city D to the first city A.</p>
+
+<h3>Matrix Representation</h3>
+
+<p>Actually each tour of n-city TSP can be expressed as <b>n &times n</b> matrix whose <b>i<sub>th</sub></b> row describes the <b>i<sub>th</sub></b> city’s location. This matrix, <b>M</b>, for 4 cities A, B, C, D can be expressed as follows &minus;</p>
+
+<p>$$M = \begin{bmatrix}A: & 1 & 0 & 0 & 0 \\B:  & 0 & 1 & 0 & 0 \\C: & 0 & 0 & 1 & 0 \\D: & 0 & 0 & 0 & 1 \end{bmatrix}$$</p>
+
+<h2>Solution by Hopfield Network</h2>
+
+<p>While considering the solution of this TSP by Hopfield network, every node in the network corresponds to one element in the matrix.</p>
+
+<h3>Energy Function Calculation</h3>
+
+<p>To be the optimized solution, the energy function must be minimum. On the basis of the following constraints, we can calculate the energy function as follows &minus;</p>
+
+<h3>Constraint-I</h3>
+
+<p>First constraint, on the basis of which we will calculate energy function, is that one element must be equal to 1 in each row of matrix <b>M</b> and other elements in each row must equal to <b>0</b> because each city can occur in only one position in the TSP tour. This constraint can mathematically be written as follows &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j=1}^n M_{x,j}\:=\:1\:for \: x\:\in \:\lbrace1,...,n\rbrace$$</p>
+
+<p>Now the energy function to be minimized, based on the above constraint, will contain a term proportional to &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{x=1}^n \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{j=1}^n M_{x,j}\end{array}\right)^2$$</p>
+
+<h3>Constraint-II</h3>
+
+<p>As we know, in TSP one city can occur in any position in the tour hence in each column of matrix <b>M</b>, one element must equal to 1 and other elements must be equal to 0. This constraint can mathematically be written as follows &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{x=1}^n M_{x,j}\:=\:1\:for \: j\:\in \:\lbrace1,...,n\rbrace$$</p>
+
+<p>Now the energy function to be minimized, based on the above constraint, will contain a term proportional to &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j=1}^n \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{x=1}^n M_{x,j}\end{array}\right)^2$$</p>
+
+<h3>Cost Function Calculation</h3>
+
+<p>Let’s suppose a square matrix of (<b>n &times; n</b>) denoted by <b>C</b> denotes the cost matrix of TSP for <b>n</b> cities where <b>n &gt; 0</b>. Following are some parameters while calculating the cost function &minus;</p>
+
+<p><b>C<sub>x, y</sub></b> &minus; The element of cost matrix denotes the cost of travelling from city <b>x</b> to <b>y</b>.</p>
+
+<p>Adjacency of the elements of A and B can be shown by the following relation &minus;</p>
+
+<p>$$M_{x,i}\:=\:1\:\: and\:\: M_{y,i\pm 1}\:=\:1$$</p>
+
+<p>As we know, in Matrix the output value of each node can be either 0 or 1, hence for every pair of cities A, B we can add the following terms to the energy function &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{i=1}^n C_{x,y}M_{x,i}(M_{y,i+1}\:+\:M_{y,i-1})$$</p>
+
+<p>On the basis of the above cost function and constraint value, the final energy function <b>E</b> can be given as follows &minus;</p>
+
+<p>$$E\:=\:\frac{1}{2}\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{x}\displaystyle\sum\limits_{y\neq x}C_{x,y}M_{x,i}(M_{y,i+1}\:+\:M_{y,i-1})\:+$$</p>
+
+<p>$$\:\begin{bmatrix}\gamma_{1} \displaystyle\sum\limits_{x} \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{i} M_{x,i}\end{array}\right)^2\:+\: \gamma_{2} \displaystyle\sum\limits_{i} \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{x} M_{x,i}\end{array}\right)^2 \end{bmatrix}$$</p>
+
+<p>Here, <b>&gamma;<sub>1</sub></b> and <b>&gamma;<sub>2</sub></b> are two weighing constants.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Other Optimization Techniques</title>
+
+<h1>Other Optimization Techniques</h1>
+
+<h2>Iterated Gradient Descent Technique</h2>
+
+<p>Gradient descent, also known as the steepest descent, is an iterative optimization algorithm to find a local minimum of a function. While minimizing the function, we are concerned with the cost or error to be minimized (Remember Travelling Salesman Problem). It is extensively used in deep learning, which is useful in a wide variety of situations. The point here to be remembered is that we are concerned with local optimization and not global optimization.</p>
+
+<h3>Main Working Idea</h3>
+
+<p>We can understand the main working idea of gradient descent with the help of the following steps &minus;</p>
+
+<p>First, start with an initial guess of the solution.</p>
+
+<p>Then, take the gradient of the function at that point.</p>
+
+<p>Later, repeat the process by stepping the solution in the negative direction of the gradient.</p>
+
+<p>By following the above steps, the algorithm will eventually converge where the gradient is zero.</p>
+
+<h3>Mathematical Concept</h3>
+
+<p>Suppose we have a function <b><i>f(x)</i></b> and we are trying to find the minimum of this function. Following are the steps to find the minimum of <b><i>f(x)</i></b>.</p>
+
+<p>First, give some initial value $x_{0}\:for\:x$</p>
+
+<p>Now take the gradient $\nabla f$ ⁡of function, with the intuition that the gradient will give the slope of the curve at that <b>x</b> and its direction will point to the increase in the function, to find out the best direction to minimize it.</p>
+
+<p>Now change x as follows &minus;</p>
+
+<p>$$x_{n\:+\:1}\:=\:x_{n}\:-\:\theta \nabla f(x_{n})$$</p>
+
+<p>Here, <b>&theta; &gt; 0</b> is the training rate (step size) that forces the algorithm to take small jumps.</p>
+
+<h3>Estimating Step Size</h3>
+
+<p>Actually a wrong step size <b>&theta;</b> may not reach convergence, hence a careful selection of the same is very important. Following points must have to be remembered while choosing the step size</p>
+
+<p>Do not choose too large step size, otherwise it will have a negative impact, i.e. it will diverge rather than converge.</p>
+
+<p>Do not choose too small step size, otherwise it take a lot of time to converge.</p>
+
+<p>Some options with regards to choosing the step size &minus;</p>
+
+<p>One option is to choose a fixed step size.</p>
+
+<p>Another option is to choose a different step size for every iteration.</p>
+
+<h2>Simulated Annealing</h2>
+
+<p>The basic concept of Simulated Annealing (SA) is motivated by the annealing in solids. In the process of annealing, if we heat a metal above its melting point and cool it down then the structural properties will depend upon the rate of cooling. We can also say that SA simulates the metallurgy process of annealing.</p>
+
+<h3>Use in ANN</h3>
+
+<p>SA is a stochastic computational method, inspired by Annealing analogy, for approximating the global optimization of a given function. We can use SA to train feed-forward neural networks.</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Generate a random solution.</p>
+
+<p><b>Step 2</b> &minus; Calculate its cost using some cost function.</p>
+
+<p><b>Step 3</b> &minus; Generate a random neighboring solution.</p>
+
+<p><b>Step 4</b> &minus; Calculate the new solution cost by the same cost function.</p>
+
+<p><b>Step 5</b> &minus; Compare the cost of a new solution with that of an old solution as follows &minus;</p>
+
+<p><b>Step 6</b> &minus; Test for the stopping condition, which may be the maximum number of iterations reached or get an acceptable solution.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Genetic Algorithm</title>
+
+<h1>Artificial Neural Network - Genetic Algorithm</h1>
+
+<p>Nature has always been a great source of inspiration to all mankind. Genetic Algorithms (GAs) are search-based algorithms based on the concepts of natural selection and genetics. GAs are a subset of a much larger branch of computation known as <b>Evolutionary Computation</b>.</p>
+
+<p>GAs was developed by John Holland and his students and colleagues at the University of Michigan, most notably David E. Goldberg and has since been tried on various optimization problems with a high degree of success.</p>
+
+<p>In GAs, we have a pool or a population of possible solutions to the given problem. These solutions then undergo recombination and mutation (like in natural genetics), producing new children, and the process is repeated over various generations. Each individual (or candidate solution) is assigned a fitness value (based on its objective function value) and the fitter individuals are given a higher chance to mate and yield more “fitter” individuals. This is in line with the Darwinian Theory of “Survival of the Fittest”.</p>
+
+<p>In this way, we keep “evolving” better individuals or solutions over generations, till we reach a stopping criterion.</p>
+
+<p>Genetic Algorithms are sufficiently randomized in nature, however they perform much better than random local search (in which we just try various random solutions, keeping track of the best so far), as they exploit historical information as well.</p>
+
+<h2>Advantages of GAs</h2>
+
+<p>GAs have various advantages which have made them immensely popular. These include &minus;</p>
+
+<p>Does not require any derivative information (which may not be available for many real-world problems).</p>
+
+<p>Is faster and more efficient as compared to the traditional methods.</p>
+
+<p>Has very good parallel capabilities.</p>
+
+<p>Optimizes both continuous and discrete functions as well as multi-objective problems.</p>
+
+<p>Provides a list of “good” solutions and not just a single solution.</p>
+
+<p>Always gets an answer to the problem, which gets better over the time.</p>
+
+<p>Useful when the search space is very large and there are large number of parameters involved.</p>
+
+<h2>Limitations of GAs</h2>
+
+<p>Like any technique, GAs also suffers from a few limitations. These include &minus;</p>
+
+<p>GAs are not suited for all problems, especially problems which are simple and for which derivative information is available.</p>
+
+<p>Fitness value is calculated repeatedly, which might be computationally expensive for some problems.</p>
+
+<p>Being stochastic, there are no guarantees on the optimality or the quality of the solution.</p>
+
+<p>If not implemented properly, GA may not converge to the optimal solution.</p>
+
+<h2>GA – Motivation</h2>
+
+<p>Genetic Algorithms have the ability to deliver a “good-enough” solution “fast-enough”. This makes Gas attractive for use in solving optimization problems. The reasons why GAs are needed are as follows &minus;</p>
+
+<h3>Solving Difficult Problems</h3>
+
+<p>In computer science, there is a large set of problems, which are <b>NP-Hard</b>. What this essentially means is that, even the most powerful computing systems take a very long time (even years!) to solve that problem. In such a scenario, GAs prove to be an efficient tool to provide <b>usable near-optimal solutions</b> in a short amount of time.</p>
+
+<h3>Failure of Gradient Based Methods</h3>
+
+<p>Traditional calculus based methods work by starting at a random point and by moving in the direction of the gradient, till we reach the top of the hill. This technique is efficient and works very well for single-peaked objective functions like the cost function in linear regression. However, in most real-world situations, we have a very complex problem called as landscapes, made of many peaks and many valleys, which causes such methods to fail, as they suffer from an inherent tendency of getting stuck at the local optima as shown in the following figure.</p>
+
+<h3>Getting a Good Solution Fast</h3>
+
+<p>Some difficult problems like the Travelling Salesman Problem (TSP), have real-world applications like path finding and VLSI Design. Now imagine that you are using your GPS Navigation system, and it takes a few minutes (or even a few hours) to compute the “optimal” path from the source to destination. Delay in such real-world applications is not acceptable and therefore a “good-enough” solution, which is delivered “fast” is what is required.</p>
+
+<h2>How to Use GA for Optimization Problems?</h2>
+
+<p>We already know that optimization is an action of making something such as design, situation, resource, and system as effective as possible. Optimization process is shown in the following diagram.</p>
+
+<h3>Stages of GA Mechanism for Optimization Process</h3>
+
+<p>Followings are the stages of GA mechanism when used for optimization of problems.</p>
+
+<p>Generate the initial population randomly.</p>
+
+<p>Select the initial solution with the best fitness values.</p>
+
+<p>Recombine the selected solutions using mutation and crossover operators.</p>
+
+<p>Insert offspring into the population.</p>
+
+<p>Now if the stop condition is met, then return the solution with their best fitness value. Else, go to step 2.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Applications of Neural Networks</title>
+
+<h1>Applications of Neural Networks</h1>
+
+<p>Before studying the fields where ANN has been used extensively, we need to understand why ANN would be the preferred choice of application.</p>
+
+<h2>Why Artificial Neural Networks?</h2>
+
+<p>We need to understand the answer to the above question with an example of a human being. As a child, we used to learn the things with the help of our elders, which includes our parents or teachers. Then later by self-learning or practice we keep learning throughout our life. Scientists and researchers are also making the machine intelligent, just like a human being, and ANN plays a very important role in the same due to the following reasons &minus;</p>
+
+<p>With the help of neural networks, we can find the solution of such problems for which algorithmic method is expensive or does not exist.</p>
+
+<p>Neural networks can learn by example, hence we do not need to program it at much extent.</p>
+
+<p>Neural networks have the accuracy and significantly fast speed than conventional speed.</p>
+
+<h2>Areas of Application</h2>
+
+<p>Followings are some of the areas, where ANN is being used. It suggests that ANN has an interdisciplinary approach in its development and applications.</p>
+
+<h3>Speech Recognition</h3>
+
+<p>Speech occupies a prominent role in human-human interaction. Therefore, it is natural for people to expect speech interfaces with computers. In the present era, for communication with machines, humans still need sophisticated languages which are difficult to learn and use. To ease this communication barrier, a simple solution could be, communication in a spoken language that is possible for the machine to understand.</p>
+
+<p>Great progress has been made in this field, however, still such kinds of systems are facing the problem of limited vocabulary or grammar along with the issue of retraining of the system for different speakers in different conditions. ANN is playing a major role in this area. Following ANNs have been used for speech recognition &minus;</p>
+
+<p>Multilayer networks</p>
+
+<p>Multilayer networks with recurrent connections</p>
+
+<p>Kohonen self-organizing feature map</p>
+
+<p>The most useful network for this is Kohonen Self-Organizing feature map, which has its input as short segments of the speech waveform. It will map the same kind of phonemes as the output array, called feature extraction technique. After extracting the features, with the help of some acoustic models as back-end processing, it will recognize the utterance.</p>
+
+<h3>Character Recognition</h3>
+
+<p>It is an interesting problem which falls under the general area of Pattern Recognition. Many neural networks have been developed for automatic recognition of handwritten characters, either letters or digits. Following are some ANNs which have been used for character recognition &minus;</p>
+
+<p>Though back-propagation neural networks have several hidden layers, the pattern of connection from one layer to the next is localized. Similarly, neocognitron also has several hidden layers and its training is done layer by layer for such kind of applications.</p>
+
+<h3>Signature Verification Application</h3>
+
+<p>Signatures are one of the most useful ways to authorize and authenticate a person in legal transactions. Signature verification technique is a non-vision based technique.</p>
+
+<p>For this application, the first approach is to extract the feature or rather the geometrical feature set representing the signature. With these feature sets, we have to train the neural networks using an efficient neural network algorithm. This trained neural network will classify the signature as being genuine or forged under the verification stage.</p>
+
+<h3>Human Face Recognition</h3>
+
+<p>It is one of the biometric methods to identify the given face. It is a typical task because of the characterization of “non-face” images. However, if a neural network is well trained, then it can be divided into two classes namely images having faces and images that do not have faces.</p>
+
+<p>First, all the input images must be preprocessed. Then, the dimensionality of that image must be reduced. And, at last it must be classified using neural network training algorithm. Following neural networks are used for training purposes with preprocessed image &minus;</p>
+
+<p>Fully-connected multilayer feed-forward neural network trained with the help of back-propagation algorithm.</p>
+
+<p>For dimensionality reduction, Principal Component Analysis (PCA) is used.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Quick Guide</title>
+
+<h1>Artificial Neural Network - Quick Guide</h1>
+
+<h1>Artificial Neural Network - Basic Concepts</h1>
+
+<p>Neural networks are parallel computing devices, which is basically an attempt to make a computer model of the brain. The main objective is to develop a system to perform various computational tasks faster than the traditional systems. These tasks include pattern recognition and classification, approximation, optimization, and data clustering.</p>
+
+<h2>What is Artificial Neural Network?</h2>
+
+<p>Artificial Neural Network (ANN) is an efficient computing system whose central theme is borrowed from the analogy of biological neural networks. ANNs are also named as “artificial neural systems,” or “parallel distributed processing systems,” or “connectionist systems.”  ANN acquires a large collection of units that are interconnected in some pattern to allow communication between the units. These units, also referred to as nodes or neurons, are simple processors which operate in parallel.</p>
+
+<p>Every neuron is connected with other neuron through a connection link. Each connection link is associated with a weight that has information about the input signal. This is the most useful information for neurons to solve a particular problem because the weight usually excites or inhibits the signal that is being communicated. Each neuron has an internal state, which is called an activation signal. Output signals, which are produced after combining the input signals and activation rule, may be sent to other units.</p>
+
+<h2>A Brief History of ANN</h2>
+
+<p>The history of ANN can be divided into the following three eras &minus;</p>
+
+<h3>ANN during 1940s to 1960s</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1943</b> &minus; It has been assumed that the concept of neural network started with the work of physiologist, Warren McCulloch, and mathematician, Walter Pitts, when in 1943 they modeled a simple neural network using electrical circuits in order to describe how neurons in the brain might work.</p>
+
+<p><b>1949</b> &minus; Donald Hebb’s book, <i>The Organization of Behavior</i>, put forth the fact that repeated activation of one neuron by another increases its strength each time they are used.</p>
+
+<p><b>1956</b> &minus; An associative memory network was introduced by Taylor.</p>
+
+<p><b>1958</b> &minus; A learning method for McCulloch and Pitts neuron model named Perceptron was invented by Rosenblatt.</p>
+
+<p><b>1960</b> &minus; Bernard Widrow and Marcian Hoff developed models called "ADALINE" and “MADALINE.”</p>
+
+<h3>ANN during 1960s to 1980s</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1961</b> &minus; Rosenblatt made an unsuccessful attempt but proposed the “backpropagation” scheme for multilayer networks.</p>
+
+<p><b>1964</b> &minus; Taylor constructed a winner-take-all circuit with inhibitions among output units.</p>
+
+<p><b>1969</b> &minus; Multilayer perceptron (MLP) was invented by Minsky and Papert.</p>
+
+<p><b>1971</b> &minus; Kohonen developed Associative memories.</p>
+
+<p><b>1976</b> &minus; Stephen Grossberg and Gail Carpenter developed Adaptive resonance theory.</p>
+
+<h3>ANN from 1980s till Present</h3>
+
+<p>Some key developments of this era are as follows &minus;</p>
+
+<p><b>1982</b> &minus; The major development was Hopfield’s Energy approach.</p>
+
+<p><b>1985</b> &minus; Boltzmann machine was developed by Ackley, Hinton, and Sejnowski.</p>
+
+<p><b>1986</b> &minus; Rumelhart, Hinton, and Williams introduced Generalised Delta Rule.</p>
+
+<p><b>1988</b> &minus; Kosko developed Binary Associative Memory (BAM) and also gave the concept of Fuzzy Logic in ANN.</p>
+
+<p>The historical review shows that significant progress has been made in this field. Neural network based chips are emerging and applications to complex problems are being developed. Surely, today is a period of transition for neural network technology.</p>
+
+<h2>Biological Neuron</h2>
+
+<p>A nerve cell (neuron) is a special biological cell that processes information. According to an estimation, there are huge number of neurons, approximately 10<sup>11</sup> with numerous interconnections, approximately 10<sup>15</sup>.</p>
+
+<h3>Schematic Diagram</h3>
+
+<h3>Working of a Biological Neuron</h3>
+
+<p>As shown in the above diagram, a typical neuron consists of the following four parts with the help of which we can explain its working &minus;</p>
+
+<p><b>Dendrites</b> &minus; They are tree-like branches, responsible for receiving the information from other neurons it is connected to. In other sense, we can say that they are like the ears of neuron.</p>
+
+<p><b>Soma</b> &minus; It is the cell body of the neuron and is responsible for processing of information, they have received from dendrites.</p>
+
+<p><b>Axon</b> &minus; It is just like a cable through which neurons send the information.</p>
+
+<p><b>Synapses</b> &minus; It is the connection between the axon and other neuron dendrites.</p>
+
+<h3>ANN versus BNN</h3>
+
+<p>Before taking a look at the differences between Artificial Neural Network (ANN) and Biological Neural Network (BNN), let us take a look at the similarities based on the terminology between these two.</p>
+
+<p>The following table shows the comparison between ANN and BNN based on some criteria mentioned.</p>
+
+<h2>Model of Artificial Neural Network</h2>
+
+<p>The following diagram represents the general model of ANN followed by its processing.</p>
+
+<p>For the above general model of artificial neural network, the net input can be calculated as follows &minus;</p>
+
+<p>$$y_{in}\:=\:x_{1}.w_{1}\:+\:x_{2}.w_{2}\:+\:x_{3}.w_{3}\:\dotso\: x_{m}.w_{m}$$</p>
+
+<p>The output can be calculated by applying the activation function over the net input.</p>
+
+<p>$$Y\:=\:F(y_{in}) $$</p>
+
+<h1>Artificial Neural Network - Building Blocks</h1>
+
+<p>Processing of ANN depends upon the following three building blocks &minus;</p>
+
+<p>In this chapter, we will discuss in detail about these three building blocks of ANN</p>
+
+<h2>Network Topology</h2>
+
+<p>A network topology is the arrangement of a network along with its nodes and connecting lines. According to the topology, ANN can be classified as the following kinds &minus;</p>
+
+<h3>Feedforward Network</h3>
+
+<p>It is a non-recurrent network having processing units/nodes in layers and all the nodes in a layer are connected with the nodes of the previous layers. The connection has different weights upon them. There is no feedback loop means the signal can only flow in one direction, from input to output. It may be divided into the following two types &minus;</p>
+
+<p><b>Single layer feedforward network</b> &minus; The concept is of feedforward ANN having only one weighted layer. In other words, we can say the input layer is fully connected to the output layer.</p>
+
+<p><b>Multilayer feedforward network</b> &minus; The concept is of feedforward ANN having more than one weighted layer. As this network has one or more layers between the input and the output layer, it is called hidden layers.</p>
+
+<h3>Feedback Network</h3>
+
+<p>As the name suggests, a feedback network has feedback paths, which means the signal can flow in both directions using loops. This makes it a non-linear dynamic system, which changes continuously until it reaches a state of equilibrium. It may be divided into the following types &minus;</p>
+
+<p><b>Recurrent networks</b> &minus; They are feedback networks with closed loops. Following are the two types of recurrent networks.</p>
+
+<p><b>Fully recurrent network</b> &minus; It is the simplest neural network architecture because all nodes are connected to all other nodes and each node works as both input and output.</p>
+
+<p><b>Jordan network</b> &minus; It is a closed loop network in which the output will go to the input again as feedback as shown in the following diagram.</p>
+
+<h2>Adjustments of Weights or Learning</h2>
+
+<p>Learning, in artificial neural network, is the method of modifying the weights of connections between the neurons of a specified network. Learning in ANN can be classified into three categories namely supervised learning, unsupervised learning, and reinforcement learning.</p>
+
+<h3>Supervised Learning</h3>
+
+<p>As the name suggests, this type of learning is done under the supervision of a teacher. This learning process is dependent.</p>
+
+<p>During the training of ANN under supervised learning, the input vector is presented to the network, which will give an output vector. This output vector is compared with the desired output vector. An error signal is generated, if there is a difference between the actual output and the desired output vector. On the basis of this error signal, the weights are adjusted until the actual output is matched with the desired output.</p>
+
+<h3>Unsupervised Learning</h3>
+
+<p>As the name suggests, this type of learning is done without the supervision of a teacher. This learning process is independent.</p>
+
+<p>During the training of ANN under unsupervised learning, the input vectors of similar type are combined to form clusters. When a new input pattern is applied, then the neural network gives an output response indicating the class to which the input pattern belongs.</p>
+
+<p>There is no feedback from the environment as to what should be the desired output and if it is correct or incorrect. Hence, in this type of learning, the network itself must discover the patterns and features from the input data, and the relation for the input data over the output.</p>
+
+<h3>Reinforcement Learning</h3>
+
+<p>As the name suggests, this type of learning is used to reinforce or strengthen the network over some critic information. This learning process is similar to supervised learning, however we might have very less information.</p>
+
+<p>During the training of network under reinforcement learning, the network receives some feedback from the environment. This makes it somewhat similar to supervised learning. However, the feedback obtained here is evaluative not instructive, which means there is no teacher as in supervised learning. After receiving the feedback, the network performs adjustments of the weights to get better critic information in future.</p>
+
+<h2>Activation Functions</h2>
+
+<p>It may be defined as the extra force or effort applied over the input to obtain an exact output. In ANN, we can also apply activation functions over the input to get the exact output. Followings are some activation functions of interest &minus;</p>
+
+<h3>Linear Activation Function</h3>
+
+<p>It is also called the identity function as it performs no input editing. It can be defined as &minus;</p>
+
+<p>$$F(x)\:=\:x$$</p>
+
+<h3>Sigmoid Activation Function</h3>
+
+<p>It is of two type as follows &minus;</p>
+
+<p><b>Binary sigmoidal function</b> &minus; This activation function performs input editing between 0 and 1. It is positive in nature. It is always bounded, which means its output cannot be less than 0 and more than 1. It is also strictly increasing in nature, which means more the input higher would be the output. It can be defined as</p>
+
+<p>$$F(x)\:=\:sigm(x)\:=\:\frac{1}{1\:+\:exp(-x)}$$</p>
+
+<p><b>Bipolar sigmoidal function</b> &minus; This activation function performs input editing between -1 and 1. It can be positive or negative in nature. It is always bounded, which means its output cannot be less than -1 and more than 1. It is also strictly increasing in nature like sigmoid function. It can be defined as</p>
+
+<p>$$F(x)\:=\:sigm(x)\:=\:\frac{2}{1\:+\:exp(-x)}\:-\:1\:=\:\frac{1\:-\:exp(x)}{1\:+\:exp(x)}$$</p>
+
+<h1>Learning and Adaptation</h1>
+
+<p>As stated earlier, ANN is completely inspired by the way biological nervous system, i.e. the human brain works. The most impressive characteristic of the human brain is to learn, hence the same feature is acquired by ANN.</p>
+
+<h3>What Is Learning in ANN?</h3>
+
+<p>Basically, learning means to do and adapt the change in itself as and when there is a change in environment. ANN is a complex system or more precisely we can say that it is a complex adaptive system, which can change its internal structure based on the information passing through it.</p>
+
+<h3>Why Is It important?</h3>
+
+<p>Being a complex adaptive system, learning in ANN implies that a processing unit is capable of changing its input/output behavior due to the change in environment. The importance of learning in ANN increases because of the fixed activation function as well as the input/output vector, when a particular network is constructed. Now to change the input/output behavior, we need to adjust the weights.</p>
+
+<h3>Classification</h3>
+
+<p>It may be defined as the process of learning to distinguish the data of samples into different classes by finding common features between the samples of the same classes. For example, to perform training of ANN, we have some training samples with unique features, and to perform its testing we have some testing samples with other unique features. Classification is an example of supervised learning.</p>
+
+<h2>Neural Network Learning Rules</h2>
+
+<p>We know that, during ANN learning, to change the input/output behavior, we need to adjust the weights. Hence, a method is required with the help of which the weights can be modified. These methods are called Learning rules, which are simply algorithms or equations. Following are some learning rules for the neural network &minus;</p>
+
+<h3>Hebbian Learning Rule</h3>
+
+<p>This rule, one of the oldest and simplest, was introduced by Donald Hebb in his book <i>The Organization of Behavior</i> in 1949. It is a kind of feed-forward, unsupervised learning.</p>
+
+<p><b>Basic Concept</b> &minus; This rule is based on a proposal given by Hebb, who wrote &minus;</p>
+
+<p>“When an axon of cell A is near enough to excite a cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells such that A’s efficiency, as one of the cells firing B, is increased.”</p>
+
+<p>From the above postulate, we can conclude that the connections between two neurons might be strengthened if the neurons fire at the same time and might weaken if they fire at different times.</p>
+
+<p><b>Mathematical Formulation</b> &minus; According to Hebbian learning rule, following is the formula to increase the weight of connection at every time step.</p>
+
+<p>$$\Delta w_{ji}(t)\:=\:\alpha x_{i}(t).y_{j}(t)$$</p>
+
+<p>Here, $\Delta w_{ji}(t)$ ⁡= increment by which the weight of connection increases at time step <b>t</b></p>
+
+<h3>Perceptron Learning Rule</h3>
+
+<p>This rule is an error correcting the supervised learning algorithm of single layer feedforward networks with linear activation function, introduced by Rosenblatt.</p>
+
+<p><b>Basic Concept</b> &minus; As being supervised in nature, to calculate the error, there would be a comparison between the desired/target output and the actual output. If there is any difference found, then a change must be made to the weights of connection.</p>
+
+<p><b>Mathematical Formulation</b> &minus; To explain its mathematical formulation, suppose we have ‘n’ number of finite input vectors, x(n), along with its desired/target output vector t(n), where n = 1 to N.</p>
+
+<p>Now the output ‘y’ can be calculated, as explained earlier on the basis of the net input, and activation function being applied over that net input can be expressed as follows &minus;</p>
+
+<p>$$y\:=\:f(y_{in})\:=\:\begin{cases}1, & y_{in}\:>\:\theta \\0, & y_{in}\:\leqslant\:\theta\end{cases}$$</p>
+
+<p>Where <b>&theta;</b> is threshold.</p>
+
+<p>The updating of weight can be done in the following two cases &minus;</p>
+
+<p><b>Case I</b> &minus; when <b>t &ne; y</b>, then</p>
+
+<p>$$w(new)\:=\:w(old)\:+\;tx$$</p>
+
+<p><b>Case II</b> &minus; when <b>t = y</b>, then</p>
+
+<h3>Delta Learning Rule (Widrow-Hoff Rule)</h3>
+
+<p>It is introduced by Bernard Widrow and Marcian Hoff, also called Least Mean Square (LMS) method, to minimize the error over all training patterns. It is kind of supervised learning algorithm with having continuous activation function.</p>
+
+<p><b>Basic Concept</b> &minus; The base of this rule is gradient-descent approach, which continues forever. Delta rule updates the synaptic weights so as to minimize the net input to the output unit and the target value.</p>
+
+<p><b>Mathematical Formulation</b> &minus; To update the synaptic weights, delta rule is given by</p>
+
+<p>$$\Delta w_{i}\:=\:\alpha\:.x_{i}.e_{j}$$</p>
+
+<p>Here $\Delta w_{i}$ = weight change for i<sup>th</sup> ⁡pattern;</p>
+
+<p>The above delta rule is for a single output unit only.</p>
+
+<p>The updating of weight can be done in the following two cases &minus;</p>
+
+<p><b>Case-I</b> &minus; when <b>t &ne; y</b>, then</p>
+
+<p>$$w(new)\:=\:w(old)\:+\:\Delta w$$</p>
+
+<p><b>Case-II</b> &minus; when <b>t = y</b>, then</p>
+
+<h3>Competitive Learning Rule (Winner-takes-all)</h3>
+
+<p>It is concerned with unsupervised training in which the output nodes try to compete with each other to represent the input pattern. To understand this learning rule, we must understand the competitive network which is given as follows &minus;</p>
+
+<p><b>Basic Concept of Competitive Network</b> &minus; This network is just like a single layer feedforward network with feedback connection between outputs. The connections between outputs are inhibitory type, shown by dotted lines, which means the competitors never support themselves.</p>
+
+<p><b>Basic Concept of Competitive Learning Rule</b> &minus; As said earlier, there will be a competition among the output nodes. Hence, the main concept is that during training, the output unit with the highest activation to a given input pattern, will be declared the winner. This rule is also called Winner-takes-all because only the winning neuron is updated and the rest of the neurons are left unchanged.</p>
+
+<p><b>Mathematical formulation</b> &minus; Following are the three important factors for mathematical formulation of this learning rule &minus;</p>
+
+<p><b>Condition to be a winner</b> &minus; Suppose if a neuron $y_{k}$⁡                        ⁡wants to be the winner then there would be the following condition &minus;</p>
+
+<p>$$y_{k}\:=\:\begin{cases}1 & if\:v_{k}\:>\:v_{j}\:for\:all\:j,\:j\:\neq\:k\\0 & otherwise\end{cases}$$</p>
+
+<p>It means that if any neuron, say $y_{k}$⁡                       , wants to win, then its induced local field (the output of summation unit), say $v_{k}$, must be the largest among all the other neurons in the network.</p>
+
+<p><b>Condition of sum total of weight</b> &minus; Another constraint over the competitive learning rule is, the sum total of weights to a particular output neuron is going to be 1. For example, if we consider neuron <b>k</b> then &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j}w_{kj}\:=\:1\:\:\:\:\:\:\:\:\:for\:all\:k$$</p>
+
+<p></p>
+
+<p><b>Change of weight for winner</b> &minus; If a neuron does not respond to the input pattern, then no learning takes place in that neuron. However, if a particular neuron wins, then the corresponding weights are adjusted as follows</p>
+
+<p>$$\Delta w_{kj}\:=\:\begin{cases}-\alpha(x_{j}\:-\:w_{kj}), & if\:neuron\:k\:wins\\0, & if\:neuron\:k\:losses\end{cases}$$</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<p>This clearly shows that we are favoring the winning neuron by adjusting its weight and if there is a neuron loss, then we need not bother to re-adjust its weight.</p>
+
+<h3>Outstar Learning Rule</h3>
+
+<p>This rule, introduced by Grossberg, is concerned with supervised learning because the desired outputs are known. It is also called Grossberg learning.</p>
+
+<p><b>Basic Concept</b> &minus; This rule is applied over the neurons arranged in a layer. It is specially designed to produce a desired output <b>d</b> of the layer of <b>p</b> neurons.</p>
+
+<p><b>Mathematical Formulation</b> &minus; The weight adjustments in this rule are computed as follows</p>
+
+<p>$$\Delta w_{j}\:=\:\alpha\:(d\:-\:w_{j})$$</p>
+
+<p>Here <b>d</b> is the desired neuron output and $\alpha$ is the learning rate.</p>
+
+<h1>Supervised Learning</h1>
+
+<p>As the name suggests, <b>supervised learning</b> takes place under the supervision of a teacher. This learning process is dependent. During the training of ANN under supervised learning, the input vector is presented to the network, which will produce an output vector. This output vector is compared with the desired/target output vector. An error signal is generated if there is a difference between the actual output and the desired/target output vector. On the basis of this error signal, the weights would be adjusted until the actual output is matched with the desired output.</p>
+
+<h2>Perceptron</h2>
+
+<p>Developed by Frank Rosenblatt by using McCulloch and Pitts model, perceptron is the basic operational unit of artificial neural networks. It employs supervised learning rule and is able to classify the data into two classes.</p>
+
+<p>Operational characteristics of the perceptron: It consists of a single neuron with an arbitrary number of inputs along with adjustable weights, but the output of the neuron is 1 or 0 depending upon the threshold. It also consists of a bias whose weight is always 1. Following figure gives a schematic representation of the perceptron.</p>
+
+<p>Perceptron thus has the following three basic elements &minus;</p>
+
+<p><b>Links</b> &minus; It would have a set of connection links, which carries a weight including a bias always having weight 1.</p>
+
+<p><b>Adder</b> &minus; It adds the input after they are multiplied with their respective weights.</p>
+
+<p><b>Activation function</b> &minus; It limits the output of neuron. The most basic activation function is a Heaviside step function that has two possible outputs. This function returns 1, if the input is positive, and 0 for any negative input.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>Perceptron network can be trained for single output unit as well as multiple output units.</p>
+
+<h3>Training Algorithm for Single Output Unit</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Now obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}.\:w_{i}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output.</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{in}\:>\:\theta\\0 & if \: -\theta\:\leqslant\:y_{in}\:\leqslant\:\theta\\-1 & if\:y_{in}\:<\:-\theta \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)\:+\:\alpha\:tx_{i}$$</p>
+
+<p>$$b(new)\:=\:b(old)\:+\:\alpha t$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y = t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)$$</p>
+
+<p>$$b(new)\:=\:b(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which would happen when there is no change in weight.</p>
+
+<h3>Training Algorithm for Multiple Output Units</h3>
+
+<p>The following diagram is the architecture of perceptron for multiple output classes.</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{ij}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output for each output unit <b>j = 1 to m</b> &minus;</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{inj}\:>\:\theta\\0 & if \: -\theta\:\leqslant\:y_{inj}\:\leqslant\:\theta\\-1 & if\:y_{inj}\:<\:-\theta \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias for <b>x = 1 to n</b> and <b>j = 1 to m</b> as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y<sub>j</sub> &ne; t<sub>j</sub></b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\alpha\:t_{j}x_{i}$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)\:+\:\alpha t_{j}$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y<sub>j</sub> = t<sub>j</sub></b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight.</p>
+
+<h2>Adaptive Linear Neuron (Adaline)</h2>
+
+<p>Adaline which stands for Adaptive Linear Neuron, is a network having a single linear unit. It was developed by Widrow and Hoff in 1960. Some important points about Adaline are as follows &minus;</p>
+
+<p>It uses bipolar activation function.</p>
+
+<p>It uses delta rule for training to minimize the Mean-Squared Error (MSE) between the actual output and the desired/target output.</p>
+
+<p>The weights and the bias are adjustable.</p>
+
+<h3>Architecture</h3>
+
+<p>The basic structure of Adaline is similar to perceptron having an extra feedback loop with the help of which the actual output is compared with the desired/target output. After comparison on the basis of training algorithm, the weights and bias will be updated.</p>
+
+<h3>Training Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every bipolar training pair <b>s:t</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input with the following relation &minus;</p>
+
+<p>$$y_{in}\:=\:b\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{i}$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output &minus;</p>
+
+<p>$$f(y_{in})\:=\:\begin{cases}1 & if\:y_{in}\:\geqslant\:0 \\-1 & if\:y_{in}\:<\:0 \end{cases}$$</p>
+
+<p><b>Step 7</b> &minus; Adjust the weight and bias as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)\:+\: \alpha(t\:-\:y_{in})x_{i}$$</p>
+
+<p>$$b(new)\:=\:b(old)\:+\: \alpha(t\:-\:y_{in})$$</p>
+
+<p><b>Case 2</b> &minus; if <b>y = t</b> then,</p>
+
+<p>$$w_{i}(new)\:=\:w_{i}(old)$$</p>
+
+<p>$$b(new)\:=\:b(old)$$</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p>$(t\:-\;y_{in})$ is the computed error.</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight or the highest weight change occurred during training is smaller than the specified tolerance.</p>
+
+<h2>Multiple Adaptive Linear Neuron (Madaline)</h2>
+
+<p>Madaline which stands for Multiple Adaptive Linear Neuron, is a network which consists of many Adalines in parallel. It will have a single output unit. Some important points about Madaline are as follows &minus;</p>
+
+<p>It is just like a multilayer perceptron, where Adaline will act as a hidden unit between the input and the Madaline layer.</p>
+
+<p>The weights and the bias between the input and Adaline layers, as in we see in the Adaline architecture, are adjustable.</p>
+
+<p>The Adaline and Madaline layers have fixed weights and bias of 1.</p>
+
+<p>Training can be done with the help of Delta rule.</p>
+
+<h3>Architecture</h3>
+
+<p>The architecture of Madaline consists of <b>“n”</b> neurons of the input layer, <b>“m”</b> neurons of the Adaline layer, and 1 neuron of the Madaline layer. The Adaline layer can be considered as the hidden layer as it is between the input layer and the output layer, i.e. the Madaline layer.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>By now we know that only the weights and bias between the input and the Adaline layer are to be adjusted, and the weights and bias between the Adaline and the Madaline layer are fixed.</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-8 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every bipolar training pair <b>s:t</b>.</p>
+
+<p><b>Step 4</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the net input at each hidden layer, i.e. the Adaline layer with the following relation &minus;</p>
+
+<p>$$Q_{inj}\:=\:b_{j}\:+\:\displaystyle\sum\limits_{i}^n x_{i}\:w_{ij}\:\:\:j\:=\:1\:to\:m$$</p>
+
+<p>Here <b>‘b’</b> is bias and <b>‘n’</b> is the total number of input neurons.</p>
+
+<p><b>Step 6</b> &minus; Apply the following activation function to obtain the final output at the Adaline and the Madaline layer &minus;</p>
+
+<p>$$f(x)\:=\:\begin{cases}1 & if\:x\:\geqslant\:0 \\-1 & if\:x\:<\:0 \end{cases}$$</p>
+
+<p>Output at the hidden (Adaline) unit</p>
+
+<p>$$Q_{j}\:=\:f(Q_{inj})$$</p>
+
+<p>Final output of the network</p>
+
+<p>$$y\:=\:f(y_{in})$$</p>
+
+<p><b>Step 7</b> &minus; Calculate the error and adjust the weights as follows &minus;</p>
+
+<p><b>Case 1</b> &minus; if <b>y &ne; t</b> and <b>t = 1</b> then,</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\: \alpha(1\:-\:Q_{inj})x_{i}$$</p>
+
+<p>$$b_{j}(new)\:=\:b_{j}(old)\:+\: \alpha(1\:-\:Q_{inj})$$</p>
+
+<p>In this case, the weights would be updated on <b>Q<sub>j</sub></b> where the net input is close to 0 because <b>t = 1</b>.</p>
+
+<p><b>Case 2</b> &minus; if <b>y &ne; t</b> and <b>t = -1</b> then,</p>
+
+<p>$$w_{ik}(new)\:=\:w_{ik}(old)\:+\: \alpha(-1\:-\:Q_{ink})x_{i}$$</p>
+
+<p>$$b_{k}(new)\:=\:b_{k}(old)\:+\: \alpha(-1\:-\:Q_{ink})$$</p>
+
+<p>In this case, the weights would be updated on <b>Q<sub>k</sub></b> where the net input is positive because <b>t = -1</b>.</p>
+
+<p>Here <b>‘y’</b> is the actual output and <b>‘t’</b> is the desired/target output.</p>
+
+<p><b>Case 3</b> &minus; if <b>y = t</b> then</p>
+
+<p><b>Step 8</b> &minus; Test for the stopping condition, which will happen when there is no change in weight or the highest weight change occurred during training is smaller than the specified tolerance.</p>
+
+<h2>Back Propagation Neural Networks</h2>
+
+<p>Back Propagation Neural (BPN) is a multilayer neural network consisting of the input layer, at least one hidden layer and output layer. As its name suggests, back propagating will take place in this network. The error which is calculated at the output layer, by comparing the target output and the actual output, will be propagated back towards the input layer.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the diagram, the architecture of BPN has three interconnected layers having weights on them. The hidden layer as well as the output layer also has bias, whose weight is always 1, on them. As is clear from the diagram, the working of BPN is in two phases. One phase sends the signal from the input layer to the output layer, and the other phase back propagates the error from the output layer to the input layer.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, BPN will use binary sigmoid activation function. The training of BPN will have the following three phases.</p>
+
+<p><b>Phase 1</b> &minus; Feed Forward Phase</p>
+
+<p><b>Phase 2</b> &minus; Back Propagation of error</p>
+
+<p><b>Phase 3</b> &minus; Updating of weights</p>
+
+<p>All these steps will be concluded in the algorithm as follows</p>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p>For easy calculation and simplicity, take some small random values.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-11 when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-10 for every training pair.</p>
+
+<h3>Phase 1</h3>
+
+<p><b>Step 4</b> &minus; Each input unit receives input signal <b>x<sub>i</sub></b> and sends it to the hidden unit for all <b>i = 1 to n</b></p>
+
+<p><b>Step 5</b> &minus; Calculate the net input at the hidden unit using the following relation &minus;</p>
+
+<p>$$Q_{inj}\:=\:b_{0j}\:+\:\sum_{i=1}^n x_{i}v_{ij}\:\:\:\:j\:=\:1\:to\:p$$</p>
+
+<p>Here <b>b<sub>0j</sub></b> is the bias on hidden unit, <b>v<sub>ij</sub></b> is the weight on <b>j</b> unit of the hidden layer coming from <b>i</b> unit of the input layer.</p>
+
+<p>Now calculate the net output by applying the following activation function</p>
+
+<p>$$Q_{j}\:=\:f(Q_{inj})$$</p>
+
+<p>Send these output signals of the hidden layer units to the output layer units.</p>
+
+<p><b>Step 6</b> &minus; Calculate the net input at the output layer unit using the following relation &minus;</p>
+
+<p>$$y_{ink}\:=\:b_{0k}\:+\:\sum_{j = 1}^p\:Q_{j}\:w_{jk}\:\:k\:=\:1\:to\:m$$</p>
+
+<p>Here <b>b<sub>0k</sub></b> ⁡is the bias on output unit, <b>w<sub>jk</sub></b> is the weight on <b>k</b> unit of the output layer coming from <b>j</b> unit of the hidden layer.</p>
+
+<p>Calculate the net output by applying the following activation function</p>
+
+<p>$$y_{k}\:=\:f(y_{ink})$$</p>
+
+<h3>Phase 2</h3>
+
+<p><b>Step 7</b> &minus; Compute the error correcting term, in correspondence with the target pattern received at each output unit, as follows &minus;</p>
+
+<p>$$\delta_{k}\:=\:(t_{k}\:-\:y_{k})f^{'}(y_{ink})$$</p>
+
+<p>On this basis, update the weight and bias as follows &minus;</p>
+
+<p>$$\Delta v_{jk}\:=\:\alpha \delta_{k}\:Q_{ij}$$</p>
+
+<p>$$\Delta b_{0k}\:=\:\alpha \delta_{k}$$</p>
+
+<p>Then, send $\delta_{k}$ back to the hidden layer.</p>
+
+<p><b>Step 8</b> &minus; Now each hidden unit will be the sum of its delta inputs from the output units.</p>
+
+<p>$$\delta_{inj}\:=\:\displaystyle\sum\limits_{k=1}^m \delta_{k}\:w_{jk}$$</p>
+
+<p>Error term can be calculated as follows &minus;</p>
+
+<p>$$\delta_{j}\:=\:\delta_{inj}f^{'}(Q_{inj})$$</p>
+
+<p>On this basis, update the weight and bias as follows &minus;</p>
+
+<p>$$\Delta w_{ij}\:=\:\alpha\delta_{j}x_{i}$$</p>
+
+<p>$$\Delta b_{0j}\:=\:\alpha\delta_{j}$$</p>
+
+<h3>Phase 3</h3>
+
+<p><b>Step 9</b> &minus; Each output unit <b><i>(y<sub>k</sub>k = 1 to m)</i></b> updates the weight and bias as follows &minus;</p>
+
+<p>$$v_{jk}(new)\:=\:v_{jk}(old)\:+\:\Delta v_{jk}$$</p>
+
+<p>$$b_{0k}(new)\:=\:b_{0k}(old)\:+\:\Delta b_{0k}$$</p>
+
+<p><b>Step 10</b> &minus; Each output unit <b><i>(z<sub>j</sub>j = 1 to p)</i></b> updates the weight and bias as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\Delta w_{ij}$$</p>
+
+<p>$$b_{0j}(new)\:=\:b_{0j}(old)\:+\:\Delta b_{0j}$$</p>
+
+<p><b>Step 11</b> &minus; Check for the stopping condition, which may be either the number of epochs reached or the target output matches the actual output.</p>
+
+<h2>Generalized Delta Learning Rule</h2>
+
+<p>Delta rule works only for the output layer. On the other hand, generalized delta rule, also called as <b>back-propagation</b> rule, is a way of creating the desired values of the hidden layer.</p>
+
+<h3>Mathematical Formulation</h3>
+
+<p>For the activation function $y_{k}\:=\:f(y_{ink})$ the derivation of net input on Hidden layer as well as on output layer can be given by</p>
+
+<p>$$y_{ink}\:=\:\displaystyle\sum\limits_i\:z_{i}w_{jk}$$</p>
+
+<p>Now the error which has to be minimized is</p>
+
+<p>$$E\:=\:\frac{1}{2}\displaystyle\sum\limits_{k}\:[t_{k}\:-\:y_{k}]^2$$</p>
+
+<p>By using the chain rule, we have</p>
+
+<p>$$\frac{\partial E}{\partial w_{jk}}\:=\:\frac{\partial }{\partial w_{jk}}(\frac{1}{2}\displaystyle\sum\limits_{k}\:[t_{k}\:-\:y_{k}]^2)$$</p>
+
+<p>$$=\:\frac{\partial }{\partial w_{jk}}\lgroup\frac{1}{2}[t_{k}\:-\:t(y_{ink})]^2\rgroup$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]\frac{\partial }{\partial w_{jk}}f(y_{ink})$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]f(y_{ink})\frac{\partial }{\partial w_{jk}}(y_{ink})$$</p>
+
+<p>$$=\:-[t_{k}\:-\:y_{k}]f^{'}(y_{ink})z_{j}$$</p>
+
+<p>The weights on connections to the hidden unit <b>z<sub>j</sub></b> can be given by &minus;</p>
+
+<p>$$\frac{\partial E}{\partial v_{ij}}\:=\:- \displaystyle\sum\limits_{k} \delta_{k}\frac{\partial }{\partial v_{ij}}\:(y_{ink})$$</p>
+
+<p>Putting the value of $y_{ink}$ we will get the following</p>
+
+<p>$$\delta_{j}\:=\:-\displaystyle\sum\limits_{k}\delta_{k}w_{jk}f^{'}(z_{inj})$$</p>
+
+<p>Weight updating can be done as follows &minus;</p>
+
+<p>For the output unit &minus;</p>
+
+<p>$$\Delta w_{jk}\:=\:-\alpha\frac{\partial E}{\partial w_{jk}}$$</p>
+
+<p>$$=\:\alpha\:\delta_{k}\:z_{j}$$</p>
+
+<p>For the hidden unit &minus;</p>
+
+<p>$$\Delta v_{ij}\:=\:-\alpha\frac{\partial E}{\partial v_{ij}}$$</p>
+
+<p>$$=\:\alpha\:\delta_{j}\:x_{i}$$</p>
+
+<h1>Unsupervised Learning</h1>
+
+<p>As the name suggests, this type of learning is done without the supervision of a teacher. This learning process is independent. During the training of ANN under unsupervised learning, the input vectors of similar type are combined to form clusters. When a new input pattern is applied, then the neural network gives an output response indicating the class to which input pattern belongs. In this, there would be no feedback from the environment as to what should be the desired output and whether it is correct or incorrect. Hence, in this type of learning the network itself must discover the patterns, features from the input data and the relation for the input data over the output.</p>
+
+<h2>Winner-Takes-All Networks</h2>
+
+<p>These kinds of networks are based on the competitive learning rule and will use the strategy where it chooses the neuron with the greatest total inputs as a winner. The connections between the output neurons show the competition between them and one of them would be ‘ON’ which means it would be the winner and others would be ‘OFF’.</p>
+
+<p>Following are some of the networks based on this simple concept using unsupervised learning.</p>
+
+<h3>Hamming Network</h3>
+
+<p>In most of the neural networks using unsupervised learning, it is essential to compute the distance and perform comparisons. This kind of network is Hamming network, where for every given input vectors, it would be clustered into different groups. Following are some important features of Hamming Networks &minus;</p>
+
+<p>Lippmann started working on Hamming networks in 1987.</p>
+
+<p>It is a single layer network.</p>
+
+<p>The inputs can be either binary {0, 1} of bipolar {-1, 1}.</p>
+
+<p>The weights of the net are calculated by the exemplar vectors.</p>
+
+<p>It is a fixed weight network which means the weights would remain the same even during training.</p>
+
+<h3>Max Net</h3>
+
+<p>This is also a fixed weight network, which serves as a subnet for selecting the node having the highest input. All the nodes are fully interconnected and there exists symmetrical weights in all these weighted interconnections.</p>
+
+<h3>Architecture</h3>
+
+<p>It uses the mechanism which is an iterative process and each node receives inhibitory inputs from all other nodes through connections. The single node whose value is maximum would be active or winner and the activations of all other nodes would be inactive. Max Net uses identity activation function with $$f(x)\:=\:\begin{cases}x & if\:x > 0\\0 & if\:x \leq 0\end{cases}$$</p>
+
+<p>The task of this net is accomplished by the self-excitation weight of +1 and mutual inhibition magnitude, which is set like [0 &lt; &#603; &lt; $\frac{1}{m}$] where <b>“m”</b> is the total number of the nodes.</p>
+
+<h2>Competitive Learning in ANN</h2>
+
+<p>It is concerned with unsupervised training in which the output nodes try to compete with each other to represent the input pattern. To understand this learning rule we will have to understand competitive net which is explained as follows &minus;</p>
+
+<h3>Basic Concept of Competitive Network</h3>
+
+<p>This network is just like a single layer feed-forward network having feedback connection between the outputs. The connections between the outputs are inhibitory type, which is shown by dotted lines, which means the competitors never support themselves.</p>
+
+<h2>Basic Concept of Competitive Learning Rule</h2>
+
+<p>As said earlier, there would be competition among the output nodes so the main concept is - during training, the output unit that has the highest activation to a given input pattern, will be declared the winner. This rule is also called Winner-takes-all because only the winning neuron is updated and the rest of the neurons are left unchanged.</p>
+
+<h3>Mathematical Formulation</h3>
+
+<p>Following are the three important factors for mathematical formulation of this learning rule &minus;</p>
+
+<p>Condition to be a winner</p>
+
+<p>Suppose if a neuron <b><i>y<sub>k</sub></i></b> wants to be the winner, then there would be the following condition</p>
+
+<p>$$y_{k}\:=\:\begin{cases}1 & if\:v_{k} > v_{j}\:for\:all\:\:j,\:j\:\neq\:k\\0 & otherwise\end{cases}$$</p>
+
+<p>It means that if any neuron, say, <b>y<sub>k</sub></b> wants to win, then its induced local field (the output of the summation unit), say <b>v<sub>k</sub></b>, must be the largest among all the other neurons in the network.</p>
+
+<p>Condition of the sum total of weight</p>
+
+<p>Another constraint over the competitive learning rule is the sum total of weights to a particular output neuron is going to be 1. For example, if we consider neuron <b>k</b> then</p>
+
+<p>$$\displaystyle\sum\limits_{k} w_{kj}\:=\:1\:\:\:\:for\:all\:\:k$$</p>
+
+<p>Change of weight for the winner</p>
+
+<p>If a neuron does not respond to the input pattern, then no learning takes place in that neuron. However, if a particular neuron wins, then the corresponding weights are adjusted as follows &minus;</p>
+
+<p>$$\Delta w_{kj}\:=\:\begin{cases}-\alpha(x_{j}\:-\:w_{kj}), & if\:neuron\:k\:wins\\0 & if\:neuron\:k\:losses\end{cases}$$</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<p>This clearly shows that we are favoring the winning neuron by adjusting its weight and if a neuron is lost, then we need not bother to re-adjust its weight.</p>
+
+<h3>K-means Clustering Algorithm</h3>
+
+<p>K-means is one of the most popular clustering algorithm in which we use the concept of partition procedure. We start with an initial partition and repeatedly move patterns from one cluster to another, until we get a satisfactory result.</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Select <b>k</b> points as the initial centroids. Initialize <b>k</b> prototypes <b>(w<sub>1</sub>,…,w<sub>k</sub>)</b>, for example we can identifying them with randomly chosen input vectors &minus;</p>
+
+<p>$$W_{j}\:=\:i_{p},\:\:\: where\:j\:\in \lbrace1,....,k\rbrace\:and\:p\:\in \lbrace1,....,n\rbrace$$</p>
+
+<p>Each cluster <b>C<sub>j</sub></b> is associated with prototype <b>w<sub>j</sub></b>.</p>
+
+<p><b>Step 2</b> &minus; Repeat step 3-5 until E no longer decreases, or the cluster membership no longer changes.</p>
+
+<p><b>Step 3</b> &minus; For each input vector <b>i<sub>p</sub></b> where <b>p &isin; {1,…,n}</b>, put <b>i<sub>p</sub></b> in the cluster <b>C<sub>j*</sub></b> with the nearest prototype <b>w<sub>j*</sub></b> having the following relation</p>
+
+<p>$$|i_{p}\:-\:w_{j*}|\:\leq\:|i_{p}\:-\:w_{j}|,\:j\:\in \lbrace1,....,k\rbrace$$</p>
+
+<p><b>Step 4</b> &minus; For each cluster <b>C<sub>j</sub></b>, where <b>j &isin; { 1,…,k}</b>, update the prototype <b>w<sub>j</sub></b> to be the centroid of all samples currently in <b>C<sub>j</sub></b> , so that</p>
+
+<p>$$w_{j}\:=\:\sum_{i_{p}\in C_{j}}\frac{i_{p}}{|C_{j}|}$$</p>
+
+<p><b>Step 5</b> &minus; Compute the total quantization error as follows &minus;</p>
+
+<p>$$E\:=\:\sum_{j=1}^k\sum_{i_{p}\in w_{j}}|i_{p}\:-\:w_{j}|^2$$</p>
+
+<h2>Neocognitron</h2>
+
+<p>It is a multilayer feedforward network, which was developed by Fukushima in 1980s. This model is based on supervised learning and is used for visual pattern recognition, mainly hand-written characters. It is basically an extension of Cognitron network, which was also developed by Fukushima in 1975.</p>
+
+<h3>Architecture</h3>
+
+<p>It is a hierarchical network, which comprises many layers and there is a pattern of connectivity locally in those layers.</p>
+
+<p>As we have seen in the above diagram, neocognitron is divided into different connected layers and each layer has two cells. Explanation of these cells is as follows &minus;</p>
+
+<p><b>S-Cell</b> &minus; It is called a simple cell, which is trained to respond to a particular pattern or a group of patterns.</p>
+
+<p><b>C-Cell</b> &minus; It is called a complex cell, which combines the output from S-cell and simultaneously lessens the number of units in each array. In another sense, C-cell displaces the result of S-cell.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>Training of neocognitron is found to be progressed layer by layer. The weights from the input layer to the first layer are trained and frozen. Then, the weights from the first layer to the second layer are trained, and so on. The internal calculations between S-cell and Ccell depend upon the weights coming from the previous layers. Hence, we can say that the training algorithm depends upon the calculations on S-cell and C-cell.</p>
+
+<h3>Calculations in S-cell</h3>
+
+<p>The S-cell possesses the excitatory signal received from the previous layer and possesses inhibitory signals obtained within the same layer.</p>
+
+<p>$$\theta=\:\sqrt{\sum\sum t_{i} c_{i}^2}$$</p>
+
+<p>Here, <b>t<sub>i</sub></b> is the fixed weight and <b>c<sub>i</sub></b> is the output from C-cell.</p>
+
+<p>The scaled input of S-cell can be calculated as follows &minus;</p>
+
+<p>$$x\:=\:\frac{1\:+\:e}{1\:+\:vw_{0}}\:-\:1$$</p>
+
+<p>Here, $e\:=\:\sum_i c_{i}w_{i}$</p>
+
+<p><b>w<sub>i</sub></b> is the weight adjusted from C-cell to S-cell.</p>
+
+<p><b>w<sub>0</sub></b> is the weight adjustable between the input and S-cell.</p>
+
+<p><b>v</b> is the excitatory input from C-cell.</p>
+
+<p>The activation of the output signal is,</p>
+
+<p>$$s\:=\:\begin{cases}x, & if\:x \geq 0\\0, & if\:x < 0\end{cases}$$</p>
+
+<h3>Calculations in C-cell</h3>
+
+<p>The net input of C-layer is</p>
+
+<p>$$C\:=\:\displaystyle\sum\limits_i s_{i}x_{i}$$</p>
+
+<p>Here, <b>s<sub>i</sub></b>  is the output from S-cell and <b>x<sub>i</sub></b> is the fixed weight from S-cell to C-cell.</p>
+
+<p>The final output is as follows &minus;</p>
+
+<p>$$C_{out}\:=\:\begin{cases}\frac{C}{a+C}, & if\:C > 0\\0, & otherwise\end{cases}$$</p>
+
+<p>Here <b>‘a’</b> is the parameter that depends on the performance of the network.</p>
+
+<h1>Learning Vector Quantization</h1>
+
+<p>Learning Vector Quantization (LVQ), different from Vector quantization (VQ) and Kohonen Self-Organizing Maps (KSOM), basically is a competitive network which uses supervised learning. We may define it as a process of classifying the patterns where each output unit represents a class. As it uses supervised learning, the network will be given a set of training patterns with known classification along with an initial distribution of the output class. After completing the training process, LVQ will classify an input vector by assigning it to the same class as that of the output unit.</p>
+
+<h2>Architecture</h2>
+
+<p>Following figure shows the architecture of LVQ which is quite similar to the architecture of KSOM. As we can see, there are <b>“n”</b> number of input units and <b>“m”</b> number of output units. The layers are fully interconnected with having weights on them.</p>
+
+<h2>Parameters Used</h2>
+
+<p>Following are the parameters used in LVQ training process as well as in the flowchart</p>
+
+<p><b>x</b> = training vector (x<sub>1</sub>,...,x<sub>i</sub>,...,x<sub>n</sub>)</p>
+
+<p><b>T</b> = class for training vector <b>x</b></p>
+
+<p><b>w<sub>j</sub></b> = weight vector for <b>j<sup>th</sup></b> output unit</p>
+
+<p><b>C<sub>j</sub></b> = class associated with the <b>j<sup>th</sup></b> output unit</p>
+
+<h2>Training Algorithm</h2>
+
+<p><b>Step 1</b> &minus; Initialize reference vectors, which can be done as follows &minus;</p>
+
+<p><b>Step 1(a)</b> &minus; From the given set of training vectors, take the first “<b>m</b>” (number of clusters) training vectors and use them as weight vectors. The remaining vectors can be used for training.</p>
+
+<p><b>Step 1(b)</b> &minus; Assign the initial weight and classification randomly.</p>
+
+<p><b>Step 1(c)</b> &minus; Apply K-means clustering method.</p>
+
+<p><b>Step 2</b> &minus; Initialize reference vector $\alpha$</p>
+
+<p><b>Step 3</b> &minus; Continue with steps 4-9, if the condition for stopping this algorithm is not met.</p>
+
+<p><b>Step 4</b> &minus; Follow steps 5-6 for every training input vector <b>x</b>.</p>
+
+<p><b>Step 5</b> &minus; Calculate Square of Euclidean Distance for <b>j = 1 to m</b> and <b>i = 1 to n</b></p>
+
+<p>$$D(j)\:=\:\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{j=1}^m (x_{i}\:-\:w_{ij})^2$$</p>
+
+<p><b>Step 6</b> &minus; Obtain the winning unit <b>J</b> where <b>D(j)</b> is minimum.</p>
+
+<p><b>Step 7</b> &minus; Calculate the new weight of the winning unit by the following relation &minus;</p>
+
+<p><b>Step 8</b> &minus; Reduce the learning rate $\alpha$.</p>
+
+<p><b>Step 9</b> &minus; Test for the stopping condition. It may be as follows &minus;</p>
+
+<h2>Flowchart</h2>
+
+<h2>Variants</h2>
+
+<p>Three other variants namely LVQ2, LVQ2.1 and LVQ3 have been developed by Kohonen. Complexity in all these three variants, due to the concept that the winner as well as the runner-up unit will learn, is more than in LVQ.</p>
+
+<h2>LVQ2</h2>
+
+<p>As discussed, the concept of other variants of LVQ above, the condition of LVQ2 is formed by window. This window will be based on the following parameters &minus;</p>
+
+<p><b>x</b> &minus; the current input vector</p>
+
+<p><b>y<sub>c</sub></b> &minus; the reference vector closest to <b>x</b></p>
+
+<p><b>y<sub>r</sub></b> &minus; the other reference vector, which is next closest to <b>x</b></p>
+
+<p><b>d<sub>c</sub></b> &minus; the distance from <b>x</b> to <b>y<sub>c</sub></b></p>
+
+<p><b>d<sub>r</sub></b> &minus; the distance from <b>x</b> to <b>y<sub>r</sub></b></p>
+
+<p>The input vector <b>x</b> falls in the window, if</p>
+
+<p>$$\frac{d_{c}}{d_{r}}\:>\:1\:-\:\theta\:\:and\:\:\frac{d_{r}}{d_{c}}\:>\:1\:+\:\theta$$</p>
+
+<p>Here, $\theta$ is the number of training samples.</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here $\alpha$ is the learning rate.</p>
+
+<h2>LVQ2.1</h2>
+
+<p>In LVQ2.1, we will take the two closest vectors namely <b>y<sub>c1</sub></b> and <b>y<sub>c2</sub></b> and the condition for window is as follows &minus;</p>
+
+<p>$$Min\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:>\:(1\:-\:\theta)$$</p>
+
+<p>$$Max\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:<\:(1\:+\:\theta)$$</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here, $\alpha$ is the learning rate.</p>
+
+<h2>LVQ3</h2>
+
+<p>In LVQ3, we will take the two closest vectors namely <b>y<sub>c1</sub></b> and <b>y<sub>c2</sub></b> and the condition for window is as follows &minus;</p>
+
+<p>$$Min\begin{bmatrix}\frac{d_{c1}}{d_{c2}},\frac{d_{c2}}{d_{c1}}\end{bmatrix}\:>\:(1\:-\:\theta)(1\:+\:\theta)$$</p>
+
+<p>Here $\theta\approx 0.2$</p>
+
+<p>Updating can be done with the following formula &minus;</p>
+
+<p>Here $\beta$ is the multiple of the learning rate $\alpha$ and <b>$\beta\:=\:m \alpha(t)$</b> for every <b>0.1 &lt; m &lt; 0.5</b></p>
+
+<h1>Adaptive Resonance Theory</h1>
+
+<p>This network was developed by Stephen Grossberg and Gail Carpenter in 1987. It is based on competition and uses unsupervised learning model. Adaptive Resonance Theory (ART) networks, as the name suggests, is always open to new learning (adaptive) without losing the old patterns (resonance). Basically, ART network is a vector classifier which accepts an input vector and classifies it into one of the categories depending upon which of the stored pattern it resembles the most.</p>
+
+<h2>Operating Principal</h2>
+
+<p>The main operation of ART classification can be divided into the following phases &minus;</p>
+
+<p><b>Recognition phase</b> &minus; The input vector is compared with the classification presented at every node in the output layer. The output of the neuron becomes “1” if it best matches with the classification applied, otherwise it becomes “0”.</p>
+
+<p><b>Comparison phase</b> &minus; In this phase, a comparison of the input vector to the comparison layer vector is done. The condition for reset is that the degree of similarity would be less than vigilance parameter.</p>
+
+<p><b>Search phase</b> &minus; In this phase, the network will search for reset as well as the match done in the above phases. Hence, if there would be no reset and the match is quite good, then the classification is over. Otherwise, the process would be repeated and the other stored pattern must be sent to find the correct match.</p>
+
+<h2>ART1</h2>
+
+<p>It is a type of ART, which is designed to cluster binary vectors. We can understand about this with the architecture of it.</p>
+
+<h3>Architecture of ART1</h3>
+
+<p>It consists of the following two units &minus;</p>
+
+<p><b>Computational Unit</b> &minus; It is made up of the following &minus;</p>
+
+<p><b>Input unit (F<sub>1</sub> layer)</b> &minus; It further has the following two portions &minus;</p>
+
+<p><b>F<sub>1</sub>(a) layer (Input portion)</b> &minus; In ART1, there would be no processing in this portion rather than having the input vectors only. It is connected to F<sub>1</sub>(b) layer (interface portion).</p>
+
+<p><b>F<sub>1</sub>(b) layer (Interface portion)</b> &minus; This portion combines the signal from the input portion with that of F<sub>2</sub> layer. F<sub>1</sub>(b) layer is connected to F<sub>2</sub> layer through bottom up weights <b>b<sub>ij</sub></b> and F<sub>2</sub> layer is connected to F<sub>1</sub>(b) layer through top down weights <b>t<sub>ji</sub></b>.</p>
+
+<p><b>Cluster Unit (F<sub>2</sub> layer)</b> &minus; This is a competitive layer. The unit having the largest net input is selected to learn the input pattern. The activation of all other cluster unit are set to 0.</p>
+
+<p><b>Reset Mechanism</b> &minus; The work of this mechanism is based upon the similarity between the top-down weight and the input vector. Now, if the degree of this similarity is less than the vigilance parameter, then the cluster is not allowed to learn the pattern and a rest would happen.</p>
+
+<p><b>Supplement Unit</b> &minus; Actually the issue with Reset mechanism is that the layer <b>F<sub>2</sub></b> must have to be inhibited under certain conditions and must also be available when some learning happens. That is why two supplemental units namely, <b>G<sub>1</sub></b> and <b>G<sub>2</sub></b> is added along with reset unit, <b>R</b>. They are called <b>gain control units</b>. These units receive and send signals to the other units present in the network. <b>‘+’</b> indicates an excitatory signal, while <b>‘&minus;’</b> indicates an inhibitory signal.</p>
+
+<p></p>
+
+<h3>Parameters Used</h3>
+
+<p>Following parameters are used &minus;</p>
+
+<p><b>n</b> &minus; Number of components in the input vector</p>
+
+<p><b>m</b> &minus; Maximum number of clusters that can be formed</p>
+
+<p><b>b<sub>ij</sub></b> &minus; Weight from F<sub>1</sub>(b) to F<sub>2</sub> layer, i.e. bottom-up weights</p>
+
+<p><b>t<sub>ji</sub></b> &minus; Weight from F<sub>2</sub> to F<sub>1</sub>(b) layer, i.e. top-down weights</p>
+
+<p><b>&rho;</b> &minus; Vigilance parameter</p>
+
+<p><b>||x||</b> &minus; Norm of vector x</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the learning rate, the vigilance parameter, and the weights as follows &minus;</p>
+
+<p>$$\alpha\:>\:1\:\:and\:\:0\:<\rho\:\leq\:1$$</p>
+
+<p>$$0\:<\:b_{ij}(0)\:<\:\frac{\alpha}{\alpha\:-\:1\:+\:n}\:\:and\:\:t_{ij}(0)\:=\:1$$</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-9, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every training input.</p>
+
+<p><b>Step 4</b> &minus; Set activations of all F<sub>1</sub>(a) and F<sub>1</sub> units as follows</p>
+
+<p><b>Step 5</b> &minus; Input signal from F<sub>1</sub>(a) to F<sub>1</sub>(b) layer must be sent like</p>
+
+<p>$$s_{i}\:=\:x_{i}$$</p>
+
+<p><b>Step 6</b> &minus; For every inhibited F<sub>2</sub> node</p>
+
+<p><b>Step 7</b> &minus; Perform step 8-10, when the reset is true.</p>
+
+<p><b>Step 8</b> &minus; Find <b>J</b> for <b>y<sub>J</sub> &ge; y<sub>j</sub></b> for all nodes <b>j</b></p>
+
+<p><b>Step 9</b> &minus; Again calculate the activation on F<sub>1</sub>(b) as follows</p>
+
+<p>$$x_{i}\:=\:sitJi$$</p>
+
+<p><b>Step 10</b> &minus; Now, after calculating the norm of vector <b>x</b> and vector <b>s</b>, we need to check the reset condition as follows &minus;</p>
+
+<p><b>Step 11</b> &minus; Weight updating for node <b>J</b> can be done as follows &minus;</p>
+
+<p>$$b_{ij}(new)\:=\:\frac{\alpha x_{i}}{\alpha\:-\:1\:+\:||x||}$$</p>
+
+<p>$$t_{ij}(new)\:=\:x_{i}$$</p>
+
+<p><b>Step 12</b> &minus; The stopping condition for algorithm must be checked and it may be as follows &minus;</p>
+
+<h1>Kohonen Self-Organizing Feature Maps</h1>
+
+<p>Suppose we have some pattern of arbitrary dimensions, however, we need them in one dimension or two dimensions. Then the process of feature mapping would be very useful to convert the wide pattern space into a typical feature space. Now, the question arises why do we require self-organizing feature map? The reason is, along with the capability to convert the arbitrary dimensions into 1-D or 2-D, it must also have the ability to preserve the neighbor topology.</p>
+
+<h2>Neighbor Topologies in Kohonen SOM</h2>
+
+<p>There can be various topologies, however the following two topologies are used the most &minus;</p>
+
+<h3>Rectangular Grid Topology</h3>
+
+<p>This topology has 24 nodes in the distance-2 grid, 16 nodes in the distance-1 grid, and 8 nodes in the distance-0 grid, which means the difference between each rectangular grid is 8 nodes. The winning unit is indicated by #.</p>
+
+<h3>Hexagonal Grid Topology</h3>
+
+<p>This topology has 18 nodes in the distance-2 grid, 12 nodes in the distance-1 grid, and 6 nodes in the distance-0 grid, which means the difference between each rectangular grid is 6 nodes. The winning unit is indicated by #.</p>
+
+<h3>Architecture</h3>
+
+<p>The architecture of KSOM is similar to that of the competitive network. With the help of neighborhood schemes, discussed earlier, the training can take place over the extended region of the network.</p>
+
+<h3>Algorithm for training</h3>
+
+<p><b>Step 1</b> &minus; Initialize the weights, the learning rate <b>&alpha;</b> and the neighborhood topological scheme.</p>
+
+<p><b>Step 2</b> &minus; Continue step 3-9, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Continue step 4-6 for every input vector <b>x</b>.</p>
+
+<p><b>Step 4</b> &minus; Calculate Square of Euclidean Distance for <b>j = 1 to m</b></p>
+
+<p>$$D(j)\:=\:\displaystyle\sum\limits_{i=1}^n \displaystyle\sum\limits_{j=1}^m (x_{i}\:-\:w_{ij})^2$$</p>
+
+<p><b>Step 5</b> &minus; Obtain the winning unit <b>J</b> where <b><i>D(j)</i></b> is minimum.</p>
+
+<p><b>Step 6</b> &minus; Calculate the new weight of the winning unit by the following relation &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:\alpha[x_{i}\:-\:w_{ij}(old)]$$</p>
+
+<p><b>Step 7</b> &minus; Update the learning rate <b>&alpha;</b> by the following relation &minus;</p>
+
+<p>$$\alpha(t\:+\:1)\:=\:0.5\alpha t$$</p>
+
+<p><b>Step 8</b> &minus; Reduce the radius of topological scheme.</p>
+
+<p><b>Step 9</b> &minus; Check for the stopping condition for the network.</p>
+
+<h1>Associate Memory Network</h1>
+
+<p>These kinds of neural networks work on the basis of pattern association, which means they can store different patterns and at the time of giving an output they can produce one of the stored patterns by matching them with the given input pattern. These types of memories are also called <b>Content-Addressable Memory</b> (CAM). Associative memory makes a parallel search with the stored patterns as data files.</p>
+
+<p>Following are the two types of associative memories we can observe &minus;</p>
+
+<h2>Auto Associative Memory</h2>
+
+<p>This is a single layer neural network in which the input training vector and the output target vectors are the same. The weights are determined so that the network stores a set of patterns.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the following figure, the architecture of Auto Associative memory network has <b>‘n’</b> number of input training vectors and similar <b>‘n’</b> number of output target vectors.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, this network is using the Hebb or Delta learning rule.</p>
+
+<p><b>Step 1</b> &minus; Initialize all the weights to zero as <b>w<sub>ij</sub> = 0 (i = 1 to n, j = 1 to n)</b></p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-4 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 4</b> &minus; Activate each output unit as follows &minus;</p>
+
+<p>$$y_{j}\:=\:s_{j}\:(j\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 5</b> &minus; Adjust the weights as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:x_{i}y_{j}$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p></p>
+
+<p><b>Step 1</b> &minus; Set the weights obtained during training for Hebb’s rule.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-5 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Set the activation of the input units equal to that of the input vector.</p>
+
+<p><b>Step 4</b> &minus; Calculate the net input to each output unit <b>j = 1 to n</b></p>
+
+<p>$$y_{inj}\:=\:\displaystyle\sum\limits_{i=1}^n x_{i}w_{ij}$$</p>
+
+<p><b>Step 5</b> &minus; Apply the following activation function to calculate the output</p>
+
+<p>$$y_{j}\:=\:f(y_{inj})\:=\:\begin{cases}+1 & if\:y_{inj}\:>\:0\\-1 & if\:y_{inj}\:\leqslant\:0\end{cases}$$</p>
+
+<h2>Hetero Associative memory</h2>
+
+<p>Similar to Auto Associative Memory network, this is also a single layer neural network. However, in this network the input training vector and the output target vectors are not the same. The weights are determined so that the network stores a set of patterns. Hetero associative network is static in nature, hence, there would be no non-linear and delay operations.</p>
+
+<h3>Architecture</h3>
+
+<p>As shown in the following figure, the architecture of Hetero Associative Memory network has <b>‘n’</b> number of input training vectors and <b>‘m’</b> number of output target vectors.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>For training, this network is using the Hebb or Delta learning rule.</p>
+
+<p><b>Step 1</b> &minus; Initialize all the weights to zero as <b>w<sub>ij</sub> = 0 (i = 1 to n, j = 1 to m)</b></p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-4 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Activate each input unit as follows &minus;</p>
+
+<p>$$x_{i}\:=\:s_{i}\:(i\:=\:1\:to\:n)$$</p>
+
+<p><b>Step 4</b> &minus; Activate each output unit as follows &minus;</p>
+
+<p>$$y_{j}\:=\:s_{j}\:(j\:=\:1\:to\:m)$$</p>
+
+<p><b>Step 5</b> &minus; Adjust the weights as follows &minus;</p>
+
+<p>$$w_{ij}(new)\:=\:w_{ij}(old)\:+\:x_{i}y_{j}$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p></p>
+
+<p><b>Step 1</b> &minus; Set the weights obtained during training for Hebb’s rule.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-5 for each input vector.</p>
+
+<p><b>Step 3</b> &minus; Set the activation of the input units equal to that of the input vector.</p>
+
+<p><b>Step 4</b> &minus; Calculate the net input to each output unit <b>j = 1 to m;</b></p>
+
+<p>$$y_{inj}\:=\:\displaystyle\sum\limits_{i=1}^n x_{i}w_{ij}$$</p>
+
+<p><b>Step 5</b> &minus; Apply the following activation function to calculate the output</p>
+
+<p>$$y_{j}\:=\:f(y_{inj})\:=\:\begin{cases}+1 & if\:y_{inj}\:>\:0\\0 & if\:y_{inj}\:=\:0\\-1 & if\:y_{inj}\:<\:0\end{cases}$$</p>
+
+<h1>Artificial Neural Network - Hopfield Networks</h1>
+
+<p>Hopfield neural network was invented by Dr. John J. Hopfield in 1982. It consists of a single layer which contains one or more fully connected recurrent neurons. The Hopfield network is commonly used for auto-association and optimization tasks.</p>
+
+<h2>Discrete Hopfield Network</h2>
+
+<p>A Hopfield network which operates in a discrete line fashion or in other words, it can be said the input and output patterns are discrete vector, which can be either binary (0,1) or bipolar (+1, -1) in nature. The network has symmetrical weights with no self-connections i.e., <b>w<sub>ij</sub> = w<sub>ji</sub></b> and <b>w<sub>ii</sub> = 0</b>.</p>
+
+<h3>Architecture</h3>
+
+<p>Following are some important points to keep in mind about discrete Hopfield network &minus;</p>
+
+<p>This model consists of neurons with one inverting and one non-inverting output.</p>
+
+<p>The output of each neuron should be the input of other neurons but not the input of self.</p>
+
+<p>Weight/connection strength is represented by <b>w<sub>ij</sub></b>.</p>
+
+<p>Connections can be excitatory as well as inhibitory. It would be excitatory, if the output of the neuron is same as the input, otherwise inhibitory.</p>
+
+<p>Weights should be symmetrical, i.e. <b>w<sub>ij</sub> = w<sub>ji</sub></b></p>
+
+<p>The output from <b>Y<sub>1</sub></b> going to <b>Y<sub>2</sub></b>, <b>Y<sub>i</sub></b> and <b>Y<sub>n</sub></b> have the weights <b>w<sub>12</sub></b>, <b>w<sub>1i</sub></b> and <b>w<sub>1n</sub></b> respectively. Similarly, other arcs have the weights on them.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>During training of discrete Hopfield network, weights will be updated. As we know that we can have the binary input vectors as well as bipolar input vectors. Hence, in both the cases, weight updates can be done with the following relation</p>
+
+<p><b>Case 1</b> &minus; Binary input patterns</p>
+
+<p>$$w_{ij}\:=\:\sum_{p=1}^P[2s_{i}(p)-\:1][2s_{j}(p)-\:1]\:\:\:\:\:for\:i\:\neq\:j$$</p>
+
+<p><b>Case 2</b> &minus; Bipolar input patterns</p>
+
+<p>$$w_{ij}\:=\:\sum_{p=1}^P[s_{i}(p)][s_{j}(p)]\:\:\:\:\:for\:i\:\neq\:j$$</p>
+
+<h3>Testing Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the weights, which are obtained from training algorithm by using Hebbian principle.</p>
+
+<p><b>Step 2</b> &minus; Perform steps 3-9, if the activations of the network is not consolidated.</p>
+
+<p><b>Step 3</b> &minus; For each input vector <b>X</b>, perform steps 4-8.</p>
+
+<p><b>Step 4</b> &minus; Make initial activation of the network equal to the external input vector <b>X</b> as follows &minus;</p>
+
+<p>$$y_{i}\:=\:x_{i}\:\:\:for\:i\:=\:1\:to\:n$$</p>
+
+<p><b>Step 5</b> &minus; For each unit <b>Y<sub>i</sub></b>, perform steps 6-9.</p>
+
+<p><b>Step 6</b> &minus; Calculate the net input of the network as follows &minus;</p>
+
+<p>$$y_{ini}\:=\:x_{i}\:+\:\displaystyle\sum\limits_{j}y_{j}w_{ji}$$</p>
+
+<p><b>Step 7</b> &minus; Apply the activation as follows over the net input to calculate the output &minus;</p>
+
+<p>$$y_{i}\:=\begin{cases}1 & if\:y_{ini}\:>\:\theta_{i}\\y_{i} & if\:y_{ini}\:=\:\theta_{i}\\0 & if\:y_{ini}\:<\:\theta_{i}\end{cases}$$</p>
+
+<p>Here $\theta_{i}$ is the threshold.</p>
+
+<p><b>Step 8</b> &minus; Broadcast this output <b>y<sub>i</sub></b> to all other units.</p>
+
+<p><b>Step 9</b> &minus; Test the network for conjunction.</p>
+
+<h3>Energy Function Evaluation</h3>
+
+<p>An energy function is defined as a function that is bonded and non-increasing function of the state of the system.</p>
+
+<p>Energy function <b>E<sub>f</sub></b>⁡, ⁡also called <b>Lyapunov function</b> determines the stability of discrete Hopfield network, and is characterized as follows &minus;</p>
+
+<p>$$E_{f}\:=\:-\frac{1}{2}\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{j=1}^n y_{i}y_{j}w_{ij}\:-\:\displaystyle\sum\limits_{i=1}^n x_{i}y_{i}\:+\:\displaystyle\sum\limits_{i=1}^n \theta_{i}y_{i}$$</p>
+
+<p><b>Condition</b> &minus; In a stable network, whenever the state of node changes, the above energy function will decrease.</p>
+
+<p>Suppose when node <b>i</b> has changed state from $y_i^{(k)}$ to $y_i^{(k\:+\:1)}$ ⁡then the Energy change $\Delta E_{f}$ is given by the following relation</p>
+
+<p>$$\Delta E_{f}\:=\:E_{f}(y_i^{(k+1)})\:-\:E_{f}(y_i^{(k)})$$</p>
+
+<p>$$=\:-\left(\begin{array}{c}\displaystyle\sum\limits_{j=1}^n w_{ij}y_i^{(k)}\:+\:x_{i}\:-\:\theta_{i}\end{array}\right)(y_i^{(k+1)}\:-\:y_i^{(k)})$$</p>
+
+<p>$$=\:-\:(net_{i})\Delta y_{i}$$</p>
+
+<p>Here $\Delta y_{i}\:=\:y_i^{(k\:+\:1)}\:-\:y_i^{(k)}$</p>
+
+<p>The change in energy depends on the fact that only one unit can update its activation at a time.</p>
+
+<h2>Continuous Hopfield Network</h2>
+
+<p>In comparison with Discrete Hopfield network, continuous network has time as a continuous variable. It is also used in auto association and optimization problems such as travelling salesman problem.</p>
+
+<p><b>Model</b> &minus; The model or architecture can be build up by adding electrical components such as amplifiers which can map the input voltage to the output voltage over a sigmoid activation function.</p>
+
+<h3>Energy Function Evaluation</h3>
+
+<p>$$E_f = \frac{1}{2}\displaystyle\sum\limits_{i=1}^n\sum_{\substack{j = 1\\ j \ne i}}^n y_i y_j w_{ij} - \displaystyle\sum\limits_{i=1}^n x_i y_i + \frac{1}{\lambda} \displaystyle\sum\limits_{i=1}^n \sum_{\substack{j = 1\\ j \ne i}}^n w_{ij} g_{ri} \int_{0}^{y_i} a^{-1}(y) dy$$</p>
+
+<p>Here <b>&lambda;</b> is gain parameter and <b>g<sub>ri</sub></b> input conductance.</p>
+
+<h1>Boltzmann Machine</h1>
+
+<p>These are stochastic learning processes having recurrent structure and are the basis of the early optimization techniques used in ANN. Boltzmann Machine was invented by Geoffrey Hinton and Terry Sejnowski in 1985. More clarity can be observed in the words of Hinton on Boltzmann Machine.</p>
+
+<p>“A surprising feature of this network is that it uses only locally available information. The change of weight depends only on the behavior of the two units it connects, even though the change optimizes a global measure” - Ackley, Hinton 1985.</p>
+
+<p>Some important points about Boltzmann Machine &minus;</p>
+
+<p>They use recurrent structure.</p>
+
+<p>They consist of stochastic neurons, which have one of the two possible states, either 1 or 0.</p>
+
+<p>Some of the neurons in this are adaptive (free state) and some are clamped (frozen state).</p>
+
+<p>If we apply simulated annealing on discrete Hopfield network, then it would become Boltzmann Machine.</p>
+
+<h2>Objective of Boltzmann Machine</h2>
+
+<p>The main purpose of Boltzmann Machine is to optimize the solution of a problem. It is the work of Boltzmann Machine to optimize the weights and quantity related to that particular problem.</p>
+
+<h3>Architecture</h3>
+
+<p>The following diagram shows the architecture of Boltzmann machine. It is clear from the diagram, that it is a two-dimensional array of units. Here, weights on interconnections between units are <b>–p</b> where <b>p &gt; 0</b>. The weights of self-connections are given by <b>b</b> where <b>b &gt; 0</b>.</p>
+
+<h3>Training Algorithm</h3>
+
+<p>As we know that Boltzmann machines have fixed weights, hence there will be no training algorithm as we do not need to update the weights in the network. However, to test the network we have to set the weights as well as to find the consensus function (CF).</p>
+
+<p>Boltzmann machine has a set of units <b>U<sub>i</sub></b> and <b>U<sub>j</sub></b> and has bi-directional connections on them.</p>
+
+<p>We are considering the fixed weight say <b>w<sub>ij</sub></b>.</p>
+
+<p><b>w<sub>ij</sub> &ne; 0</b> if <b>U<sub>i</sub></b> and <b>U<sub>j</sub></b> are connected.</p>
+
+<p>There also exists a symmetry in weighted interconnection, i.e. <b><b>w<sub>ij</sub></b> = <b>w<sub>ji</sub></b></b>.</p>
+
+<p><b>w<sub>ii</sub></b> also exists, i.e. there would be the self-connection between units.</p>
+
+<p>For any unit <b>U<sub>i</sub></b>, its state <b>u<sub>i</sub></b> would be either 1 or 0.</p>
+
+<p>The main objective of Boltzmann Machine is to maximize the Consensus Function (CF) which can be given by the following relation</p>
+
+<p>$$CF\:=\:\displaystyle\sum\limits_{i} \displaystyle\sum\limits_{j\leqslant i} w_{ij}u_{i}u_{j}$$</p>
+
+<p>Now, when the state changes from either 1 to 0 or from 0 to 1, then the change in consensus can be given by the following relation &minus;</p>
+
+<p>$$\Delta CF\:=\:(1\:-\:2u_{i})(w_{ij}\:+\:\displaystyle\sum\limits_{j\neq i} u_{i} w_{ij})$$</p>
+
+<p>Here <b>u<sub>i</sub></b> is the current state of <b>U<sub>i</sub></b>.</p>
+
+<p>The variation in coefficient (<b>1 - 2u<sub>i</sub></b>) is given by the following relation &minus;</p>
+
+<p>$$(1\:-\:2u_{i})\:=\:\begin{cases}+1, & U_{i}\:is\:currently\:off\\-1, & U_{i}\:is\:currently\:on\end{cases}$$</p>
+
+<p>Generally, unit <b>U<sub>i</sub></b> does not change its state, but if it does then the information would be residing local to the unit. With that change, there would also be an increase in the consensus of the network.</p>
+
+<p>Probability of the network to accept the change in the state of the unit is given by the following relation &minus;</p>
+
+<p>$$AF(i,T)\:=\:\frac{1}{1\:+\:exp[-\frac{\Delta CF(i)}{T}]}$$</p>
+
+<p>Here, <b>T</b> is the controlling parameter. It will decrease as CF reaches the maximum value.</p>
+
+<h3>Testing Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Initialize the following to start the training &minus;</p>
+
+<p><b>Step 2</b> &minus; Continue steps 3-8, when the stopping condition is not true.</p>
+
+<p><b>Step 3</b> &minus; Perform steps 4-7.</p>
+
+<p><b>Step 4</b> &minus; Assume that one of the state has changed the weight and choose the integer <b>I, J</b> as random values between <b>1</b> and <b>n</b>.</p>
+
+<p><b>Step 5</b> &minus; Calculate the change in consensus as follows &minus;</p>
+
+<p>$$\Delta CF\:=\:(1\:-\:2u_{i})(w_{ij}\:+\:\displaystyle\sum\limits_{j\neq i} u_{i} w_{ij})$$</p>
+
+<p><b>Step 6</b> &minus; Calculate the probability that this network would accept the change in state</p>
+
+<p>$$AF(i,T)\:=\:\frac{1}{1\:+\:exp[-\frac{\Delta CF(i)}{T}]}$$</p>
+
+<p><b>Step 7</b> &minus; Accept or reject this change as follows &minus;</p>
+
+<p><b>Case I</b> &minus; if <b>R &lt; AF</b>, accept the change.</p>
+
+<p><b>Case II</b> &minus; if <b>R &ge; AF</b>, reject the change.</p>
+
+<p>Here, <b>R</b> is the random number between 0 and 1.</p>
+
+<p><b>Step 8</b> &minus; Reduce the control parameter (temperature) as follows &minus;</p>
+
+<p><b>Step 9</b> &minus; Test for the stopping conditions which may be as follows &minus;</p>
+
+<h1>Brain-State-in-a-Box Network</h1>
+
+<p>The Brain-State-in-a-Box (BSB) neural network is a nonlinear auto-associative neural network and can be extended to hetero-association with two or more layers. It is also similar to Hopfield network. It was proposed by J.A. Anderson, J.W. Silverstein, S.A. Ritz and R.S. Jones in 1977.</p>
+
+<p>Some important points to remember about BSB Network &minus;</p>
+
+<p>It is a fully connected network with the maximum number of nodes depending upon the dimensionality <b>n</b> of the input space.</p>
+
+<p>All the neurons are updated simultaneously.</p>
+
+<p>Neurons take values between -1 to +1.</p>
+
+<h2>Mathematical Formulations</h2>
+
+<p>The node function used in BSB network is a ramp function, which can be defined as follows &minus;</p>
+
+<p>$$f(net)\:=\:min(1,\:max(-1,\:net))$$</p>
+
+<p>This ramp function is bounded and continuous.</p>
+
+<p>As we know that each node would change its state, it can be done with the help of the following mathematical relation &minus;</p>
+
+<p>$$x_{t}(t\:+\:1)\:=\:f\left(\begin{array}{c}\displaystyle\sum\limits_{j=1}^n w_{i,j}x_{j}(t)\end{array}\right)$$</p>
+
+<p>Here, <b>x<sub>i</sub>(t)</b> is the state of the <b>i<sub>th</sub></b> node at time <b>t</b>.</p>
+
+<p>Weights from <b>i<sub>th</sub></b> node to <b>j<sub>th</sub></b> node can be measured with the following relation &minus;</p>
+
+<p>$$w_{ij}\:=\:\frac{1}{P}\displaystyle\sum\limits_{p=1}^P (v_{p,i}\:v_{p,j})$$</p>
+
+<p>Here, <b>P</b> is the number of training patterns, which are bipolar.</p>
+
+<h1>Optimization Using Hopfield Network</h1>
+
+<p>Optimization is an action of making something such as design, situation, resource, and system as effective as possible. Using a resemblance between the cost function and energy function, we can use highly interconnected neurons to solve optimization problems. Such a kind of neural network is Hopfield network, that consists of a single layer containing one or more fully connected recurrent neurons. This can be used for optimization.</p>
+
+<p>Points to remember while using Hopfield network for optimization &minus;</p>
+
+<p>The energy function must be minimum of the network.</p>
+
+<p>It will find satisfactory solution rather than select one out of the stored patterns.</p>
+
+<p>The quality of the solution found by Hopfield network depends significantly on the initial state of the network.</p>
+
+<h2>Travelling Salesman Problem</h2>
+
+<p>Finding the shortest route travelled by the salesman is one of the computational problems, which can be optimized by using Hopfield neural network.</p>
+
+<h3>Basic Concept of TSP</h3>
+
+<p>Travelling Salesman Problem (TSP) is a classical optimization problem in which a salesman has to travel <b>n</b> cities, which are connected with each other, keeping the cost as well as the distance travelled minimum. For example, the salesman has to travel a set of 4 cities A, B, C, D and the goal is to find the shortest circular tour, A-B-C–D, so as to minimize the cost, which also includes the cost of travelling from the last city D to the first city A.</p>
+
+<h3>Matrix Representation</h3>
+
+<p>Actually each tour of n-city TSP can be expressed as <b>n &times n</b> matrix whose <b>i<sub>th</sub></b> row describes the <b>i<sub>th</sub></b> city’s location. This matrix, <b>M</b>, for 4 cities A, B, C, D can be expressed as follows &minus;</p>
+
+<p>$$M = \begin{bmatrix}A: & 1 & 0 & 0 & 0 \\B:  & 0 & 1 & 0 & 0 \\C: & 0 & 0 & 1 & 0 \\D: & 0 & 0 & 0 & 1 \end{bmatrix}$$</p>
+
+<h2>Solution by Hopfield Network</h2>
+
+<p>While considering the solution of this TSP by Hopfield network, every node in the network corresponds to one element in the matrix.</p>
+
+<h3>Energy Function Calculation</h3>
+
+<p>To be the optimized solution, the energy function must be minimum. On the basis of the following constraints, we can calculate the energy function as follows &minus;</p>
+
+<h3>Constraint-I</h3>
+
+<p>First constraint, on the basis of which we will calculate energy function, is that one element must be equal to 1 in each row of matrix <b>M</b> and other elements in each row must equal to <b>0</b> because each city can occur in only one position in the TSP tour. This constraint can mathematically be written as follows &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j=1}^n M_{x,j}\:=\:1\:for \: x\:\in \:\lbrace1,...,n\rbrace$$</p>
+
+<p>Now the energy function to be minimized, based on the above constraint, will contain a term proportional to &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{x=1}^n \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{j=1}^n M_{x,j}\end{array}\right)^2$$</p>
+
+<h3>Constraint-II</h3>
+
+<p>As we know, in TSP one city can occur in any position in the tour hence in each column of matrix <b>M</b>, one element must equal to 1 and other elements must be equal to 0. This constraint can mathematically be written as follows &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{x=1}^n M_{x,j}\:=\:1\:for \: j\:\in \:\lbrace1,...,n\rbrace$$</p>
+
+<p>Now the energy function to be minimized, based on the above constraint, will contain a term proportional to &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{j=1}^n \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{x=1}^n M_{x,j}\end{array}\right)^2$$</p>
+
+<h3>Cost Function Calculation</h3>
+
+<p>Let’s suppose a square matrix of (<b>n &times; n</b>) denoted by <b>C</b> denotes the cost matrix of TSP for <b>n</b> cities where <b>n &gt; 0</b>. Following are some parameters while calculating the cost function &minus;</p>
+
+<p><b>C<sub>x, y</sub></b> &minus; The element of cost matrix denotes the cost of travelling from city <b>x</b> to <b>y</b>.</p>
+
+<p>Adjacency of the elements of A and B can be shown by the following relation &minus;</p>
+
+<p>$$M_{x,i}\:=\:1\:\: and\:\: M_{y,i\pm 1}\:=\:1$$</p>
+
+<p>As we know, in Matrix the output value of each node can be either 0 or 1, hence for every pair of cities A, B we can add the following terms to the energy function &minus;</p>
+
+<p>$$\displaystyle\sum\limits_{i=1}^n C_{x,y}M_{x,i}(M_{y,i+1}\:+\:M_{y,i-1})$$</p>
+
+<p>On the basis of the above cost function and constraint value, the final energy function <b>E</b> can be given as follows &minus;</p>
+
+<p>$$E\:=\:\frac{1}{2}\displaystyle\sum\limits_{i=1}^n\displaystyle\sum\limits_{x}\displaystyle\sum\limits_{y\neq x}C_{x,y}M_{x,i}(M_{y,i+1}\:+\:M_{y,i-1})\:+$$</p>
+
+<p>$$\:\begin{bmatrix}\gamma_{1} \displaystyle\sum\limits_{x} \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{i} M_{x,i}\end{array}\right)^2\:+\: \gamma_{2} \displaystyle\sum\limits_{i} \left(\begin{array}{c}1\:-\:\displaystyle\sum\limits_{x} M_{x,i}\end{array}\right)^2 \end{bmatrix}$$</p>
+
+<p>Here, <b>&gamma;<sub>1</sub></b> and <b>&gamma;<sub>2</sub></b> are two weighing constants.</p>
+
+<h1>Other Optimization Techniques</h1>
+
+<h2>Iterated Gradient Descent Technique</h2>
+
+<p>Gradient descent, also known as the steepest descent, is an iterative optimization algorithm to find a local minimum of a function. While minimizing the function, we are concerned with the cost or error to be minimized (Remember Travelling Salesman Problem). It is extensively used in deep learning, which is useful in a wide variety of situations. The point here to be remembered is that we are concerned with local optimization and not global optimization.</p>
+
+<h3>Main Working Idea</h3>
+
+<p>We can understand the main working idea of gradient descent with the help of the following steps &minus;</p>
+
+<p>First, start with an initial guess of the solution.</p>
+
+<p>Then, take the gradient of the function at that point.</p>
+
+<p>Later, repeat the process by stepping the solution in the negative direction of the gradient.</p>
+
+<p>By following the above steps, the algorithm will eventually converge where the gradient is zero.</p>
+
+<h3>Mathematical Concept</h3>
+
+<p>Suppose we have a function <b><i>f(x)</i></b> and we are trying to find the minimum of this function. Following are the steps to find the minimum of <b><i>f(x)</i></b>.</p>
+
+<p>First, give some initial value $x_{0}\:for\:x$</p>
+
+<p>Now take the gradient $\nabla f$ ⁡of function, with the intuition that the gradient will give the slope of the curve at that <b>x</b> and its direction will point to the increase in the function, to find out the best direction to minimize it.</p>
+
+<p>Now change x as follows &minus;</p>
+
+<p>$$x_{n\:+\:1}\:=\:x_{n}\:-\:\theta \nabla f(x_{n})$$</p>
+
+<p>Here, <b>&theta; &gt; 0</b> is the training rate (step size) that forces the algorithm to take small jumps.</p>
+
+<h3>Estimating Step Size</h3>
+
+<p>Actually a wrong step size <b>&theta;</b> may not reach convergence, hence a careful selection of the same is very important. Following points must have to be remembered while choosing the step size</p>
+
+<p>Do not choose too large step size, otherwise it will have a negative impact, i.e. it will diverge rather than converge.</p>
+
+<p>Do not choose too small step size, otherwise it take a lot of time to converge.</p>
+
+<p>Some options with regards to choosing the step size &minus;</p>
+
+<p>One option is to choose a fixed step size.</p>
+
+<p>Another option is to choose a different step size for every iteration.</p>
+
+<h2>Simulated Annealing</h2>
+
+<p>The basic concept of Simulated Annealing (SA) is motivated by the annealing in solids. In the process of annealing, if we heat a metal above its melting point and cool it down then the structural properties will depend upon the rate of cooling. We can also say that SA simulates the metallurgy process of annealing.</p>
+
+<h3>Use in ANN</h3>
+
+<p>SA is a stochastic computational method, inspired by Annealing analogy, for approximating the global optimization of a given function. We can use SA to train feed-forward neural networks.</p>
+
+<h3>Algorithm</h3>
+
+<p><b>Step 1</b> &minus; Generate a random solution.</p>
+
+<p><b>Step 2</b> &minus; Calculate its cost using some cost function.</p>
+
+<p><b>Step 3</b> &minus; Generate a random neighboring solution.</p>
+
+<p><b>Step 4</b> &minus; Calculate the new solution cost by the same cost function.</p>
+
+<p><b>Step 5</b> &minus; Compare the cost of a new solution with that of an old solution as follows &minus;</p>
+
+<p><b>Step 6</b> &minus; Test for the stopping condition, which may be the maximum number of iterations reached or get an acceptable solution.</p>
+
+<h1>Artificial Neural Network - Genetic Algorithm</h1>
+
+<p>Nature has always been a great source of inspiration to all mankind. Genetic Algorithms (GAs) are search-based algorithms based on the concepts of natural selection and genetics. GAs are a subset of a much larger branch of computation known as <b>Evolutionary Computation</b>.</p>
+
+<p>GAs was developed by John Holland and his students and colleagues at the University of Michigan, most notably David E. Goldberg and has since been tried on various optimization problems with a high degree of success.</p>
+
+<p>In GAs, we have a pool or a population of possible solutions to the given problem. These solutions then undergo recombination and mutation (like in natural genetics), producing new children, and the process is repeated over various generations. Each individual (or candidate solution) is assigned a fitness value (based on its objective function value) and the fitter individuals are given a higher chance to mate and yield more “fitter” individuals. This is in line with the Darwinian Theory of “Survival of the Fittest”.</p>
+
+<p>In this way, we keep “evolving” better individuals or solutions over generations, till we reach a stopping criterion.</p>
+
+<p>Genetic Algorithms are sufficiently randomized in nature, however they perform much better than random local search (in which we just try various random solutions, keeping track of the best so far), as they exploit historical information as well.</p>
+
+<h2>Advantages of GAs</h2>
+
+<p>GAs have various advantages which have made them immensely popular. These include &minus;</p>
+
+<p>Does not require any derivative information (which may not be available for many real-world problems).</p>
+
+<p>Is faster and more efficient as compared to the traditional methods.</p>
+
+<p>Has very good parallel capabilities.</p>
+
+<p>Optimizes both continuous and discrete functions as well as multi-objective problems.</p>
+
+<p>Provides a list of “good” solutions and not just a single solution.</p>
+
+<p>Always gets an answer to the problem, which gets better over the time.</p>
+
+<p>Useful when the search space is very large and there are large number of parameters involved.</p>
+
+<h2>Limitations of GAs</h2>
+
+<p>Like any technique, GAs also suffers from a few limitations. These include &minus;</p>
+
+<p>GAs are not suited for all problems, especially problems which are simple and for which derivative information is available.</p>
+
+<p>Fitness value is calculated repeatedly, which might be computationally expensive for some problems.</p>
+
+<p>Being stochastic, there are no guarantees on the optimality or the quality of the solution.</p>
+
+<p>If not implemented properly, GA may not converge to the optimal solution.</p>
+
+<h2>GA – Motivation</h2>
+
+<p>Genetic Algorithms have the ability to deliver a “good-enough” solution “fast-enough”. This makes Gas attractive for use in solving optimization problems. The reasons why GAs are needed are as follows &minus;</p>
+
+<h3>Solving Difficult Problems</h3>
+
+<p>In computer science, there is a large set of problems, which are <b>NP-Hard</b>. What this essentially means is that, even the most powerful computing systems take a very long time (even years!) to solve that problem. In such a scenario, GAs prove to be an efficient tool to provide <b>usable near-optimal solutions</b> in a short amount of time.</p>
+
+<h3>Failure of Gradient Based Methods</h3>
+
+<p>Traditional calculus based methods work by starting at a random point and by moving in the direction of the gradient, till we reach the top of the hill. This technique is efficient and works very well for single-peaked objective functions like the cost function in linear regression. However, in most real-world situations, we have a very complex problem called as landscapes, made of many peaks and many valleys, which causes such methods to fail, as they suffer from an inherent tendency of getting stuck at the local optima as shown in the following figure.</p>
+
+<h3>Getting a Good Solution Fast</h3>
+
+<p>Some difficult problems like the Travelling Salesman Problem (TSP), have real-world applications like path finding and VLSI Design. Now imagine that you are using your GPS Navigation system, and it takes a few minutes (or even a few hours) to compute the “optimal” path from the source to destination. Delay in such real-world applications is not acceptable and therefore a “good-enough” solution, which is delivered “fast” is what is required.</p>
+
+<h2>How to Use GA for Optimization Problems?</h2>
+
+<p>We already know that optimization is an action of making something such as design, situation, resource, and system as effective as possible. Optimization process is shown in the following diagram.</p>
+
+<h3>Stages of GA Mechanism for Optimization Process</h3>
+
+<p>Followings are the stages of GA mechanism when used for optimization of problems.</p>
+
+<p>Generate the initial population randomly.</p>
+
+<p>Select the initial solution with the best fitness values.</p>
+
+<p>Recombine the selected solutions using mutation and crossover operators.</p>
+
+<p>Insert offspring into the population.</p>
+
+<p>Now if the stop condition is met, then return the solution with their best fitness value. Else, go to step 2.</p>
+
+<h1>Applications of Neural Networks</h1>
+
+<p>Before studying the fields where ANN has been used extensively, we need to understand why ANN would be the preferred choice of application.</p>
+
+<h2>Why Artificial Neural Networks?</h2>
+
+<p>We need to understand the answer to the above question with an example of a human being. As a child, we used to learn the things with the help of our elders, which includes our parents or teachers. Then later by self-learning or practice we keep learning throughout our life. Scientists and researchers are also making the machine intelligent, just like a human being, and ANN plays a very important role in the same due to the following reasons &minus;</p>
+
+<p>With the help of neural networks, we can find the solution of such problems for which algorithmic method is expensive or does not exist.</p>
+
+<p>Neural networks can learn by example, hence we do not need to program it at much extent.</p>
+
+<p>Neural networks have the accuracy and significantly fast speed than conventional speed.</p>
+
+<h2>Areas of Application</h2>
+
+<p>Followings are some of the areas, where ANN is being used. It suggests that ANN has an interdisciplinary approach in its development and applications.</p>
+
+<h3>Speech Recognition</h3>
+
+<p>Speech occupies a prominent role in human-human interaction. Therefore, it is natural for people to expect speech interfaces with computers. In the present era, for communication with machines, humans still need sophisticated languages which are difficult to learn and use. To ease this communication barrier, a simple solution could be, communication in a spoken language that is possible for the machine to understand.</p>
+
+<p>Great progress has been made in this field, however, still such kinds of systems are facing the problem of limited vocabulary or grammar along with the issue of retraining of the system for different speakers in different conditions. ANN is playing a major role in this area. Following ANNs have been used for speech recognition &minus;</p>
+
+<p>Multilayer networks</p>
+
+<p>Multilayer networks with recurrent connections</p>
+
+<p>Kohonen self-organizing feature map</p>
+
+<p>The most useful network for this is Kohonen Self-Organizing feature map, which has its input as short segments of the speech waveform. It will map the same kind of phonemes as the output array, called feature extraction technique. After extracting the features, with the help of some acoustic models as back-end processing, it will recognize the utterance.</p>
+
+<h3>Character Recognition</h3>
+
+<p>It is an interesting problem which falls under the general area of Pattern Recognition. Many neural networks have been developed for automatic recognition of handwritten characters, either letters or digits. Following are some ANNs which have been used for character recognition &minus;</p>
+
+<p>Though back-propagation neural networks have several hidden layers, the pattern of connection from one layer to the next is localized. Similarly, neocognitron also has several hidden layers and its training is done layer by layer for such kind of applications.</p>
+
+<h3>Signature Verification Application</h3>
+
+<p>Signatures are one of the most useful ways to authorize and authenticate a person in legal transactions. Signature verification technique is a non-vision based technique.</p>
+
+<p>For this application, the first approach is to extract the feature or rather the geometrical feature set representing the signature. With these feature sets, we have to train the neural networks using an efficient neural network algorithm. This trained neural network will classify the signature as being genuine or forged under the verification stage.</p>
+
+<h3>Human Face Recognition</h3>
+
+<p>It is one of the biometric methods to identify the given face. It is a typical task because of the characterization of “non-face” images. However, if a neural network is well trained, then it can be divided into two classes namely images having faces and images that do not have faces.</p>
+
+<p>First, all the input images must be preprocessed. Then, the dimensionality of that image must be reduced. And, at last it must be classified using neural network training algorithm. Following neural networks are used for training purposes with preprocessed image &minus;</p>
+
+<p>Fully-connected multilayer feed-forward neural network trained with the help of back-propagation algorithm.</p>
+
+<p>For dimensionality reduction, Principal Component Analysis (PCA) is used.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Artificial Neural Network Useful Resources</title>
+
+<h1>Artificial Neural Network - Useful Resources</h1>
+
+<p>The following resources contain additional information on Artificial Neural Network. Please use them to get more in-depth knowledge on this.</p>
+
+<h2>Useful Links on Artificial Neural Network</h2>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikipedia.org/wiki/Artificial_neural_network">Artificial Neural Network Wiki</a> &minus; Wikipedia Reference for Artificial Neural Network.</p>
+
+<h2>Useful Books on Artificial Neural Network</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss Artificial Neural Network</title>
+
+<h1>Discuss Artificial Neural Network</h1>
+
+<p>Neural networks are parallel computing devices, which are basically an attempt to make a computer model of the brain. The main objective is to develop a system to perform various computational tasks faster than the traditional systems. This tutorial covers the basic concept and terminologies involved in Artificial Neural Network. Sections of this tutorial also explain the architecture as well as the training algorithm of various networks used in ANN.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>

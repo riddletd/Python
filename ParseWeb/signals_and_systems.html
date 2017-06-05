@@ -1,0 +1,1971 @@
+<!DOCTYPE html><html><body><title>Signals and Systems</title>
+
+<h4 style="margin:0px 2px 3px -2px!important;">Quick Links</h4>
+
+<p>In this video tutorial, the tutor covers a range of topics from from basic signals and systems to signal analysis, properties of continuous-time Fourier transforms including Fourier transforms of standard signals, signal transmission through linear systems, relation between convolution and correlation of signals, and sampling theorems and techniques. This tutorial provides a comprehensive coverage of the theory of signals and systems and how the signals interact with physical systems.</p>
+
+<h1>Audience</h1>
+
+<p>This video tutorial has been designed for Electronics Engineering Students, and especially who are preparing for GATE, IES and other PSU exams preparation. It will also be helpful for students in preparing them for their Engineering Syllabus.</p>
+
+<h1>Instructor</h1>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals and Systems Tutorial</title>
+
+<h1>Signals and Systems Tutorial</h1>
+
+<p>Signals and Systems tutorial is designed to cover analysis, types, convolution, sampling and operations performed on signals. It also describes various types of systems.</p>
+
+<h1>Audience</h1>
+
+<p>This tutorial is designed for students and all enthusiastic learners, who are willing to learn signals and systems in simple and easy steps. This tutorial will give you deep understanding on Signals and Systems concepts. After completing this tutorial, you will be at intermediate level of expertise from where you can take yourself to higher level of expertise.</p>
+
+<h1>Prerequisites</h1>
+
+<p>Before proceeding with this tutorial, you must have a basic understanding of differential and integral calculus, limits and adequate knowledge of mathematics.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals and Systems - Overview</title>
+
+<h1>Signals and Systems Overview</h1>
+
+<h2>What is Signal?</h2>
+
+<p>Signal is a function of time.</p>
+
+<p><b>Example:</b> voice signal, video signal, signals on telephone wires etc.</p>
+
+<p><b>Note: </b> Noise is also a signal, but the information conveyed by noise is unwanted hence it is considered as undesirable.</p>
+
+<h2>What is System?</h2>
+
+<p>System is a device or combination of devices, which can operate on signals and produces corresponding response. Input to a system is called as excitation and output from it is called as response.</p>
+
+<p>For one or more inputs, the system can have one or more outputs.</p>
+
+<p><b>Example:</b> Communication System</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Basic Types</title>
+
+<h1>Signals Basic Types</h1>
+
+<p>Here are a few basic signals:</p>
+
+<h3>Unit Step Function</h3>
+
+<p>Unit step function is denoted by u(t). It is defined as u(t) = $\left\{\begin{matrix}1 & t \geqslant 0\\ 0 & t<0 \end{matrix}\right.$ </p>
+
+<h3>Unit Impulse Function</h3>
+
+<p>$$ \int_{-\infty}^{\infty} &delta;(t)dt=u (t)$$</p>
+
+<p> $$ \delta(t) = {du(t) \over dt } $$</p>
+
+<h3>Ramp Signal</h3>
+
+<p>$$ \int u(t) = \int 1 = t = r(t) $$ </p>
+
+<p>$$ u(t) = {dr(t) \over dt} $$ </p>
+
+<p>Area under unit ramp is unity.</p>
+
+<h3>Parabolic Signal</h3>
+
+<p>$$\iint u(t)dt = \int r(t)dt = \int t dt = {t^2 \over 2} = parabolic signal $$ </p>
+
+<p>$$ \Rightarrow u(t) = {d^2x(t) \over dt^2} $$</p>
+
+<p>$$ \Rightarrow r(t) = {dx(t) \over dt} $$</p>
+
+<h3>Signum Function</h3>
+
+<h3>Exponential Signal</h3>
+
+<p>Exponential signal is in the form of x(t) = $e^{\alpha t}$.</p>
+
+<p>The shape of exponential can be defined by $\alpha$. </p>
+
+<h3>Rectangular Signal</h3>
+
+<p>Let it be denoted as x(t) and it is defined as</p>
+
+<h3>Triangular Signal</h3>
+
+<p> Let it be denoted as x(t)</p>
+
+<h3>Sinusoidal Signal</h3>
+
+<p>Sinusoidal signal is in the form of x(t) = A cos(${w}_{0}\,\pm \phi$)  or  A sin(${w}_{0}\,\pm \phi$)</p>
+
+<p>Where T<sub>0</sub> = $ 2\pi \over {w}_{0} $ </p>
+
+<h3>Sinc Function</h3>
+
+<p>It is denoted as sinc(t) and it is defined as sinc</p>
+
+<p>$$ (t) = {sin \pi t \over \pi t} $$</p>
+
+<p>$$ = 0\, \text{for t} = \pm 1, \pm 2, \pm 3 ... $$ </p>
+
+<h3>Sampling Function</h3>
+
+<p>It is denoted as sa(t) and it is defined as</p>
+
+<p>$$sa(t) = {sin t \over t}$$</p>
+
+<p>$$= 0 \,\, \text{for t} = \pm \pi,\, \pm 2 \pi,\, \pm 3 \pi \,... $$ </p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Classification</title>
+
+<h1>Signals Classification</h1>
+
+<p>Signals are classified into the following categories:</p>
+
+<p>Continuous Time and Discrete Time Signals</p>
+
+<p>Deterministic and Non-deterministic Signals</p>
+
+<p>Even and Odd Signals</p>
+
+<p>Periodic and Aperiodic Signals</p>
+
+<p>Energy and Power Signals</p>
+
+<p>Real and Imaginary Signals</p>
+
+<h3>Continuous Time and Discrete Time Signals</h3>
+
+<p>A signal is said to be continuous when it is defined for all instants of time.</p>
+
+<p>A signal is said to be discrete when it is defined at only discrete instants of time/</p>
+
+<h3>Deterministic and Non-deterministic Signals</h3>
+
+<p>A signal is said to be deterministic if there is no uncertainty with respect to its value at any instant of time. Or, signals which can be defined exactly by a mathematical formula are known as deterministic signals.</p>
+
+<p>A signal is said to be non-deterministic if there is uncertainty with respect to its value at some instant of time. Non-deterministic signals are random in nature hence they are called random signals. Random signals cannot be described by a mathematical equation. They are modelled in probabilistic terms.</p>
+
+<h3>Even and Odd Signals </h3>
+
+<p>A signal is said to be even when it satisfies the condition x(t) = x(-t)</p>
+
+<p><b>Example 1:</b> t2, t4… cost etc.</p>
+
+<p>Let x(t) = t2</p>
+
+<p>x(-t) = (-t)2 = t2 = x(t)</p>
+
+<p>$\therefore, $ t2 is even function</p>
+
+<p><b>Example 2:</b> As shown in the following diagram, rectangle function x(t) = x(-t) so it is also even function.</p>
+
+<p>A signal is said to be odd when it satisfies the condition x(t) = -x(-t)</p>
+
+<p>Let x(t) = sin t</p>
+
+<p>x(-t) = sin(-t) = -sin t = -x(t)</p>
+
+<p>$\therefore, $ sin t is odd function.</p>
+
+<p>Any function &#131;(t) can be expressed as the sum of its even function &#131;<sub>e</sub>(t) and odd function &#131;<sub>o</sub>(t).</p>
+
+<p>&#131;(<i>t</i> ) = &#131;<sub>e</sub>(<i>t</i> ) + &#131;<sub>0</sub>(<i>t</i> )</p>
+
+<p>where</p>
+
+<p>&#131;<sub>e</sub>(<i>t</i> ) = &frac12;[&#131;(<i>t</i> ) +&#131;(<i>-t</i> )]</p>
+
+<h3>Periodic and Aperiodic Signals</h3>
+
+<p>A signal is said to be periodic if it satisfies the condition x(t) = x(t + T) or x(n) = x(n + N).</p>
+
+<p>Where</p>
+
+<p>T = fundamental time period,</p>
+
+<p>1/T = f = fundamental frequency.</p>
+
+<p>The above signal will repeat for every time interval T<sub>0</sub> hence it is periodic with period T<sub>0</sub>.</p>
+
+<h3>Energy and Power Signals</h3>
+
+<p>A signal is said to be energy signal when it has finite energy.</p>
+
+<p>$$\text{Energy}\, E = \int_{-\infty}^{\infty} x^2\,(t)dt$$</p>
+
+<p>A signal is said to be power signal when it has finite power.</p>
+
+<p>$$\text{Power}\, P = \lim_{T \to \infty}\,{1\over2T}\,\int_{-T}^{T}\,x^2(t)dt$$</p>
+
+<p>NOTE:A signal cannot be both, energy and power simultaneously. Also, a signal may be neither energy nor power signal.</p>
+
+<p>Power of energy signal = 0</p>
+
+<p>Energy of power signal = &#8734;</p>
+
+<h3>Real and Imaginary Signals</h3>
+
+<p>A signal is said to be real when it satisfies the condition x(t) = x*(t)</p>
+
+<p>A signal is said to be odd when it satisfies the condition x(t) = -x*(t)</p>
+
+<p>If x(t)= 3 then x*(t)=3*=3 here x(t) is a real signal.</p>
+
+<p>If x(t)= 3j then x*(t)=3j* = -3j = -x(t) hence x(t) is a odd signal.</p>
+
+<p><b>Note:</b> For a real signal, imaginary part should be zero. Similarly for an imaginary signal, real part should be zero.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Basic Operations</title>
+
+<h1>Signals Basic Operations</h1>
+
+<p>There are two variable parameters in general:</p>
+
+<p><b>The following operation can be performed with amplitude:</b></p>
+
+<h3>Amplitude Scaling</h3>
+
+<p>C x(t) is a amplitude scaled version of x(t) whose amplitude is scaled by a factor C.</p>
+
+<h3>Addition</h3>
+
+<p>Addition of two signals is nothing but addition of their corresponding amplitudes. This can be best explained by using the following example:</p>
+
+<p>As seen from the diagram above,</p>
+
+<p>-10 < t < -3 amplitude of z(t) = x1(t) + x2(t) = 0 + 2 = 2</p>
+
+<p>-3 < t < 3 amplitude of z(t) = x1(t) + x2(t) = 1 + 2 = 3</p>
+
+<p>3 < t < 10 amplitude of z(t) = x1(t) + x2(t) = 0 + 2 = 2</p>
+
+<h3>Subtraction</h3>
+
+<p>subtraction of two signals is nothing but subtraction of their corresponding amplitudes. This can be best explained by the following example:</p>
+
+<p>As seen from the diagram above,</p>
+
+<p>-10 < t < -3 amplitude of z (t) = x1(t) - x2(t) = 0 - 2 = -2</p>
+
+<p>-3 < t < 3 amplitude of z (t) = x1(t) - x2(t) = 1 - 2 = -1</p>
+
+<p>3 < t < 10 amplitude of z (t) = x1(t) + x2(t) = 0 - 2 = -2</p>
+
+<h3>Multiplication</h3>
+
+<p>Multiplication of two signals is nothing but multiplication of their corresponding amplitudes. This can be best explained by the following example:</p>
+
+<p>As seen from the diagram above,</p>
+
+<p>-10 < t < -3 amplitude of z (t) = x1(t) ×x2(t) = 0 ×2 = 0 </p>
+
+<p>-3 < t < 3 amplitude of z (t) = x1(t) ×x2(t) = 1 ×2 = 2</p>
+
+<p>3 < t < 10 amplitude of z (t) = x1(t) × x2(t) = 0 × 2 = 0</p>
+
+<h3>Time Shifting</h3>
+
+<p>x (t + t<sub>0</sub>)  $\to$ negative shift</p>
+
+<p>x (t - t<sub>0</sub>)  $\to$ positive shift</p>
+
+<h3>Time Scaling</h3>
+
+<p>x(At) is time scaled version of the signal x(t). where A is always positive.</p>
+
+<p>|A| > 1 $\to$ Compression of the signal</p>
+
+<p>|A| < 1 $\to$ Expansion of the signal</p>
+
+<p>Note: u(at) = u(t) time scaling is not applicable for unit step function.</p>
+
+<h3>Time Reversal</h3>
+
+<p>x(-t) is the time reversal of the signal x(t).</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Systems Classification</title>
+
+<h1>Systems Classification</h1>
+
+<p>Systems are classified into the following categories:</p>
+
+<h3>Liner and Non-liner Systems</h3>
+
+<p>T [a<sub>1</sub> x<sub>1</sub>(t) + a<sub>2</sub> x<sub>2</sub>(t)] = a<sub>1</sub> T[x<sub>1</sub>(t)] + a<sub>2</sub> T[x<sub>2</sub>(t)] </p>
+
+<p>$\therefore, $ T [a<sub>1</sub> x<sub>1</sub>(t) + a<sub>2</sub> x<sub>2</sub>(t)] = a<sub>1</sub> y<sub>1</sub>(t) + a<sub>2</sub> y<sub>2</sub>(t) </p>
+
+<p>From the above expression, is clear that response of overall system is equal to response of individual system.</p>
+
+<p><b>Example:</b></p>
+
+<p>(t) = x<sup>2</sup>(t)</p>
+
+<p>Solution:</p>
+
+<p>y<sub>1</sub> (t) = T[x<sub>1</sub>(t)] = x<sub>1</sub><sup>2</sup>(t)</p>
+
+<p>y<sub>2</sub> (t) = T[x<sub>2</sub>(t)] = x<sub>2</sub><sup>2</sup>(t)</p>
+
+<p>T [a<sub>1</sub> x<sub>1</sub>(t) + a<sub>2</sub> x<sub>2</sub>(t)] = [ a<sub>1</sub> x<sub>1</sub>(t) + a<sub>2</sub> x<sub>2</sub>(t)]<sup>2</sup></p>
+
+<h3>Time Variant and Time Invariant Systems</h3>
+
+<p>A system is said to be time variant if its input and output characteristics vary with time. Otherwise, the system is considered as time invariant.</p>
+
+<p>The condition for time invariant system is:</p>
+
+<p>y (n , t) = y(n-t)</p>
+
+<p>The condition for time variant system is:</p>
+
+<p> y (n , t) $\neq$ y(n-t)</p>
+
+<p>Where y (n , t) = T[x(n-t)] = input change </p>
+
+<p>y (n-t) = output change </p>
+
+<p><b>Example:</b></p>
+
+<p>y(n) = x(-n)</p>
+
+<p>y(n, t) = T[x(n-t)] = x(-n-t)</p>
+
+<p>y(n-t) = x(-(n-t)) = x(-n + t) </p>
+
+<p>$\therefore$ y(n, t) ≠ y(n-t). Hence, the system is time variant. </p>
+
+<h3>Liner Time variant (LTV) and Liner Time Invariant (LTI) Systems</h3>
+
+<p>If a system is both liner and time variant, then it is called liner time variant (LTV) system.</p>
+
+<p>If a system is both liner and time Invariant then that system is called liner time invariant (LTI) system.</p>
+
+<h3>Static and Dynamic Systems</h3>
+
+<p>Static system is memory-less whereas dynamic system is a memory system.</p>
+
+<p><b>Example 1:</b>  y(t) = 2 x(t)</p>
+
+<p>For present value t=0, the system output is y(0) = 2x(0). Here, the output is only dependent upon present input. Hence the system is memory less or static.</p>
+
+<p><b>Example 2:</b> y(t) = 2 x(t) + 3 x(t-3) </p>
+
+<p>For present value t=0, the system output is y(0) = 2x(0) + 3x(-3).</p>
+
+<p>Here x(-3) is past value for the present input for which the system requires memory to get this output. Hence, the system is a dynamic system.</p>
+
+<h3>Causal and Non-Causal Systems</h3>
+
+<p>A system is said to be causal if its output depends upon present and past inputs, and does not depend upon future input.</p>
+
+<p>For non causal system, the output depends upon future inputs also.</p>
+
+<p><b>Example 1:</b>  y(n) = 2 x(t) + 3 x(t-3)</p>
+
+<p>For present value t=1, the system output is y(1) = 2x(1) + 3x(-2).</p>
+
+<p>Here, the system output only depends upon present and past inputs. Hence, the system is causal.</p>
+
+<p><b>Example 2:</b>  y(n) = 2 x(t) + 3 x(t-3) + 6x(t + 3)</p>
+
+<h3>Invertible and Non-Invertible systems</h3>
+
+<p>A system is said to invertible if the input of the system appears at the output.</p>
+
+<p>Y(S) = X(S) H1(S) H2(S)</p>
+
+<p>= X(S) H1(S) · $1 \over ( H1(S) )$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Since H2(S) = 1/( H1(S) )</i></p>
+
+<p>$\therefore, $ Y(S) = X(S)</p>
+
+<p>$\to$ y(t) = x(t)</p>
+
+<p>Hence, the system is invertible.</p>
+
+<p>If y(t) $\neq$ x(t), then the system is said to be non-invertible.</p>
+
+<h3>Stable and Unstable Systems</h3>
+
+<p><b>Note:</b> For a bounded signal, amplitude is finite.</p>
+
+<p><b>Example 1:</b> y (t) = x<sup>2</sup>(t) </p>
+
+<p>Let the input is u(t) (unit step bounded input) then the output y(t) =  u2(t) = u(t) = bounded output.</p>
+
+<p>Hence, the system is stable.</p>
+
+<p><b>Example 2:</b> y (t) = $\int x(t)\, dt$ </p>
+
+<p>Let the input is u (t) (unit step bounded input) then the output y(t) = $\int u(t)\, dt$ = ramp signal (unbounded because amplitude of ramp is not finite it goes to infinite when t $\to$ infinite).</p>
+
+<p>Hence, the system is unstable.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Analysis</title>
+
+<h1>Signals Analysis</h1>
+
+<h2>Analogy Between Vectors and Signals</h2>
+
+<p>There is a perfect analogy between vectors and signals.</p>
+
+<h3>Vector</h3>
+
+<p>A vector contains magnitude and direction. The name of the vector is  denoted by bold face type and their magnitude is denoted by light face type.</p>
+
+<p><b> Example:</b> V is a vector with magnitude V. Consider two vectors V<sub>1</sub> and V<sub>2</sub> as shown in the following diagram. Let the component of V<sub>1</sub> along with V<sub>2</sub> is given by C<sub>12</sub>V<sub>2</sub>. The component of a vector V<sub>1</sub> along with the vector V<sub>2</sub> can obtained by taking a perpendicular from the end of V<sub>1</sub> to the vector V<sub>2</sub> as shown in diagram:</p>
+
+<p>The vector V<sub>1</sub> can be expressed in terms of vector V<sub>2</sub></p>
+
+<p>V<sub>1</sub>= C<sub>12</sub>V<sub>2</sub> + V<sub>e</sub></p>
+
+<p>Where Ve is the error vector.</p>
+
+<p>But this is not the only way of expressing vector V<sub>1</sub> in terms of V<sub>2</sub>. The alternate possibilities are:</p>
+
+<p>V<sub>1</sub>=C<sub>1</sub>V<sub>2</sub>+V<sub>e1</sub></p>
+
+<p>V<sub>2</sub>=C<sub>2</sub>V<sub>2</sub>+V<sub>e2</sub></p>
+
+<p>The error signal is minimum for large component value. If C<sub>12</sub>=0, then two signals are said to be orthogonal. </p>
+
+<p>Dot Product of Two Vectors </p>
+
+<p>V<sub>1</sub> . V<sub>2</sub> = V<sub>1</sub>.V<sub>2</sub> cos&theta;</p>
+
+<p>&theta; = Angle between V1 and V2 </p>
+
+<p>V<sub>1</sub> . V<sub>2</sub> =V<sub>2</sub>.V<sub>1</sub></p>
+
+<p>The components of V<sub>1</sub> alog<sub>n</sub> V<sub>2</sub> = V<sub>1</sub> Cos &theta; = $V1.V2 \over V2$ </p>
+
+<p>From the diagram, components of V<sub>1</sub> alog<sub>n</sub> V<sub>2</sub> = C <sub>12</sub> V<sub>2</sub></p>
+
+<p>$$V_1.V_2 \over V_2 = C_12\,V_2$$ </p>
+
+<p>$$ \Rightarrow C_{12} = {V_1.V_2 \over V_2}$$</p>
+
+<h3>Signal</h3>
+
+<p>f<sub>1</sub>(t) = C<sub>12</sub> f<sub>2</sub>(t) + f<sub>e</sub>(t)    for (t<sub>1</sub> < t < t<sub>2</sub>)</p>
+
+<p>$ \Rightarrow $ f<sub>e</sub>(t) = f<sub>1</sub>(t) – C<sub>12</sub> f<sub>2</sub>(t) </p>
+
+<p>One possible way of minimizing the error is integrating over the interval t<sub>1</sub> to t<sub>2</sub>.</p>
+
+<p>$${1 \over {t_2 - t_1}} \int_{t_1}^{t_2} [f_e (t)] dt$$</p>
+
+<p>$${1 \over {t_2 - t_1}} \int_{t_1}^{t_2} [f_1(t) - C_{12}f_2(t)]dt $$</p>
+
+<p>However, this step also does not reduce the error to appreciable extent. This can be corrected by taking the square of error function.</p>
+
+<p>$\varepsilon = {1 \over {t_2 - t_1}} \int_{t_1}^{t_2} [f_e (t)]^2 dt$</p>
+
+<p>$\Rightarrow {1 \over {t_2 - t_1}} \int_{t_1}^{t_2} [f_e (t) - C_{12}f_2]^2 dt $</p>
+
+<p>Where &epsilon; is the mean square value of error signal. The value of C<sub>12</sub> which minimizes the error, you need to calculate ${d\varepsilon \over dC_{12} } = 0 $</p>
+
+<p>$\Rightarrow {d \over dC_{12} } [ {1 \over t_2 - t_1 } \int_{t_1}^{t_2} [f_1 (t) - C_{12} f_2 (t)]^2 dt]= 0 $</p>
+
+<p>Derivative of the terms which do not have C12 term are zero.</p>
+
+<p>$\Rightarrow \int_{t_1}^{t_2} - 2f_1(t) f_2(t) dt + 2C_{12}\int_{t_1}^{t_2}[f_{2}^{2} (t)]dt = 0 $</p>
+
+<p>If $C_{12} = {{\int_{t_1}^{t_2}f_1(t)f_2(t)dt } \over {\int_{t_1}^{t_2} f_{2}^{2} (t)dt }} $ component is zero, then two signals are said to be orthogonal.</p>
+
+<p>Put C<sub>12</sub> = 0 to get condition for orthogonality.</p>
+
+<p>0 = $ {{\int_{t_1}^{t_2}f_1(t)f_2(t)dt } \over {\int_{t_1}^{t_2} f_{2}^{2} (t)dt }} $ </p>
+
+<p>$$ \int_{t_1}^{t_2} f_1 (t)f_2(t) dt = 0 $$</p>
+
+<h2>Orthogonal Vector Space</h2>
+
+<p>A complete set of orthogonal vectors is referred to as orthogonal vector space. Consider a three dimensional vector space as shown below:</p>
+
+<p>Consider a vector A at a point (X<sub>1</sub>, Y<sub>1</sub>, Z<sub>1</sub>). Consider three unit vectors (V<sub>X</sub>, V<sub>Y</sub>, V<sub>Z</sub>) in the direction of X, Y, Z axis respectively. Since these unit vectors are mutually orthogonal, it satisfies that</p>
+
+<p>$$V_X. V_X= V_Y. V_Y= V_Z. V_Z = 1 $$</p>
+
+<p>$$V_X. V_Y= V_Y. V_Z= V_Z. V_X = 0 $$</p>
+
+<p>You can write above conditions as</p>
+
+<p>The vector A can be represented in terms of its components and unit vectors as</p>
+
+<p>$A = X_1 V_X + Y_1 V_Y + Z_1 V_Z................(1) $ </p>
+
+<p>Any vectors in this three dimensional space can be represented in terms of these three unit vectors only.</p>
+
+<p>If you consider n dimensional space, then any vector A in that space can be represented as</p>
+
+<p>$ A = X_1 V_X + Y_1 V_Y + Z_1 V_Z+...+ N_1V_N.....(2) $ </p>
+
+<p>As the magnitude of unit vectors is unity for any vector A</p>
+
+<p>The component of A along x axis = A.V<sub>X</sub></p>
+
+<p>The component of A along Y axis = A.V<sub>Y</sub></p>
+
+<p>The component of A along Z axis = A.V<sub>Z</sub></p>
+
+<p>Similarly, for n dimensional space, the component of A along some G axis</p>
+
+<p>$= A.VG...............(3)$</p>
+
+<p>Substitute equation 2 in equation 3.</p>
+
+<p>$\Rightarrow CG= (X_1 V_X + Y_1 V_Y + Z_1 V_Z +...+G_1 V_G...+ N_1V_N)V_G$</p>
+
+<p>$= X_1 V_X V_G + Y_1 V_Y V_G + Z_1 V_Z V_G +...+ G_1V_G V_G...+ N_1V_N V_G$</p>
+
+<p>$= G_1 \,\,\,\,\, \text{since } V_G V_G=1$</p>
+
+<p>$If V_G V_G \neq 1  \,\,\text{i.e.} V_G V_G= k$</p>
+
+<p>$AV_G = G_1V_G V_G= G_1K$</p>
+
+<p>$G_1 = {(AV_G) \over K}$</p>
+
+<h2>Orthogonal Signal Space</h2>
+
+<p>Let us consider a set of n mutually orthogonal functions x<sub>1</sub>(t), x<sub>2</sub>(t)... x<sub>n</sub>(t) over the interval t<sub>1</sub> to t<sub>2</sub>. As these functions are orthogonal to each other, any two signals x<sub>j</sub>(t), x<sub>k</sub>(t) have to satisfy the orthogonality condition. i.e.</p>
+
+<p>$$\int_{t_1}^{t_2} x_j(t)x_k(t)dt = 0 \,\,\, \text{where}\, j \neq k$$</p>
+
+<p>$$\text{Let} \int_{t_1}^{t_2}x_{k}^{2}(t)dt = k_k $$ </p>
+
+<p>Let a function f(t), it can be approximated with this orthogonal signal space by adding the components along mutually orthogonal signals i.e.</p>
+
+<p>$\,\,\,f(t) = C_1x_1(t) + C_2x_2(t) + ... + C_nx_n(t) + f_e(t) $</p>
+
+<p>$\quad\quad=\Sigma_{r=1}^{n} C_rx_r (t) $</p>
+
+<p>$\,\,\,f(t) = f(t) - \Sigma_{r=1}^n C_rx_r (t) $</p>
+
+<p>Mean sqaure error $ \varepsilon =  {1 \over t_2 - t_2 } \int_{t_1}^{t_2} [ f_e(t)]^2 dt$</p>
+
+<p>$$ = {1 \over t_2 - t_2 } \int_{t_1}^{t_2} [ f[t] - \sum_{r=1}^{n} C_rx_r(t) ]^2 dt $$</p>
+
+<p>The component which minimizes the mean square error can be found by </p>
+
+<p>$$ {d\varepsilon \over dC_1} = {d\varepsilon \over dC_2} = ... = {d\varepsilon \over dC_k} = 0 $$</p>
+
+<p>Let us consider ${d\varepsilon \over dC_k} = 0 $ </p>
+
+<p>$${d \over dC_k}[ {1 \over t_2 - t_1} \int_{t_1}^{t_2} [ f(t) - \Sigma_{r=1}^n C_rx_r(t)]^2 dt] = 0 $$</p>
+
+<p>All terms that do not contain C<sub>k</sub> is zero. i.e. in summation, r=k term remains and all other terms are zero.</p>
+
+<p>$$\int_{t_1}^{t_2} - 2 f(t)x_k(t)dt + 2C_k \int_{t_1}^{t_2} [x_k^2 (t)] dt=0 $$</p>
+
+<p>$$\Rightarrow C_k = {{\int_{t_1}^{t_2}f(t)x_k(t)dt} \over {int_{t_1}^{t_2} x_k^2 (t)dt}} $$</p>
+
+<p>$$\Rightarrow \int_{t_1}^{t_2} f(t)x_k(t)dt = C_kK_k $$</p>
+
+<h2>Mean Square Error</h2>
+
+<p>The average of square of error function f<sub>e</sub>(t) is called as mean square error. It is denoted by &epsilon; (epsilon).</p>
+
+<p>$\varepsilon = {1 \over t_2 - t_1 } \int_{t_1}^{t_2} [f_e (t)]^2dt$</p>
+
+<p>$\,\,\,\,=  {1 \over t_2 - t_1 } \int_{t_1}^{t_2} [f_e (t) - \Sigma_{r=1}^n C_rx_r(t)]^2 dt $</p>
+
+<p>$\,\,\,\,=  {1 \over t_2 - t_1 } [ \int_{t_1}^{t_2} [f_e^2 (t) ]dt + \Sigma_{r=1}^{n} C_r^2 \int_{t_1}^{t_2} x_r^2 (t) dt - 2 \Sigma_{r=1}^{n} C_r \int_{t_1}^{t_2} x_r (t)f(t)dt$</p>
+
+<p>You know that $C_{r}^{2} \int_{t_1}^{t_2} x_r^2 (t)dt = C_r \int_{t_1}^{t_2} x_r (t)f(d)dt = C_r^2 K_r $</p>
+
+<p>$\varepsilon = {1 \over t_2 - t_1 } [ \int_{t_1}^{t_2} [f^2 (t)] dt + \Sigma_{r=1}^{n} C_r^2 K_r - 2 \Sigma_{r=1}^{n} C_r^2 K_r] $</p>
+
+<p>$\,\,\,\,=  {1 \over t_2 - t_1 } [\int_{t_1}^{t_2} [f^2 (t)] dt - \Sigma_{r=1}^{n} C_r^2 K_r ] $</p>
+
+<p>The above equation is used to evaluate the mean square error.</p>
+
+<h2>Closed and Complete Set of Orthogonal Functions</h2>
+
+<p>Let us consider a set of n mutually orthogonal functions x<sub>1</sub>(t), x<sub>2</sub>(t)...x<sub>n</sub>(t) over the interval t<sub>1</sub> to t<sub>2</sub>. This is called as closed and complete set when there exist no function f(t) satisfying the condition $\int_{t_1}^{t_2} f(t)x_k(t)dt = 0 $</p>
+
+<p>If this function is satisfying the equation $\int_{t_1}^{t_2} f(t)x_k(t)dt=0 \,\, \text{for}\, k = 1,2,..$ then f(t) is said to be orthogonal to each and every function of orthogonal set. This set is incomplete without f(t). It becomes closed and complete set when f(t) is included.</p>
+
+<p>f(t) can be approximated with this orthogonal set by adding the components along mutually orthogonal signals i.e.</p>
+
+<p>$$f(t) = C_1 x_1(t) + C_2 x_2(t) + ... + C_n x_n(t) + f_e(t) $$</p>
+
+<p>If the infinite series $C_1 x_1(t) + C_2 x_2(t) + ... + C_n x_n(t)$ converges to f(t) then mean square error is zero.</p>
+
+<h2>Orthogonality in Complex Functions</h2>
+
+<p>If f<sub>1</sub>(t) and f<sub>2</sub>(t) are two complex functions, then f<sub>1</sub>(t) can be expressed in terms of f<sub>2</sub>(t) as </p>
+
+<p>$f_1(t) = C_{12}f_2(t) \,\,\,\,\,\,\,\,$ ..with negligible error</p>
+
+<p>Where $C_{12} = {{\int_{t_1}^{t_2} f_1(t)f_2^*(t)dt} \over { \int_{t_1}^{t_2} |f_2(t)|^2 dt}} $</p>
+
+<p>Where $f_2^* (t)$ = complex conjugate of f<sub>2</sub>(t).</p>
+
+<p>If f<sub>1</sub>(t) and f<sub>2</sub>(t) are orthogonal then C<sub>12</sub> = 0</p>
+
+<p>$$ {\int_{t_1}^{t_2} f_1 (t) f_2^*(t) dt \over \int_{t_1}^{t_2} |f_2 (t) |^2 dt} = 0 $$</p>
+
+<p>$$\Rightarrow  \int_{t_1}^{t_2} f_1 (t) f_2^* (dt) = 0$$</p>
+
+<p>The above equation represents orthogonality condition in complex functions.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Fourier Series</title>
+
+<h1>Fourier Series</h1>
+
+<p><b>Jean Baptiste Joseph Fourier,</b>a French mathematician and a physicist; was born in Auxerre, France. He initialized Fourier series, Fourier transforms and their applications to problems of heat transfer and vibrations. The Fourier series, Fourier transforms and Fourier's Law are named in his honour.</p>
+
+<h2>Fourier series</h2>
+
+<p>To represent any periodic signal x(t), Fourier developed an expression called Fourier series. This is in terms of an infinite sum of sines and cosines or exponentials. Fourier series uses orthoganality condition. </p>
+
+<h3>Fourier Series Representation of Continuous Time Periodic Signals</h3>
+
+<p>A signal is said to be periodic if it satisfies the condition x (t) = x (t + T) or x (n) = x (n + N).</p>
+
+<p>&omega;<sub>0</sub>= fundamental frequency = 2&pi;/T </p>
+
+<p>There are two basic periodic signals:</p>
+
+<p>$x(t) = \cos\omega_0t$  (sinusoidal) & </p>
+
+<p>$x(t) = e^{j\omega_0 t} $ (complex exponential) </p>
+
+<p>These two signals are periodic with period $T= 2\pi/\omega_0$. </p>
+
+<p>A set of harmonically related complex exponentials can be represented as {$\phi_k (t)$}</p>
+
+<p>All these signals are periodic with period T </p>
+
+<p>According to orthogonal signal space approximation of a function x (t) with n, mutually orthogonal functions is given by</p>
+
+<p>Where $a_k$= Fourier coefficient = coefficient of approximation.</p>
+
+<p>This signal x(t) is also periodic with period T.</p>
+
+<p>Equation 2 represents Fourier series representation of periodic signal x(t).</p>
+
+<p>The term k = 0 is constant.</p>
+
+<p>The term $k = \pm1$ having fundamental frequency $\omega_0$, is called as 1<sup>st</sup> harmonics.</p>
+
+<p>The term $k = \pm2$ having fundamental frequency $2\omega_0$, is called as 2<sup>nd</sup> harmonics, and so on...</p>
+
+<p>The term $k = ±n$ having fundamental frequency $n\omega0$, is called as n<sup>th</sup> harmonics.</p>
+
+<h3>Deriving Fourier Coefficient</h3>
+
+<p>We know that $x(t) = \Sigma_{k=- \infty}^{\infty} a_k  e^{jk \omega_0 t} ...... (1)$</p>
+
+<p>Multiply $e^{-jn\omega_0 t}$ on both sides. Then</p>
+
+<p>Consider integral on both sides.</p>
+
+<p>by Euler's formula,</p>
+
+<p>Hence in equation 2, the integral is zero for all values of k except at k = n. Put k = n in equation 2.</p>
+
+<p>Replace n by k.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Fourier Series Properties</title>
+
+<h1>Fourier Series Properties</h1>
+
+<p>These are properties of Fourier series:</p>
+
+<h3>Linearity Property</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$  &  $ y(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{yn}$</p>
+
+<p>then linearity property states that </p>
+
+<h3>Time Shifting Property</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>then time shifting property states that </p>
+
+<p>$x(t-t_0) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} e^{-jn\omega_0 t_0}f_{xn} $</p>
+
+<h3>Frequency Shifting Property</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>then frequency shifting property states that </p>
+
+<p>$e^{jn\omega_0 t_0} . x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{x(n-n_0)} $</p>
+
+<h3>Time Reversal Property</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>then time reversal property states that </p>
+
+<p>If $ x(-t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{-xn}$ </p>
+
+<h3>Time Scaling Property</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>then time scaling property states that </p>
+
+<p>If $ x(at) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>Time scaling property changes frequency components from $\omega_0$ to $a\omega_0$. </p>
+
+<h3>Differentiation and Integration Properties</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>then differentiation property states that </p>
+
+<p>If $ {dx(t)\over dt} \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} jn\omega_0 . f_{xn}$ </p>
+
+<p>& integration property states that</p>
+
+<p>If $ \int x(t) dt \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient}  {f_{xn} \over jn\omega_0} $ </p>
+
+<h3>Multiplication and Convolution Properties</h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$  &  $ y(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{yn}$</p>
+
+<p>then multiplication property states that </p>
+
+<p>& convolution property states that </p>
+
+<h3>Conjugate and Conjugate Symmetry Properties </h3>
+
+<p>If $ x(t) \xleftarrow[\,]{fourier\,series}\xrightarrow[\,]{coefficient} f_{xn}$ </p>
+
+<p>Then conjugate property states that</p>
+
+<p>Conjugate symmetry property for real valued time signal states that</p>
+
+<p>$$f*_{xn} = f_{-xn}$$</p>
+
+<p>&amp; Conjugate symmetry property for imaginary valued time signal states that</p>
+
+<p>$$f*_{xn} = -f_{-xn} $$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Fourier Series Types</title>
+
+<h1>Fourier Series Types</h1>
+
+<h2>Trigonometric Fourier Series (TFS)</h2>
+
+<p>$\sin n\omega_0 t$ and $\sin m\omega_0 t$ are orthogonal over the interval $(t_0, t_0+{2\pi \over \omega_0})$. So $\sin\omega_0 t,\, \sin 2\omega_0 t$ forms an orthogonal set. This set is not complete without {$\cos n\omega_0 t$ } because this cosine set is also orthogonal to sine set. So to complete this set we must include both cosine and sine terms. Now the complete orthogonal set contains all cosine and sine terms i.e. {$\sin n\omega_0 t,\,\cos n\omega_0 t$ } where n=0, 1, 2...</p>
+
+<p>$\therefore$ Any function x(t) in the interval $(t_0, t_0+{2\pi \over \omega_0})$ can be represented as</p>
+
+<p>$$ x(t) = a_0 \cos0\omega_0 t+ a_1  \cos⁡ 1\omega_0 t+ a_2  \cos2 ⁡\omega_0 t +...+ a_n  \cos⁡ n\omega_0 t + ... $$</p>
+
+<p>$$ + b_0  \sin⁡ 0\omega_0 t + b_1 \sin⁡ 1\omega_0 t +...+ b_n \sin⁡ n\omega_0 t + ... $$</p>
+
+<p>$$ = a_0 + a_1  \cos⁡ 1\omega_0 t + a_2 \cos 2⁡ \omega_0 t +...+ a_n \cos⁡ n\omega_0 t + ...$$</p>
+
+<p>$$ + b_1 \sin⁡ 1\omega_0 t +...+ b_n \sin⁡ n\omega_0 t + ...$$</p>
+
+<p>The above equation represents trigonometric Fourier series representation of x(t).</p>
+
+<p>$$\text{Where} \,a_0 = {\int_{t_0}^{t_0+T} x(t)·1 dt \over \int_{t_0}^{t_0+T} 1^2 dt}  = {1 \over T}· \int_{t_0}^{t_0+T} x(t)dt $$</p>
+
+<p>$$a_n = {\int_{t_0}^{t_0+T} x(t)· \cos⁡ n\omega_0 t\,dt \over \int_{t_0}^{t_0+T} \cos ^2 n\omega_0 t\, dt}$$ </p>
+
+<p>$$b_n = {\int_{t_0}^{t_0+T} x(t)· \sin n\omega_0 t\,dt \over \int_{t_0}^{t_0+T} \sin ^2 n\omega_0 t\, dt}$$</p>
+
+<p>$$\text{Here}\, \int_{t_0}^{t_0+T} \cos ^2 n\omega_0 t\, dt = \int_{t_0}^{t_0+T} \sin ^2 n\omega_0 t\, dt = {T\over 2}$$</p>
+
+<p>$$\therefore a_n = {2\over T}· \int_{t_0}^{t_0+T} x(t)· \cos⁡ n\omega_0 t\,dt$$</p>
+
+<p>$$b_n = {2\over T}· \int_{t_0}^{t_0+T} x(t)· \sin n\omega_0 t\,dt$$</p>
+
+<h2>Exponential Fourier Series (EFS)</h2>
+
+<p>Consider a set of complex exponential functions $\left\{e^{jn\omega_0 t}\right\} (n=0, \pm1, \pm2...)$ which is orthogonal over the interval $(t_0, t_0+T)$. Where $T={2\pi \over \omega_0}$ . This is a complete set so it is possible to represent any function f(t) as shown below</p>
+
+<p>Equation 1 represents exponential Fourier series representation of a signal f(t) over the interval (t<sub>0</sub>, t<sub>0</sub>+T). The Fourier coefficient is given as</p>
+
+<h2>Relation Between Trigonometric and Exponential Fourier Series</h2>
+
+<p>Consider a periodic signal x(t), the TFS & EFS representations are given below respectively</p>
+
+<p>$ = F_0 + (F_1+ F_{-1}) \cos\omega_0 t + (F_2+ F_{-2}) \cos2\omega_0 t +...+ j(F_1 - F_{-1}) \sin\omega_0 t + j(F_2 - F_{-2}) \sin2\omega_0 t+...  $</p>
+
+<p>$ \therefore x(t) = F_0 + \Sigma_{n=1}^{\infty}( (F_n +F_{-n}  ) \cos n\omega_0 t+j(F_n-F_{-n}) \sin n\omega_0 t) ... ... (2)  $</p>
+
+<p>Compare equation 1 and 2.</p>
+
+<p>$a_0= F_0$</p>
+
+<p>$a_n=F_n+F_{-n}$</p>
+
+<p>$b_n = j(F_n-F_{-n}  )$</p>
+
+<p>Similarly,</p>
+
+<p>$F_n = \frac12 (a_n - jb_n  )$</p>
+
+<p>$F_{-n} = \frac12 (a_n + jb_n  )$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Fourier Transforms</title>
+
+<h1>Fourier Transforms</h1>
+
+<p>The main drawback of Fourier series is, it is only applicable to periodic signals. There are some naturally produced signals such as nonperiodic or aperiodic, which we cannot represent using Fourier series. To overcome this shortcoming, Fourier developed a mathematical model to transform signals between time (or spatial) domain to frequency domain & vice versa, which is called 'Fourier transform'.</p>
+
+<p>Fourier transform has many applications in physics and engineering such as analysis of LTI systems, RADAR, astronomy, signal processing etc.</p>
+
+<h2>Deriving Fourier transform from Fourier series</h2>
+
+<p>Consider a periodic signal f(t) with period T. The complex Fourier series representation of f(t) is given as</p>
+
+<p>Let ${1 \over T_0}  = \Delta f$, then equation 1 becomes </p>
+
+<p> but you know that  </p>
+
+<p>Substitute in equation 2.</p>
+
+<p>(2) <span style="font-size: 125%">$ \Rightarrow f(t)  = \Sigma_{k=-\infty}^{\infty} {1 \over T_0} \int_{t_0}^{t_0+T}  f(t) e^{-j k\omega_0 t} dt\, e^{j2\pi k \Delta ft} $</span></p>
+
+<p>Let $t_0={T\over2}$</p>
+
+<p>In the limit as $T \to \infty, \Delta f$ approaches differential $df, k \Delta f$ becomes a continuous variable $f$, and summation becomes integration</p>
+
+<p>Fourier transform of a signal $$f(t) = F[\omega] = [\int_{-\infty}^{\infty}\, f(t) e^{-j\omega t} dt]$$ </p>
+
+<p>Inverse Fourier Transform is $$f(t)   = \int_{-\infty}^{\infty}\,F[\omega]  e^{j\omega t} d \omega$$</p>
+
+<h2>Fourier Transform of Basic Functions</h2>
+
+<p> Let us go through Fourier Transform of basic functions:</p>
+
+<h3>FT of GATE Function</h3>
+
+<h3>FT of Impulse Function</h3>
+
+<p>$FT [\omega(t) ] = [\int_{- \infty}^{\infty} \delta (t) e^{-j\omega t} dt] $ </p>
+
+<p>$\quad \quad \quad \quad =  e^{-j\omega t}\, |\, t = 0 $</p>
+
+<p>$\quad \quad \quad \quad = e^{0} = 1 $</p>
+
+<h3>FT of Unit Step Function:</h3>
+
+<p>$U(\omega) = \pi \delta (\omega)+1/j\omega$</p>
+
+<h3>FT of Exponentials</h3>
+
+<p>$ e^{-at}u(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} 1/(a+jω)$</p>
+
+<p>$ e^{-at}u(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} 1/(a+j\omega )$</p>
+
+<p>$ e^{-a\,|\,t\,|} \stackrel{\mathrm{F.T}}{\longleftrightarrow} {2a \over {a^2+ω^2}}$</p>
+
+<p>$ e^{j \omega_0 t} \stackrel{\mathrm{F.T}}{\longleftrightarrow} \delta (\omega - \omega_0)$</p>
+
+<h3>FT of Signum Function </h3>
+
+<p>$ sgn(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} {2 \over j \omega }$</p>
+
+<h2>Conditions for Existence of Fourier Transform</h2>
+
+<p>Any function f(t) can be represented by using Fourier transform only when the function satisfies Dirichlet’s conditions. i.e.</p>
+
+<p>The function f(t) has finite number of maxima and minima.</p>
+
+<p>There must be finite number of discontinuities in the signal f(t),in the given interval of time.</p>
+
+<p>It must be absolutely integrable in the given interval of time i.e.</p>
+
+<p>$ \int_{-\infty}^{\infty}\, |\, f(t) | \, dt < \infty $</p>
+
+<h2>Discrete Time Fourier Transforms (DTFT)</h2>
+
+<p>The discrete-time Fourier transform (DTFT) or the Fourier transform of a discrete–time sequence x[n] is a representation of the sequence in terms of the complex exponential sequence $e^{j\omega n}$.</p>
+
+<p>The DTFT sequence x[n] is given by</p>
+
+<p>$$ X(\omega) = \Sigma_{n= -\infty}^{\infty} x(n)e^{-j \omega n} \,\, ...\,... (1) $$</p>
+
+<p>Here, X(&omega;) is a complex function of real frequency variable &omega; and it can be written as</p>
+
+<p>$$ X(\omega) = X_{re}(\omega) + jX_{img}(\omega) $$</p>
+
+<p>Where X<sub>re</sub>(&omega;), X<sub>img</sub>(&omega;) are real and imaginary parts of X(&omega;) respectively.</p>
+
+<p>$$ X_{re}(\omega) = |\, X(\omega) |  \cos\theta(\omega) $$</p>
+
+<p>$$ X_{img}(\omega) = |\, X(\omega) |  \sin\theta(\omega) $$</p>
+
+<p>$$ |X(\omega) |^2 = |\, X_{re} (\omega)  |^2+ |\,X_{im} (\omega)  |^2 $$</p>
+
+<p>And X(&omega;) can also be represented as $ X(\omega) = |\,X(\omega) | e^{j\theta (ω)} $ </p>
+
+<h2>Inverse Discrete-Time Fourier Transform</h2>
+
+<p>$$ x(n) = { 1 \over 2\pi} \int_{-\pi}^{\pi} X(\omega) e^{j \omega n} d\omega \,\, ...\,... (2)$$</p>
+
+<h3>Convergence Condition:</h3>
+
+<p>The infinite series in equation 1 may be converges or may not. x(n) is absolutely summable.</p>
+
+<p>$$ \text{when}\,\, \sum_{n=-\infty}^{\infty} |\, x(n)|\, < \infty $$</p>
+
+<p>An absolutely summable sequence has always a finite energy but a finite-energy sequence is not necessarily to be absolutely summable.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Fourier Transforms Properties</title>
+
+<h1>Fourier Transforms Properties</h1>
+
+<p>Here are the properties of Fourier Transform:</p>
+
+<h3>Linearity Property</h3>
+
+<p>$\text{If}\,\,x (t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} X(\omega) $</p>
+
+<p>$ \text{&amp;} \,\,     y(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} Y(\omega) $</p>
+
+<p>Then linearity property states that </p>
+
+<p>$a  x (t) + b  y (t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} a X(\omega) + b Y(\omega) $</p>
+
+<h3>Time Shifting Property</h3>
+
+<p>$\text{If}\, x(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} X (\omega)$</p>
+
+<p>Then Time shifting property states that</p>
+
+<p>$x (t-t_0) \stackrel{\mathrm{F.T}}{\longleftrightarrow} e^{-j\omega t_0 } X(\omega)$</p>
+
+<h3>Frequency Shifting Property</h3>
+
+<p>$\text{If}\,\,  x(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} X(\omega)$</p>
+
+<p>Then frequency shifting property states that</p>
+
+<p>$e^{j\omega_0 t} . x (t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}  X(\omega - \omega_0)$</p>
+
+<h3>Time Reversal Property</h3>
+
+<p>$ \text{If}\,\, x(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}  X(\omega)$</p>
+
+<p>Then Time reversal property states that</p>
+
+<p>$ x (-t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} X(-\omega)$</p>
+
+<h3>Time Scaling Property</h3>
+
+<p>$ \text{If}\,\, x (t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}   X(\omega) $</p>
+
+<p>Then Time scaling property states that</p>
+
+<p>$ x (at)  {1 \over |\,a\,|} X { \omega \over a}$</p>
+
+<h3>Differentiation and Integration Properties</h3>
+
+<p>$ If \,\,   x (t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} X(\omega)$</p>
+
+<p>Then Differentiation property states that</p>
+
+<p>$ {dx (t)  \over dt} \stackrel{\mathrm{F.T}}{\longleftrightarrow}   j\omega . X(\omega)$</p>
+
+<p>$ {d^n x (t) \over dt^n } \stackrel{\mathrm{F.T}}{\longleftrightarrow}  (j \omega)^n . X(\omega) $</p>
+
+<p>and integration property states that</p>
+
+<p>$ \int x(t) \, dt \stackrel{\mathrm{F.T}}{\longleftrightarrow}    {1 \over j \omega} X(\omega) $</p>
+
+<p>$ \iiint ... \int  x(t)\, dt \stackrel{\mathrm{F.T}}{\longleftrightarrow}  { 1 \over (j\omega)^n}  X(\omega) $</p>
+
+<h3>Multiplication and Convolution Properties</h3>
+
+<p>$ \text{If} \,\, x(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}  X(\omega) $</p>
+
+<p>$ \text{&amp;} \,\,y(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}  Y(\omega) $</p>
+
+<p>Then multiplication property states that</p>
+
+<p>$ x(t). y(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow}  X(\omega)*Y(\omega) $</p>
+
+<p>and convolution property states that </p>
+
+<p>$ x(t) * y(t) \stackrel{\mathrm{F.T}}{\longleftrightarrow} {1 \over 2 \pi} X(\omega).Y(\omega) $</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Distortion Less Transmission</title>
+
+<h1>Distortion Less Transmission</h1>
+
+<p>Transmission is said to be distortion-less if the input and output have identical wave shapes. i.e., in distortion-less transmission, the input x(t) and output y(t) satisfy the condition:</p>
+
+<p>y (t) = Kx(t - t<sub>d</sub>) 	</p>
+
+<p>Where t<sub>d</sub> = delay time and</p>
+
+<p>Take Fourier transform on both sides</p>
+
+<p>FT[ y (t)] = FT[Kx(t - t<sub>d</sub>)]</p>
+
+<p>According to time shifting property,</p>
+
+<p>$ \therefore  Y(w) = KX(w)e^{-j \omega t_d}$</p>
+
+<p>Thus, distortionless transmission of a signal x(t) through a system with impulse response h(t) is achieved when</p>
+
+<p>$|H(\omega)|  =  K \,\, \text{and} \,\,\,\,$          (amplitude response)</p>
+
+<p>$ \Phi (\omega) = -\omega t_d = -2\pi f t_d \,\,\, $        (phase response)</p>
+
+<p>A physical transmission system may have amplitude and phase responses as shown below:</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Hilbert Transform</title>
+
+<h1>Hilbert Transform</h1>
+
+<p>Hilbert transform of a signal x(t) is defined as the transform in which phase angle of all components of the signal is shifted by $\pm \text{90}^o $.</p>
+
+<p>Hilbert transform of x(t) is represented with  $\hat{x}(t)$,and it is given by</p>
+
+<p>$$ \hat{x}(t) = { 1 \over \pi } \int_{-\infty}^{\infty} {x(k) \over t-k } dk  $$</p>
+
+<p>The inverse Hilbert transform is given by</p>
+
+<p>$$ \hat{x}(t) = { 1 \over \pi } \int_{-\infty}^{\infty} {x(k) \over t-k } dk  $$</p>
+
+<p>x(t), $\hat{x}$(t) is called a Hilbert transform pair.</p>
+
+<h3>Properties of the Hilbert Transform</h3>
+
+<p>A signal x(t) and its Hilbert transform  $\hat{x}$(t) have</p>
+
+<p>The same amplitude spectrum.</p>
+
+<p>The same autocorrelation function.</p>
+
+<p>The energy spectral density is same for both x(t) and $\hat{x}$(t). </p>
+
+<p>x(t) and  $\hat{x}$(t) are orthogonal.</p>
+
+<p>The Hilbert transform of  $\hat{x}$(t) is -x(t)</p>
+
+<p>If Fourier transform exist then Hilbert transform also exists for energy and power signals.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Convolution and Correlation</title>
+
+<h1>Convolution and Correlation</h1>
+
+<h2>Convolution</h2>
+
+<p>Convolution is a mathematical operation used to express the relation between input and output of an LTI system. It relates input, output and impulse response of an LTI system as</p>
+
+<p>$$ y (t) = x(t) * h(t) $$</p>
+
+<p>Where y (t) = output of LTI</p>
+
+<p>There are two types of convolutions:</p>
+
+<p>Continuous convolution</p>
+
+<p>Discrete convolution</p>
+
+<h3>Continuous Convolution</h3>
+
+<p></p>
+
+<p>$ y(t) \,\,=  x (t) * h (t) $</p>
+
+<h3>Discrete Convolution</h3>
+
+<p>$y(n)\,\,=  x (n) * h (n)$</p>
+
+<p>By using convolution we can find zero state response of the system.</p>
+
+<h2>Deconvolution</h2>
+
+<p>Deconvolution is reverse process to convolution widely used in signal and image processing. </p>
+
+<h2>Properties of Convolution</h2>
+
+<h3>Commutative Property</h3>
+
+<h3>Distributive Property</h3>
+
+<h3>Associative Property</h3>
+
+<h3>Shifting Property</h3>
+
+<h3>Convolution with Impulse</h3>
+
+<h3>Convolution of Unit Steps</h3>
+
+<h3>Scaling Property</h3>
+
+<h3>Differentiation of Output</h3>
+
+<p><b>Note:</b></p>
+
+<p>Convolution of two causal sequences is causal.</p>
+
+<p>Convolution of two anti causal sequences is anti causal.</p>
+
+<p>Convolution of two unequal length rectangles results a trapezium.</p>
+
+<p>Convolution of two equal length rectangles results a triangle.</p>
+
+<p>A function convoluted itself is equal to integration of that function.</p>
+
+<p><b>Example:</b> You know that $u(t) * u(t) = r(t)$</p>
+
+<p>According to above note, $u(t) * u(t) = \int u(t)dt = \int 1dt = t = r(t)$</p>
+
+<p>Here, you get the result just by integrating $u(t)$.</p>
+
+<h2>Limits of Convoluted Signal</h2>
+
+<p>	If two signals are convoluted then the resulting convoluted signal has following range:</p>
+
+<p><b> Sum of lower limits &lt; t &lt; sum of upper limits </b></p>
+
+<p>Ex: find the range of convolution of signals given below</p>
+
+<p>Here, we have two rectangles of unequal length to convolute, which results a trapezium.</p>
+
+<p>The range of convoluted signal is:</p>
+
+<p><b>Sum of lower limits &lt; t &lt; sum of upper limits</b> </p>
+
+<p>$-1+-2 &lt; t &lt; 2+2 $</p>
+
+<p>$-3 &lt; t &lt; 4 $</p>
+
+<p>Hence the result is trapezium with period 7.</p>
+
+<h2>Area of Convoluted Signal</h2>
+
+<p>The area under convoluted signal is given by $A_y = A_x A_h$</p>
+
+<p>Where  A<sub>x</sub> = area under input signal</p>
+
+<p><b>Proof:</b> $y(t)  = \int_{-\infty}^{\infty} x(\tau)  h (t-\tau)d\tau$</p>
+
+<p>Take integration on both sides</p>
+
+<p>$ \int y(t)dt  \,\,\, =\int \int_{-\infty}^{\infty}\, x (\tau)  h (t-\tau)d\tau dt $</p>
+
+<p>We know that area of any signal is the integration of that signal itself.</p>
+
+<p>$\therefore A_y = A_x\,A_h$</p>
+
+<h2>DC Component</h2>
+
+<p>DC component of any signal is given by </p>
+
+<p>$\text{DC component}={\text{area of the signal} \over \text{period of the signal}}$</p>
+
+<p>Ex: what is the dc component of the resultant convoluted signal given below?</p>
+
+<p>Here area of   x<sub>1</sub>(t) = length × breadth =  1 × 3 = 3</p>
+
+<p>area of x<sub>2</sub>(t) = length × breadth =  1 × 4 = 4</p>
+
+<p>area of convoluted signal = area of x<sub>1</sub>(t) ×  area of x<sub>2</sub>(t)</p>
+
+<p>= 3 × 4 = 12</p>
+
+<p>Duration of the convoluted signal = sum of lower limits &lt; t &lt; sum of upper limits</p>
+
+<p>= -1 + -2 &lt; t &lt; 2+2</p>
+
+<p>= -3 &lt; t &lt; 4</p>
+
+<p><b>Period=7</b></p>
+
+<p>$\therefore$ Dc component of the convoluted signal = $\text{area of the signal} \over \text{period of the signal}$</p>
+
+<p>Dc component = ${12 \over 7}$</p>
+
+<h2>Discrete Convolution</h2>
+
+<p>Let us see how to calculate discrete convolution:</p>
+
+<p><b>i. To calculate discrete linear convolution: </b></p>
+
+<p>Convolute two sequences x[n] = {a,b,c} &amp; h[n] = [e,f,g]	</p>
+
+<p>Convoluted output = [ ea, eb+fa, ec+fb+ga, fc+gb, gc]</p>
+
+<p><b>Note:</b> if any two sequences have m, n number of samples respectively, then the resulting convoluted sequence will have [m+n-1] samples.</p>
+
+<p><b>Example:</b> Convolute two sequences x[n] = {1,2,3} &amp; h[n] = {-1,2,2}</p>
+
+<p>Convoluted output y[n] = [ -1, -2+2, -3+4+2, 6+4, 6]</p>
+
+<p>= [-1, 0, 3, 10, 6]</p>
+
+<p>Here x[n] contains 3 samples and h[n] is also having 3 samples so the resulting sequence having 3+3-1 = 5 samples.</p>
+
+<p><b>ii. To calculate periodic or circular convolution:</b></p>
+
+<p>Periodic convolution is valid for discrete Fourier transform. To calculate periodic convolution all the samples must be real. Periodic or circular convolution is also called as fast convolution.</p>
+
+<p>If two sequences of length m, n respectively are convoluted using circular convolution then resulting sequence having max [m,n] samples.</p>
+
+<p>Ex: convolute two sequences x[n] = {1,2,3} & h[n] = {-1,2,2} using circular convolution</p>
+
+<p>Normal Convoluted output y[n] = [ -1, -2+2, -3+4+2, 6+4, 6].</p>
+
+<p>= [-1, 0, 3, 10, 6]</p>
+
+<p>Here x[n] contains 3 samples and h[n] also has 3 samples. Hence the resulting sequence obtained by circular convolution must have max[3,3]= 3 samples.</p>
+
+<p>Now to get periodic convolution result, 1st 3 samples [as the period is 3] of normal convolution is same next two samples are added to 1st samples as shown below:</p>
+
+<p>$\therefore$  Circular convolution result $y[n] = [9\quad 6\quad 3 ]$</p>
+
+<h2>Correlation</h2>
+
+<p>	Correlation is a measure of similarity between two signals. The general formula for correlation is</p>
+
+<p>$$ \int_{-\infty}^{\infty}  x_1 (t)x_2 (t-\tau) dt $$</p>
+
+<p>There are two types of correlation:</p>
+
+<p>Auto correlation</p>
+
+<p>Cros correlation</p>
+
+<h2>Auto Correlation Function</h2>
+
+<p>	It is defined as correlation of a signal with itself. Auto correlation function is a measure of similarity between a signal &amp; its time delayed version. It is represented with R($\tau$).</p>
+
+<p>Consider a signals x(t). The auto correlation function of x(t) with its time delayed version is given by</p>
+
+<p>$$ R_{11} (\tau) = R (\tau) = \int_{-\infty}^{\infty} x(t)x(t-\tau) dt \quad \quad \text{[+ve shift]} $$</p>
+
+<p>$$\quad \quad \quad \quad \quad = \int_{-\infty}^{\infty} x(t)x(t + \tau) dt \quad \quad \text{[-ve shift]} $$</p>
+
+<p>Where $\tau$ = searching or scanning or delay parameter.</p>
+
+<p>If the signal is complex then auto correlation function is given by</p>
+
+<p>$$ R_{11} (\tau) = R (\tau) = \int_{-\infty}^{\infty} x(t)x * (t-\tau) dt \quad \quad \text{[+ve shift]} $$</p>
+
+<p>$$\quad \quad \quad \quad \quad = \int_{-\infty}^{\infty} x(t + \tau)x * (t) dt \quad \quad \text{[-ve shift]} $$</p>
+
+<h3>Properties of Auto-correlation Function of Energy Signal</h3>
+
+<p>	Auto correlation exhibits conjugate symmetry i.e. R ($\tau$) = R*(-$\tau$)</p>
+
+<p>	Auto correlation function of energy signal at origin i.e. at $\tau$=0 is equal to total energy of that signal, which is given as:</p>
+
+<p>R (0) = E = $ \int_{-\infty}^{\infty}\,|\,x(t)\,|^2\,dt $</p>
+
+<p>	Auto correlation function $\infty {1 \over \tau} $, </p>
+
+<p>	Auto correlation function is maximum at $\tau$=0 i.e |R ($\tau$) | &le; R (0) &forall;  $\tau$</p>
+
+<p> Auto correlation function and energy spectral densities are Fourier transform pairs. i.e.</p>
+
+<p>$F.T\,[ R (\tau) ] = \Psi(\omega)$</p>
+
+<p>$\Psi(\omega) = \int_{-\infty}^{\infty} R (\tau) e^{-j\omega \tau} d \tau$</p>
+
+<p>$	R (\tau) = x (\tau)* x(-\tau) $</p>
+
+<h3>Auto Correlation Function of Power Signals</h3>
+
+<p>	The auto correlation function of periodic power signal with period T is given by</p>
+
+<p>$$ R (\tau) = \lim_{T \to \infty} {1\over T} \int_{{-T \over 2}}^{{T \over 2}}\, x(t) x* (t-\tau) dt $$</p>
+
+<h3>Properties</h3>
+
+<p>	Auto correlation of power signal exhibits conjugate symmetry i.e. $ R (\tau) = R*(-\tau)$</p>
+
+<p>	Auto correlation function of power signal at $\tau = 0$ (at origin)is equal to total power of that signal. i.e. </p>
+
+<p>$R (0)= \rho $</p>
+
+<p>	Auto correlation function of power signal $\infty {1 \over \tau}$, </p>
+
+<p>	Auto correlation function of power signal is maximum at $\tau$ = 0 i.e.,</p>
+
+<p>$ | R (\tau) | \leq R (0)\, \forall \,\tau$</p>
+
+<p>Auto correlation function and power spectral densities are Fourier transform pairs. i.e.,</p>
+
+<p>$F.T[ R (\tau) ] = s(\omega)$</p>
+
+<p>$s(\omega) = \int_{-\infty}^{\infty} R (\tau) e^{-j\omega \tau} d\tau$</p>
+
+<p>$R (\tau) = x (\tau)* x(-\tau) $</p>
+
+<h2>Density Spectrum</h2>
+
+<p>Let us see density spectrums:</p>
+
+<h3>Energy Density Spectrum</h3>
+
+<p>Energy density spectrum can be calculated using the formula:</p>
+
+<p>$$ E = \int_{-\infty}^{\infty} |\,x(f)\,|^2 df $$</p>
+
+<h3>Power Density Spectrum</h3>
+
+<p>Power density spectrum can be calculated by using the formula:</p>
+
+<p>$$P =  \Sigma_{n = -\infty}^{\infty}\, |\,C_n |^2 $$</p>
+
+<h2>Cross Correlation Function</h2>
+
+<p>Cross correlation is the measure of similarity between two different signals.</p>
+
+<p>Consider two signals x<sub>1</sub>(t) and x<sub>2</sub>(t). The cross correlation of these two signals $R_{12}(\tau)$ is given by</p>
+
+<p>$$R_{12} (\tau)  = \int_{-\infty}^{\infty} x_1 (t)x_2 (t-\tau)\, dt \quad \quad  \text{[+ve shift]} $$</p>
+
+<p>$$\quad \quad =  \int_{-\infty}^{\infty} x_1 (t+\tau)x_2 (t)\, dt \quad \quad  \text{[-ve shift]}$$</p>
+
+<p>If signals are complex then</p>
+
+<p>$$R_{12} (\tau)  = \int_{-\infty}^{\infty} x_1 (t)x_2^{*}(t-\tau)\, dt \quad \quad  \text{[+ve shift]} $$</p>
+
+<p>$$\quad \quad =  \int_{-\infty}^{\infty} x_1 (t+\tau)x_2^{*} (t)\, dt \quad \quad  \text{[-ve shift]}$$</p>
+
+<p>$$R_{21} (\tau)  = \int_{-\infty}^{\infty} x_2 (t)x_1^{*}(t-\tau)\, dt \quad \quad  \text{[+ve shift]} $$</p>
+
+<p>$$\quad \quad =  \int_{-\infty}^{\infty} x_2 (t+\tau)x_1^{*} (t)\, dt \quad \quad  \text{[-ve shift]}$$</p>
+
+<h3>Properties of Cross Correlation Function of Energy and Power Signals</h3>
+
+<p>	Auto correlation exhibits conjugate symmetry i.e. $R_{12}  (\tau) = R^*_{21} (-\tau)$.</p>
+
+<p>Cross correlation is not commutative like convolution i.e.</p>
+
+<p>$$ R_{12}  (\tau) \neq R_{21}  (-\tau) $$</p>
+
+<p>	If R<sub>12</sub>(0) = 0 means, if $ \int_{-\infty}^{\infty} x_1 (t) x_2^* (t) dt = 0$, then the two signals are said to be orthogonal.</p>
+
+<p>Cross correlation function corresponds to the multiplication of spectrums of one signal to the complex conjugate of spectrum of another signal. i.e.</p>
+
+<p>$$ R_{12}  (\tau) \leftarrow \rightarrow X_1(\omega) X_2^*(\omega)$$</p>
+
+<p>This also called as correlation theorem.</p>
+
+<h2>Parseval's Theorem</h2>
+
+<p>Parseval's theorem for energy signals states that the total energy in a signal can be obtained by the spectrum of the signal as</p>
+
+<p>$ E = {1\over 2 \pi} \int_{-\infty}^{\infty} |X(\omega)|^2  d\omega $</p>
+
+<p><b>Note:</b> If a signal has energy E then time scaled version of that signal x(at) has energy E/a.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Sampling Theorem</title>
+
+<h1>Signals Sampling Theorem</h1>
+
+<p><b>Statement:</b> A continuous time signal can be represented in its samples and can be recovered back when sampling frequency f<sub>s</sub> is greater than or equal to the twice the highest frequency component of message signal. i. e. </p>
+
+<p>$$ f_s \leq 2 f_m. $$</p>
+
+<p><b>Proof:</b> Consider a continuous time signal x(t). The spectrum of x(t) is a band limited to f<sub>m</sub> Hz i.e. the spectrum of x(t) is zero for |&omega;|>&omega;<sub>m</sub>.</p>
+
+<p>Sampling of input signal x(t) can be obtained by multiplying x(t) with an impulse train &delta;(t) of period T<sub>s</sub>. The output of multiplier is a discrete signal called sampled signal which is represented with y(t) in the following diagrams:</p>
+
+<p>Here, you can observe that the sampled signal takes the period of impulse. The process of sampling can be explained by the following mathematical expression:</p>
+
+<p>$ \text{Sampled signal}\, y(t) = x(t) . \delta(t) \,\,...\,...(1) $</p>
+
+<p>The trigonometric Fourier series representation of $\delta$(t) is given by</p>
+
+<p>$ \delta(t)= a_0 + \Sigma_{n=1}^{\infty}(a_n  \cos⁡ n\omega_s t + b_n  \sin⁡ n\omega_s t )\,\,...\,...(2) $</p>
+
+<p>Where $ a_0 = {1\over T_s}  \int_{-T \over 2}^{ T \over 2} \delta (t)dt  = {1\over T_s}   \delta(0)  =  {1\over T_s} $</p>
+
+<p>Substitute above values in equation 2.</p>
+
+<p>$\therefore\, \delta(t)= {1 \over T_s} + \Sigma_{n=1}^{\infty} ( { 2 \over T_s}  \cos ⁡ n\omega_s t+0)$</p>
+
+<p>Substitute &delta;(t) in equation 1.</p>
+
+<p>$\to y(t) = x(t) . \delta(t) $</p>
+
+<p>Take Fourier transform on both sides.</p>
+
+<p>$Y(\omega) = {1 \over T_s}  [X(\omega)+X(\omega-\omega_s )+X(\omega+\omega_s )+X(\omega-2\omega_s )+X(\omega+2\omega_s )+ \,...] $</p>
+
+<p>$\therefore\,\, Y(\omega)  =  {1\over T_s}  \Sigma_{n=-\infty}^{\infty} X(\omega - n\omega_s )\quad\quad where \,\,n= 0,\pm1,\pm2,... $</p>
+
+<p>To reconstruct x(t), you must recover input signal spectrum X(&omega;) from sampled signal spectrum Y(&omega;), which is possible when there is no overlapping between the cycles of Y(&omega;).</p>
+
+<p>Possibility of sampled frequency spectrum with different conditions is given by the following diagrams:</p>
+
+<h2>Aliasing Effect</h2>
+
+<p>The overlapped region in case of under sampling represents aliasing effect, which can be removed by</p>
+
+<p>considering f<sub>s</sub> >2f<sub>m</sub></p>
+
+<p>By using anti aliasing filters.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals Sampling Techniques</title>
+
+<h1>Signals Sampling Techniques</h1>
+
+<p>There are three types of sampling techniques:</p>
+
+<p>Impulse sampling.</p>
+
+<p>Natural sampling.</p>
+
+<p>Flat Top sampling.</p>
+
+<h2>Impulse Sampling</h2>
+
+<p>Impulse sampling can be performed by multiplying input signal x(t) with impulse train $\Sigma_{n=-\infty}^{\infty}\delta(t-nT)$ of period 'T'. Here, the amplitude of impulse changes with respect to amplitude of input signal x(t). The output of sampler is given by</p>
+
+<p>$y(t) = x(t) ×$ impulse train</p>
+
+<p>$ y(t) = y_{\delta} (t) = \Sigma_{n=-\infty}^{\infty}x(nt) \delta(t-nT)\,...\,... 1 $</p>
+
+<p>To get the spectrum of sampled signal, consider Fourier transform of equation 1 on both sides</p>
+
+<p>$Y(\omega)  =  {1 \over T} \Sigma_{n=-\infty}^{\infty} X(\omega - n \omega_s ) $</p>
+
+<p>This is called ideal sampling or impulse sampling. You cannot use this practically because pulse width cannot be zero and the generation of impulse train is not possible practically.</p>
+
+<h2>Natural Sampling</h2>
+
+<p>Natural sampling is similar to impulse sampling, except the impulse train is replaced by pulse train of period T. i.e. you multiply input signal x(t) to pulse train $\Sigma_{n=-\infty}^{\infty} P(t-nT)$ as shown below</p>
+
+<p>The output of sampler is</p>
+
+<p>$y(t) = x(t) \times \text{pulse train}$</p>
+
+<p>The exponential Fourier series representation of p(t) can be given as</p>
+
+<p>Where <span style="font-size:115%">$F_n=  {1 \over T} \int_{-T \over 2}^{T \over 2} p(t) e^{-j n \omega_s t} dt$</span></p>
+
+<p>Substitute F<sub>n</sub> value in equation 2</p>
+
+<p>Substitute p(t) in equation 1</p>
+
+<p>To get the spectrum of sampled signal, consider the Fourier transform on both sides.</p>
+
+<p>According to frequency shifting property</p>
+
+<h2>Flat Top Sampling</h2>
+
+<p>	During transmission, noise is introduced at top of the transmission pulse which can be easily removed if the pulse is in the form of flat top. Here, the top of the samples are flat i.e. they have constant amplitude. Hence, it is called as flat top sampling or practical sampling. Flat top sampling makes use of sample and hold circuit.</p>
+
+<p>Theoretically, the sampled signal can be obtained by convolution of rectangular pulse p(t) with ideally sampled signal say y<sub>&delta;</sub>(t) as shown in the diagram:</p>
+
+<p>i.e. $ y(t) = p(t) \times y_\delta (t)\, ... \, ...(1)	$</p>
+
+<p>To get the sampled spectrum, consider Fourier transform on both sides for equation 1 </p>
+
+<p>$Y[\omega] = F.T\,[P(t) \times y_\delta (t)]	$</p>
+
+<p>By the knowledge of convolution property,</p>
+
+<p>$Y[\omega] = P(\omega)\,  Y_\delta (\omega)$</p>
+
+<p>Here $P(\omega)  = T Sa({\omega T \over 2}) = 2 \sin \omega T/ \omega$</p>
+
+<h2>Nyquist Rate</h2>
+
+<p>It is the minimum sampling rate at which signal can be converted into samples and can be recovered back without distortion.</p>
+
+<p>Nyquist rate f<sub>N</sub> = 2f<sub>m</sub> hz</p>
+
+<p>Nyquist interval = ${1 \over fN}$ = $ {1 \over 2fm}$ seconds.</p>
+
+<h2>Samplings of Band Pass Signals</h2>
+
+<p>In case of band pass signals, the spectrum of band pass signal X[&omega;] = 0 for the frequencies outside the range f<sub>1</sub> &le; f &le; f<sub>2</sub>. The frequency f<sub>1</sub> is always greater than zero. Plus, there is no aliasing effect when f<sub>s</sub> &gt; 2f<sub>2</sub>. But it has two disadvantages:</p>
+
+<p>The sampling rate is large in proportion with f<sub>2</sub>. This has practical limitations.</p>
+
+<p>The sampled signal spectrum has spectral gaps.</p>
+
+<p>To overcome this, the band pass theorem states that the input signal x(t) can be converted into its samples and can be recovered back without distortion when sampling frequency f<sub>s</sub> &lt; 2f<sub>2</sub>.</p>
+
+<p>Also,</p>
+
+<p>$$ f_s = {1 \over T} = {2f_2 \over m} $$</p>
+
+<p>Where m is the largest integer &lt; ${f_2 \over B}$</p>
+
+<p>and B is the bandwidth of the signal. If f<sub>2</sub>=KB, then</p>
+
+<p>$$ f_s = {1 \over T} = {2KB \over m} $$</p>
+
+<p>For band pass signals of bandwidth 2f<sub>m</sub> and the minimum sampling rate f<sub>s</sub>= 2 B = 4f<sub>m</sub>,</p>
+
+<p>the spectrum of sampled signal is given by $Y[\omega] = {1 \over T} \Sigma_{n=-\infty}^{\infty}\,X[ \omega - 2nB]$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Laplace Transforms (LT)</title>
+
+<h1>Laplace Transforms (LT)</h1>
+
+<p>Complex Fourier transform is also called as Bilateral Laplace Transform. This is used to solve differential equations. Consider an LTI system exited by a complex exponential signal of the form x(t) = Ge<sup>st</sup>.</p>
+
+<p>Where s = any complex number = $\sigma + j\omega$,</p>
+
+<p>The response of LTI can be obtained by the convolution of input with its impulse response i.e.</p>
+
+<p>$ y(t) = x(t) \times h(t) = \int_{-\infty}^{\infty}\, h (\tau)\, x (t-\tau)d\tau $</p>
+
+<p>$ y(t) = Ge^{st}.H(S) = x(t).H(S)$</p>
+
+<p>Where H(S) = Laplace transform of $h(\tau) = \int_{-\infty}^{\infty}  h (\tau)  e^{-s\tau} d\tau $</p>
+
+<p>Similarly, Laplace transform of $x(t) = X(S) = \int_{-\infty}^{\infty}  x(t)  e^{-st} dt\,...\,...(1)$</p>
+
+<h2>Relation between Laplace and Fourier transforms</h2>
+
+<p>Laplace transform of $x(t) = X(S) =\int_{-\infty}^{\infty}  x(t)  e^{-st} dt$</p>
+
+<p>Substitute s= &sigma; + j&omega; in above equation.</p>
+
+<p>$→ X(\sigma+j\omega) =\int_{-\infty}^{\infty}\,x (t)  e^{-(\sigma+j\omega)t} dt$</p>
+
+<h2>Inverse Laplace Transform</h2>
+
+<p>You know that $X(S)    = F.T [x (t)  e^{-\sigma t}]$	</p>
+
+<p>$\to x (t)  e^{-\sigma t} = F.T^{-1} [X(S)] = F.T^{-1} [X(\sigma+j\omega)]$</p>
+
+<p>Here, $\sigma+j\omega = s$</p>
+
+<p>Equations 1 and 4 represent Laplace and Inverse Laplace Transform of a signal x(t).</p>
+
+<h2>Conditions for Existence of Laplace Transform</h2>
+
+<p>Dirichlet's conditions are used to define the existence of Laplace transform. i.e.</p>
+
+<p>The function f(t) has finite number of maxima and minima.</p>
+
+<p>There must be finite number of discontinuities in the signal f(t),in the given interval of time.</p>
+
+<p>It must be absolutely integrable in the given interval of time. i.e.</p>
+
+<p>$ \int_{-\infty}^{\infty} |\,f(t)|\, dt \lt \infty $</p>
+
+<h2>Initial and Final Value Theorems</h2>
+
+<p>If the Laplace transform of an unknown function x(t) is known, then it is possible to determine the initial and the final values of that unknown signal i.e. x(t) at t=0<sup>+</sup> and t=&infin;.</p>
+
+<h3>Initial Value Theorem</h3>
+
+<p><b>Statement:</b> if x(t) and its 1st derivative is Laplace transformable, then the initial value of x(t) is given by </p>
+
+<p>$$ x(0^+) = \lim_{s \to \infty} ⁡SX(S) $$</p>
+
+<h3>Final Value Theorem</h3>
+
+<p><b>Statement:</b> if x(t) and its 1st derivative is Laplace transformable, then the final value of x(t) is given by </p>
+
+<p>$$ x(\infty) = \lim_{s \to \infty} ⁡SX(S) $$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Laplace Transforms Properties</title>
+
+<h1>Laplace Transforms Properties</h1>
+
+<p> The properties of Laplace transform are:</p>
+
+<h3>Linearity Property</h3>
+
+<p>If $\,x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s)$</p>
+
+<p>&amp;    $\, y(t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} Y(s)$</p>
+
+<p>Then linearity property states that</p>
+
+<p>$a  x (t) + b  y (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow}  a X(s) + b Y(s)$</p>
+
+<h3>Time Shifting Property</h3>
+
+<p>If    $\,x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s)$</p>
+
+<p>Then time shifting property states that</p>
+
+<p>$x (t-t_0) \stackrel{\mathrm{L.T}}{\longleftrightarrow} e^{-st_0 } X(s)$</p>
+
+<h3>Frequency Shifting Property</h3>
+
+<p>If   $\, x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s)$</p>
+
+<p>Then frequency shifting property states that</p>
+
+<p>$e^{s_0 t} . x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s-s_0)$</p>
+
+<h3>Time Reversal Property</h3>
+
+<p>If    $\,x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s)$</p>
+
+<p>Then time reversal property states that</p>
+
+<p>$x (-t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(-s)$</p>
+
+<h3>Time Scaling Property</h3>
+
+<p>If    $\,x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow}   X(s)$</p>
+
+<p>Then time scaling property states that</p>
+
+<p>$x (at) \stackrel{\mathrm{L.T}}{\longleftrightarrow} {1\over |a|} X({s\over a})$</p>
+
+<h3>Differentiation and Integration Properties</h3>
+
+<p>If   $\, x (t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s)$</p>
+
+<p>Then differentiation property states that</p>
+
+<p>The integration property states that</p>
+
+<h3>Multiplication and Convolution Properties</h3>
+
+<p>If $\,x(t) \stackrel{\mathrm{L.T}}{\longleftrightarrow}  X(s)$</p>
+
+<p>and $ y(t) \stackrel{\mathrm{L.T}}{\longleftrightarrow}  Y(s)$</p>
+
+<p>Then multiplication property states that</p>
+
+<p>$x(t). y(t) \stackrel{\mathrm{L.T}}{\longleftrightarrow}  {1 \over 2 \pi j} X(s)*Y(s)$</p>
+
+<p>The convolution property states that </p>
+
+<p>$x(t) * y(t) \stackrel{\mathrm{L.T}}{\longleftrightarrow} X(s).Y(s)$</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Region of Convergence (ROC)</title>
+
+<h1>Region of Convergence (ROC)</h1>
+
+<p>The range variation of σ for which the Laplace transform converges is called region of convergence.</p>
+
+<h2>Properties of ROC of Laplace Transform</h2>
+
+<p>ROC contains strip lines parallel to j&omega; axis in s-plane.</p>
+
+<p>	If x(t) is absolutely integral and it is of finite duration, then ROC is entire s-plane.</p>
+
+<p>	If x(t) is a right sided sequence then ROC : Re{s} &gt; &sigma;<sub>o</sub>.</p>
+
+<p>	If x(t) is a left sided sequence then ROC : Re{s} &lt; &sigma;<sub>o</sub>.</p>
+
+<p> If x(t) is a two sided sequence then ROC is the combination of two regions.</p>
+
+<p>ROC can be explained by making use of examples given below:</p>
+
+<p><b>Example 1: Find the Laplace transform and ROC of $x(t) = e-^{at}u(t)$</b></p>
+
+<p>$L.T[x(t)] = L.T[e-^{at}u(t)] = {1 \over S+a}$</p>
+
+<p>$ Re{} \gt -a $</p>
+
+<p>$ ROC:Re{s} \gt >-a$</p>
+
+<p><b>Example 2: Find the Laplace transform and ROC of $x(t) = e^{at}u(-t)$</b></p>
+
+<p>$ L.T[x(t)] = L.T[e^{at}u(t)] = {1 \over S-a} $</p>
+
+<p>$ Re{s} &lt; a $</p>
+
+<p>$ ROC: Re{s} &lt; a $</p>
+
+<p><b>Example 3: Find the Laplace transform and ROC of $x(t) = e^{-at}u(t)+e^{at}u(-t)$</b></p>
+
+<p>$L.T[x(t)] = L.T[e^{-at}u(t)+e^{at}u(-t)] = {1 \over S+a} + {1 \over S-a}$</p>
+
+<p>For ${1 \over S+a} Re\{s\} \gt -a  $</p>
+
+<p>For ${1 \over S-a} Re\{s\} \lt a  $</p>
+
+<p>Referring to the above diagram, combination region lies from –a to a. Hence,</p>
+
+<p>$ ROC:  -a &lt; Re{s} &lt; a  $</p>
+
+<h2>Causality and Stability</h2>
+
+<p>For a system to be causal, all poles of its transfer function must be right half of s-plane.</p>
+
+<p>A system is said to be stable when all poles of its transfer function lay on the left half of s-plane.</p>
+
+<p>A system is said to be unstable when at least one pole of its transfer function is shifted to the right half of s-plane.</p>
+
+<p>A system is said to be marginally stable when at least one pole of its transfer function lies on the j&omega; axis of s-plane.</p>
+
+<h2>ROC of Basic Functions</h2>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Z-Transforms (ZT)</title>
+
+<h1>Z-Transforms (ZT)</h1>
+
+<p>Analysis of continuous time LTI systems can be done using z-transforms. It is a powerful mathematical tool to convert differential equations into algebraic equations.</p>
+
+<p>The bilateral (two sided) z-transform of a discrete time signal x(n) is given as</p>
+
+<p>$Z.T[x(n)] = X(Z)  = \Sigma_{n = -\infty}^{\infty} x(n)z^{-n} $</p>
+
+<p>The unilateral (one sided) z-transform of a discrete time signal x(n) is given as</p>
+
+<p>$Z.T[x(n)] = X(Z)  = \Sigma_{n = 0}^{\infty} x(n)z^{-n}  $</p>
+
+<p>Z-transform may exist for some signals for which Discrete Time Fourier Transform (DTFT) does not exist.</p>
+
+<h2>Concept of Z-Transform and Inverse Z-Transform</h2>
+
+<p>Z-transform of a discrete time signal x(n) can be represented with X(Z), and it is defined as</p>
+
+<p>If  $Z = re^{j\omega}$ then equation 1 becomes</p>
+
+<p>The above equation represents the relation between Fourier transform and Z-transform.</p>
+
+<h2>Inverse Z-transform</h2>
+
+<p>Substitute $re^{j \omega} = z$.</p>
+
+<p>Substitute in equation 3.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Z-Transforms Properties</title>
+
+<h1>Z-Transforms Properties</h1>
+
+<p>Z-Transform has following properties:</p>
+
+<h3>Linearity Property</h3>
+
+<p>If $\,x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>and $\,y(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} Y(Z)$</p>
+
+<p>Then linearity property states that</p>
+
+<p>$a\,  x (n) + b\,  y (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow}  a\, X(Z) + b\, Y(Z)$</p>
+
+<h3>Time Shifting Property</h3>
+
+<p>If $\,x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>Then Time shifting property states that</p>
+
+<p>$x (n-m) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} z^{-m} X(Z)$</p>
+
+<h3>Multiplication by Exponential Sequence Property</h3>
+
+<p>If $\,x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>Then multiplication by an exponential sequence property states that</p>
+
+<p>$a^n\, . x(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow}  X(Z/a)$</p>
+
+<h3>Time Reversal Property</h3>
+
+<p>If $\,   x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>Then time reversal property states that</p>
+
+<p>$x (-n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow}  X(1/Z)$</p>
+
+<h3>Differentiation in Z-Domain OR Multiplication by n Property</h3>
+
+<p>If $\, x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>Then multiplication by n or differentiation in z-domain property states that</p>
+
+<p>$ n^k x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} [-1]^k z^k{d^k X(Z) \over dZ^K} $</p>
+
+<h3>Convolution Property</h3>
+
+<p>If $\,x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>and $\,y(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow}  Y(Z)$</p>
+
+<p>Then convolution property states that </p>
+
+<p>$x(n) * y(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z).Y(Z)$</p>
+
+<h3>Correlation Property</h3>
+
+<p>If $\,x (n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z)$</p>
+
+<p>and $\,y(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow}  Y(Z)$</p>
+
+<p>Then correlation property states that </p>
+
+<p>$x(n) \otimes y(n) \stackrel{\mathrm{Z.T}}{\longleftrightarrow} X(Z).Y(Z^{-1})$</p>
+
+<h2>Initial Value and Final Value Theorems</h2>
+
+<p>Initial value and final value theorems of z-transform are defined for causal signal.</p>
+
+<h3>Initial Value Theorem</h3>
+
+<p>For a causal signal x(n), the initial value theorem states that</p>
+
+<p>$ x (0) = \lim_{z \to \infty }⁡X(z) $</p>
+
+<p>This is used to find the initial value of the signal without taking inverse z-transform</p>
+
+<h3>Final Value Theorem</h3>
+
+<p>For a causal signal x(n), the final value theorem states that</p>
+
+<p>$ x ( \infty ) = \lim_{z \to 1} [z-1] ⁡X(z) $</p>
+
+<p>This is used to find the final value of the signal without taking inverse z-transform.</p>
+
+<h2>Region of Convergence (ROC) of Z-Transform</h2>
+
+<p>The range of variation of z for which z-transform converges is called region of convergence of z-transform.</p>
+
+<h3>Properties of ROC of Z-Transforms</h3>
+
+<p>ROC of z-transform is indicated with circle in z-plane.</p>
+
+<p>ROC does not contain any poles.</p>
+
+<p>If x(n) is a finite duration causal sequence or right sided sequence, then the ROC is entire z-plane except at z = 0.</p>
+
+<p>If x(n) is a finite duration anti-causal sequence or left sided sequence, then the ROC is entire z-plane except at z = &infin;.</p>
+
+<p>If x(n) is a infinite duration causal sequence, ROC is exterior of the circle with radius a. i.e. |z| > a.</p>
+
+<p>If x(n) is a infinite duration anti-causal sequence, ROC is interior of the circle with radius a. i.e. |z| &lt; a.</p>
+
+<p>If x(n) is a finite duration two sided sequence, then the ROC is entire z-plane except at z = 0 &amp; z = &infin;.</p>
+
+<p>The concept of ROC can be explained by the following example:</p>
+
+<p><b>Example 1:</b> Find z-transform and ROC of $a^n u[n] + a^{-}nu[-n-1]$</p>
+
+<p>$Z.T[a^n u[n]] + Z.T[a^{-n}u[-n-1]] = {Z \over Z-a} + {Z \over Z {-1 \over a}}$</p>
+
+<p>$$ ROC: |z| \gt a  \quad\quad      ROC: |z| \lt {1 \over a} $$</p>
+
+<p>The plot of ROC has two conditions as a &gt; 1 and a &lt; 1, as you do not know a.</p>
+
+<p>In this case, there is no combination ROC.</p>
+
+<p>Here, the combination of ROC is from $a \lt |z| \lt {1 \over a}$ </p>
+
+<p>Hence for this problem, z-transform is possible when a &lt; 1.</p>
+
+<h2>Causality and Stability</h2>
+
+<h3>Causality condition for discrete time LTI systems is as follows:</h3>
+
+<p>A discrete time LTI system is causal when</p>
+
+<p>ROC is outside the outermost pole.</p>
+
+<p>In The transfer function H[Z], the order of numerator cannot be grater than the order of denominator.</p>
+
+<h3>Stability Condition for Discrete Time LTI Systems</h3>
+
+<p>A discrete time LTI system is stable when</p>
+
+<p>its system function H[Z] include unit circle |z|=1.</p>
+
+<p>all poles of the transfer function lay inside the unit circle |z|=1.</p>
+
+<h2>Z-Transform of Basic Signals</h2>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Page Not Found</title>
+
+<h2>404 - Page Not Found</h2>
+
+<h2>404 <i class="icon icon-file"></i></h2>
+
+<p>We're sorry, but the page you were looking for doesn't exist.</p>
+
+<p>Here are some useful links</p>
+
+<h4>Mobile First</h4>
+
+<h4>About us</h4>
+
+<h4>Extra Links</h4>
+
+<h4>Contact Us</h4>
+
+<p><i class="icon icon-map-marker"></i> <strong>Address:</strong> 3rd Floor, Jyoti Celestia, Madhapur, Hyderabad, Telangana 500081</p>
+
+<p><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="about/contact_us.htm">Click Here</a></p>
+
+<p><i class="icon icon-dribbble"></i> <strong>Website:</strong> <a href="http://www.tutorialspoint.com">www.tutorialspoint.com</a></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Signals and Systems Useful Resources</title>
+
+<h1>Signals and Systems - Useful Resources</h1>
+
+<p>The following resources contain additional information on Signals and Systems. Please use them to get more in-depth knowledge on this.</p>
+
+<h2>Useful Links on Signals and Systems</h2>
+
+<p><a rel="nofollow" target="_blank" href="https://en.wikibooks.org/wiki/Signals_and_Systems">Signals and Systems Wiki</a> -  Wikipedia Reference for Signals and Systems.</p>
+
+<h2>Useful Books on Signals and Systems</h2>
+
+<p>To enlist your site on this page, please drop an email to <b>contact@tutorialspoint.com</b></p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+<title>Discuss Signals and Systems</title>
+
+<h1>Discuss Signals and Systems</h1>
+
+<p>Signals and Systems tutorial is designed to cover analysis, types, convolution, sampling and operations performed on signals. It also describes various types of systems.</p>
+
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+
+</body></html>
