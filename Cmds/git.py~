@@ -2,7 +2,7 @@
 
 ######################################################################
 #
-# This file is used to store functions to create, initialize, and
+# This file is used to store functions for to create, initialize, and
 # add all of a directories contents to github. It is also used to
 # update the git repository. If you create a new repo, the name will
 # be the same as the directory name.
