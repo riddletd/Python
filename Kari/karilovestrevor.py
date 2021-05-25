@@ -11,4 +11,6 @@
 ######################################################################
 
 import os, sys
-print("Trevor Loves Kari very much")
+
+def kari():
+  print("Trevor Loves Kari very much")
